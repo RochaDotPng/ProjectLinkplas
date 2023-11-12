@@ -1,1 +1,10 @@
- 
+ .main--hero-image{
+  height: 830px;
+  background: rgba(45, 101, 118, 0.50);
+ }
+
+ .main--hero-section{
+  background-image: url('./company-front.jpg');
+  background-position: center;
+  background-size: cover;
+ }
