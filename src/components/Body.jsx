@@ -2,11 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NavSection from './NavSection';
+import FluidImage from './common/FluidImage';
 
 function Body() {
   return (
     <>
     <NavSection />
+    <div>
+        <FluidImage source='../company-front.jpg'></FluidImage>
+    </div>
     <Container>
       <Row>
         <Col>1 of 2</Col>

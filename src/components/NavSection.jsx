@@ -18,8 +18,10 @@ function NavSection() {
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="#home">Sobre</Nav.Link>
+            <Nav.Link href="#link">Serviços</Nav.Link>
+            <Nav.Link href="#link">Galeria</Nav.Link>
+            <Nav.Link href="#link">Politica de Qualidade</Nav.Link>
             <Button>Contactos</Button>
           </Nav>
         </div> 
