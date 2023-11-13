@@ -3,13 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
 
-function Header() {
+export default function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">
           <img
-            alt=""
+            alt="Linkplas"
             src="./logo.png"
             width="139"
             height="73"
@@ -29,5 +29,3 @@ function Header() {
     </Navbar>
   );
 }
-
-export default Header;
