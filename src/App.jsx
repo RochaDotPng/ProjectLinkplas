@@ -7,6 +7,7 @@ import Contacts from './pages/Contacts'
 import Gallery from './pages/Gallery'
 import Policy from './pages/Policy'
 import Services from './pages/Services'
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function App() {
 

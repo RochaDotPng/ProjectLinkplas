@@ -10,7 +10,7 @@ export default function Header() {
         <Navbar.Brand href="#home">
           <img
             alt="Linkplas"
-            src="./logo.png"
+            src="./images/logo.png"
             width="139"
             height="73"
             className="d-inline-block align-top"
@@ -24,7 +24,7 @@ export default function Header() {
             <Nav.Link href="#link">Politica de Qualidade</Nav.Link>
             <Button>Contactos</Button>
           </Nav>
-        </div> 
+        </div>
       </Container>
     </Navbar>
   );
