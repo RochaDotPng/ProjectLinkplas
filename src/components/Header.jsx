@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 
 export default function Header() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary header">
       <Container>
         <Navbar.Brand href="#home">
           <img
