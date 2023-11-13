@@ -30,4 +30,4 @@ function Header() {
   );
 }
 
-export default NavSection;
+export default Header;
