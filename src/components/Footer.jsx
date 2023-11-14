@@ -26,10 +26,10 @@ export default function Footer() {
                 <p>Copyright &copy;2023</p>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
-                        <Nav.Link href="" className="footer-link">Link</Nav.Link>
+                        <Nav.Link href="" className="footer-link">Politica de Privacidade</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="" className="footer-link">Link</Nav.Link>
+                        <Nav.Link href="" className="footer-link">Termos e Condições</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </div>
