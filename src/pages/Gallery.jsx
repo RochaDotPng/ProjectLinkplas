@@ -3,9 +3,9 @@ import Footer from "../components/Footer";
 
 export default function Galery() {
     return (
-        <>
+        <div>
             <Header />
             <Footer />
-        </>
+        </div>
     )
 }

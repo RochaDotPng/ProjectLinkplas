@@ -14,13 +14,15 @@ export default function Header() {
     <Navbar expand="lg" className="bg-body-tertiary header">
       <Container>
         <Navbar.Brand href="/">
-          <img
-            alt="Linkplas"
-            src="./images/logo.png"
-            width="139"
-            height="73"
-            className="d-inline-block align-top"
-          />{' '}
+          <Nav.Link as={Link} to="/">
+            <img
+              alt="Linkplas"
+              src="./images/logo.png"
+              width="139"
+              height="73"
+              className="d-inline-block align-top"
+            />
+          </Nav.Link>{' '}
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">

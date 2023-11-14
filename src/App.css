@@ -109,21 +109,28 @@ footer img {
 }
 /*---------------------*/
 /* --- TRANSITIONS --- */
-.fade-enter {
-   opacity: 0.01;
+/* Fading In */
+.page-fade-enter {
+   opacity: 0;
+   transform: translateY(20px); /* You can use other transform properties for different effects */
  }
  
- .fade-enter.fade-enter-active {
+ .page-fade-enter-active {
    opacity: 1;
-   transition: opacity 500ms ease-in;
+   transform: translateY(0);
+   transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
  }
  
- .fade-exit {
+ /* Fading Out */
+ .page-fade-exit {
    opacity: 1;
+   transform: translateY(0);
  }
  
- .fade-exit.fade-exit-active {
-   opacity: 0.01;
-   transition: opacity 500ms ease-in;
+ .page-fade-exit-active {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
  }
+ 
 /* ------------------- */

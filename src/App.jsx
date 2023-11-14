@@ -8,7 +8,7 @@ import Gallery from './pages/Gallery'
 import Policy from './pages/Policy'
 import Services from './pages/Services'
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { SwitchTransition , CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function App() {
 
@@ -17,12 +17,12 @@ export default function App() {
       <TransitionGroup>
         <BrowserRouter>
           <Routes>
-              <Route path="/" element={<CSSTransition key="home" classNames="fade" timeout={500}><Home /></CSSTransition>} />
-              <Route path="/About" element={<CSSTransition key="about" classNames="fade" timeout={500}><About /></CSSTransition>} />
-              <Route path="/Contacts" element={<CSSTransition key="contacts" classNames="fade" timeout={500}><Contacts /></CSSTransition>} />
-              <Route path="/Gallery" element={<CSSTransition key="gallery" classNames="fade" timeout={500}><Gallery /></CSSTransition>} />
-              <Route path="/Policy" element={<CSSTransition key="policy" classNames="fade" timeout={500}><Policy /></CSSTransition>} />
-              <Route path="/Services" element={<CSSTransition key="services" classNames="fade" timeout={500}><Services /></CSSTransition>} />
+              <Route path="/" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>} />
+              <Route path="/About" element={<SwitchTransition><CSSTransition key="about" classNames="page-fade" timeout={500}><About /></CSSTransition></SwitchTransition>} />
+              <Route path="/Contacts" element={<SwitchTransition><CSSTransition key="contacts" classNames="page-fade" timeout={500}><Contacts /></CSSTransition></SwitchTransition>} />
+              <Route path="/Gallery" element={<SwitchTransition><CSSTransition key="gallery" classNames="page-fade" timeout={500}><Gallery /></CSSTransition></SwitchTransition>} />
+              <Route path="/Policy" element={<SwitchTransition><CSSTransition key="policy" classNames="page-fade" timeout={500}><Policy /></CSSTransition></SwitchTransition>} />
+              <Route path="/Services" element={<SwitchTransition><CSSTransition key="services" classNames="page-fade" timeout={500}><Services /></CSSTransition></SwitchTransition>} />
           </Routes>
         </BrowserRouter>
       </TransitionGroup>
