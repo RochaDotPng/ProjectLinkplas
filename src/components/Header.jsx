@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Header() {
   const navigate = useNavigate();
 
-  const handleNavLinkClick = (path) => {
+  const handleContactsClick = (path) => {
     navigate(path);
   };
   return (
@@ -36,7 +36,7 @@ export default function Header() {
             <Nav.Link as={Link} to="/Policy">
               Politica de Qualidade
             </Nav.Link>
-            <Button onClick={() => handleNavLinkClick('/Contacts')}>Contactos</Button>
+            <Button onClick={() => handleContactsClick('/Contacts')}>Contactos</Button>
           </Nav>
         </div>
       </Container>
