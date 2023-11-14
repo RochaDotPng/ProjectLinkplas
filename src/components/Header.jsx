@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary header">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt="Linkplas"
             src="./images/logo.png"
@@ -18,10 +18,10 @@ export default function Header() {
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">
-            <Nav.Link href="#home">Sobre</Nav.Link>
-            <Nav.Link href="#link">Serviços</Nav.Link>
-            <Nav.Link href="#link">Galeria</Nav.Link>
-            <Nav.Link href="#link">Politica de Qualidade</Nav.Link>
+            <Nav.Link href="/About">Sobre</Nav.Link>
+            <Nav.Link href="/Services">Serviços</Nav.Link>
+            <Nav.Link href="/Gallery">Galeria</Nav.Link>
+            <Nav.Link href="/Policy">Politica de Qualidade</Nav.Link>
             <Button>Contactos</Button>
           </Nav>
         </div>
