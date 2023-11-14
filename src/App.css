@@ -45,7 +45,7 @@
 }
 
 footer {
-   position: fixed;
+   position: relative;
    bottom: 0;
    left: 0;
    width: 100%;
@@ -77,7 +77,6 @@ i {
 .icon-container {
    display: flex;
    align-items: center;
-   margin-top: 15px;
 }
 
 .icon-container i {
@@ -95,7 +94,7 @@ i {
 }
 
 .footer-down p {
-   margin-top: 15px;
+   margin-top: 5px;
 }
 
 .footer-link {
