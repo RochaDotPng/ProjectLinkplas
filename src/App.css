@@ -5,9 +5,17 @@
    font-family: 'Open Sans', sans-serif;
 }
 
+/* --- MAIN PAGE --- */
+
 .main--hero-image {
    height: 830px;
    background: rgba(45, 101, 118, 0.50);
+}
+
+.main--hero-section {
+   background-image: url('./images/company-front.jpg');
+   background-position: center;
+   background-size: cover;
 }
 
 .main--hero-section {
@@ -38,12 +46,29 @@
    text-align: center;
 }
 
-.main--hero-section {
-   background-image: url('./images/company-front.jpg');
-   background-position: center;
-   background-size: cover;
+/* ----------------------*/
+
+/* ------ ICONS ------*/
+i {
+   color: rgb(214, 212, 212);
 }
 
+.socials i {
+   margin-right: 15px;
+}
+
+.icon-container {
+   display: flex;
+   align-items: center;
+}
+
+.icon-container i {
+   margin-right: 10px;
+   margin-bottom: 11px;
+}
+
+/* --------------------*/
+/* ------ FOOTER ------*/
 footer {
    position: relative;
    bottom: 0;
@@ -66,24 +91,6 @@ footer img {
    height: 73px;
 }
 
-i {
-   color: rgb(214, 212, 212);
-}
-
-.socials i {
-   margin-right: 15px;
-}
-
-.icon-container {
-   display: flex;
-   align-items: center;
-}
-
-.icon-container i {
-   margin-right: 10px;
-   margin-bottom: 11px;
-}
-
 .footer-down {
    background-color: #304148;
    display: flex;
@@ -100,3 +107,4 @@ i {
 .footer-link {
    color: rgb(214, 212, 212);
 }
+/*---------------------*/
