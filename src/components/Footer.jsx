@@ -6,8 +6,8 @@ export default function Footer() {
             <div className="footer-up">
                 <img src="./images/logo-light.png"></img>
                 <div className='socials'>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-linkedin"></i>
+                    <i className="bi bi-facebook"></i>
+                    <i className="bi bi-linkedin"></i>
                 </div>
                 <div className="icon-container">
                     <i className="bi bi-envelope-fill"></i>
