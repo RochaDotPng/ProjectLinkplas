@@ -8,21 +8,25 @@ import Gallery from './pages/Gallery'
 import Policy from './pages/Policy'
 import Services from './pages/Services'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/About" element={<About/>}/>
-      <Route path="/Contacts" element={<Contacts/>}/>
-      <Route path="/Gallery" element={<Gallery/>}/>
-      <Route path="/Policy" element={<Policy/>}/>
-      <Route path="/Services" element={<Services/>}/>
-    </Routes>
-    </BrowserRouter>
+      <TransitionGroup>
+        <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<CSSTransition key="home" classNames="fade" timeout={500}><Home /></CSSTransition>} />
+              <Route path="/About" element={<CSSTransition key="about" classNames="fade" timeout={500}><About /></CSSTransition>} />
+              <Route path="/Contacts" element={<CSSTransition key="contacts" classNames="fade" timeout={500}><Contacts /></CSSTransition>} />
+              <Route path="/Gallery" element={<CSSTransition key="gallery" classNames="fade" timeout={500}><Gallery /></CSSTransition>} />
+              <Route path="/Policy" element={<CSSTransition key="policy" classNames="fade" timeout={500}><Policy /></CSSTransition>} />
+              <Route path="/Services" element={<CSSTransition key="services" classNames="fade" timeout={500}><Services /></CSSTransition>} />
+          </Routes>
+        </BrowserRouter>
+      </TransitionGroup>
     </>
+
   )
 }

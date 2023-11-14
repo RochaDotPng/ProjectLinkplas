@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 export default function BodyHeroSection() {
     return (
-        <Carousel className='carousel'>
+        <Carousel interval="4000" className='carousel'>
             <Carousel.Item>
                 <img className='carousel-img' src='./images/company-front-carousel.jpg'></img>
                 <Carousel.Caption>
