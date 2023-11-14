@@ -2,8 +2,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleNavLinkClick = (path) => {
+    navigate(path);
+  };
   return (
     <Navbar expand="lg" className="bg-body-tertiary header">
       <Container>
@@ -18,11 +24,19 @@ export default function Header() {
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">
-            <Nav.Link href="/About">Sobre</Nav.Link>
-            <Nav.Link href="/Services">Serviços</Nav.Link>
-            <Nav.Link href="/Gallery">Galeria</Nav.Link>
-            <Nav.Link href="/Policy">Politica de Qualidade</Nav.Link>
-            <Button>Contactos</Button>
+            <Nav.Link as={Link} to="/About">
+              Sobre
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Services">
+              Serviços
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Gallery">
+              Galeria
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Policy">
+              Politica de Qualidade
+            </Nav.Link>
+            <Button onClick={() => handleNavLinkClick('/Contacts')}>Contactos</Button>
           </Nav>
         </div>
       </Container>
