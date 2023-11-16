@@ -3,6 +3,7 @@
 * {
    margin: 0;
    font-family: 'Open Sans', sans-serif;
+   box-sizing: border-box;
 }
 
 /* --- MAIN PAGE --- */
@@ -31,8 +32,7 @@
    height: auto;
 }
 
-.carousel p,
-h1 {
+.carousel  p, .carousel h1 {
    text-shadow: 1px 1px 1px #000;
 }
 
@@ -144,8 +144,17 @@ footer img {
 }
 
 /* ------------------- */
-/* -----SERVICES------ */
+
+/* ------ TEXT ------- */
+
+.text-outlined{
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+}
+
 /* ------------------- */
+
+/* -----SERVICES------ */
 
 .services-body-container {
    position: relative;
@@ -247,12 +256,22 @@ footer img {
 .about-container {
    display: flex;
    justify-content: space-between;
-   align-items: flex-start;
-   margin: 50px;
+   gap: 70px;
+   margin: 150px;
+   height: 100%;
+   align-items: stretch;
+}
+
+.about-container p{
+   text-align: justify;
 }
 
 .about-img-container {
    flex: 1;
+   height: auto;
+   background-image: url('./images/office2.jpeg');
+   background-position: center;
+   background-size: cover;
 }
 
 .about-img-container img {
