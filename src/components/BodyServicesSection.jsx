@@ -7,12 +7,12 @@ export default function BodyServicesSection() {
                 <div className="services-body-img"></div>
                 <div className="services-text">
                     <h2>Os nossos serviços</h2>
-                    <div className="cards-container">
-                        <Cards title={"teste"} text={"teste"} />
-                        <Cards title={"teste"} text={"teste"} />
-                        <Cards title={"teste"} text={"teste"} />
-                        <Cards title={"teste"} text={"teste"} />
-                    </div>
+                </div>
+                <div className="cards-container">
+                    <Cards title={"teste"} text={"teste"} />
+                    <Cards title={"teste"} text={"teste"} />
+                    <Cards title={"teste"} text={"teste"} />
+                    <Cards title={"teste"} text={"teste"} />
                 </div>
             </div>
         </>

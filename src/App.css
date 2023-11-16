@@ -148,10 +148,8 @@ footer img {
 /* ------------------- */
 
 .services-body-container {
-   margin: 50px;
-   margin-top: 50px;
    position: relative;
-   height: 450px;
+   height: 450px; 
 }
 
 .services-body-img {
@@ -174,9 +172,7 @@ footer img {
 
 .services-text {
    position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+   top: 0;
    color: white;
    text-align: center;
    width: 100%;
@@ -187,8 +183,10 @@ footer img {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 10px;
+   top: 0;
+   margin-left: 300px;
    position: relative;
-   left: 15%;
+   top: -40%;
 }
 
 .card-link {
@@ -238,6 +236,30 @@ footer img {
 }
 
 .policy-text-container {
+   flex: 1;
+   margin-left: 30px;
+}
+
+/* ------------------- */
+/* -----ABOUT------ */
+/* ------------------- */
+
+.about-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin: 50px;
+}
+
+.about-img-container {
+   flex: 1;
+}
+
+.about-img-container img {
+   max-width: 100%;
+}
+
+.about-text-container {
    flex: 1;
    margin-left: 30px;
 }

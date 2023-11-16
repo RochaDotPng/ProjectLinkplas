@@ -1,4 +1,5 @@
 import BodyHeroSection from "../components/BodyHeroSection";
+import BodyAboutSection from "../components/BodyAboutSection";
 import BodyServicesSection from "../components/BodyServicesSection";
 import BodyGallerySection from "../components/BodyGallerySection";
 import BodyPolicySection from "../components/BodyPolicySection";
@@ -10,6 +11,7 @@ export default function Home() {
         <div>
             <Header />
             <BodyHeroSection />
+            <BodyAboutSection/>
             <BodyServicesSection/>
             <BodyGallerySection/>
             <BodyPolicySection/>
