@@ -13,7 +13,24 @@ export default function BodyAboutSection() {
                     <Button>Ler mais</Button>
                 </div>
                 <div className="about-img-container">
-                    
+                    <div className='about-vision-div'>
+                        <div>
+                            <h4>Missão</h4>
+                            <p className='hightlight m-0'>Fornecer peças e componentes plásticos de elevada qualidade e complexidade técnica.</p>
+                        </div>
+                        <div>
+                            <a className='pointer link-light text-decoration-none d-flex align-items-center'>Ver mais <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div className='about-mission-div'>
+                        <div>
+                            <h4>Visão</h4>
+                            <p className='highlight m-0'>Dar uma resposta global às necessidades dos mais exigentes clientes nacionais e estrangeiros.</p>
+                        </div>
+                        <div>
+                            <a className='pointer link-light text-decoration-none d-flex align-items-center gap-1'>Ver mais <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
