@@ -4,10 +4,11 @@ export default function Footer() {
     return (
         <footer>
             <div className="footer-up">
+                
+                <div className='socials d-flex align-items-center'>
                 <img src="./images/logo-light.png"></img>
-                <div className='socials'>
-                    <i className="bi bi-facebook"></i>
-                    <i className="bi bi-linkedin"></i>
+                    <i className="bi bi-facebook align-self-end"></i>
+                    <i className="bi bi-linkedin align-self-end"></i>
                 </div>
                 <div className="icon-big-container">
                     <div className="icon-container">

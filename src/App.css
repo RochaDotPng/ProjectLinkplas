@@ -10,6 +10,10 @@
    cursor: pointer;
 }
 
+.text-shadow{
+   text-shadow: 1px 1px 1px #000;
+}
+
 /* --- MAIN PAGE --- */
 
 .main--hero-image {
@@ -90,22 +94,25 @@ footer {
    background-color: #304148;
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
+   justify-content: space-between;
    align-items: center;
    color: rgb(214, 212, 212);
    border-bottom: 1px solid white;
+   padding: 25px 85px;
 }
 
 footer img {
    width: 139px;
    height: 73px;
+   margin-right: 20px;
 }
 
 .footer-down {
    background-color: #304148;
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
+   justify-content: space-between;
+   padding: 25px 85px;
    align-items: center;
    color: rgb(214, 212, 212);
    height: 70px;
@@ -163,29 +170,19 @@ footer img {
 .services-body-container {
    position: relative;
    height: 450px; 
+   margin-bottom: 200px;
 }
 
 .services-body-img {
    position: relative;
-   height: 300px;
-   background-image: url('./images/background-moldes.jpeg');
+   height: 500px;
+   background-image: url('./images/background-moldes-filtered.jpg');
    background-size: cover;
    background-position: center;
 }
 
-.services-body-img::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   background-color: rgba(45, 101, 118, 0.7);
-}
 
 .services-text {
-   position: absolute;
-   top: 0;
    color: white;
    text-align: center;
    width: 100%;
@@ -197,9 +194,9 @@ footer img {
    grid-template-columns: repeat(2, 1fr);
    gap: 10px;
    top: 0;
-   margin-left: 300px;
+   margin-left: 150px;
+   margin-right: 150px;
    position: relative;
-   top: -40%;
 }
 
 .card-link {
@@ -241,7 +238,11 @@ footer img {
 }
 
 .policy-img-container {
-   flex: 1;
+   flex: 1 143px;
+   background-image: url(./images/company-front.jpg);
+   background-position: center;
+   background-size: cover;
+   height: 450px;
 }
 
 .policy-img-container img {
@@ -249,7 +250,7 @@ footer img {
 }
 
 .policy-text-container {
-   flex: 1;
+   flex: 2;
    margin-left: 30px;
 }
 

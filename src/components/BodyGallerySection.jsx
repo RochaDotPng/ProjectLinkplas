@@ -8,8 +8,8 @@ export default function BodyGallerySection() {
                 <Button>Explorar</Button>
                 <div className='gallery-img-container'>
                     <img src='./images/machine-front.jpg' />
-                    <img src='./images/machine-front.jpg' />
-                    <img src='./images/machine-front.jpg' />
+                    <img src='./images/background-moldes.jpeg' />
+                    <img src='./images/machine1.jpeg' />
                     <img src='./images/machine-front.jpg' />
                     <img src='./images/machine-front.jpg' />
                     <img src='./images/machine-front.jpg' />
