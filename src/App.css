@@ -26,12 +26,13 @@
 
 /* ----- CAROUSEL ----- */
 
-.carousel-img{
+.carousel-img {
    width: 100%;
    height: auto;
 }
 
-.carousel p , h1{
+.carousel p,
+h1 {
    text-shadow: 1px 1px 1px #000;
 }
 
@@ -57,14 +58,19 @@ i {
    margin-right: 15px;
 }
 
-.icon-container {
+.icon-big-container {
    display: flex;
-   align-items: center;
+}
+
+.icon-container {
+   margin-top: 10px;
+   display: flex;
+   padding: 15px;
 }
 
 .icon-container i {
-   margin-right: 10px;
-   margin-bottom: 11px;
+   margin-right: 5px;
+   margin-bottom: 15px;
 }
 
 /* --------------------*/
@@ -98,39 +104,115 @@ footer img {
    justify-content: space-around;
    align-items: center;
    color: rgb(214, 212, 212);
+   height: 70px;
 }
 
 .footer-down p {
    margin-top: 5px;
+   margin-right: 46%;
 }
 
 .footer-link {
    color: rgb(214, 212, 212);
 }
+
 /*---------------------*/
 /* --- TRANSITIONS --- */
 /* Fading In */
 .page-fade-enter {
    opacity: 0;
-   transform: translateY(20px); /* You can use other transform properties for different effects */
- }
- 
- .page-fade-enter-active {
+   transform: translateY(20px);
+   /* You can use other transform properties for different effects */
+}
+
+.page-fade-enter-active {
    opacity: 1;
    transform: translateY(0);
    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
- }
- 
- /* Fading Out */
- .page-fade-exit {
+}
+
+/* Fading Out */
+.page-fade-exit {
    opacity: 1;
    transform: translateY(0);
- }
- 
- .page-fade-exit-active {
+}
+
+.page-fade-exit-active {
    opacity: 0;
    transform: translateY(20px);
    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
- }
- 
+}
+
 /* ------------------- */
+/* -----SERVICES------ */
+/* ------------------- */
+
+.services-body-container {
+   margin: 50px;
+   margin-top: 50px;
+   position: relative;
+   height: 450px;
+}
+
+.services-body-img {
+   position: relative;
+   height: 300px;
+   background-image: url('./images/background-moldes.jpeg');
+   background-size: cover;
+   background-position: center;
+}
+
+.services-body-img::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(45, 101, 118, 0.7);
+}
+
+.services-text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
+   text-align: center;
+   width: 100%;
+   padding: 20px;
+}
+
+.cards-container {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+   position:relative;
+   left: 15%;
+}
+
+.card-link{
+   color: rgba(45, 101, 118);
+   text-decoration: none;
+   font-weight: bold;
+}
+
+/* ------------------- */
+/* -----GALLERY------ */
+/* ------------------- */
+.gallery-container{
+   margin: 50px;
+   text-align: center;
+}
+
+.gallery-img-container{
+   margin: 10px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+}
+
+.gallery-img-container img{
+   width: 100%;
+   height: auto;
+}
