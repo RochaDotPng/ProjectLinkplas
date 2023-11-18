@@ -12,11 +12,10 @@ export default function Home() {
         <div>
             <Header />
             <BodyHeroSection />
-            <BodyAboutSection/>
-            <BodyServicesSection/>
-            <BodyGallerySection/>
-            <BodyPolicySection/>
             <BodySustainabilitySection/>
+            <BodyServicesSection/>
+            <BodyAboutSection/>
+            <BodyPolicySection/>
             <Footer />
         </div>
     )

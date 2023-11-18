@@ -4,6 +4,10 @@
    margin: 0;
    font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+#root{
+   height: 100vh;
 }
 
 .pointer {
@@ -329,7 +333,7 @@ footer img {
 
 .sustain-container {
    text-align: center;
-   margin: 20px;
+   margin: 120px;
 }
 
 .sustainability-title {
@@ -350,3 +354,56 @@ footer img {
 .sustainability-card:hover {
    transform: translateY(-10px);
 }
+
+/* ----- SCROLL ----- */
+/* Styles for Vertical Scrollbar */
+.track-vertical {
+   top: 2px;
+   bottom: 2px;
+   right: 5px;
+   border-radius: 3px;
+   background: rgba(0, 0, 0, 0); /* Darker background color */
+ 
+   .thumb-vertical {
+     position: relative;
+     display: block;
+     width: 10px !important; /* Adjust the width of the thumb */
+     cursor: pointer;
+     border-radius: 5px; /* Slightly rounder corners */
+     background-color: rgba(0, 0, 0, 0.7); /* Lighter color for the thumb */
+   }
+ }
+ 
+ /* Styles for Horizontal Scrollbar */
+ .track-horizontal {
+   position: absolute;
+   height: 8px; /* Adjust the height of the track */
+   right: 2px;
+   bottom: 2px;
+   left: 2px;
+   border-radius: 3px;
+   background: rgba(0, 0, 0, 0); /* Darker background color */
+ 
+   .thumb-horizontal {
+     position: relative;
+     display: block;
+     height: 100%;
+     cursor: pointer;
+     border-radius: 5px; /* Slightly rounder corners */
+     background-color: rgba(255, 255, 255, 0.7); /* Lighter color for the thumb */
+   }
+ }
+ 
+ /* Styles for Scrollbar View */
+ .view {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   overflow: scroll;
+   margin-right: -15px;
+   margin-bottom: -17px !important;
+ }
+ 
+/* ------------------- */
