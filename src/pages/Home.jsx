@@ -3,6 +3,7 @@ import BodyAboutSection from "../components/BodyAboutSection";
 import BodyServicesSection from "../components/BodyServicesSection";
 import BodyGallerySection from "../components/BodyGallerySection";
 import BodyPolicySection from "../components/BodyPolicySection";
+import BodySustainabilitySection from "../components/BodySustainabilitySection";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
             <BodyServicesSection/>
             <BodyGallerySection/>
             <BodyPolicySection/>
+            <BodySustainabilitySection/>
             <Footer />
         </div>
     )
