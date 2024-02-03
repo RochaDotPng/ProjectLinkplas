@@ -26,7 +26,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-down">
-                <p>Copyright &copy;2023</p>
+                <p>Todos os direitos reservados a www.linkplas.pt &copy;2023</p>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
                         <Nav.Link href="" className="footer-link">Politica de Privacidade</Nav.Link>
