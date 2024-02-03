@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary header">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand>
           <Nav.Link as={Link} to="/">
             <img
               alt="Linkplas"
@@ -22,7 +22,7 @@ export default function Header() {
               height="73"
               className="d-inline-block align-top"
             />
-          </Nav.Link>{' '}
+          </Nav.Link>
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">

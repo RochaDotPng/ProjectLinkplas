@@ -363,6 +363,7 @@ footer img {
    right: 5px;
    border-radius: 3px;
    background: rgba(0, 0, 0, 0); /* Darker background color */
+   z-index: 1000;
  
    .thumb-vertical {
      position: relative;
@@ -383,6 +384,7 @@ footer img {
    left: 2px;
    border-radius: 3px;
    background: rgba(0, 0, 0, 0); /* Darker background color */
+   z-index: 1000;
  
    .thumb-horizontal {
      position: relative;
@@ -404,6 +406,7 @@ footer img {
    overflow: scroll;
    margin-right: -15px;
    margin-bottom: -17px !important;
+   z-index: 1000;
  }
  
 /* ------------------- */

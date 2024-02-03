@@ -19,11 +19,10 @@ export default function App() {
         autoHide
         autoHideTimeout={1000}
         autoHideDuration={200}
-        renderTrackHorizontal={props => <div {...props} className="track-horizontal"/>}
         renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-        renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
         renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-        renderView={props => <div {...props} className="view"/>}>
+        renderView={props => <div {...props} className="view"/>}
+        >
         <TransitionGroup>
           <BrowserRouter>
             <Routes>
