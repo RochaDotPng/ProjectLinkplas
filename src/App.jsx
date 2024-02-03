@@ -15,14 +15,6 @@ export default function App() {
 
   return (
     <>
-      <Scrollbars
-        autoHide
-        autoHideTimeout={1000}
-        autoHideDuration={200}
-        renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-        renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-        renderView={props => <div {...props} className="view"/>}
-        >
         <TransitionGroup>
           <BrowserRouter>
             <Routes>
@@ -35,7 +27,6 @@ export default function App() {
             </Routes>
           </BrowserRouter>
         </TransitionGroup>
-      </Scrollbars>
     </>
 
   )
