@@ -6,7 +6,7 @@ import About from './pages/About'
 import Contacts from './pages/Contacts'
 import Gallery from './pages/Gallery'
 import Policy from './pages/Policy'
-import Services from './pages/Services'
+import Products from './pages/Products'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -23,7 +23,7 @@ export default function App() {
               <Route path="/Contacts" element={<SwitchTransition><CSSTransition key="contacts" classNames="page-fade" timeout={500}><Contacts /></CSSTransition></SwitchTransition>} />
               <Route path="/Gallery" element={<SwitchTransition><CSSTransition key="gallery" classNames="page-fade" timeout={500}><Gallery /></CSSTransition></SwitchTransition>} />
               <Route path="/Policy" element={<SwitchTransition><CSSTransition key="policy" classNames="page-fade" timeout={500}><Policy /></CSSTransition></SwitchTransition>} />
-              <Route path="/Services" element={<SwitchTransition><CSSTransition key="services" classNames="page-fade" timeout={500}><Services /></CSSTransition></SwitchTransition>} />
+              <Route path="/Products" element={<SwitchTransition><CSSTransition key="products" classNames="page-fade" timeout={500}><Products /></CSSTransition></SwitchTransition>} />
             </Routes>
           </BrowserRouter>
         </TransitionGroup>

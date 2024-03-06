@@ -18,6 +18,10 @@
    text-shadow: 1px 1px 1px #000;
 }
 
+.width-700{
+   width: 700px;
+}
+
 /* --- MAIN PAGE --- */
 
 .main--hero-image {
@@ -26,39 +30,26 @@
 }
 
 .main--hero-section {
-   background-image: url('./images/company-front.jpg');
-   background-position: center;
+   background-image: url(./images/home-hero-landscape.jpg);
+   height: calc(100vh - 99px);
+   background-repeat: no-repeat;
    background-size: cover;
-}
-
-.main--hero-section {
-   background-image: url('./images/company-front.jpg');
    background-position: center;
-   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
 
-/* ----- CAROUSEL ----- */
-
-.carousel-img {
-   width: 100%;
-   height: auto;
-}
-
-.carousel p,
-.carousel h1 {
-   text-shadow: 1px 1px 1px #000;
-}
-
-.carousel-caption {
-   position: absolute;
-   right: 15%;
-   bottom: 35%;
-   left: 15%;
+.main--hero-section h1,
+.main--hero-section p{
    padding-top: 1.25rem;
    padding-bottom: 1.25rem;
    color: #fff;
    text-align: center;
+   text-shadow: 1px 1px 1px #000;
 }
+
 
 /* ----------------------*/
 
@@ -170,44 +161,78 @@ footer img {
 
 /* ------------------- */
 
-/* -----SERVICES------ */
+/* -----Products------ */
 
-.services-body-container {
+.products-body-container {
    position: relative;
    height: 450px;
    margin-bottom: 200px;
 }
 
-.services-body-img {
+.products-body-img {
    position: relative;
-   height: 500px;
+   height: 330px;
    background-image: url('./images/background-moldes-filtered.jpg');
    background-size: cover;
    background-position: center;
 }
 
 
-.services-text {
+.products-text {
    color: white;
    text-align: center;
    width: 100%;
    padding: 20px;
+   padding-top: 60px;
+   font-size: rem;
 }
 
-.cards-container {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 10px;
-   top: 0;
-   margin-left: 150px;
-   margin-right: 150px;
+.product-buttons-container{
    position: relative;
+   top:120px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 20px;
 }
 
-.card-link {
-   color: rgba(45, 101, 118);
-   text-decoration: none;
-   font-weight: bold;
+.product-button{
+   min-width: 148px;
+   height: 148px;
+   border-radius: 22px;
+   background-color: white;
+   text-align: center;
+   color: var(--bs-primary);
+   font-weight: 700;
+   cursor: pointer;
+   transition: transform 0.3s ease-in-out;
+}
+
+.product-button.disabled{
+   cursor:initial;
+   background-color: var(--bs-gray-400);
+}
+
+.product-button:hover {
+   transform: translateY(-10px);
+}
+
+.product-button.disabled:hover{
+   transform: translateY(0px);
+}
+
+.product-button i{
+   color: var(--bs-primary);
+   font-size: 60px;
+}
+
+.product-button p{
+   position: relative;
+   top: 5px;
+}
+
+.product-button .bi::before{
+   margin-top:20px;
 }
 
 /* ------------------- */
@@ -268,7 +293,7 @@ footer img {
    justify-content: space-between;
    gap: 70px;
    margin: 150px;
-   height: 100%;
+   height: 580px;
    align-items: stretch;
 }
 
@@ -277,7 +302,7 @@ footer img {
 }
 
 .about-img-container {
-   flex: 1;
+   flex: 1.5;
    height: auto;
    background-image: url('./images/office2.jpeg');
    background-position: center;
@@ -291,21 +316,13 @@ footer img {
    max-width: 100%;
 }
 
+.about-img-container p {
+   line-height: 25px;
+}
+
 .about-text-container {
    flex: 1;
    margin-left: 30px;
-}
-
-.about-vision-div {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   padding: 28px;
-   width: 255px;
-   height: 223px;
-   flex-shrink: 0;
-   background: #2D6576;
-   color: white;
 }
 
 .about-mission-div {
@@ -314,9 +331,21 @@ footer img {
    justify-content: space-between;
    padding: 28px;
    width: 255px;
-   height: 271px;
+   height: 300px;
    flex-shrink: 0;
-   background: #4154F1;
+   background: var(--bs-secondary);
+   color: white;
+}
+
+.about-vision-div {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 28px;
+   width: 255px;
+   height: 220px;
+   flex-shrink: 0;
+   background: var(--bs-primary);
    color: white;
 }
 
@@ -338,6 +367,8 @@ footer img {
 
 .sustainability-title {
    margin-top: 0;
+   font-weight: 700;
+   margin-bottom: 3rem;
 }
 
 .sustainability-cards-container {
@@ -356,57 +387,30 @@ footer img {
 }
 
 /* ----- SCROLL ----- */
-/* Styles for Vertical Scrollbar */
-.track-vertical {
-   top: 2px;
-   bottom: 2px;
-   right: 5px;
-   border-radius: 3px;
-   background: rgba(0, 0, 0, 0); /* Darker background color */
-   z-index: 1000;
- 
-   .thumb-vertical {
-     position: relative;
-     display: block;
-     width: 10px !important; /* Adjust the width of the thumb */
-     cursor: pointer;
-     border-radius: 5px; /* Slightly rounder corners */
-     background-color: rgba(0, 0, 0, 0.7); /* Lighter color for the thumb */
-   }
- }
- 
- /* Styles for Horizontal Scrollbar */
- .track-horizontal {
-   position: absolute;
-   height: 8px; /* Adjust the height of the track */
-   right: 2px;
-   bottom: 2px;
-   left: 2px;
-   border-radius: 3px;
-   background: rgba(0, 0, 0, 0); /* Darker background color */
-   z-index: 1000;
- 
-   .thumb-horizontal {
-     position: relative;
-     display: block;
-     height: 100%;
-     cursor: pointer;
-     border-radius: 5px; /* Slightly rounder corners */
-     background-color: rgba(255, 255, 255, 0.7); /* Lighter color for the thumb */
-   }
- }
- 
- /* Styles for Scrollbar View */
- .view {
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   right: 0px;
-   bottom: 0px;
-   overflow: scroll;
-   margin-right: -15px;
-   margin-bottom: -17px !important;
-   z-index: 1000;
- }
+
+*::-webkit-scrollbar {
+   width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+   border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+   border-radius: 8px;
+   background-clip: content-box;
+   background-color: var(--bs-gray-600);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+   background-color: var(--bs-gray-700);
+}
+
  
 /* ------------------- */
+
+@media (max-width: 768px){
+   .container-md, .container-sm, .container {
+      max-width: 100%;
+  }
+}

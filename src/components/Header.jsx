@@ -29,8 +29,8 @@ export default function Header() {
             <Nav.Link as={Link} to="/About">
               Sobre
             </Nav.Link>
-            <Nav.Link as={Link} to="/Services">
-              Serviços
+            <Nav.Link as={Link} to="/Products">
+              Produtos
             </Nav.Link>
             <Nav.Link as={Link} to="/Gallery">
               Galeria

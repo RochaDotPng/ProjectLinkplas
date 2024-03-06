@@ -1,6 +1,6 @@
 import BodyHeroSection from "../components/BodyHeroSection";
 import BodyAboutSection from "../components/BodyAboutSection";
-import BodyServicesSection from "../components/BodyServicesSection";
+import BodyProductSection from "../components/BodyProductsSection";
 import BodyPolicySection from "../components/BodyPolicySection";
 import BodySustainabilitySection from "../components/BodySustainabilitySection";
 import Header from "../components/Header";
@@ -12,7 +12,7 @@ export default function Home() {
             <Header />
             <BodyHeroSection />
             <BodySustainabilitySection/>
-            <BodyServicesSection/>
+            <BodyProductSection/>
             <BodyAboutSection/>
             <BodyPolicySection/>
             <Footer />
