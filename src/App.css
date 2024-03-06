@@ -18,6 +18,10 @@
    text-shadow: 1px 1px 1px #000;
 }
 
+.text-white{
+   color: white;
+}
+
 .width-700{
    width: 700px;
 }
@@ -454,7 +458,7 @@ footer img {
    background-color: var(--bs-secondary);
    color: white;
    padding: 15px 30px;
-   width: 280px;
+   width: 280px; 
    z-index: 1;
 }
 
@@ -471,6 +475,11 @@ footer img {
 .perna-img{
    position: relative;
    top: -100px;
+}
+
+.perna-animation{
+   margin-top: 20px;
+   width: 560px;
 }
  
 
