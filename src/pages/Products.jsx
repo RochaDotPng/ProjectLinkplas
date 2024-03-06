@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BodyProductSection from "../components/BodyProductsSection";
@@ -15,7 +15,7 @@ export default function Products() {
     return (
         <div>
             <Header />
-            <BodyProductSection className="mb-1" onProductChange={handleProductChange} />
+            <BodyProductSection className="mb-1" onProductChange={handleProductChange}  initialProduct={'Indústria'}/>
             {selectedProduct === 'Indústria' && <ProductsIndustry />}
             <Footer />
         </div>

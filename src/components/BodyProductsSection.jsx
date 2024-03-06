@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ProductButton from './ProductButton';
 import Container from 'react-bootstrap/Container';
 
-export default function BodyProductSection({ className, onProductChange }) {
+export default function BodyProductSection({ className, onProductChange, initialProduct }) {
 
-    const [selectedProduct, setSelectedProduct] = useState('Indústria');
+    const [selectedProduct, setSelectedProduct] = useState(initialProduct);
 
     const handleProductButtonClick = (label) => {
         setSelectedProduct(label);

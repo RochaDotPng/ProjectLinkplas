@@ -12,7 +12,7 @@ export default function Home() {
             <Header />
             <BodyHeroSection />
             <BodySustainabilitySection/>
-            <BodyProductSection/>
+            <BodyProductSection initialProduct={null}/>
             <BodyAboutSection/>
             <BodyPolicySection/>
             <Footer />
