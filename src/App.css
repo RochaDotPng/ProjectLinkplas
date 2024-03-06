@@ -55,7 +55,8 @@ tr:last-child td:last-child{
    padding-top: 7px;
 }
 
-.nav-tabs .nav-link.active{
+.nav-link.active{
+   font-weight: bold;
    color: var(--bs-primary);
 }
 

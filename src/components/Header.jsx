@@ -2,10 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleContactsClick = (path) => {
     navigate(path);
@@ -26,16 +27,32 @@ export default function Header() {
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">
-            <Nav.Link as={Link} to="/About">
+            <Nav.Link
+              as={Link}
+              to="/About"
+              className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`}
+            >
               Sobre
             </Nav.Link>
-            <Nav.Link as={Link} to="/Products">
+            <Nav.Link
+              as={Link}
+              to="/Products"
+              className={`nav-link ${location.pathname === '/Products' ? 'active' : ''}`}
+            >
               Produtos
             </Nav.Link>
-            <Nav.Link as={Link} to="/Gallery">
+            <Nav.Link
+              as={Link}
+              to="/Gallery"
+              className={`nav-link ${location.pathname === '/Gallery' ? 'active' : ''}`}
+            >
               Galeria
             </Nav.Link>
-            <Nav.Link as={Link} to="/Policy">
+            <Nav.Link
+              as={Link}
+              to="/Policy"
+              className={`nav-link ${location.pathname === '/Policy' ? 'active' : ''}`}
+            >
               Politica de Qualidade
             </Nav.Link>
             <Button onClick={() => handleContactsClick('/Contacts')}>Contactos</Button>
