@@ -27,35 +27,31 @@
    padding-top: 7px;
 }
 
-/* --- MAIN PAGE --- */
-
-.main--hero-image {
-   height: 830px;
-   background: rgba(45, 101, 118, 0.50);
-}
-
-.main--hero-section {
-   background-image: url(./images/home-hero-landscape.jpg);
+/* --- MAIN PAGE --- */   
+   
+.carousel-img {
+   width: 100%;
    height: calc(100vh - 99px);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+   object-fit: cover;
+   object-position: center;
 }
 
-.main--hero-section h1,
-.main--hero-section p{
+.carousel p,
+.carousel h1 {
+   text-shadow: 1px 1px 1px #000;
+}
+
+.carousel-caption {
+   position: absolute;
+   right: 15%;
+   bottom: 35%;
+   left: 15%;
    padding-top: 1.25rem;
    padding-bottom: 1.25rem;
    color: #fff;
    text-align: center;
-   text-shadow: 1px 1px 1px #000;
+
 }
-
-
 /* ----------------------*/
 
 /* ------ ICONS ------*/
@@ -237,7 +233,7 @@ footer img {
 }
 
 .product-button .bi::before{
-   margin-top:20px;
+   margin-top:28px;
 }
 
 /* ------------------- */
