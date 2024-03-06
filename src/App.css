@@ -227,6 +227,15 @@ footer img {
    transition: transform 0.3s ease-in-out;
 }
 
+.product-button.active{
+   color:white;
+   background-color: var(--bs-primary);
+}
+
+.product-button.active i{
+   color: white;
+}
+
 .product-button.disabled{
    cursor:initial;
    background-color: var(--bs-gray-400);
@@ -445,7 +454,7 @@ footer img {
 }
 
 .product-text-container{
-   flex: 1;
+   flex: 1.5;
 }
 
 .product-img-container{
@@ -479,7 +488,7 @@ footer img {
 
 .perna-animation{
    margin-top: 20px;
-   width: 560px;
+   width: 700px;
 }
  
 
