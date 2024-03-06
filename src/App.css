@@ -349,6 +349,14 @@ footer img {
 /* -----ABOUT------ */
 /* ------------------- */
 
+.about-body-img{
+   position: relative;
+   height: 380px;
+   background-image: url('./images/company-front-filtered.jpg');
+   background-size: cover;
+   background-position: left;
+}
+
 .about-container {
    display: flex;
    justify-content: space-between;

@@ -29,43 +29,43 @@ export default function Tampa() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>30001</td>
+                                    <td className='fw-bold'>30001</td>
                                     <td>12</td>
                                     <td>10</td>
                                     <td>2,5</td>
                                 </tr>
                                 <tr>
-                                    <td>30002</td>
+                                    <td className='fw-bold'>30002</td>
                                     <td>16</td>
                                     <td>12</td>
                                     <td>3</td>
                                 </tr>
                                 <tr>
-                                    <td>30003</td>
+                                    <td className='fw-bold'>30003</td>
                                     <td>38</td>
                                     <td>16</td>
                                     <td>3,5</td>
                                 </tr>
                                 <tr>
-                                    <td>30004</td>
+                                    <td className='fw-bold'>30004</td>
                                     <td>42</td>
                                     <td>16</td>
                                     <td>3,5</td>
                                 </tr>
                                 <tr>
-                                    <td>30005</td>
+                                    <td className='fw-bold'>30005</td>
                                     <td>48</td>
                                     <td>18,5</td>
                                     <td>4</td>
                                 </tr>
                                 <tr>
-                                    <td>30006</td>
+                                    <td className='fw-bold'>30006</td>
                                     <td>51</td>
                                     <td>18,5</td>
                                     <td>4</td>
                                 </tr>
                                 <tr>
-                                    <td>30007</td>
+                                    <td className='fw-bold'>30007</td>
                                     <td>63</td>
                                     <td>20</td>
                                     <td>4,5</td>
