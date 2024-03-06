@@ -7,15 +7,15 @@ export default function Abracadeira(){
             <div className="product-container">
                 <div className='product-text-container'>
                     <p>A inovadora Abraçadeira para Tubo da Linkplas: a solução perfeita para fixação eficiente e de confiança. Com um design inteligente e encaixe fácil, nossa abraçadeira de plástico proporciona uma instalação sem complicações, enquanto a sua resistência garante segurança duradoura. Moldada com precisão, a nossa abraçadeira é a escolha ideal para garantir a estabilidade e integridade dos seus projetos.</p>
-                    <div><Button>Pedir cotação</Button><Button className='btn-secondary text-white'>Especificações</Button></div>
+                    <div><Button className='p-3'>Pedir cotação</Button><Button className='p-3 btn-secondary ms-3 text-white'>Especificações<i className='text-white ms-2 bi bi-download'></i></Button></div>
                     <img className='perna-animation' src='./images/perna_animation.gif'></img>
                 </div>
                 <div className="product-img-container">
-                    <div className='product-square'>
-                        <h5>Aplicação Fácil</h5>
+                    <div className='abracadeira-square'>
+                        <h5 className='mb-4'>Aplicação fácil</h5>
                         <p>Permite uma fixação instantânea em qualquer posição</p>
                     </div>
-                    <img className='abracadeira-img' src='./images/abracadeira.png'></img>
+                    <img className='tampa-img' src='./images/abracadeira.png'></img>
                     <img className='perna-img' src='./images/perna1.png'></img>
                 </div>
             </div>

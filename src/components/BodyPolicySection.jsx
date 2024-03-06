@@ -7,7 +7,7 @@ export default function BodyPolicySection() {
                 <div className="policy-img-container">
                 </div>
                 <div className="policy-text-container">
-                    <h1 className="fw-bold mb-4 mt-5">Política de Qualidade</h1>
+                    <h1 className="fw-bold mb-4 mt-5">Estratégia</h1>
                     <p>Através de uma estratégia de Melhoria Contínua, a Linkplas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de qualidade, reduzir e minimizar perigos e riscos da sua atividade tomando todas as medidas necessárias.</p>                    
                     <a className='pointer text-decoration-none d-flex align-items-center text-primary fw-semibold'>Saber mais<i className="bi text-primary bi-arrow-right ms-2"></i></a>
                     <div className="policy-quote-container">

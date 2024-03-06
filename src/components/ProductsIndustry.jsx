@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Abracadeira from '../components/products-components/Abracadeira'
+import Tampa from '../components/products-components/Tampa';
 
 export default function ProductsIndustry(){
     return(
@@ -11,10 +12,10 @@ export default function ProductsIndustry(){
         className="mb-3"
         >
             <Tab eventKey="abracadeira" title="Abraçadeira">
-                <Abracadeira></Abracadeira>
+                <Abracadeira />
             </Tab>
             <Tab eventKey="tampa" title="Tampa">
-                Tab content for Tampa
+                <Tampa />
             </Tab>
         </Tabs>
         </Container>
