@@ -22,6 +22,11 @@
    width: 700px;
 }
 
+.bi-arrow-right::before {
+   content: "\f138";
+   padding-top: 7px;
+}
+
 /* --- MAIN PAGE --- */
 
 .main--hero-image {
@@ -236,43 +241,24 @@ footer img {
 }
 
 /* ------------------- */
-/* -----GALLERY------ */
-/* ------------------- */
-
-.gallery-container {
-   margin: 50px;
-   text-align: center;
-}
-
-.gallery-img-container {
-   margin: 10px;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 10px;
-}
-
-.gallery-img-container img {
-   width: 100%;
-   height: auto;
-}
-
-/* ------------------- */
 /* -----POLICY------ */
 /* ------------------- */
 
 .policy-container {
    display: flex;
    justify-content: space-between;
-   align-items: flex-start;
-   margin: 50px;
+   gap: 70px;
+   margin:150px 0px;
+   height: 580px;
+   align-items: stretch;
 }
 
 .policy-img-container {
    flex: 1 143px;
-   background-image: url(./images/company-front.jpg);
+   background-image: url(./images/profile_ceo.jpg);
    background-position: center;
    background-size: cover;
-   height: 450px;
+   height: auto;
 }
 
 .policy-img-container img {
@@ -280,9 +266,36 @@ footer img {
 }
 
 .policy-text-container {
+   height: 100%;
    flex: 2;
    margin-left: 30px;
+   display: flex;
+   flex-direction: column;
 }
+
+.policy-quote-container{
+   position: relative;
+   bottom: 40px;
+   margin-top: auto;
+   background-color: var(--bs-secondary);
+   color: white;
+   padding: 20px;
+   margin-left: -240px;
+}
+
+.policy-quote-container p{
+   font-style: italic;
+}
+
+.policy-quote-text:after {
+   content: '“';
+    height: 91px;
+    font-size: 6rem;
+    color: white;
+    position: absolute;
+    right: 45px;
+    bottom: 0px;
+ }
 
 /* ------------------- */
 /* -----ABOUT------ */
@@ -292,7 +305,7 @@ footer img {
    display: flex;
    justify-content: space-between;
    gap: 70px;
-   margin: 150px;
+   margin: 150px 0px;
    height: 580px;
    align-items: stretch;
 }
@@ -354,6 +367,27 @@ footer img {
    font-style: normal;
    font-weight: 400;
    line-height: 28px;
+}
+
+/* ------------------- */
+/* -----GALLERY------ */
+/* ------------------- */
+
+.gallery-container {
+   margin: 50px;
+   text-align: center;
+}
+
+.gallery-img-container {
+   margin: 10px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+}
+
+.gallery-img-container img {
+   width: 100%;
+   height: auto;
 }
 
 /* ------------------- */
