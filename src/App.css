@@ -27,6 +27,16 @@
    padding-top: 7px;
 }
 
+.nav-tabs .nav-link.active{
+   color: var(--bs-primary);
+}
+
+
+.nav-tabs .nav-link {
+   color: var(--bs-secondary);
+   font-weight: 700;
+   border-color: var(--bs-nav-tabs-link-hover-border-color);
+}
 /* --- MAIN PAGE --- */   
    
 .carousel-img {
@@ -65,6 +75,7 @@ i {
 
 .icon-big-container {
    display: flex;
+   gap:20px;
 }
 
 .icon-container {
@@ -89,13 +100,16 @@ footer {
 
 .footer-up {
    background-color: #304148;
+   border-bottom: 1px solid white;
+}
+
+.footer-up-container {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
    color: rgb(214, 212, 212);
-   border-bottom: 1px solid white;
-   padding: 25px 85px;
+   padding: 25px 0;
 }
 
 footer img {
@@ -106,19 +120,19 @@ footer img {
 
 .footer-down {
    background-color: #304148;
+   height: 70px;
+}
+
+.footer-down-container {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   padding: 25px 85px;
+   padding: 25px 0;
    align-items: center;
    color: rgb(214, 212, 212);
    height: 70px;
 }
 
-.footer-down p {
-   margin-top: 5px;
-   margin-right: 46%;
-}
 
 .footer-link {
    color: rgb(214, 212, 212);
@@ -416,6 +430,50 @@ footer img {
    transform: translateY(-10px);
 }
 
+/* ------------------- */
+/* ------Products----- */
+/* ------------------- */
+.product-container{
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   gap: 70px;
+}
+
+.product-text-container{
+   flex: 1;
+}
+
+.product-img-container{
+   flex: 1;
+   height: auto;
+}
+
+.product-square{
+   display: inline-block;
+   background-color: var(--bs-secondary);
+   color: white;
+   padding: 15px 30px;
+   width: 280px;
+   z-index: 1;
+}
+
+.product-square p{
+   font-size: 14px;
+}
+
+.abracadeira-img{
+   position: relative;
+   top: -64px;
+   left: 113px;
+}
+
+.perna-img{
+   position: relative;
+   top: -100px;
+}
+ 
+
 /* ----- SCROLL ----- */
 
 *::-webkit-scrollbar {
@@ -439,8 +497,16 @@ footer img {
  
 /* ------------------- */
 
-@media (max-width: 768px){
+@media (max-width: 1000px){
+   .icon-container p{
+      display: none;
+   }
+
    .container-md, .container-sm, .container {
       max-width: 100%;
+  }
+
+   .sustain-container {
+      margin: 40px;
   }
 }

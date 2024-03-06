@@ -1,10 +1,10 @@
 import ProductButton from './ProductButton';
 import Container from 'react-bootstrap/Container';
 
-export default function BodyProductSection() {
+export default function BodyProductSection({className}) {
     return (
         <>
-            <div className="products-body-container">
+            <div className={`products-body-container ${className}`}>
                 <div className="products-body-img">
                     <Container>
                     <div className="products-text">
