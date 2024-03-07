@@ -595,7 +595,7 @@ footer img {
 
 .form-overlay {
    position: relative;
-   top: -30px;
+   top: 0px;
    z-index: 3;
 }
 
@@ -651,7 +651,7 @@ footer img {
    background-color: var(--bs-primary);
    position: absolute;
    left: 0;
-   top: 34px;
+   top: 0;
    z-index: 1;
 }
 
