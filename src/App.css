@@ -11,6 +11,10 @@
    height: 100vh;
 }
 
+.flex-1{
+   flex: 1;
+}
+
 .table {
    --bs-table-color: var(--bs-white);
    --bs-table-striped-color: var(--bs-white);
@@ -447,7 +451,27 @@ footer img {
    color: var(--bs-white);
    background-color: var(--bs-secondary);
    width: 50%;
-   height: 200px;
+   height: 180px;
+   position: relative;
+   top: -130px;
+}
+
+.about-quote-text:after {
+   content: '“';
+   height: 91px;
+   font-size: 6rem;
+   color: var(--bs-white);
+   position: absolute;
+   right: 45px;
+   bottom: 0px;
+}
+
+.about-text{
+   display: flex;
+   gap: 90px;
+   line-height: 34px;
+   margin-top: -80px;
+   margin-bottom: 40px;
 }
 
 /* ------------------- */
