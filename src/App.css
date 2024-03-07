@@ -61,10 +61,6 @@ tr:last-child td:last-child {
    color: var(--bs-primary)!important;
 }
 
-.product-download .dropdown-toggle::after{
-   content: none;
-}
-
 .nav-tabs .nav-link {
    color: var(--bs-secondary);
    font-weight: 700;
@@ -293,6 +289,10 @@ footer img {
 
 .product-button .bi::before {
    margin-top: 28px;
+}
+
+.products-download .dropdown-toggle::after{
+   content: none;
 }
 
 /* ------------------- */
