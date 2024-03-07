@@ -358,7 +358,7 @@ footer img {
 
 .about-body-img {
    position: relative;
-   height: 380px;
+   height: 250px;
    background-image: url('./images/company-front-filtered.jpg');
    background-size: cover;
    background-position: left;
