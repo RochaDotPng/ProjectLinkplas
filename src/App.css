@@ -577,15 +577,16 @@ footer img {
 
 .content-container {
    position: relative;
+   padding-top: 40px;
    z-index: 2;
    box-sizing: border-box;
+   display: flex;
+   justify-content: space-between;
 }
 
 .form-overlay {
-   position: absolute;
-   top: -230px;
-   left: 340px;
-   transform: translate(75%, -70%);
+   position: relative;
+   top: -30px;
    z-index: 3;
 }
 
@@ -608,10 +609,8 @@ footer img {
 }
 
 .card-overlay {
-   position: absolute;
-   top: -200px;
-   left: 55px;
-   transform: translate(-20%, -70%);
+   position: relative;
+   top: 110px;
    z-index: 3;
 }
 
@@ -635,16 +634,14 @@ footer img {
    padding: 20px 0 10px 15px;
    color: white;
    background-color: rgba(104, 128, 45, 1);
-   height: 100px;
-   width: 500px;
+   height: 120px;
 }
 
 .green-card-overlay {
-   width: 85%;
+   width: 60%;
    position: absolute;
-   top: -470px;
-   left: 190px;
-   transform: translate(9%, -80%);
+   left: 0;
+   top: 25px;
    z-index: 3;
 }
 

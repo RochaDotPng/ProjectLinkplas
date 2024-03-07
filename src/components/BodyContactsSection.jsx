@@ -5,21 +5,21 @@ import GreenCard from './contacts-components/GreenCard'
 
 export default function BodyContactsSection() {
     return (
-        <>
             <div className="contacts-body-container">
-                <div className="contacts-body-container-img"></div>
+                <div className="contacts-body-container-img">
                 <Container className="content-container">
-                    <div className='form-overlay'>
-                        <Form/>
-                    </div>
                     <div className="card-overlay">
                         <Card/>
                     </div>
-                    <div className="green-card-overlay">
-                        <GreenCard/>
+                    <div className='form-overlay'>
+                        <Form/>
                     </div>
                 </Container>
+                <div className="green-card-overlay">
+                    <GreenCard/>
+                </div>
+                </div>
+                
             </div>
-        </>
     )
 }
