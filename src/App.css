@@ -441,6 +441,19 @@ footer img {
    line-height: 28px;
 }
 
+.about-green-card {
+   padding: 20px 30px 10px 30px;
+   align-items: center;
+   color: var(--bs-white);
+   background-color: var(--bs-secondary);
+   width: 50%;
+   height: 200px;
+}
+
+.ceo {
+   font-size: 12px;
+}
+
 /* ------------------- */
 /* -----GALLERY------ */
 /* ------------------- */
