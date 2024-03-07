@@ -27,6 +27,13 @@ export default function Header({className}) {
         </Navbar.Brand>
         <div className="justify-content-end">
           <Nav className="gap-4 me-auto">
+          <Nav.Link
+              as={Link}
+              to="/"
+              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
+              Início
+            </Nav.Link>
             <Nav.Link
               as={Link}
               to="/About"
@@ -40,13 +47,6 @@ export default function Header({className}) {
               className={`nav-link ${location.pathname === '/Products' ? 'active' : ''}`}
             >
               Produtos
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/Gallery"
-              className={`nav-link ${location.pathname === '/Gallery' ? 'active' : ''}`}
-            >
-              Galeria
             </Nav.Link>
             <Nav.Link
               as={Link}
