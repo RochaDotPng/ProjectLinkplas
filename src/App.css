@@ -592,7 +592,8 @@ footer img {
 
 .contacts-body-container-img2 {
    background-image: url('./images/contacts-map.png');
-   height: 708px;
+   height: 100%;
+   background-size: cover;
    background-position: 0px, -43px;
 }
 
@@ -637,12 +638,19 @@ footer img {
 }
 
 .contacts-card {
+   font-size:14px;
+   padding: 15px 0 10px 25px;
    display: flex;
    flex-direction: column;
-   width: 323px;
-   height: 449px;
+   width: 280px;
+   height: 410px;
    border-radius: 22px;
    background-color: rgba(255, 255, 255, 1);
+}
+
+.contacts-card h5{
+   color: rgb(56, 56, 160);
+   margin-top: 10px;
 }
 
 .img-overlay {
