@@ -58,9 +58,12 @@ tr:last-child td:last-child {
 
 .nav-link.active {
    font-weight: bold;
-   color: var(--bs-primary);
+   color: var(--bs-primary)!important;
 }
 
+.product-download .dropdown-toggle::after{
+   content: none;
+}
 
 .nav-tabs .nav-link {
    color: var(--bs-secondary);
@@ -530,7 +533,18 @@ footer img {
    width: 300px;
 }
 
+<<<<<<< Updated upstream
 .perna-img {
+=======
+.intercalar-img{
+   position: relative;
+   top: -10px;
+   left: 113px;
+   width: 250px;
+}
+
+.perna-img{
+>>>>>>> Stashed changes
    position: relative;
    top: -20px;
 }

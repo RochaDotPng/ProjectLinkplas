@@ -3,6 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Abracadeira from '../components/products-components/Abracadeira'
 import Tampa from '../components/products-components/Tampa';
+import Intercalar from './products-components/Intercalar';
 
 export default function ProductsIndustry(){
     return(
@@ -16,6 +17,9 @@ export default function ProductsIndustry(){
             </Tab>
             <Tab eventKey="tampa" title="Tampa">
                 <Tampa />
+            </Tab>
+            <Tab eventKey="intercalar" title="Intercalar">
+                <Intercalar />
             </Tab>
         </Tabs>
         </Container>

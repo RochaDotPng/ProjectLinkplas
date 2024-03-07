@@ -1,4 +1,4 @@
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Container, Table, Dropdown } from 'react-bootstrap';
 
 
 export default function Tampa() {
@@ -16,7 +16,22 @@ export default function Tampa() {
                 <div className='product-text-container'>
                     <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>
                     <p>Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
-                    <div className='text-end'><Button className='p-3'>Pedir cotação</Button><Button className='p-3 btn-secondary ms-3 text-white'>Especificações<i className='text-white ms-2 bi bi-download'></i></Button></div>
+                    <div className='text-end'>
+                        <Button className='p-3'>Pedir cotação</Button>
+                        <Dropdown className='products-download d-inline'>
+                            <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
+                            <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="./files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="./files/tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="./files/tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="./files/tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="./files/tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>
                     <div className='table-tampa'>
                         <Table striped>
                             <thead>
