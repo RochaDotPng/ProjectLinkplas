@@ -291,7 +291,7 @@ footer img {
    margin-top: 28px;
 }
 
-.products-download .dropdown-toggle::after{
+.products-download .dropdown-toggle::after {
    content: none;
 }
 
@@ -358,10 +358,19 @@ footer img {
 
 .about-body-img {
    position: relative;
-   height: 150px;
+   height: 290px;
    background-image: url(./images/company-front-filtered.jpg);
    background-size: cover;
    background-position-y: -112px;
+}
+
+.about-body-img h1 {
+   color: white;
+   text-align: center;
+   width: 100%;
+   padding: 20px;
+   padding-top: 60px;
+   font-size: rem;
 }
 
 .about-container {
