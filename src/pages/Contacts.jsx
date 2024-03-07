@@ -5,7 +5,7 @@ import BodyContactsSection from "../components/BodyContactsSection";
 export default function Contacts() {
     return (
         <div>
-            <Header />
+            <Header className="shadow z-3"/>
             <BodyContactsSection/>
             <Footer />
         </div>

@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({className}) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -12,7 +12,7 @@ export default function Header() {
     navigate(path);
   };
   return (
-    <Navbar expand="lg" className="bg-body-tertiary header">
+    <Navbar expand="lg" className={`bg-body-tertiary header ${className}`}>
       <Container>
         <Navbar.Brand>
           <Nav.Link as={Link} to="/">
