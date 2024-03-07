@@ -1,13 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Form from './contacts-components/Form'
 import Card from './contacts-components/Card'
+import GreenCard from './contacts-components/GreenCard'
 
 export default function BodyContactsSection() {
     return (
         <>
             <div className="contacts-body-container">
-                <div className="contacts-body-container-img1"></div>
-                <div className="contacts-body-container-img2"></div>
+                <div className="contacts-body-container-img"></div>
                 <Container className="content-container">
                     <div className='form-overlay'>
                         <Form/>
@@ -15,8 +15,8 @@ export default function BodyContactsSection() {
                     <div className="card-overlay">
                         <Card/>
                     </div>
-                    <div className="img-overlay">
-                        <img src="./images/contacts-green-overlay.jpg" alt="" />
+                    <div className="green-card-overlay">
+                        <GreenCard/>
                     </div>
                 </Container>
             </div>

@@ -58,10 +58,10 @@ tr:last-child td:last-child {
 
 .nav-link.active {
    font-weight: bold;
-   color: var(--bs-primary)!important;
+   color: var(--bs-primary) !important;
 }
 
-.product-download .dropdown-toggle::after{
+.product-download .dropdown-toggle::after {
    content: none;
 }
 
@@ -533,14 +533,14 @@ footer img {
    width: 300px;
 }
 
-.intercalar-img{
+.intercalar-img {
    position: relative;
    top: -10px;
    left: 113px;
    width: 250px;
 }
 
-.perna-img{
+.perna-img {
    position: relative;
    top: -20px;
 }
@@ -568,29 +568,7 @@ footer img {
    height: calc(100vh - 99px);
 }
 
-.contacts-body-container-img1,
-.contacts-body-container-img2 {
-   flex: 1;
-   background-size: cover;
-}
-
-.contacts-body-container-img1 {
-   background-image: url('./images/company-front-carousel.jpg');
-   height: 174px;
-}
-
-.contacts-body-container-img1::before {
-   content: '';
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   height: 174px;
-   background: rgba(45, 101, 118, 0.5);
-}
-
-.contacts-body-container-img2 {
+.contacts-body-container-img {
    background-image: url('./images/contacts-map.png');
    height: 100%;
    background-size: cover;
@@ -605,15 +583,15 @@ footer img {
 
 .form-overlay {
    position: absolute;
-   top: -300px;
+   top: -200px;
    left: 300px;
-   transform: translate(53%, -90%);
+   transform: translate(75%, -70%);
    z-index: 3;
 }
 
 .form-contacts {
-   width: 650px;
-   height: 670px;
+   width: 550px;
+   height: 500px;
    border-radius: 22px;
    background-color: rgba(255, 255, 255, 1);
    display: flex;
@@ -631,14 +609,14 @@ footer img {
 
 .card-overlay {
    position: absolute;
-   top: -300px;
+   top: -150px;
    left: 100px;
    transform: translate(-23%, -70%);
    z-index: 3;
 }
 
 .contacts-card {
-   font-size:14px;
+   font-size: 14px;
    padding: 15px 0 10px 25px;
    display: flex;
    flex-direction: column;
@@ -648,16 +626,24 @@ footer img {
    background-color: rgba(255, 255, 255, 1);
 }
 
-.contacts-card h5{
+.contacts-card h5 {
    color: rgb(56, 56, 160);
    margin-top: 10px;
 }
 
-.img-overlay {
+.contacts-green-card {
+   padding: 20px 0 10px 15px;
+   color: white;
+   background-color: rgba(104, 128, 45, 1);
+   height: 100px;
+   width: 500px;
+}
+
+.green-card-overlay {
    width: 85%;
    position: absolute;
-   top: -700px;
-   left: 101px;
+   top: -450px;
+   left: 200px;
    transform: translate(-24%, -80%);
    z-index: 3;
 }
