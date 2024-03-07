@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BodyProductSection from "../components/BodyProductsSection";
@@ -7,8 +8,8 @@ import ProductsTakeAway from '../components/products-components/take_away/Produc
 import ProductsServices from '../components/products-components/services/ProductsServices';
 
 export default function Products() {
-
-    const [selectedProduct, setSelectedProduct] = useState('Industria');
+    let { parameter } = useParams();
+    const [selectedProduct, setSelectedProduct] = useState(parameter);
 
     const handleProductChange = (product) => {
         setSelectedProduct(product);
@@ -17,7 +18,7 @@ export default function Products() {
     return (
         <div>
             <Header />
-            <BodyProductSection className="mb-1" onProductChange={handleProductChange}  initialProduct={'Industria'}/>
+            <BodyProductSection className="mb-1" onProductChange={handleProductChange}  initialProduct={parameter}/>
             {selectedProduct === 'Industria' && <ProductsIndustry />}
             {selectedProduct === 'Take-Away' && <ProductsTakeAway />}
             {selectedProduct === 'Servicos' && <ProductsServices />}
