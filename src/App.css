@@ -605,9 +605,18 @@ footer img {
 
 .tupperlink-img {
    position: relative;
-   top: 64px;
-   left: 113px;
+    top: -98px;
+    left: 13px;
+    width: 550px;
+}
+
+.tupperlink-img-div{
    width: 300px;
+   height: 350px;
+}
+
+.table-tupperlink {
+   width: 500px;
 }
 
 /* ------------------- */
