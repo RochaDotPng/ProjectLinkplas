@@ -565,7 +565,7 @@ footer img {
 
 .contacts-body-container {
    position: relative;
-   flex-direction: column;
+   height: calc(100vh - 99px);
 }
 
 .contacts-body-container-img1,
@@ -576,7 +576,7 @@ footer img {
 
 .contacts-body-container-img1 {
    background-image: url('./images/company-front-carousel.jpg');
-   height: 388px;
+   height: 174px;
 }
 
 .contacts-body-container-img1::before {
@@ -586,13 +586,13 @@ footer img {
    right: 0;
    bottom: 0;
    left: 0;
-   height: 387px;
+   height: 174px;
    background: rgba(45, 101, 118, 0.5);
 }
 
 .contacts-body-container-img2 {
    background-image: url('./images/contacts-map.png');
-   height: 565px;
+   height: 708px;
    background-position: 0px, -43px;
 }
 
