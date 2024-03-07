@@ -583,8 +583,8 @@ footer img {
 
 .form-overlay {
    position: absolute;
-   top: -200px;
-   left: 300px;
+   top: -230px;
+   left: 340px;
    transform: translate(75%, -70%);
    z-index: 3;
 }
@@ -609,9 +609,9 @@ footer img {
 
 .card-overlay {
    position: absolute;
-   top: -150px;
-   left: 100px;
-   transform: translate(-23%, -70%);
+   top: -200px;
+   left: 55px;
+   transform: translate(-20%, -70%);
    z-index: 3;
 }
 
@@ -642,9 +642,9 @@ footer img {
 .green-card-overlay {
    width: 85%;
    position: absolute;
-   top: -450px;
-   left: 200px;
-   transform: translate(-24%, -80%);
+   top: -470px;
+   left: 190px;
+   transform: translate(9%, -80%);
    z-index: 3;
 }
 
