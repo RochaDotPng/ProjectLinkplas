@@ -2,16 +2,21 @@ import { Button, Container, Table, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Tampa() {
+export default function TupperLink() {
     const navigate = useNavigate();
     const handleContactsClick = (path) => {
         navigate(path);
     };
     return (
         <Container>
+
             <div className="product-container mt-5">
                 <div className="product-img-container">
-                    <img className='tampa-img' src='./images/tampa.png'></img>
+                    <div className='tupperlink-square'>
+                        <h5 className='mb-4'>Design empilhável</h5>
+                        <p>Uma maior otimização de espaço permitindo um transporte mais seguro e estável</p>
+                    </div>
+                    <img className='tupperlink-img' src='./images/tampa.png'></img>
                 </div>
                 <div className='product-text-container'>
                     <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>

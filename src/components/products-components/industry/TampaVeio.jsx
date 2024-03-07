@@ -20,10 +20,10 @@ export default function TampaVeio(){
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="./files/TampaVeio/7017030011.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="./files/TampaVeio/7017030011.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="./files/TampaVeio/7017030011.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="./files/TampaVeio/7017030011.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

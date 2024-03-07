@@ -35,7 +35,7 @@ export default function Abracadeira(){
                         <h5 className='mb-4'>Aplicação fácil</h5>
                         <p>Permite uma fixação instantânea em qualquer posição</p>
                     </div>
-                    <img className='tampa-img' src='./images/abracadeira.png'></img>
+                    <img className='abracadeira-img' src='./images/abracadeira.png'></img>
                     <img className='perna-img' src='./images/perna1.png'></img>
                 </div>
             </div>

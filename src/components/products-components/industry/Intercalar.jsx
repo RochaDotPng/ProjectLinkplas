@@ -25,10 +25,10 @@ export default function Intercalar() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="./files/Intercalar/7017030013.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="./files/Intercalar/7017030013.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="./files/Intercalar/7017030013.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="./files/Intercalar/7017030013.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

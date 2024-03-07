@@ -533,11 +533,12 @@ footer img {
    position: relative;
    top: -64px;
    left: 113px;
+   width: 350px;
 }
 
 .tampa-img {
    position: relative;
-   top: -64px;
+   top: 64px;
    left: 113px;
    width: 300px;
 }
@@ -552,6 +553,7 @@ footer img {
 .perna-img {
    position: relative;
    top: -20px;
+   width: 440px;
 }
 
 .perna-animation {
@@ -559,13 +561,20 @@ footer img {
    width: 700px;
 }
 
-.tampa-square {
+.tupperlink-square {
    display: inline-block;
    background-color: var(--bs-secondary);
    color: var(--bs-white);
    padding: 15px 30px 5px 30px;
    width: 280px;
    z-index: 1;
+}
+
+.tupperlink-img {
+   position: relative;
+   top: 64px;
+   left: 113px;
+   width: 300px;
 }
 
 /* ------------------- */
