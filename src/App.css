@@ -619,6 +619,17 @@ footer img {
    width: 500px;
 }
 
+.ultrasons-img {
+   position: relative;
+    left: 13px;
+    width: 550px;
+}
+
+.ultrasons-img-div{
+   width: 300px;
+   height: 870px;
+}
+
 /* ------------------- */
 /* ------CONTACTS----- */
 /* ------------------- */

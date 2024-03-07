@@ -23,8 +23,8 @@ export default function BodyProductSection({ className, onProductChange, initial
                             <ProductButton
                                 label="Indústria"
                                 icon="buildings"
-                                onClick={() => handleProductButtonClick('Indústria')}
-                                disabledClass={selectedProduct === 'Indústria' ? 'active' : ''}
+                                onClick={() => handleProductButtonClick('Industria')}
+                                disabledClass={selectedProduct === 'Industria' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Farmacêutica"
@@ -35,8 +35,8 @@ export default function BodyProductSection({ className, onProductChange, initial
                             <ProductButton
                                 label="Serviços"
                                 icon="tools"
-                                onClick={() => handleProductButtonClick('Serviços')}
-                                disabledClass={selectedProduct === 'Serviços' ? 'active' : ''}
+                                onClick={() => handleProductButtonClick('Servicos')}
+                                disabledClass={selectedProduct === 'Servicos' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Alimentar"
