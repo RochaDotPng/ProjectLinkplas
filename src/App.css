@@ -358,10 +358,10 @@ footer img {
 
 .about-body-img {
    position: relative;
-   height: 250px;
-   background-image: url('./images/company-front-filtered.jpg');
+   height: 150px;
+   background-image: url(./images/company-front-filtered.jpg);
    background-size: cover;
-   background-position: left;
+   background-position-y: -112px;
 }
 
 .about-container {

@@ -1,6 +1,11 @@
 import { Button, Container, Dropdown } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function Abracadeira(){
+    const navigate = useNavigate();
+    const handleContactsClick = (path) => {
+        navigate(path);
+    };
     return(
         <Container>
             <h1 className="fw-bold mb-2 mt-5">Abraçadeira</h1>
@@ -8,7 +13,7 @@ export default function Abracadeira(){
                 <div className='product-text-container'>
                     <p>A inovadora Abraçadeira para Tubo da Linkplas: a solução perfeita para fixação eficiente e de confiança. Com um design inteligente e encaixe fácil, nossa abraçadeira de plástico proporciona uma instalação sem complicações, enquanto a sua resistência garante segurança duradoura. Moldada com precisão, a nossa abraçadeira é a escolha ideal para garantir a estabilidade e integridade dos seus projetos.</p>
                     <div>
-                        <Button className='p-3'>Pedir cotação</Button>
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
                             <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
                             <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>

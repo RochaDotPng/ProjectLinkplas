@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BodyProductSection from "../components/BodyProductsSection";
-import ProductsIndustry from "../components/ProductsIndustry"
+import ProductsIndustry from "../components/products-components/industry/ProductsIndustry"
 
 export default function Products() {
 

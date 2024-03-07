@@ -1,7 +1,12 @@
 import { Button, Container, Table, Dropdown } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Tampa() {
+    const navigate = useNavigate();
+    const handleContactsClick = (path) => {
+        navigate(path);
+    };
     return (
         <Container>
 
@@ -17,7 +22,7 @@ export default function Tampa() {
                     <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>
                     <p>Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
                     <div className='text-end'>
-                        <Button className='p-3'>Pedir cotação</Button>
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
                             <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
                             <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
