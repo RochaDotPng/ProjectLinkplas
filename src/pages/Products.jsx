@@ -9,7 +9,7 @@ import ProductsServices from '../components/products-components/services/Product
 
 export default function Products() {
     let { parameter } = useParams();
-    const [selectedProduct, setSelectedProduct] = useState(parameter);
+    const [selectedProduct, setSelectedProduct] = useState(parameter == undefined ?"Industry":parameter);
 
     const handleProductChange = (product) => {
         setSelectedProduct(product);
