@@ -12,8 +12,8 @@
 }
 
 .table {
-   --bs-table-color: white;
-   --bs-table-striped-color: white;
+   --bs-table-color: var(--bs-white);
+   --bs-table-striped-color: var(--bs-white);
    --bs-table-accent-bg: var(--bs-secondary);
    --bs-table-striped-bg: #4E5F24;
    border-radius: 2px;
@@ -44,7 +44,7 @@ tr:last-child td:last-child {
 }
 
 .text-white {
-   color: white;
+   color: var(--bs-white);
 }
 
 .width-700 {
@@ -132,7 +132,7 @@ footer {
 
 .footer-up {
    background-color: #304148;
-   border-bottom: 1px solid white;
+   border-bottom: 1px solid var(--bs-white);
 }
 
 .footer-up-container {
@@ -226,7 +226,7 @@ footer img {
 
 
 .products-text {
-   color: white;
+   color: var(--bs-white);
    text-align: center;
    width: 100%;
    padding: 20px;
@@ -247,7 +247,7 @@ footer img {
    min-width: 148px;
    height: 148px;
    border-radius: 22px;
-   background-color: white;
+   background-color: var(--bs-white);
    text-align: center;
    color: var(--bs-primary);
    font-weight: 700;
@@ -256,12 +256,12 @@ footer img {
 }
 
 .product-button.active {
-   color: white;
+   color: var(--bs-white);
    background-color: var(--bs-primary);
 }
 
 .product-button.active i {
-   color: white;
+   color: var(--bs-white);
 }
 
 .product-button.disabled {
@@ -333,7 +333,7 @@ footer img {
    bottom: 40px;
    margin-top: auto;
    background-color: var(--bs-secondary);
-   color: white;
+   color: var(--bs-white);
    padding: 20px;
    margin-left: -240px;
 }
@@ -346,7 +346,7 @@ footer img {
    content: '“';
    height: 91px;
    font-size: 6rem;
-   color: white;
+   color: var(--bs-white);
    position: absolute;
    right: 45px;
    bottom: 0px;
@@ -365,7 +365,7 @@ footer img {
 }
 
 .about-body-img h1 {
-   color: white;
+   color: var(--bs-white);
    text-align: center;
    width: 100%;
    padding: 20px;
@@ -419,7 +419,7 @@ footer img {
    height: 300px;
    flex-shrink: 0;
    background: var(--bs-secondary);
-   color: white;
+   color: var(--bs-white);
 }
 
 .about-vision-div {
@@ -431,7 +431,7 @@ footer img {
    height: 220px;
    flex-shrink: 0;
    background: var(--bs-primary);
-   color: white;
+   color: var(--bs-white);
 }
 
 .highlight {
@@ -527,7 +527,7 @@ footer img {
 .abracadeira-square {
    display: inline-block;
    background-color: var(--bs-secondary);
-   color: white;
+   color: var(--bs-white);
    padding: 15px 30px 5px 30px;
    width: 280px;
    z-index: 1;
@@ -575,7 +575,7 @@ footer img {
 .tampa-square {
    display: inline-block;
    background-color: var(--bs-secondary);
-   color: white;
+   color: var(--bs-white);
    padding: 15px 30px 5px 30px;
    width: 280px;
    z-index: 1;
@@ -608,7 +608,7 @@ footer img {
 
 .form-overlay {
    position: relative;
-   top: -30px;
+   top: 0px;
    z-index: 3;
 }
 
@@ -644,27 +644,28 @@ footer img {
    width: 280px;
    height: 410px;
    border-radius: 22px;
-   background-color: rgba(255, 255, 255, 1);
+   background-color: var(--bs-white);
 }
 
 .contacts-card h5 {
-   color: rgb(56, 56, 160);
+   color: var(--bs-primary);
    margin-top: 10px;
 }
 
 .contacts-green-card {
    padding: 20px 0 10px 15px;
-   color: white;
-   background-color: rgba(104, 128, 45, 1);
+   color: var(--bs-white);
+   width: 60%;
    height: 95px;
 }
 
 .green-card-overlay {
-   width: 60%;
+   width: 100%;
+   background-color: var(--bs-primary);
    position: absolute;
    left: 0;
-   top: 25px;
-   z-index: 3;
+   top: 0;
+   z-index: 1;
 }
 
 /* ----- SCROLL ----- */

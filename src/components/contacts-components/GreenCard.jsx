@@ -1,7 +1,8 @@
 export default function GreenCard(){
     return(
         <div className="contacts-green-card">
-            <p>Se tiver um projeto mente a Linkplas é o parceiro ideal. <br />Entre em contacto</p>
+            <h5>Se tiver um projeto mente a Linkplas é o parceiro ideal.</h5>
+            <h5>Entre em contacto</h5>
         </div>
     )
 }

@@ -15,9 +15,13 @@ export default function BodyContactsSection() {
                         <Form />
                     </div>
                 </Container>
+
                 <div className="green-card-overlay">
-                    <GreenCard />
+                    <Container className='p-0'>
+                        <GreenCard />
+                    </Container>
                 </div>
+
             </div>
         </div>
     )
