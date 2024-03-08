@@ -18,7 +18,7 @@ export default function Header({className}) {
           <Nav.Link as={Link} to="/">
             <img
               alt="Linkplas"
-              src="./images/logo.png"
+              src= "../images/logo.png"
               width="139"
               height="73"
               className="d-inline-block align-top"
@@ -44,7 +44,7 @@ export default function Header({className}) {
             <Nav.Link
               as={Link}
               to="/Products/Industria"
-              className={`nav-link ${location.pathname === '/Products/Industria' ? 'active' : ''}`}
+              className={`nav-link ${location.pathname === '/Products' ? 'active' : ''}`}
             >
               Produtos
             </Nav.Link>

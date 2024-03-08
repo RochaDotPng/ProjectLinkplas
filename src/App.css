@@ -225,7 +225,7 @@ footer img {
 .products-body-img {
    position: relative;
    height: 330px;
-   background-image: url('./images/background-moldes-filtered.jpg');
+   background-image: url('../images/background-moldes-filtered.jpg');
    background-size: cover;
    background-position: center;
 }
@@ -315,7 +315,7 @@ footer img {
 
 .policy-img-container {
    flex: 1 143px;
-   background-image: url(./images/profile_ceo.jpg);
+   background-image: url(../images/profile_ceo.jpg);
    background-position: center;
    background-size: cover;
    height: auto;
@@ -364,7 +364,7 @@ footer img {
 .about-body-img {
    position: relative;
    height: 290px;
-   background-image: url(./images/company-front-filtered.jpg);
+   background-image: url(../images/company-front-filtered.jpg);
    background-size: cover;
    background-position-y: -112px;
 }
@@ -395,7 +395,7 @@ footer img {
 .about-img-container {
    flex: 1.5;
    height: auto;
-   background-image: url('./images/office2.jpeg');
+   background-image: url('../images/office2.jpeg');
    background-position: center;
    background-size: cover;
    display: flex;
@@ -634,6 +634,17 @@ footer img {
    height: 870px;
 }
 
+.caixa-pequena-img{
+   position: relative;
+   left: 13px;
+   width: 550px;
+}
+
+.caixa-pequena-img-div {
+   width: 300px;
+   height: 870px;
+}
+
 /* ------------------- */
 /* ------CONTACTS----- */
 /* ------------------- */
@@ -644,7 +655,7 @@ footer img {
 }
 
 .contacts-body-container-img {
-   background-image: url('./images/contacts-map.png');
+   background-image: url('../images/contacts-map.png');
    height: 100%;
    background-size: cover;
    background-position: 0px, -43px;
@@ -724,7 +735,7 @@ footer img {
 /* ----- SCROLL ----- */
 
 *::-webkit-scrollbar {
-   width: 10px;
+   width: 12px;
    height: 10px; 
 }
 

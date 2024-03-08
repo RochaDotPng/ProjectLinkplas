@@ -18,25 +18,24 @@ export default function Abracadeira(){
                             <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
                             <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
-                                <Dropdown.Item href="./files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
-                                <Dropdown.Item href="./files/Abracadeira/7017030008.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="./files/Abracadeira/7017030008.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="./files/Abracadeira/7017030008.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="./files/Abracadeira/7017030008.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="../files/Abracadeira/7017030008.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="../files/Abracadeira/7017030008.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="../files/Abracadeira/7017030008.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="../files/Abracadeira/7017030008.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <img className='perna-animation' src='./images/perna_animation.gif'></img>
+                    <img className='perna-animation' src='../images/perna_animation.gif'></img>
                 </div>
                 <div className="product-img-container">
                     <div className='abracadeira-square'>
                         <h5 className='mb-4'>Aplicação fácil</h5>
                         <p>Permite uma fixação instantânea em qualquer posição</p>
                     </div>
-                    <img className='abracadeira-img' src='./images/abracadeira.png'></img>
-                    <img className='perna-img' src='./images/perna1.png'></img>
+                    <img className='abracadeira-img' src='../images/abracadeira.png'></img>
+                    <img className='perna-img' src='../images/perna1.png'></img>
                 </div>
             </div>
         </Container>

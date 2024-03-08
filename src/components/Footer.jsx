@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="footer-up">
                 <Container className='footer-up-container'>
                     <div className='socials d-flex align-items-center'>
-                        <img src="./images/logo-light.png"></img>
+                        <img src="../images/logo-light.png"></img>
                     </div>
                     <div className="icon-big-container">
                         <div className="icon-container">

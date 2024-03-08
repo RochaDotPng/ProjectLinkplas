@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import ProductsFarmacy from './CaixaMedicamentos';
+import CaixaMedicamentos from './CaixaMedicamentos';
 
 export default function ProductsFarmacy(){
     return(
@@ -11,7 +11,7 @@ export default function ProductsFarmacy(){
         className="mb-3"
         >
             <Tab eventKey="caixa" title="Caixa de medicamentos">
-                <ProductsFarmacy />
+                <CaixaMedicamentos />
             </Tab>
         </Tabs>
         </Container>
