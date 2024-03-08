@@ -4,12 +4,14 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import emailjs from 'emailjs-com';
 import Alert from 'react-bootstrap/Alert';
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 export default function FormCard() {
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const [alertVariant, setAlertVariant] = useState('success');
+    const [recaptchaValue, setRecaptchaValue] = useState(null);
     const initialFormData = {
         nome: '',
         empresa: '',
@@ -25,6 +27,11 @@ export default function FormCard() {
         mensagem: '',
     });
 
+    const handleRecaptchaChange = (value) => {
+        // Update state with the reCAPTCHA value
+        setRecaptchaValue(value);
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -33,26 +40,29 @@ export default function FormCard() {
         });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
-            .then((result) => {
-                setFormData(initialFormData);
-                setAlertMessage('Mensagem foi enviada com sucesso!');
-                setAlertVariant('success');
-                setShowAlert(true);
-                // Optionally reset form and hide alert after a few seconds
-                setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
-                console.log('Email successfully sent!', result.text);
-                // Handle success (e.g., showing a success message)
-            }, (error) => {
-                setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
-                setAlertVariant('danger');
-                setShowAlert(true);
-                console.log('Failed to send the email.', error.text);
-                // Handle errors (e.g., showing an error message)
-            });
-        console.log('Dados do formulário:', formData);
+
+            emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
+                .then((result) => {
+                    setFormData(initialFormData);
+                    setAlertMessage('Mensagem foi enviada com sucesso!');
+                    setAlertVariant('success');
+                    setShowAlert(true);
+                    // Optionally reset form and hide alert after a few seconds
+                    setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
+                    console.log('Email successfully sent!', result.text);
+                    // Handle success (e.g., showing a success message)
+                }, (error) => {
+                    setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
+                    setAlertVariant('danger');
+                    setShowAlert(true);
+                    console.log('Failed to send the email.', error.text);
+                    // Handle errors (e.g., showing an error message)
+                });
+            console.log('Dados do formulário:', formData);
+
     };
 
     return (
