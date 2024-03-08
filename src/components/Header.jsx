@@ -36,15 +36,8 @@ export default function Header({className}) {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/About"
-              className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`}
-            >
-              Sobre
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
               to="/Products/Industria"
-              className={`nav-link ${location.pathname === '/Products' ? 'active' : ''}`}
+              className={`nav-link ${location.pathname.includes('/Products') ? 'active' : ''}`}
             >
               Produtos
             </Nav.Link>
@@ -54,6 +47,13 @@ export default function Header({className}) {
               className={`nav-link ${location.pathname === '/Policy' ? 'active' : ''}`}
             >
               Politica de Qualidade
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/About"
+              className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`}
+            >
+              Sobre
             </Nav.Link>
             <Button onClick={() => handleContactsClick('/Contacts')}>Contactos</Button>
           </Nav>

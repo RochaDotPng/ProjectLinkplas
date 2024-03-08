@@ -31,8 +31,8 @@ export default function Abracadeira(){
                 </div>
                 <div className="product-img-container">
                     <div className='abracadeira-square'>
-                        <h5 className='mb-4'>Aplicação fácil</h5>
-                        <p>Permite uma fixação instantânea em qualquer posição</p>
+                        <h5 className='mb-4'>Design empilhavel</h5>
+                        <p>Uma maior otimização de espaço permitindo um transporte mais seguro e estável</p>
                     </div>
                     <img className='abracadeira-img' src='../images/abracadeira.png'></img>
                     <img className='perna-img' src='../images/perna1.png'></img>

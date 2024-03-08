@@ -57,6 +57,10 @@ tr:last-child td:last-child {
    width: 700px;
 }
 
+.full-width{
+   width: 100%;
+}
+
 .bi-arrow-right::before {
    content: "\f138";
    padding-top: 7px;
@@ -633,16 +637,52 @@ footer img {
    height: 870px;
 }
 
-.caixa-pequena-img{
+.tampa-caixa-img{
    position: relative;
    left: 13px;
+   top: -20px;
    width: 550px;
 }
 
-.caixa-pequena-img-div {
+.tampa-caixa-pequena-img-div {
    width: 300px;
    height: 870px;
 }
+
+.tampa-caixa-square {
+   display: inline-block;
+   background-color: var(--bs-secondary);
+   color: var(--bs-white);
+   padding: 15px 30px 5px 30px;
+   width: 280px;
+   z-index: 1;
+}
+
+.caixa-grande-img{
+   position: relative;
+   left: 13px;
+   top: -60px;
+   width: 550px;
+}
+
+.caixa-grande-img-div {
+   width: 300px;
+   height: 560px;
+}
+
+.caixa-grande-square {
+   display: inline-block;
+   background-color: var(--bs-secondary);
+   color: var(--bs-white);
+   padding: 15px 30px 5px 30px;
+   width: 280px;
+   z-index: 1;
+   position: relative;
+   left: 280px;
+}
+
+
+
 
 /* ------------------- */
 /* ------CONTACTS----- */
@@ -676,14 +716,14 @@ footer img {
 }
 
 .form-contacts {
-   width: 550px;
+   width: 500px;
    height: 500px;
    border-radius: 22px;
    background-color: rgba(255, 255, 255, 1);
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   justify-content: space-between;
+   align-items: start;
    margin: 0 auto;
    padding: 20px;
    box-sizing: border-box;

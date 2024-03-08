@@ -1,6 +1,6 @@
 export default function Card() {
     return (
-        <div className="contacts-card">
+        <div className="contacts-card shadow">
             <h5>Morada:</h5>
             <p>Linkplas, Lda</p>
             <p>Rua António Gomes Correia Júnior</p>

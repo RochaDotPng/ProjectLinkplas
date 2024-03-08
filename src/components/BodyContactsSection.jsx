@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import Form from './contacts-components/Form'
+import FormCard from './contacts-components/FormCard'
 import Card from './contacts-components/Card'
 import GreenCard from './contacts-components/GreenCard'
 
@@ -12,7 +12,7 @@ export default function BodyContactsSection() {
                         <Card />
                     </div>
                     <div className='form-overlay'>
-                        <Form />
+                        <FormCard />
                     </div>
                 </Container>
 
