@@ -61,21 +61,40 @@ export default function FormCard() {
                     label="Contacto"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.contacto} type="tel" placeholder="O seu contacto" />
+                    <Form.Control 
+                        name="contacto" 
+                        onChange={handleChange}
+                        value={formData.contacto} 
+                        type="tel" 
+                        placeholder="O seu contacto" />
                 </FloatingLabel>
                 <FloatingLabel
                     controlId="emailInput"
                     label="Email"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.email} type="email" placeholder="O seu email" required />
+                    <Form.Control 
+                        name="email"
+                        onChange={handleChange} 
+                        value={formData.email} 
+                        type="email" 
+                        placeholder="O seu email" 
+                        required 
+                    />
                 </FloatingLabel>
                 <FloatingLabel
                     controlId="floatingTextarea"
                     label="Mensagem"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.mensagem} as="textarea" style={{ height: '100px' }} placeholder="Leave a comment here" />
+                    <Form.Control 
+                        name="mensagem" 
+                        onChange={handleChange} 
+                        value={formData.mensagem} 
+                        as="textarea" 
+                        style={{ height: '100px' }} 
+                        placeholder="Leave a comment here" 
+                    />
                 </FloatingLabel>
                 <Button className="px-4" variant="primary" type="submit">Enviar</Button>
             </Form>

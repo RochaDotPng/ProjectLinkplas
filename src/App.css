@@ -717,7 +717,6 @@ footer img {
 
 .form-contacts {
    width: 500px;
-   height: 500px;
    border-radius: 22px;
    background-color: rgba(255, 255, 255, 1);
    display: flex;
@@ -726,6 +725,7 @@ footer img {
    align-items: start;
    margin: 0 auto;
    padding: 20px;
+   gap: 20px;
    box-sizing: border-box;
 }
 
