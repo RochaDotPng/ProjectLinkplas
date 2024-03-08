@@ -380,6 +380,31 @@ footer img {
    bottom: 0px;
 }
 
+.policy-body-img {
+   position: relative;
+   height: 290px;
+   background-image: url(../images/company-front-filtered.jpg);
+   background-size: cover;
+   background-position-y: -112px;
+}
+
+.policy-body-img h1 {
+   color: var(--bs-white);
+   text-align: center;
+   width: 100%;
+   padding: 20px;
+   padding-top: 60px;
+   font-size: rem;
+}
+
+.policy-text {
+   line-height: 34px;
+}
+
+.policy-text span{
+   font-weight: bold;
+}
+
 /* ------------------- */
 /* -----ABOUT------ */
 /* ------------------- */
@@ -497,27 +522,6 @@ footer img {
    line-height: 34px;
    margin-top: -80px;
    margin-bottom: 40px;
-}
-
-/* ------------------- */
-/* -----GALLERY------ */
-/* ------------------- */
-
-.gallery-container {
-   margin: 50px;
-   text-align: center;
-}
-
-.gallery-img-container {
-   margin: 10px;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 10px;
-}
-
-.gallery-img-container img {
-   width: 100%;
-   height: auto;
 }
 
 /* ------------------- */
