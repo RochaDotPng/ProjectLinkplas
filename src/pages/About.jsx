@@ -34,6 +34,27 @@ export default function About() {
                         <span>Apesar de sermos uma empresa com uma história recente, podemos afirmar que possuímos um Know-how bastante especializado e a tecnologia mais avançada na indústria, já que a aposta na inovação, é uma constante na nossa empresa.</span>
                     </div>
                 </div>
+                <div className="about-text">
+                    <div className="flex-1">
+                        <h5>Missão</h5>
+                        <p>A LinkPlas fornece peças e componentes plásticos de elevada qualidade e complexidade técnica, desenvolvendo as mais eficientes e inovadoras soluções em parceria com os seus clientes.</p>
+                    </div>
+                    <div className="flex-1">
+                        <h5>Visão</h5>
+                        <p>Crescer como uma empresa de referência no setor dos componentes plásticos, com capacidade para dar uma resposta global às necessidades dos mais exigentes clientes nacionais e estrangeiros.</p>
+                    </div>
+                    <div className="flex-1">
+                        <h5>Valores</h5>
+                        <p>A Linkplas rege-se pelos seguintes valores empresariais:</p>
+                        <ul>
+                            <li>Confiança</li>
+                            <li>Qualidade</li>
+                            <li>Excelência</li>
+                            <li>Rigor</li>
+                            <li>Eficácia e Eficiência</li>
+                        </ul>
+                    </div>
+                </div>
             </Container>
             <Footer />
         </div>

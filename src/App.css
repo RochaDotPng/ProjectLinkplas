@@ -496,7 +496,14 @@ footer img {
    gap: 90px;
    line-height: 34px;
    margin-top: -80px;
-   margin-bottom: 40px;
+   margin-bottom: 90px;
+}
+.about-text:last-child {
+   display: flex;
+   gap: 90px;
+   line-height: 34px;
+   margin-top: 80px;
+   margin-bottom: 20px;
 }
 
 /* ------------------- */

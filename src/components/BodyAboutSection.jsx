@@ -1,7 +1,14 @@
 import { Container } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom'
 
 export default function BodyAboutSection() {
+    const navigate = useNavigate();
+
+    const handleNavigate = (e) => {
+        e.preventDefault();
+        navigate('/About');
+    };
+    
     return (
         <>
             <Container>
@@ -18,7 +25,7 @@ export default function BodyAboutSection() {
                                 <p className='hightlight m-0'>Dar uma resposta global às necessidades dos mais exigentes clientes</p>
                             </div>
                             <div>
-                                <a className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center'>Saber mais<i className="bi bi-arrow-right ms-2"></i></a>
+                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center'>Saber mais<i className="bi bi-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                         <div className='about-mission-div'>
@@ -27,7 +34,7 @@ export default function BodyAboutSection() {
                                 <p className='highlight m-0'>Fornecer peças e componentes plásticos de elevada qualidade e complexidade técnica, desenvolvendo as mais eficientes e inovadoras soluções</p>
                             </div>
                             <div>
-                                <a className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center gap-1'>Saber mais <i className="bi bi-arrow-right ms-2"></i></a>
+                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center gap-1'>Saber mais <i className="bi bi-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
