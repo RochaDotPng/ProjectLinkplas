@@ -34,35 +34,41 @@ export default function FormCard() {
                     label="Nome"
                     className="mb-0 full-width"
                 >
-                    <Form.Control 
-                        onChange={handleChange} 
-                        value={formData.nome} 
-                        type="text" 
-                        placeholder="Escreva o seu nome" 
+                    <Form.Control
+                        name="nome"
+                        onChange={handleChange}
+                        value={formData.nome}
+                        type="text"
+                        placeholder="Escreva o seu nome"
                         required
                     />
                     <Form.Control.Feedback type="invalid">Por favor preencha o seu nome</Form.Control.Feedback>
                 </FloatingLabel>
                 <FloatingLabel
-                    controlId="companyInput"
+                    controlId="empresa"
                     label="Empresa"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.empresa} type="text" placeholder="A sua empresa" />
+                    <Form.Control 
+                        name="empresa"
+                        value={formData.empresa} 
+                        onChange={handleChange}
+                        type="text" 
+                        placeholder="A sua empresa" />
                 </FloatingLabel>
                 <FloatingLabel
                     controlId="contactInput"
                     label="Contacto"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.contacto} type="text" placeholder="O seu contacto" />
+                    <Form.Control value={formData.contacto} type="tel" placeholder="O seu contacto" />
                 </FloatingLabel>
                 <FloatingLabel
                     controlId="emailInput"
                     label="Email"
                     className="mb-0 full-width"
                 >
-                    <Form.Control value={formData.email} type="email" placeholder="O seu email" required/>
+                    <Form.Control value={formData.email} type="email" placeholder="O seu email" required />
                 </FloatingLabel>
                 <FloatingLabel
                     controlId="floatingTextarea"
