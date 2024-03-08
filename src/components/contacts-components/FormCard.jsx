@@ -2,9 +2,21 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import emailjs from 'emailjs-com';
+import Alert from 'react-bootstrap/Alert';
+
 
 export default function FormCard() {
-
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertVariant, setAlertVariant] = useState('success');
+    const initialFormData = {
+        nome: '',
+        empresa: '',
+        contacto: '',
+        email: '',
+        mensagem: '',
+    };
     const [formData, setFormData] = useState({
         nome: '',
         empresa: '',
@@ -23,11 +35,32 @@ export default function FormCard() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
+            .then((result) => {
+                setFormData(initialFormData);
+                setAlertMessage('Mensagem foi enviada com sucesso!');
+                setAlertVariant('success');
+                setShowAlert(true);
+                // Optionally reset form and hide alert after a few seconds
+                setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
+                console.log('Email successfully sent!', result.text);
+                // Handle success (e.g., showing a success message)
+            }, (error) => {
+                setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
+                setAlertVariant('danger');
+                setShowAlert(true);
+                console.log('Failed to send the email.', error.text);
+                // Handle errors (e.g., showing an error message)
+            });
         console.log('Dados do formulário:', formData);
     };
 
     return (
-        <>
+        <>{showAlert && (
+            <Alert className="alert-container" variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
+                {alertMessage}
+            </Alert>
+        )}
             <Form onSubmit={handleSubmit} className="form-contacts">
                 <FloatingLabel
                     controlId="nome"
@@ -49,11 +82,11 @@ export default function FormCard() {
                     label="Empresa"
                     className="mb-0 full-width"
                 >
-                    <Form.Control 
+                    <Form.Control
                         name="empresa"
-                        value={formData.empresa} 
+                        value={formData.empresa}
                         onChange={handleChange}
-                        type="text" 
+                        type="text"
                         placeholder="A sua empresa" />
                 </FloatingLabel>
                 <FloatingLabel
@@ -61,11 +94,11 @@ export default function FormCard() {
                     label="Contacto"
                     className="mb-0 full-width"
                 >
-                    <Form.Control 
-                        name="contacto" 
+                    <Form.Control
+                        name="contacto"
                         onChange={handleChange}
-                        value={formData.contacto} 
-                        type="tel" 
+                        value={formData.contacto}
+                        type="tel"
                         placeholder="O seu contacto" />
                 </FloatingLabel>
                 <FloatingLabel
@@ -73,13 +106,13 @@ export default function FormCard() {
                     label="Email"
                     className="mb-0 full-width"
                 >
-                    <Form.Control 
+                    <Form.Control
                         name="email"
-                        onChange={handleChange} 
-                        value={formData.email} 
-                        type="email" 
-                        placeholder="O seu email" 
-                        required 
+                        onChange={handleChange}
+                        value={formData.email}
+                        type="email"
+                        placeholder="O seu email"
+                        required
                     />
                 </FloatingLabel>
                 <FloatingLabel
@@ -87,13 +120,13 @@ export default function FormCard() {
                     label="Mensagem"
                     className="mb-0 full-width"
                 >
-                    <Form.Control 
-                        name="mensagem" 
-                        onChange={handleChange} 
-                        value={formData.mensagem} 
-                        as="textarea" 
-                        style={{ height: '100px' }} 
-                        placeholder="Leave a comment here" 
+                    <Form.Control
+                        name="mensagem"
+                        onChange={handleChange}
+                        value={formData.mensagem}
+                        as="textarea"
+                        style={{ height: '100px' }}
+                        placeholder="Leave a comment here"
                     />
                 </FloatingLabel>
                 <Button className="px-4" variant="primary" type="submit">Enviar</Button>

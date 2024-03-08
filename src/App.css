@@ -180,6 +180,25 @@ footer img {
    color: rgb(214, 212, 212);
 }
 
+/* ----- Alerts ----- */
+
+.alert-container {
+   position: fixed;
+    top: 150px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: auto; 
+    z-index: 1050; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+   --bs-alert-color: var(--bs-success-text-emphasis);
+    --bs-alert-bg: var(--bs-success-bg-subtle);
+    --bs-alert-border-color: var(--bs-success-border-subtle);
+    --bs-alert-link-color: var(--bs-success-text-emphasis);
+}
+
 /*---------------------*/
 /* --- TRANSITIONS --- */
 /* Fading In */
@@ -790,6 +809,13 @@ footer img {
 
 *::-webkit-scrollbar-thumb:hover {
    background-color: var(--bs-gray-700);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 /* -- Floating Labels fix -- */

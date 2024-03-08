@@ -9,12 +9,7 @@ import ProductsServices from '../components/products-components/services/Product
 import ProductsFarmacy from '../components/products-components/farmacy/ProductsFarmacy';
 
 export default function Products() {
-  let isChangeURL = false;
   let { parameter } = useParams();
-  if (parameter == undefined) {
-    let isChangeURL = true;
-    parameter = "Industria";
-  }
   const [selectedProduct, setSelectedProduct] = useState(parameter);
   let navigate = useNavigate();
 
@@ -30,11 +25,6 @@ export default function Products() {
     setSelectedProduct(product);
     ChangeUrl(product);
   };
-  if (isChangeURL) {
-    useEffect(() => {
-      handleProductChange(parameter);
-    }, []) //this is here with an array with only 1 item so it runs only once at the loading of the page
-  }
 
   return (
     <div>
