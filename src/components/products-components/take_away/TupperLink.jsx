@@ -17,7 +17,7 @@ export default function TupperLink() {
                         <p>Uma maior otimização de espaço permitindo um transporte mais seguro e estável</p>
                     </div>
                     <div className='tupperlink-img-div'>
-                        <img className='tupperlink-img' src='./images/tupperlink.png'></img>
+                        <img className='tupperlink-img' src='../images/tupperlink.png'></img>
                     </div>
                 </div>
                 <div className='product-text-container'>

@@ -13,7 +13,7 @@ export default function UltraSons() {
             <div className="product-container mt-5">
                 <div className="product-img-container">
                     <div className='ultrasons-img-div'>
-                        <img className='ultrasons-img' src='./images/ultra-sons.png'></img>
+                        <img className='ultrasons-img' src='../images/ultra-sons.png'></img>
                     </div>
                 </div>
                 <div className='product-text-container'>
