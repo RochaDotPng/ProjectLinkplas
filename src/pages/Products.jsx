@@ -39,7 +39,7 @@ export default function Products() {
   return (
     <div>
       <Header />
-      <BodyProductSection className="mb-1" onProductChange={handleProductChange} initialProduct={parameter} />
+      <BodyProductSection className="mb-1" onProductChange={handleProductChange} initialProduct={parameter} isHomePage={false}/>
       {selectedProduct === 'Industria' && <ProductsIndustry />}
       {selectedProduct === 'Farmaceutica' && <ProductsFarmacy />}
       {selectedProduct === 'Take-Away' && <ProductsTakeAway />}

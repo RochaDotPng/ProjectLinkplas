@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import ProductButton from './ProductButton';
 import Container from 'react-bootstrap/Container';
+import { useNavigate } from 'react-router-dom';
 
-export default function BodyProductSection({ className, onProductChange, initialProduct }) {
+export default function BodyProductSection({ className, onProductChange, initialProduct ,isHomePage }) {
 
     const [selectedProduct, setSelectedProduct] = useState(initialProduct);
+    const navigate = useNavigate();
 
     const handleProductButtonClick = (label) => {
-        setSelectedProduct(label);
-        onProductChange(label);
+        if(isHomePage){
+            navigate('/Products/'+label);
+        }else{
+            setSelectedProduct(label);
+            onProductChange(label);
+        }
     };
 
     return (
@@ -39,12 +45,6 @@ export default function BodyProductSection({ className, onProductChange, initial
                                 disabledClass={selectedProduct === 'Servicos' ? 'active' : ''}
                             />
                             <ProductButton
-                                label="Alimentar"
-                                icon="icon-kitchen-tools"
-                                //onClick={() => handleProductButtonClick('Alimentar')}
-                                disabledClass={"disabled"}
-                            />
-                            <ProductButton
                                 label="Take-Away"
                                 icon="bi bi-basket"
                                 onClick={() => handleProductButtonClick('Take-Away')}
@@ -52,7 +52,8 @@ export default function BodyProductSection({ className, onProductChange, initial
                             />
                             <ProductButton
                                 label="Brevemente..."
-                                icon="bi bi-hourglass-split"
+                                icon="icon-kitchen-tools"
+                                //onClick={() => handleProductButtonClick('Alimentar')}
                                 disabledClass={"disabled"}
                             />
                         </div>
