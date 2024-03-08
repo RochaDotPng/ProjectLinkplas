@@ -517,7 +517,6 @@ footer img {
    display: flex;
    justify-content: center;
    gap: 60px;
-   overflow-x: auto;
 }
 
 .sustainability-card {

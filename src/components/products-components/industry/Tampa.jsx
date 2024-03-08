@@ -11,7 +11,7 @@ export default function Tampa() {
         <Container>
             <div className="product-container mt-5">
                 <div className="product-img-container">
-                    <img className='tampa-img' src='./images/tampa.png'></img>
+                    <img className='tampa-img' src='../images/tampa.png'></img>
                 </div>
                 <div className='product-text-container'>
                     <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>
@@ -24,11 +24,11 @@ export default function Tampa() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="./files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
-                                <Dropdown.Item href="./files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="./files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="./files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="./files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="../files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

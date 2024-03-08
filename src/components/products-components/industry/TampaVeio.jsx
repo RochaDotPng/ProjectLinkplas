@@ -20,16 +20,16 @@ export default function TampaVeio(){
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="./files/TampaVeio/7017030011.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="./files/TampaVeio/7017030011.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="./files/TampaVeio/7017030011.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="./files/TampaVeio/7017030011.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="../files/TampaVeio/7017030011.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="../files/TampaVeio/7017030011.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="../files/TampaVeio/7017030011.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="../files/TampaVeio/7017030011.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
                 </div>
                 <div className="product-text-container">
-                    <img className='perna-img' src='./images/tampa-veio.png'></img>
+                    <img className='perna-img' src='../images/tampa-veio.png'></img>
                 </div>
             </div>
         </Container>
