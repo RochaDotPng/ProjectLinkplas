@@ -43,8 +43,8 @@ export default function Header({className}) {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/Products"
-              className={`nav-link ${location.pathname === '/Products' ? 'active' : ''}`}
+              to="/Products/Industria"
+              className={`nav-link ${location.pathname === '/Products/Industria' ? 'active' : ''}`}
             >
               Produtos
             </Nav.Link>

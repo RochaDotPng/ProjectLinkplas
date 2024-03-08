@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 export default function SustainabilityCard({ src , title , text }) {
     return (
-        <Card className='sustainability-card shadow' style={{ width: '18rem' }}>
+        <Card className='sustainability-card shadow'>
             <Card.Img variant="top" src={src} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>

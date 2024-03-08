@@ -9,10 +9,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function App() {
-
-  const base = document.querySelector('base');
-  const basename = base && base.getAttribute('href');
-
   return (
     <>
       <TransitionGroup>

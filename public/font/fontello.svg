@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="bi-kitchen-tools" unicode="&#xe800;" d="M789 193c-29 0-54-1-78 0-73 2-119 45-120 118-2 78-2 156 2 233 8 126 68 217 187 265 58 24 92-1 92-63q0-389 0-778c0-13 0-29-7-37-8-11-25-21-38-21-11 1-26 13-33 24-6 10-5 25-5 38 0 72 0 144 0 221z m-1 525c-49-17-96-68-103-131-10-93-9-188-11-282 0-9 16-25 25-27 29-3 59-1 89-1z m-594-413c-24 5-44 6-62 12-67 21-110 79-106 155 4 91 16 182 26 273 4 34 23 49 48 46 24-4 38-25 35-58-7-65-16-130-23-196-2-24-4-49-4-74 2-41 31-70 72-71 37 0 74 0 111 0 44 1 76 32 74 76-4 63-12 125-19 188-2 29-7 59-8 88-1 28 14 45 37 47 23 2 43-14 45-40 10-86 22-171 28-257 7-112-43-167-167-188-1-9-2-19-2-29q0-155 0-311v-22c0-43-14-62-43-62s-42 20-42 62q0 165 0 331z m0 318c0 39 0 78 0 117 1 32 16 51 42 51 25 1 42-16 43-48q2-121 0-243c-1-31-19-49-43-48-25 1-42 21-42 52 0 40 0 80 0 119z" horiz-adv-x="915" />
+</font>
+</defs>
+</svg>

@@ -22,37 +22,37 @@ export default function BodyProductSection({ className, onProductChange, initial
                         <div className="product-buttons-container">
                             <ProductButton
                                 label="Indústria"
-                                icon="buildings"
+                                icon="bi bi-buildings"
                                 onClick={() => handleProductButtonClick('Industria')}
                                 disabledClass={selectedProduct === 'Industria' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Farmacêutica"
-                                icon="capsule"
-                                onClick={() => handleProductButtonClick('Farmacêutica')}
-                                disabledClass={selectedProduct === 'Farmacêutica' ? 'active' : ''}
+                                icon="bi bi-capsule"
+                                onClick={() => handleProductButtonClick('Farmaceutica')}
+                                disabledClass={selectedProduct === 'Farmaceutica' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Serviços"
-                                icon="tools"
+                                icon="bi bi-tools"
                                 onClick={() => handleProductButtonClick('Servicos')}
                                 disabledClass={selectedProduct === 'Servicos' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Alimentar"
-                                icon="basket"
+                                icon="icon-kitchen-tools"
                                 onClick={() => handleProductButtonClick('Alimentar')}
                                 disabledClass={selectedProduct === 'Alimentar' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Take-Away"
-                                icon="box2"
+                                icon="bi bi-basket"
                                 onClick={() => handleProductButtonClick('Take-Away')}
                                 disabledClass={selectedProduct === 'Take-Away' ? 'active' : ''}
                             />
                             <ProductButton
                                 label="Brevemente..."
-                                icon="hourglass-split"
+                                icon="bi bi-hourglass-split"
                                 disabledClass={"disabled"}
                             />
                         </div>

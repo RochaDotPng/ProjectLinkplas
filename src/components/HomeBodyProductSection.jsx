@@ -17,32 +17,32 @@ export default function HomeBodyProductSection({ className, onProductChange, ini
                         <div className="product-buttons-container">
                             <ProductButton
                                 label="Indústria"
-                                icon="buildings"
+                                icon="bi bi-buildings"
                                 onClick={() => navigate('/Products/Industria')}
                             />
                             <ProductButton
                                 label="Farmacêutica"
-                                icon="capsule"
-                                onClick={() => navigate('/Products/Servicos')}
+                                icon="bi bi-capsule"
+                                onClick={() => navigate('/Products/Farmaceutica')}
                             />
                             <ProductButton
                                 label="Serviços"
-                                icon="tools"
+                                icon="bi bi-tools"
                                 onClick={() => navigate('/Products/Servicos')}
                             />
                             <ProductButton
                                 label="Alimentar"
-                                icon="basket"
-                                onClick={() => navigate('/Products/Servicos')}
+                                icon="icon-kitchen-tools"
+                                onClick={() => navigate('/Products/Alimentar')}
                             />
                             <ProductButton
                                 label="Take-Away"
-                                icon="box2"
-                                onClick={() => navigate('/Products/Servicos')}
+                                icon="bi bi-basket"
+                                onClick={() => navigate('/Products/Take-Away')}
                             />
                             <ProductButton
                                 label="Brevemente..."
-                                icon="hourglass-split"
+                                icon="bi bi-hourglass-split"
                                 disabledClass={"disabled"}
                             />
                         </div>
