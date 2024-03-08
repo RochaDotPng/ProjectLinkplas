@@ -554,7 +554,7 @@ footer img {
 }
 
 .sustainability-card {
-   min-width: 18rem;
+   width: 18rem;
    transition: transform 0.3s ease-in-out;
 }
 
