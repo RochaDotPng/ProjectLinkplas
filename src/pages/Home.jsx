@@ -11,7 +11,7 @@ export default function Home() {
         <div>
             <Header />
             <BodyHeroSection />
-            <BodySustainabilitySection/>
+            {/*<BodySustainabilitySection/>*/}
             <BodyProductSection isHomePage={true} initialProduct={null}/>
             <BodyAboutSection/>
             <BodyPolicySection/>

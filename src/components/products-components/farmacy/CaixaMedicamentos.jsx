@@ -23,7 +23,7 @@ export default function CaixaMedicamentos() {
                         <div className='caixa-grande-square'>
                             <h5>Tamanho grande e pequeno</h5>
                         </div>
-                        <img className='caixa-grande-img' src='../images/caixa-grande.png'></img>
+                        <img alt='Imagem da caixa de medicamentos maior' className='caixa-grande-img' src='../images/caixa-grande.png'></img>
                     </div>
                 </div>
                 <div className="product-img-container">
@@ -32,7 +32,7 @@ export default function CaixaMedicamentos() {
                             <h5 className='mb-4'>Aplicação fácil</h5>
                             <p>Permite uma fixação instantânea em qualquer posição</p>
                         </div>
-                        <img className='tampa-caixa-img' src='../images/tampa-caixa.png'></img>
+                        <img alt="Imagem da caixa de medicamentos mais pequena e a tampa" className='tampa-caixa-img' src='../images/tampa-caixa.png'></img>
                     </div>
                 </div>
             </div>

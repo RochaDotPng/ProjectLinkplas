@@ -12,7 +12,7 @@ export default function Intercalar() {
 
             <div className="product-container mt-5">
                 <div className="product-img-container">
-                    <img className='intercalar-img' src='../images/intercalar.png'></img>
+                    <img alt='Imagem da intercalar longarina' className='intercalar-img' src='../images/intercalar.png'></img>
                 </div>
                 <div className='product-text-container'>
                     <h1 className="fw-bold mb-2 ">Intercalar longarina</h1>

@@ -51,7 +51,7 @@ export default function BodyProductSection({ className, onProductChange, initial
                                 disabledClass={selectedProduct === 'Take-Away' ? 'active' : ''}
                             />
                             <ProductButton
-                                label="Brevemente..."
+                                label="Brevemente"
                                 icon="icon-kitchen-tools"
                                 //onClick={() => handleProductButtonClick('Alimentar')}
                                 disabledClass={"disabled"}

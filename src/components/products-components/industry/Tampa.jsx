@@ -11,7 +11,7 @@ export default function Tampa() {
         <Container>
             <div className="product-container mt-5">
                 <div className="product-img-container">
-                    <img className='tampa-img' src='../images/tampa.png'></img>
+                    <img alt='Imagem da tampa de tubo' className='tampa-img' src='../images/tampa.png'></img>
                 </div>
                 <div className='product-text-container'>
                     <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>

@@ -29,7 +29,7 @@ export default function TampaVeio(){
                     </div>
                 </div>
                 <div className="product-text-container">
-                    <img className='perna-img' src='../images/tampa-veio.png'></img>
+                    <img alt='Imagem da perna com uma tampa de veio' className='perna-img' src='../images/tampa-veio.png'></img>
                 </div>
             </div>
         </Container>

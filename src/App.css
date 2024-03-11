@@ -78,6 +78,13 @@ tr:last-child td:last-child {
    border-bottom: 0px;
 }
 
+a{
+   display: flex;
+   text-decoration: none;
+   color: white;
+   font-weight: 300;
+}
+
 /* --- MAIN PAGE --- */
 
 .carousel-img {
@@ -241,13 +248,13 @@ footer img {
 
 .products-body-container {
    position: relative;
-   height: 450px;
+   height: 360px;
    margin-bottom: 200px;
 }
 
 .products-body-img {
    position: relative;
-   height: 330px;
+   height: 260px;
    background-image: url('../images/background-moldes-filtered.jpg');
    background-size: cover;
    background-position: center;
@@ -265,15 +272,15 @@ footer img {
 
 .product-buttons-container {
    position: relative;
-   top: 120px;
+   top: 60px;
    display: flex;
    justify-content: space-between;
    gap: 40px;
 }
 
 .product-button {
-   min-width: 148px;
-   height: 148px;
+   min-width: 125px;
+   height: 125px;
    border-radius: 22px;
    background-color: var(--bs-white);
    text-align: center;
@@ -281,6 +288,7 @@ footer img {
    font-weight: 700;
    cursor: pointer;
    transition: transform 0.3s ease-in-out;
+   border: 0px;
 }
 
 .product-button.active {
@@ -307,7 +315,7 @@ footer img {
 
 .product-button i {
    color: var(--bs-primary);
-   font-size: 60px;
+   font-size: 46px;
 }
 
 .product-button p {
@@ -316,7 +324,7 @@ footer img {
 }
 
 .product-button i::before {
-   margin-top: 28px;
+   margin-top: 20px;
 }
 
 .products-download .dropdown-toggle::after {
@@ -338,14 +346,12 @@ footer img {
 
 .policy-img-container {
    flex: 1 143px;
-   background-image: url(../images/profile_ceo.jpg);
-   background-position: center;
-   background-size: cover;
    height: auto;
 }
 
 .policy-img-container img {
-   max-width: 100%;
+   width: auto;
+   height: 100%;
 }
 
 .policy-text-container {
@@ -382,10 +388,10 @@ footer img {
 
 .policy-body-img {
    position: relative;
-   height: 290px;
-   background-image: url(../images/company-front-filtered.jpg);
-   background-size: cover;
-   background-position-y: -112px;
+    height: 389px;
+    background-image: url(../images/company-front.jpg);
+    background-size: cover;
+    background-position-y: -4px;
 }
 
 .policy-body-img h1 {

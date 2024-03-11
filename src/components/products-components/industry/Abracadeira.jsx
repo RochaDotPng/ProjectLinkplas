@@ -27,15 +27,15 @@ export default function Abracadeira(){
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <img className='perna-animation' src='../images/perna_animation.gif'></img>
+                    <img alt='Animação da montagem da abraçadeira na perna' className='perna-animation' src='../images/perna_animation.gif'></img>
                 </div>
                 <div className="product-img-container">
                     <div className='abracadeira-square'>
                         <h5 className='mb-4'>Design empilhavel</h5>
                         <p>Uma maior otimização de espaço permitindo um transporte mais seguro e estável</p>
                     </div>
-                    <img className='abracadeira-img' src='../images/abracadeira.png'></img>
-                    <img className='perna-img' src='../images/perna1.png'></img>
+                    <img alt='Imagem da abraçadeira plástica' className='abracadeira-img' src='../images/abracadeira.png'></img>
+                    <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='perna-img' src='../images/perna1.png'></img>
                 </div>
             </div>
         </Container>

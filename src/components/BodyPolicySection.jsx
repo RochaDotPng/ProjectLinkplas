@@ -14,6 +14,7 @@ export default function BodyPolicySection() {
         <><Container>
             <div className="policy-container">
                 <div className="policy-img-container">
+                    <img alt="Foto da CEO Paula Rocha" src="../images/profile_ceo.jpg" ></img>
                 </div>
                 <div className="policy-text-container">
                     <h1 className="fw-bold mb-4 mt-5">Estratégia</h1>
