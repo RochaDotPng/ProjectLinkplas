@@ -20,12 +20,12 @@ export default function BodyContactsSection() {
         <LoadScript googleMapsApiKey="AIzaSyCzB2FC7gcUk4ceAPWiDyVSuPn6e7uAygo">
             <div className="contacts-body-container">
                 <Container className="content-container">
-                    <GoogleMap
-                        mapContainerStyle={mapContainerStyle}
-                        zoom={15}
-                        center={center}
-                    >
-                    </GoogleMap>
+                <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    zoom={15}
+                    center={center}
+                >
+                </GoogleMap>
                     <div className="card-overlay">
                         <Card />
                     </div>
