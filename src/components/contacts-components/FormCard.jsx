@@ -44,24 +44,31 @@ export default function FormCard() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-            emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
-                .then((result) => {
-                    setFormData(initialFormData);
-                    setAlertMessage('Mensagem foi enviada com sucesso!');
-                    setAlertVariant('success');
-                    setShowAlert(true);
-                    // Optionally reset form and hide alert after a few seconds
-                    setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
-                    console.log('Email successfully sent!', result.text);
-                    // Handle success (e.g., showing a success message)
-                }, (error) => {
-                    setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
-                    setAlertVariant('danger');
-                    setShowAlert(true);
-                    console.log('Failed to send the email.', error.text);
-                    // Handle errors (e.g., showing an error message)
-                });
-            console.log('Dados do formulário:', formData);
+        if (!recaptchaValue) {
+            setAlertMessage('Por favor, preencha o reCAPTCHA.');
+            setAlertVariant('danger');
+            setShowAlert(true);
+            return;
+          }
+
+        emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
+            .then((result) => {
+                setFormData(initialFormData);
+                setAlertMessage('Mensagem foi enviada com sucesso!');
+                setAlertVariant('success');
+                setShowAlert(true);
+                // Optionally reset form and hide alert after a few seconds
+                setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
+                console.log('Email successfully sent!', result.text);
+                // Handle success (e.g., showing a success message)
+            }, (error) => {
+                setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
+                setAlertVariant('danger');
+                setShowAlert(true);
+                console.log('Failed to send the email.', error.text);
+                // Handle errors (e.g., showing an error message)
+            });
+        console.log('Dados do formulário:', formData);
 
     };
 
@@ -139,7 +146,11 @@ export default function FormCard() {
                         placeholder="Leave a comment here"
                     />
                 </FloatingLabel>
-                <Button className="px-4" variant="primary" type="submit">Enviar</Button>
+                <ReCAPTCHA
+                    sitekey="6LfZgpUpAAAAAMjCEnFH7caeZLvDB0EMsvJu-ANX"
+                    onChange={handleRecaptchaChange}
+                />
+                <Button className="px-4" variant="primary" type="submit" disabled={!recaptchaValue}>Enviar</Button>
             </Form>
         </>
     )
