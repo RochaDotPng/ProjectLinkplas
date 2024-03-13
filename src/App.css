@@ -1399,6 +1399,12 @@ input:-webkit-autofill:active {
    .icon-container {
       padding: 4px;
    }
+
+   footer img {
+      width: 106px;
+      height: auto;
+      margin-right: 20px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1409,6 +1415,12 @@ input:-webkit-autofill:active {
    .container{
       padding: 0px;
    }
+
+   footer img {
+      width: 80px;
+      height: auto;
+      margin-right: 20px;
+  }
 }
 
 @media (max-width: 364px) {
