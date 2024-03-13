@@ -1207,6 +1207,7 @@ input:-webkit-autofill:active {
       margin-right: 0px;
       padding-left: 40px;
       padding-right: 40px;
+      gap:24px;
       top: 50px;
       flex-wrap: wrap;
    }
@@ -1401,6 +1402,9 @@ input:-webkit-autofill:active {
 }
 
 @media (max-width: 380px) {
+   .product-buttons-container{
+      gap: 24px;
+   }
 
    .container{
       padding: 0px;
