@@ -10,7 +10,7 @@ export default function UltraSons() {
     return (
         <Container>
 
-            <div className="product-container mt-5">
+            <div className="product-container mt-5 product-tampa">
                 <div className="product-img-container">
                     <div className='ultrasons-img-div'>
                         <img alt='Imagem de máquina de soldar com ultrasons' className='ultrasons-img' src='../images/ultra-sons.png'></img>

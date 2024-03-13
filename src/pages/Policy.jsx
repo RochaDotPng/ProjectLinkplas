@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 export default function Policy() {
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="policy-body-img">
                 <h1 className='fw-bold text-shadow'>Politica de qualidade</h1>
             </div>

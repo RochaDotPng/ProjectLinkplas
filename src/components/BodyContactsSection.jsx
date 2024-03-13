@@ -2,30 +2,25 @@ import Container from 'react-bootstrap/Container';
 import FormCard from './contacts-components/FormCard'
 import Card from './contacts-components/Card'
 import GreenCard from './contacts-components/GreenCard'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 export default function BodyContactsSection() {
 
-    const mapContainerStyle = {
-        height: '100vh',
-        width: '100%',
-    };
-
-    const center = {
-        lat: 40.89962330345354,
-        lng: -8.43715279187227,
-    };
-
     return (
-        <LoadScript googleMapsApiKey="AIzaSyCzB2FC7gcUk4ceAPWiDyVSuPn6e7uAygo">
+        <>
+            <div className="green-card-overlay">
+                <Container className='p-0'>
+                    <GreenCard />
+                </Container>
+            </div>
             <div className="contacts-body-container">
+                <div className='map-class'>
+                <iframe 
+                    height="100%" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.586093549102!2d-8.438720483603221!3d40.89966268682006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd237ed703882dd3%3A0x16733d3c12b4f9b0!2slinkplas!5e0!3m2!1sen!2spt!4v1499089683867" 
+                    style={{ border: '0', width: '100%', height: '100%', position: 'absolute' }}
+                    allowFullScreen=""></iframe>
+                </div>
                 <Container className="content-container">
-                    <GoogleMap
-                        mapContainerStyle={mapContainerStyle}
-                        zoom={15}
-                        center={center}
-                    >
-                    </GoogleMap>
                     <div className="card-overlay">
                         <Card />
                     </div>
@@ -33,12 +28,8 @@ export default function BodyContactsSection() {
                         <FormCard />
                     </div>
                 </Container>
-                <div className="green-card-overlay">
-                    <Container className='p-0'>
-                        <GreenCard />
-                    </Container>
-                </div>
+
             </div>
-        </LoadScript>
+        </>
     )
 }

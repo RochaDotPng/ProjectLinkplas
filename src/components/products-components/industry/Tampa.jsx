@@ -9,7 +9,7 @@ export default function Tampa() {
     };
     return (
         <Container>
-            <div className="product-container mt-5">
+            <div className="product-container product-tampa mt-5">
                 <div className="product-img-container">
                     <img alt='Imagem da tampa de tubo' className='tampa-img' src='../images/tampa.png'></img>
                 </div>

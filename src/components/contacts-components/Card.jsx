@@ -10,7 +10,7 @@ export default function Card() {
             <h5>Telefone:</h5>
             <p>+351 256 601 535</p>
             <h5>Email:</h5>
-            <p>paula.rocha@linkplas.pt</p>
+            <a className="text-regular" href='mailto:paula.rocha@linkplas.pt'><p>paula.rocha@linkplas.pt</p></a>
         </div>
     );
 }

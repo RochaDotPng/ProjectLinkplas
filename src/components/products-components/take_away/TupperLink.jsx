@@ -10,7 +10,7 @@ export default function TupperLink() {
     return (
         <Container>
 
-            <div className="product-container mt-5">
+            <div className="product-container mt-5 product-tampa">
                 <div className="product-img-container">
                     <div className='tupperlink-square'>
                         <h5 className='mb-4'>Design empilhável</h5>
@@ -25,7 +25,7 @@ export default function TupperLink() {
                     <p>TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza.  A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente</p>
                     
                     <p>Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os  TupperLink oferecem praticidade sem igual</p>
-                    <div className='d-flex gap-3 justify-content-between'>
+                    <div className='d-flex gap-3 justify-content-between flex-wrap'>
                         <div>
                             <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                         </div>

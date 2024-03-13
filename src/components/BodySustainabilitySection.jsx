@@ -3,7 +3,7 @@ import SustainabilityCard from "./SustainabilityCard"
 export default function BodySustainabilitySection() {
     return (
         <>
-            <div className="sustain-container">
+            <div className="sustain-container overflow-hidden">
                 <h2 className="sustainability-title">Sustentabilidade</h2>
                 <div className="sustainability-cards-container">
                     <SustainabilityCard 

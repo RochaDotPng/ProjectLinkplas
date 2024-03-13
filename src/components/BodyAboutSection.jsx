@@ -12,7 +12,7 @@ export default function BodyAboutSection() {
     return (
         <>
             <Container>
-                <div className="about-container">
+                <div className="about-container overflow-hidden">
                     <div className="about-text-container">
                         <h1 className="fw-bold mb-4">Sobre</h1>
                         <p>A LinkPlas é uma empresa industrial de produção e comercialização de plásticos para peças industriais, e para outros fins. Somos uma organização dinâmica, moderna e dedicada na satisfação das necessidades dos nossos clientes.</p>

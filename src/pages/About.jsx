@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 export default function About() {
     return (
         <div>
-            <Header />
+            <Header  />
             <div className="about-body-img">
                 <h1 className='fw-bold text-shadow'>Sobre nós</h1>
             </div>

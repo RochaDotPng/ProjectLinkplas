@@ -78,7 +78,7 @@ export default function FormCard() {
                 {alertMessage}
             </Alert>
         )}
-            <Form onSubmit={handleSubmit} className="form-contacts">
+            <Form onSubmit={handleSubmit} className="form-contacts shadow">
                 <FloatingLabel
                     controlId="nome"
                     label="Nome"
@@ -146,11 +146,11 @@ export default function FormCard() {
                         placeholder="Leave a comment here"
                     />
                 </FloatingLabel>
-                <ReCAPTCHA
+                {/*<ReCAPTCHA
                     sitekey="6LfZgpUpAAAAAMjCEnFH7caeZLvDB0EMsvJu-ANX"
                     onChange={handleRecaptchaChange}
-                />
-                <Button className="px-4" variant="primary" type="submit" disabled={!recaptchaValue}>Enviar</Button>
+        />*/}
+                <Button className="px-4" variant="primary" type="submit" >Enviar</Button>
             </Form>
         </>
     )

@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 export default function Home() {
     return (
         <div>
-            <Header />
+            <Header/>
             <BodyHeroSection />
             {/*<BodySustainabilitySection/>*/}
             <BodyProductSection isHomePage={true} initialProduct={null}/>
