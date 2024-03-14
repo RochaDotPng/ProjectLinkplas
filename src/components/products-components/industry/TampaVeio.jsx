@@ -27,7 +27,7 @@ export default function TampaVeio(){
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <img alt='Imagem da perna com uma tampa de veio' className='tampa-veio-desenho-img' src='../images/tampa-veio-desenho.jpg'></img>
+                    <img alt='Desenho tecnico da tampa de veio' className='mt-4 tampa-veio-desenho-img' src='../images/tampa-veio-desenho.jpg'></img>
                 </div>
                 <div className="product-text-container">
                     <img alt='Imagem da perna com uma tampa de veio' className='tampa-veio-img' src='../images/tampa-veio.png'></img>
