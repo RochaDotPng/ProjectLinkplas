@@ -51,7 +51,7 @@ export default function FormCard() {
             return;
           }
 
-        emailjs.sendForm('service_ki3c9oc', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
+        emailjs.sendForm('service_gtahs5a', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
             .then((result) => {
                 setFormData(initialFormData);
                 setAlertMessage('Mensagem foi enviada com sucesso!');
