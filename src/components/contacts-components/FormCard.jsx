@@ -44,12 +44,12 @@ export default function FormCard() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!recaptchaValue) {
+        /*if (!recaptchaValue) {
             setAlertMessage('Por favor, preencha o reCAPTCHA.');
             setAlertVariant('danger');
             setShowAlert(true);
             return;
-          }
+          }*/
 
         emailjs.sendForm('service_gtahs5a', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
             .then((result) => {
