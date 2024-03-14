@@ -34,35 +34,33 @@ export default function TupperLink() {
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Diametro</th>
+                                        <th>Volume</th>
+                                        <th>Comprimento</th>
+                                        <th>Largura</th>
                                         <th>Altura</th>
-                                        <th>Espessura</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td className='fw-bold'>30001</td>
-                                        <td>12</td>
-                                        <td>10</td>
-                                        <td>2,5</td>
+                                        <td>500ml</td>
+                                        <td>210mm</td>
+                                        <td>160mm</td>
+                                        <td>28mm</td>
                                     </tr>
                                     <tr>
                                         <td className='fw-bold'>30002</td>
-                                        <td>16</td>
-                                        <td>12</td>
-                                        <td>3</td>
+                                        <td>1000ml</td>
+                                        <td>210mm</td>
+                                        <td>160mm</td>
+                                        <td>45mm</td>
                                     </tr>
                                     <tr>
                                         <td className='fw-bold'>30003</td>
-                                        <td>38</td>
-                                        <td>16</td>
-                                        <td>3,5</td>
-                                    </tr>
-                                    <tr>
-                                        <td className='fw-bold'>30004</td>
-                                        <td>42</td>
-                                        <td>16</td>
-                                        <td>3,5</td>
+                                        <td>1500ml</td>
+                                        <td>210mm</td>
+                                        <td>160mm</td>
+                                        <td>64mm</td>
                                     </tr>
                                 </tbody>
                             </Table>
