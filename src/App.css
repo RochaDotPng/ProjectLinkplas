@@ -143,6 +143,15 @@ a {
    justify-content: center;
 }
 
+.scroll-up-button{
+   position: fixed;
+   bottom: 161px;
+   right: 6%;
+   font-weight: bold;
+   font-size: 22px;
+   z-index: 20;
+}
+
 /* ----------------------*/
 
 /* ------ ICONS ------*/
@@ -667,6 +676,12 @@ footer img {
    width: 440px;
 }
 
+.tampa-veio-desenho-img {
+   position: relative;
+   /* top: -20px; */
+   width: 480px;
+}
+
 .perna-animation {
    margin-top: 20px;
    width: 700px;
@@ -941,6 +956,10 @@ input:-webkit-autofill:active {
       margin-right: -100px;
       margin-left: -100px;
    }
+
+   .product-container{
+      flex-wrap: wrap;
+   }
 }
 
 @media (max-width: 1140px) {
@@ -984,6 +1003,8 @@ input:-webkit-autofill:active {
    .product-buttons-container .product-button.disabled {
       display: none;
    }
+
+   
 }
 
 @media (max-width: 992px) {
@@ -1066,7 +1087,7 @@ input:-webkit-autofill:active {
    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 676px) {
 
    .container-half {
       max-width: 100%;
@@ -1320,6 +1341,14 @@ input:-webkit-autofill:active {
       transform: translateX(-50%);
    }
 
+   .tampa-veio-desenho-img {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 20px;
+      width: 300px;
+  }
+
    .caixa-grande-square {
       left: 90px;
    }
@@ -1405,6 +1434,10 @@ input:-webkit-autofill:active {
       height: auto;
       margin-right: 20px;
   }
+
+  .table > :not(caption) > * > * {
+   padding: 0.3rem 0.4rem;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1412,8 +1445,12 @@ input:-webkit-autofill:active {
       gap: 24px;
    }
 
+   .table > :not(caption) > * > * {
+      padding: 0.2rem 0.2rem;
+     }
+
    .container{
-      padding: 0px;
+      padding: 2%;
    }
 
    footer img {

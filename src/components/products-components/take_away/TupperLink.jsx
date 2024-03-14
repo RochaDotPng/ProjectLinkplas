@@ -42,21 +42,21 @@ export default function TupperLink() {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td className='fw-bold'>30001</td>
+                                        <td className='fw-bold'>1</td>
                                         <td>500ml</td>
                                         <td>210mm</td>
                                         <td>160mm</td>
                                         <td>28mm</td>
                                     </tr>
                                     <tr>
-                                        <td className='fw-bold'>30002</td>
+                                        <td className='fw-bold'>2</td>
                                         <td>1000ml</td>
                                         <td>210mm</td>
                                         <td>160mm</td>
                                         <td>45mm</td>
                                     </tr>
                                     <tr>
-                                        <td className='fw-bold'>30003</td>
+                                        <td className='fw-bold'>3</td>
                                         <td>1500ml</td>
                                         <td>210mm</td>
                                         <td>160mm</td>
