@@ -1047,6 +1047,7 @@ input:-webkit-autofill:active {
 
    .about-text .flex-1 {
       flex-basis: 100%;
+      text-align: justify;
    }
 
    .policy-container {
