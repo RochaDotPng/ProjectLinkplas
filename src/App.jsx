@@ -14,7 +14,7 @@ export default function App() {
   window.onscroll = function () { scrollFunction() };
 
   function scrollFunction() {
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
       document.getElementById("toTop").classList.remove("d-none");
       document.getElementById("toTop").classList.add("d-block");
     } else {
