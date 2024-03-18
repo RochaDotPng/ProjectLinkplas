@@ -14,12 +14,22 @@ export default function App() {
   window.onscroll = function () { scrollFunction() };
 
   function scrollFunction() {
+    var button = document.getElementById('toTop');
+    var footerHeight =  document.getElementById('footerComponent').offsetHeight;
+    var windowBottom = window.scrollY + window.innerHeight;
+    var footerTop = document.documentElement.scrollHeight - footerHeight;
+
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      document.getElementById("toTop").classList.remove("d-none");
-      document.getElementById("toTop").classList.add("d-block");
+      button.classList.remove("d-none");
+      button.classList.add("d-block");
     } else {
-      document.getElementById("toTop").classList.remove("d-block");
-      document.getElementById("toTop").classList.add("d-none");
+      button.classList.remove("d-block");
+      button.classList.add("d-none");
+    }
+    if (windowBottom > footerTop + 150) {
+      button.style.bottom = (windowBottom-footerTop) + 20 + 'px'; // Adjust this value to suit your needs
+    } else {
+      button.style.bottom = '160px'; // Distance from bottom when fixed
     }
   }
 
@@ -42,7 +52,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </TransitionGroup>
-      <Button id='toTop' onClick={topFunction} className='scroll-up-button d-none'><i class="bi bi-chevron-up"></i></Button>
+      <Button id='toTop' onClick={topFunction} className='scroll-up-button d-none'><i className="bi bi-chevron-up"></i></Button>
     </>
 
   )

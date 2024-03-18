@@ -9,7 +9,7 @@ export default function Footer() {
 
 
     return (
-        <footer className='overflow-hidden'>
+        <footer id='footerComponent' className='overflow-hidden'>
             <div className="footer-up">
                 <Container className='footer-up-container'>
                     <div className='socials d-flex align-items-center'>
