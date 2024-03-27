@@ -12,11 +12,13 @@ export default function BodyAboutSection() {
     return (
         <>
             <Container>
-                <div className="about-container overflow-hidden">
+                <div className="about-container">
                     <div className="about-text-container">
                         <h1 className="fw-bold mb-4">Sobre</h1>
-                        <p>A LinkPlas é uma empresa industrial de produção e comercialização de plásticos para peças industriais, e para outros fins. Somos uma organização dinâmica, moderna e dedicada na satisfação das necessidades dos nossos clientes.</p>
-                        <p>Apesar de sermos uma empresa com uma história recente, podemos afirmar que possuímos um Know-how bastante especializado e a tecnologia mais avançada na indústria, já que a aposta na inovação, é uma constante na nossa empresa.</p>
+                        <span>Somos especializados na transformação de matéria plástica, utilizando o nosso processo de Injeção em que contamos com uma equipa dinâmica e profissional dedicada a superar expectativas e atender às necessidades dos nossos clientes.</span>
+                        <br />
+                        <br />
+                        <span>Temos como compromisso fornecer soluções de alta qualidade e personalizadas para empresas industriais em todo o mundo.</span>
                     </div>
                     <div aria-label='Imagem do escritorio da Linkplas' className="about-img-container">
                         <div className='about-vision-div'>

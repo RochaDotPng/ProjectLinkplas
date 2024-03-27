@@ -1,17 +1,30 @@
-import { Button, Container, Dropdown } from 'react-bootstrap';
+import { Button, Container, Dropdown, ButtonGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function TampaVeio(){
     const navigate = useNavigate();
     const handleContactsClick = (path) => {
         navigate(path);
     };
+
+    const [size, setSize] = useState('20');
+
+    function handleSize(newSize){
+        setSize(newSize);
+        console.log(newSize);
+    }
     return(
         <Container>
             <h1 className="fw-bold mb-2 mt-5">Tampa para veio</h1>
             <div className="product-container">
                 <div className='product-img-container'>
                     <p>Uma tampa para os veios</p>
+                    <ButtonGroup className='mb-4' aria-label="Seleção da dimensão das tampas">
+                        <Button  onClick={() =>{handleSize('20')}} className="text-white" variant="secondary">20mm <i className="bi bi-arrows-expand-vertical"></i></Button>
+                        <Button  onClick={() =>{handleSize('24')}} className="text-white" variant="secondary">24mm <i className="bi bi-arrows-expand-vertical"></i></Button>
+                        <Button  onClick={() =>{handleSize('30')}} className="text-white" variant="secondary">30mm <i className="bi bi-arrows-expand-vertical"></i></Button>
+                    </ButtonGroup>
                     <div>
                         <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
@@ -27,7 +40,6 @@ export default function TampaVeio(){
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <img alt='Desenho tecnico da tampa de veio' className='mt-4 tampa-veio-desenho-img' src='../images/tampa-veio-desenho.jpg'></img>
                 </div>
                 <div className="product-text-container">
                     <img alt='Imagem da perna com uma tampa de veio' className='tampa-veio-img' src='../images/tampa-veio.png'></img>

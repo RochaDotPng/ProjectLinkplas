@@ -5,7 +5,7 @@ import UltraSons from './UltraSons';
 
 export default function ProductsServices(){
     return(
-        <Container><Tabs
+        <Container className='service-height-container'><Tabs
         defaultActiveKey="ultrasons"
         id="uncontrolled-tab-example"
         className="mb-3"

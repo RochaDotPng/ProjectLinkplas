@@ -33,7 +33,7 @@ export default function TupperLink() {
                             <Table striped>
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th className='fw-bold'>#</th>
                                         <th>Volume</th>
                                         <th>Comprimento</th>
                                         <th>Largura</th>

@@ -16,6 +16,7 @@
 
 #root {
    height: 100vh;
+   --bs-secondary-light: #89a543;
 }
 
 .flex-1 {
@@ -59,7 +60,7 @@ tr:last-child td:last-child {
 }
 
 .text-white {
-   color: var(--bs-white);
+   color: var(--bs-white) !important;
 }
 
 .width-700 {
@@ -150,6 +151,11 @@ a {
    font-weight: bold;
    font-size: 22px;
    z-index: 20;
+}
+
+.btn-checked.btn-secondary{
+   background-color: var(--bs-secondary-light);
+   border: solid 1px var(--bs-secondary-light)
 }
 
 /* ----------------------*/
@@ -296,7 +302,7 @@ footer img {
 .products-body-img {
    position: relative;
    height: 260px;
-   background-image: url('../images/background-moldes-filtered.jpg');
+   background-image: url('../public/images/background-moldes-filtered.jpg');
    background-size: cover;
    background-position: center;
 }
@@ -430,7 +436,7 @@ footer img {
 .policy-body-img {
    position: relative;
    height: 389px;
-   background-image: url(../images/company-front.jpg);
+   background-image: url(../public/images/company-front.jpg);
    background-size: cover;
 }
 
@@ -455,7 +461,7 @@ footer img {
 .about-body-img {
    position: relative;
    height: 290px;
-   background-image: url(../images/company-front-filtered.jpg);
+   background-image: url(../public/images/company-front-filtered.jpg);
    background-size: cover;
    background-position-y: -112px;
 }
@@ -486,7 +492,7 @@ footer img {
 .about-img-container {
    flex: 1.5;
    height: auto;
-   background-image: url('../images/office2.jpeg');
+   background-image: url('../public/images/office2.jpeg');
    background-position: center;
    background-size: cover;
    display: flex;
@@ -609,6 +615,11 @@ footer img {
 /* ------------------- */
 /* ------Products----- */
 /* ------------------- */
+
+.service-height-container{
+   min-height: calc(100vh - 664px);
+}
+
 .product-container {
    margin-top: 20px;
    display: flex;
@@ -715,12 +726,11 @@ footer img {
 .ultrasons-img {
    position: relative;
    left: 13px;
-   width: 550px;
+   width: 500px;
 }
 
 .ultrasons-img-div {
-   width: 300px;
-   height: 870px;
+   height: 500px;
 }
 
 .tampa-caixa-img {
@@ -958,7 +968,11 @@ input:-webkit-autofill:active {
    }
 
    .product-container{
-      flex-wrap: wrap;
+      flex-wrap: wrap-reverse;
+   }
+
+   .product-text-container{
+      min-width: 400px;
    }
 }
 
@@ -1141,7 +1155,7 @@ input:-webkit-autofill:active {
 
    .about-img-container {
       flex: 1.5;
-      background-image: url(../images/office2.jpeg);
+      background-image: url(../public/images/office2.jpeg);
       background-position: center;
       background-size: cover;
       background-position-y: -198px;
@@ -1156,7 +1170,7 @@ input:-webkit-autofill:active {
    }
 
    .about-green-card {
-      height: 212px;
+      height: auto;
    }
 
    .about-body-img {
@@ -1256,7 +1270,7 @@ input:-webkit-autofill:active {
    .products-body-img {
       position: relative;
       height: 370px;
-      background-image: url(../images/background-moldes-filtered.jpg);
+      background-image: url(../public/images/background-moldes-filtered.jpg);
       background-size: cover;
       background-position: center;
    }
@@ -1321,6 +1335,7 @@ input:-webkit-autofill:active {
    .ultrasons-img-div {
       width: 100%;
       height: auto;
+      margin-bottom: 24px;
    }
 
    /*Farmacy*/
@@ -1331,13 +1346,13 @@ input:-webkit-autofill:active {
    }
 
    .caixa-grande-img {
-      width: 310px;
+      width: 300px;
       left: 50%;
       transform: translateX(-50%);
    }
 
    .tampa-caixa-img {
-      width: 310px;
+      width: 300px;
       left: 50%;
       transform: translateX(-50%);
    }
@@ -1351,13 +1366,14 @@ input:-webkit-autofill:active {
   }
 
    .caixa-grande-square {
-      left: 90px;
+      left: unset;
+      right: -30px;
    }
 
    /*Takeaway*/
 
    .table-tupperlink {
-      width: 100%;
+      width: calc(100% - 6px);
    }
 
    .tupperlink-img-div {
@@ -1439,9 +1455,36 @@ input:-webkit-autofill:active {
   .table > :not(caption) > * > * {
    padding: 0.3rem 0.4rem;
   }
+
+  .about-img-container{
+   flex-wrap: wrap;
+   height: 620px;
+  }
+
+  .about-vision-div{
+   width: 100%;
+  }
+
+  .about-mission-div{
+   width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
+   .btn{
+      --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.875rem;
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+   }
+
+   .ultrasons-img{
+      width: 300px;
+   }
+
+   .product-text-container{
+      min-width: 200px;
+   }
    .product-buttons-container{
       gap: 24px;
    }
@@ -1459,11 +1502,37 @@ input:-webkit-autofill:active {
       height: auto;
       margin-right: 20px;
   }
+
+  .icon-big-container{
+   gap:10px;
+  }
 }
 
 @media (max-width: 364px) {
    .product-buttons-container{
       padding-right: 8px;
       padding-left: 8px;
+   }
+   .table-tupperlink{
+      font-size: 13px;
+   }
+}
+
+@media (max-width: 310px) {
+   .fs-5 {
+      font-size: 1.15rem !important;
+  }
+
+   .about-quote-text:after{
+      height: 40px;
+   }
+   span, p, li{
+      font-size: 13px;
+   }
+   .table-tupperlink .fw-bold{
+      display: none;
+   }
+   .product-buttons-container {
+      gap: 8px;
    }
 }
