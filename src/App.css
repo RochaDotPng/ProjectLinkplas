@@ -328,7 +328,7 @@ footer img {
 .product-button {
    min-width: 125px;
    height: 125px;
-   border-radius: 22px;
+   border-radius: 16px;
    background-color: var(--bs-white);
    text-align: center;
    color: var(--bs-primary);
@@ -452,6 +452,7 @@ footer img {
 .policy-text {
    padding: 52px;
    line-height: 30px;
+   height: calc(100vh - 689px);
 }
 
 /* ------------------- */
@@ -1223,6 +1224,7 @@ input:-webkit-autofill:active {
 
    .policy-text {
       padding: 20px;
+      height: 100%;
    }
 
    .policy-body-img {
