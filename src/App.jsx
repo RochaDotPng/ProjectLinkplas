@@ -5,7 +5,6 @@ import About from './pages/About'
 import Contacts from './pages/Contacts'
 import Policy from './pages/Policy'
 import Products from './pages/Products'
-import "bootstrap-icons/font/bootstrap-icons.css";
 import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Button } from 'react-bootstrap';
 
