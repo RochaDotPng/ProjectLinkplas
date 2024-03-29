@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
             <div className="footer-down">
                 <Container className='footer-down-container'>
-                    <span>Todos os direitos reservados a www.linkplas.pt &copy;2023</span>
+                    <span>Todos os direitos reservados a www.linkplas.pt &copy;2024</span>
                 </Container>
             </div>
         </footer>
