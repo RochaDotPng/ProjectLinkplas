@@ -8,7 +8,7 @@ export default function TampaVeio() {
         navigate(path);
     };
 
-    const [size, setSize] = useState('20');
+    const [size, setSize] = useState('16');
 
     function handleSize(newSize) {
         setSize(newSize);
@@ -53,9 +53,8 @@ export default function TampaVeio() {
                 <div className='product-img-container'>
                     <p>Uma tampa para os veios</p>
                     <ButtonGroup className='mb-4' aria-label="Seleção da dimensão das tampas">
+                        <Button onClick={() => { handleSize('16') }} className={size == '16' && ("text-white btn-checked") || ("text-white")} variant="secondary">16mm <i className="bi bi-arrows-expand-vertical"></i></Button>
                         <Button onClick={() => { handleSize('20') }} className={size == '20' && ("text-white btn-checked") || ("text-white")} variant="secondary">20mm <i className="bi bi-arrows-expand-vertical"></i></Button>
-                        <Button onClick={() => { handleSize('24') }} className={size == '24' && ("text-white btn-checked") || ("text-white")} variant="secondary">24mm <i className="bi bi-arrows-expand-vertical"></i></Button>
-                        <Button onClick={() => { handleSize('30') }} className={size == '30' && ("text-white btn-checked") || ("text-white")} variant="secondary">30mm <i className="bi bi-arrows-expand-vertical"></i></Button>
                     </ButtonGroup>
                     <div>
                         <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>

@@ -24,7 +24,7 @@ export default function Tampa() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
                                 <Dropdown.Item href="../files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
                                 <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
                                 <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>

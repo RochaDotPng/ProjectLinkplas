@@ -9,13 +9,13 @@ import TampaVeio from './TampaVeio';
 export default function ProductsIndustry(){
     return(
         <Container><Tabs
-        defaultActiveKey="tampa"
+        defaultActiveKey="abracadeira"
         id="uncontrolled-tab-example"
         className="mb-3"
         >
-            {/*<Tab eventKey="abracadeira" title="Abraçadeira">
+            {<Tab eventKey="abracadeira" title="Abraçadeira">
                 <Abracadeira />
-    </Tab>*/}
+            </Tab>}
             <Tab eventKey="tampa" title="Tampa">
                 <Tampa />
             </Tab>
