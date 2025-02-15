@@ -12,9 +12,9 @@ export default function BodyHeroSection() {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img alt='Imagem do produto Tupperlink' className="carousel-img" src='./images/tupperLink-hero.png'></img>
+                <img alt='Imagem do produto KeepyLink' className="carousel-img" src='./images/tupperLink-hero2.png'></img>
                 <Carousel.Caption>
-                    <h1 className='fw-bold'>TupperLink</h1>
+                    <h1 className='fw-bold'>KeepyLink</h1>
                     <p className='fs-5' >Take-away economico e reutilizavel</p>
                 </Carousel.Caption>
             </Carousel.Item>

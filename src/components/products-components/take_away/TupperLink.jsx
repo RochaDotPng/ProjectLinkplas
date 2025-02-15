@@ -17,14 +17,14 @@ export default function TupperLink() {
                         <p>Uma maior otimização de espaço permitindo um transporte mais seguro e estável</p>
                     </div>
                     <div className='tupperlink-img-div'>
-                        <img alt='Imagem de tupperlinks empilhados mostrando a facilidade de serem empilhados para um transporte mais seguro' className='tupperlink-img' src='../images/tupperlink.png'></img>
+                        <img alt='Imagem de tupperlinks empilhados mostrando a facilidade de serem empilhados para um transporte mais seguro' className='tupperlink-img' src='../images/tupperlink_large.png'></img>
                     </div>
                 </div>
                 <div className='product-text-container'>
-                    <h1 className="fw-bold mb-2 ">Tupper Link</h1>
-                    <p>TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza.  A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente</p>
+                    <h1 className="fw-bold mb-2 ">KeepyLink</h1>
+                    <p>KeepyLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza.  A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente</p>
                     
-                    <p>Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os  TupperLink oferecem praticidade sem igual</p>
+                    <p>Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os KeepyLink oferecem praticidade sem igual</p>
                     <div className='d-flex gap-3 justify-content-between flex-wrap'>
                         <div>
                             <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
@@ -61,6 +61,20 @@ export default function TupperLink() {
                                         <td>210mm</td>
                                         <td>160mm</td>
                                         <td>64mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='fw-bold'>4</td>
+                                        <td>2000ml</td>
+                                        <td>210mm</td>
+                                        <td>160mm</td>
+                                        <td>86mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='fw-bold'>5</td>
+                                        <td>2500ml</td>
+                                        <td>346mm</td>
+                                        <td>226mm</td>
+                                        <td>50mm</td>
                                     </tr>
                                 </tbody>
                             </Table>

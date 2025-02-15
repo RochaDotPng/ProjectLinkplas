@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Card Titl2",
+        "description": "Description text",
+        "image": "./LinkplasData/image.jpg",
+        "url": "https://www.google.com",
+        "date": "Janeiro 12, 2025 - Instagram"
+    }
+    ,
+    {
+        "title": "Card Title",
+        "description": "Como guardar a sua marmelada numa condição perfeita! Com TippyLink",
+        "image": "./LinkplasData/image.jpg",
+        "url": "https://www.google.com",
+        "date": "Janeiro 12, 2025 - Instagram"
+    }
+    ,
+    {
+        "title": "Card Title",
+        "description": "Description text3",
+        "image": "./LinkplasData/image.jpg",
+        "url": "https://www.google.com",
+        "date": "Janeiro 12, 2025 - Instagram"
+    }
+    ,
+    {
+        "title": "Card Title",
+        "description": "Description text4",
+        "image": "./LinkplasData/image.jpg",
+        "url": "https://www.google.com",
+        "date": "Janeiro 12, 2025 - Instagram"
+    }
+  ]

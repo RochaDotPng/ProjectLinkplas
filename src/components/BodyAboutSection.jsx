@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import CardSection from './CardSection';
 
 export default function BodyAboutSection() {
     const navigate = useNavigate();
@@ -10,8 +11,9 @@ export default function BodyAboutSection() {
     };
     
     return (
-        <>
+        <>  
             <Container>
+            <CardSection jsonPath="./LinkplasData/cards.json"></CardSection>
                 <div className="about-container">
                     <div className="about-text-container">
                         <h1 className="fw-bold mb-4">Sobre</h1>
