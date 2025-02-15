@@ -80,8 +80,8 @@ export default function Anilha() {
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Diametro</th>
-                                    <th>Altura</th>
+                                    <th>Diametro Ext</th>
+                                    <th>Diametro Int</th>
                                     <th>Espessura</th>
                                 </tr>
                             </thead>
@@ -90,57 +90,58 @@ export default function Anilha() {
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
                                             <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
-                                                <span>30001</span>
+                                                <span>30014</span>
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
+                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
-                                    <td>12</td>
-                                    <td>10</td>
-                                    <td>2,5</td>
+                                    <td>40 mm</td>
+                                    <td>9 mm</td>
+                                    <td>6 mm</td>
                                 </tr>
                                 <tr>
-                                    <td className='fw-bold'>30002</td>
-                                    <td>16</td>
-                                    <td>12</td>
-                                    <td>3</td>
+                                    <td className='fw-bold'>
+                                    <Dropdown className=''>
+                                            <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
+                                                <span>30015</span>
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                    <td>60 mm</td>
+                                    <td>9 mm</td>
+                                    <td>7 mm</td>
                                 </tr>
                                 <tr>
-                                    <td className='fw-bold'>30003</td>
-                                    <td>38</td>
-                                    <td>16</td>
-                                    <td>3,5</td>
-                                </tr>
-                                <tr>
-                                    <td className='fw-bold'>30004</td>
-                                    <td>42</td>
-                                    <td>16</td>
-                                    <td>3,5</td>
-                                </tr>
-                                <tr>
-                                    <td className='fw-bold'>30005</td>
-                                    <td>48</td>
-                                    <td>18,5</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td className='fw-bold'>30006</td>
-                                    <td>51</td>
-                                    <td>18,5</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td className='fw-bold'>30007</td>
-                                    <td>63</td>
-                                    <td>20</td>
-                                    <td>4,5</td>
+                                    <td className='fw-bold'>
+                                    <Dropdown className=''>
+                                            <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
+                                                <span>30016</span>
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                    <td>60 mm</td>
+                                    <td>21 mm</td>
+                                    <td>7 mm</td>
                                 </tr>
                             </tbody>
                         </Table>
