@@ -94,10 +94,10 @@ export default function Anilha() {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -113,10 +113,10 @@ export default function Anilha() {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -132,10 +132,10 @@ export default function Anilha() {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>

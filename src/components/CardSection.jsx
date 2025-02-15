@@ -18,8 +18,10 @@ const CardSection = ({ jsonPath }) => {
   }, [jsonPath]);
 
   return (
+    <>
+    <h2 className="mb-4">Novidades</h2>
     <div className="w-full overflow-x-auto">
-      <h2 className="mb-4">Novidades</h2>
+      
       <div className="flex space-x-4 pb-5 h-600 d-flex gap-60">
         {cards.map((card, index) => (
           <div 
@@ -50,6 +52,7 @@ const CardSection = ({ jsonPath }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
