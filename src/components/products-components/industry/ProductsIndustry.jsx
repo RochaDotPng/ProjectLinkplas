@@ -5,6 +5,7 @@ import Abracadeira from './Abracadeira'
 import Tampa from './Tampa';
 import Intercalar from './Intercalar';
 import TampaVeio from './TampaVeio';
+import Anilha from './Anilha';
 
 export default function ProductsIndustry(){
     return(
@@ -24,6 +25,9 @@ export default function ProductsIndustry(){
             </Tab>
             <Tab eventKey="tampa-veio" title="Tampa para veio">
                 <TampaVeio />
+            </Tab>
+            <Tab eventKey="anilhha" title="Anilha Intercalar">
+                <Anilha />
             </Tab>
         </Tabs>
         </Container>

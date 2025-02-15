@@ -17,6 +17,11 @@ export default function Footer() {
                     </div>
                     <div className="icon-big-container">
                         <div className="icon-container">
+                            <a href='https://www.instagram.com/link_plas/'>
+                                <i className="bi bi-instagram"></i>
+                            </a>
+                        </div>
+                        <div className="icon-container">
                             <a href='https://www.facebook.com/p/LinkplasLda-100057181310945'>
                                 <i className="bi bi-facebook"></i>
                             </a>

@@ -10,7 +10,7 @@ export default function ProductsTakeAway(){
         id="uncontrolled-tab-example"
         className="mb-3"
         >
-            <Tab eventKey="tupperlink" title="TupperLink">
+            <Tab eventKey="tupperlink" title="KeepyLink">
                 <TupperLink />
             </Tab>
         </Tabs>

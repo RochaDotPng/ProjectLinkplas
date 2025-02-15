@@ -1,33 +1,34 @@
 [
     {
-        "title": "Card Titl2",
-        "description": "Description text",
-        "image": "./LinkplasData/image.jpg",
-        "url": "https://www.google.com",
-        "date": "Janeiro 12, 2025 - Instagram"
+        "title": "Feliz Natal",
+        "description": "Desejamos que este Natal vos traga a vocês e às vossas famílias momentos de paz, alegria e renovação. Um Ano Novo repleto de saúde, felicidade e prosperidade.",
+        "image": "./LinkplasData/natal.jpeg",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7277005348857663489",
+        "date": "Dezembro 23, 2024 - Linkedin"
     }
     ,
     {
-        "title": "Card Title",
-        "description": "Como guardar a sua marmelada numa condição perfeita! Com TippyLink",
-        "image": "./LinkplasData/image.jpg",
-        "url": "https://www.google.com",
-        "date": "Janeiro 12, 2025 - Instagram"
+        "title": "Rabanadas frescas",   
+        "description": "Com KeepyLink ela nao 'murcha', mantém o seu sabor e textura crocante sem precisar de um milagre de Natal",
+        "image": "./LinkplasData/rabanada.jpeg",
+        "url": "https://www.instagram.com/p/DDvOZGfCb6sdpaIIO__HDVJVwVnwqTH-Tc9il80/",
+        "date": "Dezembro 18, 2024 - Instagram"
     }
     ,
     {
-        "title": "Card Title",
-        "description": "Description text3",
-        "image": "./LinkplasData/image.jpg",
-        "url": "https://www.google.com",
-        "date": "Janeiro 12, 2025 - Instagram"
+        "title": "Selo Igualdade Salarial",
+        "description": " Este reconhecimento reafirma o nosso compromisso com a igualdade de género e com um ambiente onde todos são valorizados pelo seu talento.",
+        "image": "./LinkplasData/igualdade.jpeg",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7262842505405091840",
+        "date": "Novembro 14, 2024 - Linkedin"
     }
     ,
     {
-        "title": "Card Title",
-        "description": "Description text4",
+        "title": "Nos bastidores da Linkplas",
+        "description": "Aqui está um vislumbre do nosso compromisso com a qualidade enquanto preparamos cada embalagem com precisão.",
         "image": "./LinkplasData/image.jpg",
-        "url": "https://www.google.com",
-        "date": "Janeiro 12, 2025 - Instagram"
+        "url": "https://www.instagram.com/p/DBrQHqqipX8-WmDx8uMIDVILqkWciNnASDN3-Q0/",
+        "date": "Outubro 28, 2024 - Instagram"
     }
+
   ]

@@ -19,8 +19,8 @@ const CardSection = ({ jsonPath }) => {
 
   return (
     <div className="w-full overflow-x-auto">
-      <h2 className="mb-4 fw-light">Novidades</h2>
-      <div className="flex space-x-4 pb-4 d-flex gap-60">
+      <h2 className="mb-4">Novidades</h2>
+      <div className="flex space-x-4 pb-5 h-600 d-flex gap-60">
         {cards.map((card, index) => (
           <div 
             key={index} 
@@ -41,7 +41,7 @@ const CardSection = ({ jsonPath }) => {
                 href={card.url}  
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-body hover:underline"
+                className="text-body hover:underline fw-semibold"
               >
                 Ver mais
               </a>
