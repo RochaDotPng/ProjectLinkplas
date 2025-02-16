@@ -816,7 +816,8 @@ footer img {
 .caixa-grande-img {
    position: relative;
    left: 13px;
-   top: -60px;
+   top: -25px;
+   z-index: 99999;
    width: 550px;
 }
 
