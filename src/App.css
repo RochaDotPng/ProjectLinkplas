@@ -334,9 +334,10 @@ footer img {
 /* -----Products------ */
 
 .products-body-container {
-   position: relative;
    height: 360px;
-   margin-bottom: 200px;
+   position: sticky;
+   top: -150px;
+   z-index: 99999;
 }
 
 .products-body-img {
@@ -1621,5 +1622,354 @@ input:-webkit-autofill:active {
    }
    .product-buttons-container {
       gap: 8px;
+   }
+}
+
+/* Products Industry Sidebar Layout */
+.products-industry-container {
+   padding: 0;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+.sidebar-nav {
+   padding: 0;
+   background-color: #f8f9fa;
+   border-right: 1px solid #dee2e6;
+   min-height: calc(100vh - 200px);
+}
+
+.products-sidebar {
+   padding: 2rem 1.5rem;
+   position: sticky;
+   top: 150px;
+   height: fit-content;
+}
+
+.sidebar-title {
+   color: var(--bs-secondary-dark);
+   font-weight: 600;
+   border-bottom: 2px solid var(--bs-secondary);
+   padding-bottom: 0.5rem;
+}
+
+.products-nav {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.products-nav .nav-item {
+   display: flex;
+   align-items: center;
+   padding: 1rem 1.5rem;
+   background: none;
+   border: none;
+   border-radius: 8px;
+   color: #6c757d;
+   font-weight: 500;
+   text-align: left;
+   width: 100%;
+   transition: all 0.3s ease;
+   cursor: pointer;
+}
+
+.products-nav .nav-item:hover {
+   background-color: #e9ecef;
+   color: var(--bs-secondary-dark);
+   transform: translateX(5px);
+}
+
+.products-nav .nav-item.active {
+   background-color: var(--bs-primary);
+   color: white;
+   font-weight: 600;
+}
+
+.products-nav .nav-item.active i {
+   color: white;
+}
+
+.products-content {
+   padding: 2rem;
+   background-color: white;
+   max-width: 100%;
+}
+
+.product-section {
+   margin-bottom: 4rem;
+   scroll-margin-top: 120px;
+}
+
+.product-section:last-child {
+   margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .products-industry-container .row {
+      margin: 0;
+   }
+   
+   .sidebar-nav {
+      position: relative;
+      min-height: auto;
+      border-right: none;
+      border-bottom: 1px solid #dee2e6;
+   }
+   
+   .products-sidebar {
+      padding: 1rem;
+      position: relative;
+      top: 0;
+   }
+   
+   .products-nav {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 0.25rem;
+   }
+   
+   .products-nav .nav-item {
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+      min-width: fit-content;
+   }
+   
+   .products-nav .nav-item:hover {
+      transform: none;
+   }
+   
+   .products-content {
+      padding: 1rem;
+   }
+   
+   .product-section {
+      scroll-margin-top: 80px;
+   }
+}
+
+/* Vertical Product Layout Styles */
+.product-container-vertical {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   padding: 1rem 0;
+}
+
+.product-description-section {
+   background-color: #f8f9fa;
+}
+
+.product-description-section p {
+   font-size: 1.1rem;
+   line-height: 1.6;
+   color: #5a5a5a;
+}
+
+.product-actions {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.product-features-section {
+   padding: 1.5rem;
+}
+
+.abracadeira-feature-box {
+   background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-secondary-dark) 100%);
+   color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   text-align: center;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.abracadeira-feature-box h5 {
+   font-weight: 600;
+   margin-bottom: 1rem;
+}
+
+.product-images-section .row {
+   margin: 0;
+}
+
+.product-images-section .col-md-4 {
+   padding: 0.5rem;
+}
+
+.product-img {
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   transition: transform 0.3s ease;
+   max-height: 300px;
+   object-fit: contain;
+   width: 100%;
+}
+
+.product-img:hover {
+   transform: scale(1.02);
+}
+
+.product-animation {
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   max-height: 300px;
+   width: 100%;
+   object-fit: contain;
+}
+
+.product-specs-section {
+   background-color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+   border: 1px solid #e9ecef;
+}
+
+.product-specs-section h5 {
+   color: var(--bs-secondary-dark);
+   font-weight: 600;
+   border-bottom: 2px solid var(--bs-secondary);
+   padding-bottom: 0.5rem;
+   display: inline-block;
+}
+
+.table-responsive {
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+/* Size selection styling */
+.product-description-section h6 {
+   color: var(--bs-secondary-dark);
+   font-weight: 600;
+}
+
+.btn-checked {
+   background-color: var(--bs-secondary-dark) !important;
+   border-color: var(--bs-secondary-dark) !important;
+}
+
+/* Responsive adjustments for vertical layout */
+@media (max-width: 768px) {
+   .product-container-vertical {
+      gap: 1.5rem;
+   }
+   
+   .product-description-section {
+      padding: 1.5rem;
+   }
+   
+   .product-actions {
+      flex-direction: column;
+      align-items: stretch;
+   }
+   
+   .product-actions .btn,
+   .product-actions .dropdown {
+      width: 100%;
+   }
+   
+   .product-images-section .col-md-4 {
+      margin-bottom: 1rem;
+   }
+   
+   .abracadeira-feature-box {
+      padding: 1.5rem;
+   }
+   
+   .product-specs-section {
+      padding: 1.5rem;
+   }
+}
+
+/* Products Services Layout */
+.products-services-container {
+   padding: 0;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+/* Service-specific styles */
+.service-img {
+   border-radius: 12px;
+   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+   transition: transform 0.3s ease;
+   width: 800px;
+   height: 800px;
+   object-fit: cover;
+}
+
+.service-img:hover {
+   transform: scale(1.02);
+}
+
+.service-benefits-section {
+   background-color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+   border: 1px solid #e9ecef;
+}
+
+.service-benefits-section h5 {
+   color: var(--bs-primary);
+   font-weight: 600;
+   border-bottom: 2px solid var(--bs-primary);
+   padding-bottom: 0.5rem;
+   display: inline-block;
+}
+
+.benefits-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 1.5rem;
+   margin-top: 1.5rem;
+}
+
+.benefit-item {
+   display: flex;
+   align-items: flex-start;
+   padding: 1.5rem;
+   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+   border-radius: 10px;
+   border-left: 4px solid var(--bs-primary);
+   transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.benefit-item i {
+   color: var(--bs-primary);
+   font-size: 1.2rem;
+   margin-top: 0.2rem;
+   flex-shrink: 0;
+}
+
+.benefit-item span {
+   font-weight: 500;
+   line-height: 1.4;
+   color: #495057;
+}
+
+/* Responsive adjustments for services */
+@media (max-width: 768px) {
+   .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+   }
+   
+   .benefit-item {
+      padding: 1rem;
+   }
+   
+   .service-benefits-section {
+      padding: 1.5rem;
    }
 }

@@ -71,21 +71,28 @@ export default function TampaVeio() {
 
     return (
         <Container>
-            <h1 className="fw-bold mb-2 mt-5">Tampa para veio</h1>
-            <div className="product-container">
-                <div className='product-img-container'>
-                    <p>Topo de proteção exterior de veio</p>
-                    <ButtonGroup className='mb-4' aria-label="Seleção da dimensão das tampas">
-                        <Button onClick={() => { handleSize('16') }} className={size == '16' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 16mm </Button>
-                        <Button onClick={() => { handleSize('20') }} className={size == '20' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 20mm </Button>
-                    </ButtonGroup>
-                    <div>
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+            <h1 className="fw-bold mb-4 mt-5">Tampa para veio</h1>
+            <div className="product-container-vertical">
+                
+                {/* Description Section */}
+                <div className='product-description-section mb-4'>
+                    <p className="mb-4">Topo de proteção exterior de veio</p>
+                    
+                    {/* Size Selection */}
+                    <div className="mb-4">
+                        <h6 className="mb-3">Selecione a dimensão:</h6>
+                        <ButtonGroup aria-label="Seleção da dimensão das tampas">
+                            <Button onClick={() => { handleSize('16') }} className={size == '16' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 16mm </Button>
+                            <Button onClick={() => { handleSize('20') }} className={size == '20' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 20mm </Button>
+                        </ButtonGroup>
+                    </div>
+                    
+                    <div className="product-actions mb-4">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
+                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
                                 <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
                                 <Dropdown.Item href="#!" onClick={() => downloadFile('PDF')} >Desenho - PDF </Dropdown.Item>
                                 <Dropdown.Item href="#!" onClick={() => downloadFile('DWG')} >2D - DWG </Dropdown.Item>
@@ -96,8 +103,12 @@ export default function TampaVeio() {
                         </Dropdown>
                     </div>
                 </div>
-                <div className="product-text-container">
-                    <img alt='Imagem da perna com uma tampa de veio' className='tampa-veio-img' src='../images/tampa-veio.png'></img>
+
+                {/* Product Image Section */}
+                <div className="product-images-section">
+                    <div className="text-center">
+                        <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
+                    </div>
                 </div>
             </div>
         </Container>

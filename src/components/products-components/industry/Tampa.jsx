@@ -9,20 +9,19 @@ export default function Tampa() {
     };
     return (
         <Container>
-            <div className="product-container product-tampa mt-5">
-                <div className="product-img-container">
-                    <img alt='Imagem da tampa de tubo' className='tampa-img' src='../images/tampa.png'></img>
-                </div>
-                <div className='product-text-container'>
-                    <h1 className="fw-bold mb-2 ">Tampa para tubos</h1>
-                    <p>Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
-                    <div className='text-end'>
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+            <h1 className="fw-bold mb-4 mt-5">Tampa para tubos</h1>
+            <div className="product-container-vertical">
+                
+                {/* Description Section */}
+                <div className='product-description-section mb-4'>
+                    <p className="mb-4">Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
+                    
+                    <div className="product-actions mb-4">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
+                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
                             <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
                                 <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
                                 <Dropdown.Item href="../files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
@@ -32,7 +31,19 @@ export default function Tampa() {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <div className='table-tampa'>
+                </div>
+
+                {/* Product Image Section */}
+                <div className="product-images-section mb-4">
+                    <div className="text-center">
+                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
+                    </div>
+                </div>
+
+                {/* Specifications Table Section */}
+                <div className="product-specs-section">
+                    <h5 className="mb-3">Especificações Técnicas</h5>
+                    <div className='table-responsive'>
                         <Table striped>
                             <thead>
                                 <tr>

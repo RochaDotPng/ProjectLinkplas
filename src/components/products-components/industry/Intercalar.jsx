@@ -9,21 +9,19 @@ export default function Intercalar() {
     };
     return (
         <Container>
-
-            <div className="product-container product-tampa mt-5">
-                <div className="product-img-container">
-                    <img alt='Imagem da intercalar longarina' className='intercalar-img' src='../images/intercalar.png'></img>
-                </div>
-                <div className='product-text-container'>
-                    <h1 className="fw-bold mb-2 ">Intercalar longarina</h1>
-                    <p>Espaçador para longarinas em transportadores.</p>
-                    <div>
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+            <h1 className="fw-bold mb-4 mt-5">Intercalar longarina</h1>
+            <div className="product-container-vertical">
+                
+                {/* Description Section */}
+                <div className='product-description-section mb-4'>
+                    <p className="mb-4">Espaçador para longarinas em transportadores.</p>
+                    
+                    <div className="product-actions mb-4">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary ms-3 text-white" variant="secondary" id="dropdown-basic">
+                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
                             <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
                                 <Dropdown.Item href="../files/Intercalar/7017030013.DWG" download>2D - DWG </Dropdown.Item>
                                 <Dropdown.Item href="../files/Intercalar/7017030013.IGS" download>3D - IGS</Dropdown.Item>
@@ -31,6 +29,13 @@ export default function Intercalar() {
                                 <Dropdown.Item href="../files/Intercalar/7017030013.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                    </div>
+                </div>
+
+                {/* Product Image Section */}
+                <div className="product-images-section">
+                    <div className="text-center">
+                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
                     </div>
                 </div>
             </div>

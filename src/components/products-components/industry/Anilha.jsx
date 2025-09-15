@@ -64,18 +64,29 @@ export default function Anilha() {
 
     return (
         <Container>
-            <h1 className="fw-bold mb-2 mt-5">Anilha Intercalar</h1>
-            <div className="product-container">
-                <div className='product-img-container'>
-                    <p>Anilhas intercalares POM</p>
-                    <div>
+            <h1 className="fw-bold mb-4 mt-5">Anilha Intercalar</h1>
+            <div className="product-container-vertical">
+                
+                {/* Description Section */}
+                <div className='product-description-section mb-4'>
+                    <p className="mb-4">Anilhas intercalares POM</p>
+                    
+                    <div className="product-actions mb-4">
                         <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                     </div>
-                    <img alt='Imagem da anilha intercalar' className='tampa-veio-img' src='../images/anilha_intercalar.png'></img>
-
                 </div>
-                <div className="product-text-container display-flex justify-content-end">
-                    <div className='table-tampa'>
+
+                {/* Product Image Section */}
+                <div className="product-images-section mb-4">
+                    <div className="text-center">
+                        <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
+                    </div>
+                </div>
+
+                {/* Specifications Table Section */}
+                <div className="product-specs-section">
+                    <h5 className="mb-3">Especificações Técnicas</h5>
+                    <div className='table-responsive'>
                         <Table striped>
                             <thead>
                                 <tr>
@@ -92,7 +103,6 @@ export default function Anilha() {
                                             <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
                                                 <span>30014</span>
                                             </Dropdown.Toggle>
-
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
@@ -107,11 +117,10 @@ export default function Anilha() {
                                 </tr>
                                 <tr>
                                     <td className='fw-bold'>
-                                    <Dropdown className=''>
+                                        <Dropdown className=''>
                                             <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
                                                 <span>30015</span>
                                             </Dropdown.Toggle>
-
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
@@ -126,11 +135,10 @@ export default function Anilha() {
                                 </tr>
                                 <tr>
                                     <td className='fw-bold'>
-                                    <Dropdown className=''>
+                                        <Dropdown className=''>
                                             <Dropdown.Toggle className="table-dropdown-button" variant="secondary" id="dropdown-basic">
                                                 <span>30016</span>
                                             </Dropdown.Toggle>
-
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
                                                 <Dropdown.Item href="../files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
@@ -146,7 +154,6 @@ export default function Anilha() {
                             </tbody>
                         </Table>
                     </div>
-
                 </div>
             </div>
         </Container>
