@@ -333,12 +333,18 @@ footer img {
 
 /* -----Products------ */
 
-.products-body-container {
-   height: 360px;
-   position: sticky;
-   top: -150px;
-   z-index: 99999;
-}
+ .products-body-container {
+    height: 360px;
+    margin-bottom: 200px;
+ }
+
+ /* Sticky positioning only for products page */
+ .products-body-container.products-page-sticky {
+    position: sticky;
+    top: -150px;
+    z-index: 99999;
+    margin-bottom: 0;
+ }
 
 .products-body-img {
    position: relative;
@@ -1969,7 +1975,83 @@ input:-webkit-autofill:active {
       padding: 1rem;
    }
    
-   .service-benefits-section {
+    .service-benefits-section {
+       padding: 1.5rem;
+    }
+ }
+
+/* Products Farmacy Layout */
+.products-farmacy-container {
+   padding: 0;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+/* Products Take-Away Layout */
+.products-takeaway-container {
+   padding: 0;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+/* Farmacy-specific styles */
+.farmacy-feature-box {
+   background: linear-gradient(135deg, var(--bs-primary) 0%, #0056b3 100%);
+   color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   text-align: center;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.farmacy-feature-box h5 {
+   font-weight: 600;
+   margin-bottom: 1rem;
+}
+
+.farmacy-image-container {
+   position: relative;
+   text-align: center;
+}
+
+.size-indicator {
+   position: absolute;
+   top: 10px;
+   left: 50%;
+   transform: translateX(-50%);
+   background: rgba(0, 0, 0, 0.8);
+   color: white;
+   padding: 0.5rem 1rem;
+   border-radius: 20px;
+   font-size: 0.9rem;
+   font-weight: 500;
+   z-index: 2;
+}
+
+/* Take-Away-specific styles */
+.takeaway-feature-box {
+   background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-secondary-dark) 100%);
+   color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   text-align: center;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.takeaway-feature-box h5 {
+   font-weight: 600;
+   margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for farmacy and take-away */
+@media (max-width: 768px) {
+   .farmacy-feature-box,
+   .takeaway-feature-box {
       padding: 1.5rem;
+   }
+   
+   .size-indicator {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
    }
 }

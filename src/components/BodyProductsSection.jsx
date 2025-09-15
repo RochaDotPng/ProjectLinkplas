@@ -19,7 +19,7 @@ export default function BodyProductSection({ className, onProductChange, initial
 
     return (
         <>
-            <div className={`products-body-container ${className}`}>
+            <div className={`products-body-container ${!isHomePage ? 'products-page-sticky' : ''} ${className}`}>
                 <div className="products-body-img">
                     <Container>
                         <div className="products-text">
