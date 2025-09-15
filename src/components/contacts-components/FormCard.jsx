@@ -4,14 +4,15 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import emailjs from 'emailjs-com';
 import Alert from 'react-bootstrap/Alert';
-import ReCAPTCHA from "react-google-recaptcha";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 
 export default function FormCard() {
+    const { executeRecaptcha } = useGoogleReCaptcha();
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const [alertVariant, setAlertVariant] = useState('success');
-    const [recaptchaValue, setRecaptchaValue] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const initialFormData = {
         nome: '',
         empresa: '',
@@ -27,10 +28,6 @@ export default function FormCard() {
         mensagem: '',
     });
 
-    const handleRecaptchaChange = (value) => {
-        // Update state with the reCAPTCHA value
-        setRecaptchaValue(value);
-    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,35 +38,64 @@ export default function FormCard() {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        /*if (!recaptchaValue) {
-            setAlertMessage('Por favor, preencha o reCAPTCHA.');
+        
+        if (!executeRecaptcha) {
+            setAlertMessage('reCAPTCHA ainda não carregou. Tente novamente.');
             setAlertVariant('danger');
             setShowAlert(true);
             return;
-          }*/
+        }
 
-        emailjs.sendForm('service_gtahs5a', 'template_q0b0cal', e.target, 'YEOLiURw_i3ugczT_')
+        setIsSubmitting(true);
+
+        try {
+            // Execute reCAPTCHA v3
+            const token = await executeRecaptcha('contact_form');
+            
+            // Add token to form data
+            const formElement = e.target;
+            const tokenInput = document.createElement('input');
+            tokenInput.type = 'hidden';
+            tokenInput.name = 'recaptcha_token';
+            tokenInput.value = token;
+            formElement.appendChild(tokenInput);
+
+            emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+                formElement, 
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
             .then((result) => {
-                setFormData(initialFormData);
-                setAlertMessage('Mensagem foi enviada com sucesso!');
+                console.log(result.text);
+                setAlertMessage('Mensagem enviada com sucesso!');
                 setAlertVariant('success');
                 setShowAlert(true);
-                // Optionally reset form and hide alert after a few seconds
-                setTimeout(() => setShowAlert(false), 70000); // Hide after 5 seconds
-                console.log('Email successfully sent!', result.text);
-                // Handle success (e.g., showing a success message)
+                setFormData(initialFormData);
             }, (error) => {
-                setAlertMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
+                console.log(error.text);
+                setAlertMessage('Erro ao enviar mensagem. Tente novamente.');
                 setAlertVariant('danger');
                 setShowAlert(true);
-                console.log('Failed to send the email.', error.text);
-                // Handle errors (e.g., showing an error message)
+            })
+            .finally(() => {
+                // Remove the token input
+                const tokenInput = formElement.querySelector('input[name="recaptcha_token"]');
+                if (tokenInput) {
+                    tokenInput.remove();
+                }
+                setIsSubmitting(false);
             });
-        console.log('Dados do formulário:', formData);
 
+        } catch (error) {
+            console.error('reCAPTCHA error:', error);
+            setAlertMessage('Erro de segurança. Tente novamente.');
+            setAlertVariant('danger');
+            setShowAlert(true);
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -146,11 +172,14 @@ export default function FormCard() {
                         placeholder="Leave a comment here"
                     />
                 </FloatingLabel>
-                {/*<ReCAPTCHA
-                    sitekey="6LfZgpUpAAAAAMjCEnFH7caeZLvDB0EMsvJu-ANX"
-                    onChange={handleRecaptchaChange}
-        />*/}
-                <Button className="px-4" variant="primary" type="submit" >Enviar</Button>
+                <Button 
+                    className="px-4" 
+                    variant="primary" 
+                    type="submit" 
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? 'Enviando...' : 'Enviar'}
+                </Button>
             </Form>
         </>
     )
