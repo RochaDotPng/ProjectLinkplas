@@ -45,7 +45,7 @@ html{
 }
 
 
-
+/*
 .circle-background-left::before{
    content: '';
     position: absolute;
@@ -85,6 +85,7 @@ html{
     filter: blur(40px);
     z-index: 0;
 }
+*/
 
 .display-flex{
    display: flex;

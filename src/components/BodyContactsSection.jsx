@@ -7,8 +7,8 @@ export default function BodyContactsSection() {
 
     return (
         <>
-            <div className="green-card-overlay">
-                <Container className='p-0'>
+            <div className="green-card-overlay pt-2">
+                <Container className='p-0 pt-5'>
                     <GreenCard />
                 </Container>
             </div>
