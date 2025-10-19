@@ -51,7 +51,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </TransitionGroup>
-      <Button id='toTop' onClick={topFunction} className='scroll-up-button d-none'><i className="bi bi-chevron-up"></i></Button>
+      <button id='toTop' onClick={topFunction} className='btn scroll-up-button btn-secondary d-none'><i className="bi bi-chevron-up"></i></button>
     </>
 
   )

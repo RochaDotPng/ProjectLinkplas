@@ -9,7 +9,7 @@ export default function UltraSons() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-2">Soldadura por Ultra Sons</h1>
+            <h1 className="fw-bold mb-4 mt-2 text-white">Soldadura por Ultra Sons</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}

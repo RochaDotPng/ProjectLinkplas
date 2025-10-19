@@ -1,10 +1,12 @@
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export default function BodyPolicySection() {
 
     const navigate = useNavigate();
+    const [isPolicyVisible, setIsPolicyVisible] = useState(false);
+    const policyRef = useRef(null);
 
     const handlePolicyButtonClick = (e) => {
         e.preventDefault();
@@ -32,9 +34,36 @@ export default function BodyPolicySection() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.target === policyRef.current && entry.isIntersecting) {
+                    setIsPolicyVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        if (policyRef.current) {
+            observer.observe(policyRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
     return (
-        <><Container>
-            <div className="policy-container overflow-hidden">
+        <><Container className='circle-left'>
+            <div 
+                ref={policyRef}
+                className={`policy-container overflow-hidden ${isPolicyVisible ? 'animate-in' : 'animate-out'}`}
+            >
                 <div className="policy-img-container">
                     <img alt="Foto da CEO Paula Rocha" src="../images/profile_ceo.jpg" ></img>
                     {orientation === 'portrait' && (<div className="policy-quote-container">
@@ -45,9 +74,14 @@ export default function BodyPolicySection() {
                     </div>)}
                 </div>
                 <div className="policy-text-container">
-                    <h1 className="fw-bold mb-4 mt-5">Estratégia</h1>
+                    <h1 className="product-title mt-5">Estratégia</h1>
                     <p>Através de uma estratégia de Melhoria Contínua, a Linkplas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de qualidade, reduzir e minimizar perigos e riscos da sua atividade tomando todas as medidas necessárias.</p>
-                    <a onClick={handlePolicyButtonClick} className='pointer text-decoration-none d-flex align-items-center text-primary fw-semibold'>Saber mais<i className="bi text-primary bi-arrow-right ms-2"></i></a>
+                    <div>
+                        <Button onClick={handlePolicyButtonClick}
+                        variant="outline-success"
+                        className="keepylink-cta">Saber mais →
+                        </Button>
+                    </div>
                     {orientation === 'landscape' && (<div className="policy-quote-container">
                         <p>Na Linkplas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
                         <span className="fw-bold">Paula Rocha</span>

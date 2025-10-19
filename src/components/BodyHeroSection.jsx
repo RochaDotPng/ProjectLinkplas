@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 export default function BodyHeroSection() {
     return (
         <>
-        <Carousel interval="4000" className='carousel'>
+        <Carousel interval="4000" className='carousel z-1'>
             <Carousel.Item>
                 <img alt='Imagem do parque de Vale de Cambra.' className='carousel-img' src='./images/home-hero-landscape.jpg'></img>
                 <Carousel.Caption>

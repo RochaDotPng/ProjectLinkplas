@@ -1,13 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import BodyHeroSection from "../components/BodyHeroSection";
 import BodyAboutSection from "../components/BodyAboutSection";
-import BodyProductSection from "../components/BodyProductsSection";
 import BodyPolicySection from "../components/BodyPolicySection";
 import BodySustainabilitySection from "../components/BodySustainabilitySection";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BodyProductShowcaseSection from "../components/BodyProductShowcaseSection";
 import { Helmet } from 'react-helmet-async';
 
 export default function Home() {
+    const navigate = useNavigate();
+
+    const handleProductChange = (product) => {
+        navigate(`/Products/${product}`);
+    };
+
     return (
         <div>
             <Helmet>
@@ -22,7 +29,7 @@ export default function Home() {
             <Header/>
             <BodyHeroSection />
             {/*<BodySustainabilitySection/>*/}
-            <BodyProductSection isHomePage={true} initialProduct={null}/>
+            <BodyProductShowcaseSection onProductChange={handleProductChange}/>
             <BodyAboutSection/>
             <BodyPolicySection/>
             <Footer />

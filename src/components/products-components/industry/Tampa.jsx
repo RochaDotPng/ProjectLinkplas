@@ -9,7 +9,7 @@ export default function Tampa() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">Tampa para tubos</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">Tampa para tubos</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}
@@ -41,9 +41,9 @@ export default function Tampa() {
                 </div>
 
                 {/* Specifications Table Section */}
-                <div className="product-specs-section">
-                    <h5 className="mb-3">Especificações Técnicas</h5>
-                    <div className='table-responsive'>
+                <div>
+                    <h5 className="mb-3 text-white">Especificações Técnicas</h5>
+                    <div className='table-responsive  product-specs-section'>
                         <Table striped>
                             <thead>
                                 <tr>

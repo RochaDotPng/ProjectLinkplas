@@ -1,22 +1,52 @@
 import { Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react';
 import CardSection from './CardSection';
 
 export default function BodyAboutSection() {
     const navigate = useNavigate();
+    const [isAboutVisible, setIsAboutVisible] = useState(false);
+    const aboutRef = useRef(null);
 
     const handleNavigate = (e) => {
         e.preventDefault();
         navigate('/About');
     };
+
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.target === aboutRef.current && entry.isIntersecting) {
+                    setIsAboutVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        if (aboutRef.current) {
+            observer.observe(aboutRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
     
     return (
         <>  
-            <Container>
+            <Container className='circle-background-right'>
             <CardSection jsonPath="./LinkplasData/cards.json"></CardSection>
-                <div className="about-container">
+                <div 
+                    ref={aboutRef}
+                    className={`about-container ${isAboutVisible ? 'animate-in' : 'animate-out'}`}
+                >
                     <div className="about-text-container">
-                        <h1 className="fw-bold mb-4">Sobre</h1>
+                        <h1 className="product-title">Sobre nós</h1>
                         <span>Somos especializados na transformação de matéria plástica, utilizando o nosso processo de Injeção em que contamos com uma equipa dinâmica e profissional dedicada a superar expectativas e atender às necessidades dos nossos clientes.</span>
                         <br />
                         <br />

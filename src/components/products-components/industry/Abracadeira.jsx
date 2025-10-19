@@ -8,7 +8,7 @@ export default function Abracadeira(){
     };
     return(
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">Abraçadeira</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">Abraçadeira</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}
@@ -32,13 +32,6 @@ export default function Abracadeira(){
                     </div>
                 </div>
 
-                {/* Features Section */}
-                <div className='product-features-section mb-4'>
-                    <div className='abracadeira-feature-box'>
-                        <h5 className='mb-3'>Aplicação Fácil</h5>
-                        <p>Permite uma fixação instantânea em qualquer posição</p>
-                    </div>
-                </div>
 
                 {/* Images Section */}
                 <div className="product-images-section">

@@ -9,39 +9,50 @@ export default function TupperLink() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">KeepyLink</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">KeepyLink</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
-                    <p className="mb-3"><strong>KeepyLink: tupperwares take-away revolucionários</strong> - a solução de armazenamento versátil e sustentável para restaurantes, cafés e delivery. Estes recipientes reutilizáveis são empilháveis para otimizar o espaço, vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza.</p>
-                    <p className="mb-3">Substitua os descartáveis! Os nossos <strong>tuppers ecológicos</strong> são a escolha consciente para o seu negócio - funcionalidade, conveniência e eco-amigável em cada recipiente.</p>
-                    <p className="mb-4">Desenvolvidos especificamente para serviços de <strong>takeaway e delivery</strong>, os KeepyLink oferecem praticidade sem igual para restaurantes modernos que querem reduzir o impacto ambiental.</p>
+                    <p className="mb-3"><strong>KeepyLink:</strong> a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.</p>
+                    <p className="mb-4">Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os KeepyLink oferecem praticidade sem igual.</p>
                     
                     <div className="product-actions mb-4">
                         <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                     </div>
                 </div>
 
-                {/* Features Section */}
-                <div className='product-features-section mb-4'>
-                    <div className='takeaway-feature-box'>
-                        <h5 className='mb-3'>Design Empilhável Para Takeaway</h5>
-                        <p>Tupperwares especialmente projetados para restaurantes: otimização máxima de espaço, transporte seguro para delivery e armazenamento eficiente na cozinha profissional.</p>
-                    </div>
-                </div>
 
-                {/* Product Image Section */}
+                {/* Product Images Section */}
                 <div className="product-images-section mb-4">
-                    <div className="text-center">
-                        <img alt='Tupperwares take-away KeepyLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                    <div className="row">
+                        <div className="col-md-6 mb-3">
+                            <div className="farmacy-image-container">
+                                <div className='size-indicator'>
+                                    <span>Transparente</span>
+                                </div>
+                                <div className="text-center">
+                                    <img alt='Tupperwares take-away KeepyLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <div className="farmacy-image-container">
+                                <div className='size-indicator'>
+                                    <span>Com cor</span>
+                                </div>
+                                <div className="text-center">
+                                    <img alt='KeepyLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* Specifications Table Section */}
-                <div className="product-specs-section">
-                    <h5 className="mb-3">Especificações Técnicas</h5>
-                    <div className='table-responsive'>
+                <div>
+                    <h5 className="mb-3 text-white">Especificações Técnicas</h5>
+                    <div className='table-responsive product-specs-section'>
                         <Table striped>
                             <thead>
                                 <tr>

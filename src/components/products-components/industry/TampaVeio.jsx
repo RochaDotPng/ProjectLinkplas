@@ -71,7 +71,7 @@ export default function TampaVeio() {
 
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">Tampa para veio</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">Tampa para veio</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}
@@ -104,10 +104,19 @@ export default function TampaVeio() {
                     </div>
                 </div>
 
-                {/* Product Image Section */}
+                {/* Product Images Section */}
                 <div className="product-images-section">
-                    <div className="text-center">
-                        <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
+                    <div className="row">
+                        <div className="col-md-6 mb-3">
+                            <div className="text-center">
+                                <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <div className="text-center">
+                                <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='../images/tampa-veio-uso.png'></img>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

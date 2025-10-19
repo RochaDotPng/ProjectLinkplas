@@ -41,15 +41,14 @@ export default function Header({ className }) {
   }, []);
 
   return (
-    <Navbar expand="lg" className={`bg-body-tertiary header ${className}`}>
+    <Navbar expand="lg" className={`bg-body-tertiary px-4 container header  ${className}`}>
       <Container>
         <Navbar.Brand>
           <Nav.Link as={Link} to="/">
             <img
               alt="Linkplas"
-              src="../images/logo.png"
-              width="139"
-              height="73"
+              src="../images/logo-text.png"
+              height="36"
               className="d-inline-block align-top"
             />
           </Nav.Link>
@@ -59,14 +58,7 @@ export default function Header({ className }) {
             <Nav className="gap-4 me-auto">
               <Nav.Link
                 as={Link}
-                to="/"
-                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-              >
-                Início
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/Products/Industria"
+                to="/Products/Farmaceutica"
                 className={`nav-link ${location.pathname.includes('/Products') ? 'active' : ''}`}
               >
                 Produtos

@@ -9,7 +9,7 @@ export default function Intercalar() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">Intercalar longarina</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">Intercalar longarina</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}

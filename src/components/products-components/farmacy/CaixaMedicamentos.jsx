@@ -9,7 +9,7 @@ export default function CaixaMedicamentos() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5">Caixa de medicamentos</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white">KeepyFarma</h1>
             <div className="product-container-vertical">
                 
                 {/* Description Section */}
@@ -17,17 +17,11 @@ export default function CaixaMedicamentos() {
                     <p className='mb-4'>Caixa de transporte de medicamentos fabricada em plástico de alta resistência, desenhada para a segurança e conservação de produtos farmacêuticos. Com dimensões otimizadas para facilidade de manuseamento e armazenamento, esta caixa possui um sistema de fecho seguro e é resistente a variações de temperatura e humidade. Ideal para uso em farmácias, hospitais e clínicas, garante a integridade e a qualidade dos medicamentos durante o transporte.</p>
                     
                     <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+                        <Button onClick={() => handleContactsClick('/sontacts')} className='p-3'>Pedir cotação</Button>
                     </div>
                 </div>
 
                 {/* Features Section */}
-                <div className='product-features-section mb-4'>
-                    <div className='farmacy-feature-box'>
-                        <h5 className='mb-3'>Aplicação fácil</h5>
-                        <p>Permite uma fixação instantânea em qualquer posição</p>
-                    </div>
-                </div>
 
                 {/* Images Section */}
                 <div className="product-images-section">

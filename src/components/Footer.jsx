@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="footer-up">
                 <Container className='footer-up-container'>
                     <div className='socials d-flex align-items-center'>
-                        <img alt="Logo linkplas" src="../images/logo-light.png"></img>
+                        <img alt="Logo linkplas" src="../images/logo-text-white.png"></img>
                     </div>
                     <div className="icon-big-container">
                         <div className="icon-container">
