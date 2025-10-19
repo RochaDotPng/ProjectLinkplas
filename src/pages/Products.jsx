@@ -17,8 +17,8 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Products() {
   let { parameter } = useParams();
-  const [selectedProduct, setSelectedProduct] = useState('KeepyFarma');
-  const [activeProduct, setActiveProduct] = useState('KeepyFarma');
+  const [selectedProduct, setSelectedProduct] = useState('Farmaceutica');
+  const [activeProduct, setActiveProduct] = useState('Farmaceutica');
   const [autoOpenSections, setAutoOpenSections] = useState({
     'Industria': false,
     'Servicos': false,
@@ -82,11 +82,52 @@ export default function Products() {
     }
   }
 
+  // Function to get products for each category
+  const getProductsForCategory = (category) => {
+    switch(category) {
+      case 'Farmaceutica':
+        return [
+          { component: <CaixaMedicamentos />, ref: keepyFarmaRef, id: 'keepyfarma' }
+        ];
+      case 'Take-Away':
+        return [
+          { component: <TupperLink />, ref: keepyLinkRef, id: 'keepylink' }
+        ];
+      case 'Industria':
+        return [
+          { component: <Tampa />, ref: tampaRef, id: 'tampa' },
+          { component: <Intercalar />, ref: intercalarRef, id: 'intercalar' },
+          { component: <TampaVeio />, ref: tampaVeioRef, id: 'tampaveio' },
+          { component: <Anilha />, ref: anilhaRef, id: 'anilha' },
+          { component: <Abracadeira />, ref: abracadeiraRef, id: 'abracadeira' }
+        ];
+      case 'Servicos':
+        return [
+          { component: <UltraSons />, ref: ultraSonsRef, id: 'ultrasons' }
+        ];
+      default:
+        return [];
+    }
+  };
+
   const handleProductChange = (product) => {
     setSelectedProduct(product);
     ChangeUrl(product);
     
-    // Scroll to the product section
+    // On mobile, scroll to top when switching categories
+    if (window.innerWidth <= 991) { // lg breakpoint
+      // Force scroll to top with multiple methods to ensure it works
+      window.scrollTo(0, 0); // Immediate scroll
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 50);
+      return;
+    }
+    
+    // Desktop: Scroll to the product section
     const productRefs = {
       'KeepyFarma': keepyFarmaRef,
       'KeepyLink': keepyLinkRef,
@@ -158,7 +199,7 @@ export default function Products() {
       <Header />
       
       <Container fluid className="products-main-container">
-        <Container>
+        <Container className="p-0">
         <Row>
           {/* Desktop Sidebar */}
           <Col lg={3} className="d-none d-lg-block">
@@ -172,40 +213,52 @@ export default function Products() {
           
           {/* Main Content */}
           <Col lg={9} className="products-content-area">
-            {/* KeepyFarma - First Product */}
-            <div ref={keepyFarmaRef} id="keepyfarma">
-              <CaixaMedicamentos />
-            </div>
-            
-            {/* KeepyLink - Second Product */}
-            <div ref={keepyLinkRef} id="keepylink">
-              <TupperLink />
-            </div>
-            
-            {/* Industry Products */}            
-            <div ref={tampaRef} id="tampa">
-              <Tampa />
-            </div>
-            
-            <div ref={intercalarRef} id="intercalar">
-              <Intercalar />
-            </div>
-            
-            <div ref={tampaVeioRef} id="tampaveio">
-              <TampaVeio />
-            </div>
-            
-            <div ref={anilhaRef} id="anilha">
-              <Anilha />
+            {/* Desktop: Show all products */}
+            <div className="d-none d-lg-block">
+              {/* KeepyFarma - First Product */}
+              <div ref={keepyFarmaRef} id="keepyfarma">
+                <CaixaMedicamentos />
+              </div>
+              
+              {/* KeepyLink - Second Product */}
+              <div ref={keepyLinkRef} id="keepylink">
+                <TupperLink />
+              </div>
+              
+              {/* Industry Products */}            
+              <div ref={tampaRef} id="tampa">
+                <Tampa />
+              </div>
+              
+              <div ref={intercalarRef} id="intercalar">
+                <Intercalar />
+              </div>
+              
+              <div ref={tampaVeioRef} id="tampaveio">
+                <TampaVeio />
+              </div>
+              
+              <div ref={anilhaRef} id="anilha">
+                <Anilha />
+              </div>
+
+              <div ref={abracadeiraRef} id="abracadeira">
+                <Abracadeira />
+              </div>
+              
+              {/* Services */}
+              <div ref={ultraSonsRef} id="ultrasons">
+                <UltraSons />
+              </div>
             </div>
 
-            <div ref={abracadeiraRef} id="abracadeira">
-              <Abracadeira />
-            </div>
-            
-            {/* Services */}
-            <div ref={ultraSonsRef} id="ultrasons">
-              <UltraSons />
+            {/* Mobile: Show only selected category products */}
+            <div className="d-block d-lg-none">
+              {getProductsForCategory(selectedProduct).map((product, index) => (
+                <div key={product.id} ref={product.ref} id={product.id}>
+                  {product.component}
+                </div>
+              ))}
             </div>
           </Col>
         </Row>

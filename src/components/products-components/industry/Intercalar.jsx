@@ -12,6 +12,13 @@ export default function Intercalar() {
             <h1 className="fw-bold mb-4 mt-5 text-white">Intercalar longarina</h1>
             <div className="product-container-vertical">
                 
+                {/* Mobile: Images first */}
+                <div className="product-images-section mb-4 d-block d-md-none">
+                    <div className="text-center">
+                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
+                    </div>
+                </div>
+
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
                     <p className="mb-4">Espaçador para longarinas em transportadores.</p>
@@ -32,8 +39,8 @@ export default function Intercalar() {
                     </div>
                 </div>
 
-                {/* Product Image Section */}
-                <div className="product-images-section">
+                {/* Desktop: Images after description */}
+                <div className="product-images-section d-none d-md-block">
                     <div className="text-center">
                         <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
                     </div>

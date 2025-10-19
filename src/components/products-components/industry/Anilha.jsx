@@ -67,6 +67,22 @@ export default function Anilha() {
             <h1 className="fw-bold mb-4 mt-5 text-white">Anilha Intercalar</h1>
             <div className="product-container-vertical">
                 
+                {/* Mobile: Images first */}
+                <div className="product-images-section mb-4 d-block d-md-none">
+                    <div className="row">
+                        <div className="col-md-6 mb-3">
+                            <div className="text-center">
+                                <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <div className="text-center">
+                                <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='../images/anilha_intercalar-uso.png'></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
                     <p className="mb-4">Anilhas intercalares POM</p>
@@ -76,8 +92,8 @@ export default function Anilha() {
                     </div>
                 </div>
 
-                {/* Product Image Section */}
-                <div className="product-images-section mb-4">
+                {/* Desktop: Images after description */}
+                <div className="product-images-section mb-4 d-none d-md-block">
                     <div className="row">
                         <div className="col-md-6 mb-3">
                             <div className="text-center">
@@ -95,7 +111,9 @@ export default function Anilha() {
                 {/* Specifications Table Section */}
                 <div>
                     <h5 className="mb-3 text-white">Especificações Técnicas</h5>
-                    <div className='table-responsive product-specs-section'>
+                    
+                    {/* Desktop Table */}
+                    <div className='table-responsive product-specs-section d-none d-md-block'>
                         <Table striped>
                             <thead>
                                 <tr>
@@ -156,6 +174,78 @@ export default function Anilha() {
                                     <td>60 mm</td>
                                     <td>21 mm</td>
                                     <td>7 mm</td>
+                                    <td className='fw-bold'>
+                                        <Dropdown className=''>
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                    
+                    {/* Mobile Table */}
+                    <div className='table-responsive product-specs-section d-block d-md-none'>
+                        <Table striped>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Dimensões</th>
+                                    <th>Desenho</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className='fw-bold'>
+                                        <span>30014</span>
+                                    </td>
+                                    <td>40×9×6 mm</td>
+                                    <td className='fw-bold'>
+                                        <Dropdown className=''>
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>
+                                        <span>30015</span>
+                                    </td>
+                                    <td>60×9×7 mm</td>
+                                    <td className='fw-bold'>
+                                        <Dropdown className=''>
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="../files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>
+                                        <span>30016</span>
+                                    </td>
+                                    <td>60×21×7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
                                             <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">

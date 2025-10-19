@@ -11,6 +11,21 @@ export default function Abracadeira(){
             <h1 className="fw-bold mb-4 mt-5 text-white">Abraçadeira</h1>
             <div className="product-container-vertical">
                 
+                {/* Mobile: Images first */}
+                <div className="product-images-section mb-4 d-block d-md-none">
+                    <div className="row">
+                        <div className="col-md-4 mb-3">
+                            <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='../images/abracadeira.png'></img>
+                        </div>
+                        <div className="col-md-4 mb-3">
+                            <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='product-img img-fluid' src='../images/perna1.png'></img>
+                        </div>
+                        <div className="col-md-4 mb-3">
+                            <img alt='Animação da montagem da abraçadeira na perna' className='product-animation img-fluid' src='../images/perna_animation.gif'></img>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
                     <p className="mb-4">A inovadora Abraçadeira para Tubo da Linkplas: a solução perfeita para fixação eficiente e de confiança. Com um design inteligente e encaixe fácil, nossa abraçadeira de plástico proporciona uma instalação sem complicações, enquanto a sua resistência garante segurança duradoura. Moldada com precisão, a nossa abraçadeira é a escolha ideal para garantir a estabilidade e integridade dos seus projetos.</p>
@@ -32,9 +47,8 @@ export default function Abracadeira(){
                     </div>
                 </div>
 
-
-                {/* Images Section */}
-                <div className="product-images-section">
+                {/* Desktop: Images after description */}
+                <div className="product-images-section d-none d-md-block">
                     <div className="row">
                         <div className="col-md-4 mb-3">
                             <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='../images/abracadeira.png'></img>

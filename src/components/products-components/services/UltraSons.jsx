@@ -12,6 +12,13 @@ export default function UltraSons() {
             <h1 className="fw-bold mb-4 mt-2 text-white">Soldadura por Ultra Sons</h1>
             <div className="product-container-vertical">
                 
+                {/* Mobile: Images first */}
+                <div className="product-images-section mb-4 d-block d-md-none">
+                    <div className="text-center">
+                        <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
+                    </div>
+                </div>
+
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
                     <span>A Linkplas tem a capacidade interna para realizar soldadura de peças plásticas por ultra sons.</span>
@@ -30,8 +37,8 @@ export default function UltraSons() {
                     </div>
                 </div>
 
-                {/* Service Image Section */}
-                <div className="product-images-section mb-4">
+                {/* Desktop: Images after description */}
+                <div className="product-images-section mb-4 d-none d-md-block">
                     <div className="text-center">
                         <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
                     </div>

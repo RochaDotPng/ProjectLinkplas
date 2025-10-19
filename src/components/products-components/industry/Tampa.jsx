@@ -12,6 +12,13 @@ export default function Tampa() {
             <h1 className="fw-bold mb-4 mt-5 text-white">Tampa para tubos</h1>
             <div className="product-container-vertical">
                 
+                {/* Mobile: Images first */}
+                <div className="product-images-section mb-4 d-block d-md-none">
+                    <div className="text-center">
+                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
+                    </div>
+                </div>
+
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
                     <p className="mb-4">Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
@@ -33,8 +40,8 @@ export default function Tampa() {
                     </div>
                 </div>
 
-                {/* Product Image Section */}
-                <div className="product-images-section mb-4">
+                {/* Desktop: Images after description */}
+                <div className="product-images-section mb-4 d-none d-md-block">
                     <div className="text-center">
                         <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
                     </div>
@@ -43,7 +50,9 @@ export default function Tampa() {
                 {/* Specifications Table Section */}
                 <div>
                     <h5 className="mb-3 text-white">Especificações Técnicas</h5>
-                    <div className='table-responsive  product-specs-section'>
+                    
+                    {/* Desktop Table */}
+                    <div className='table-responsive product-specs-section d-none d-md-block'>
                         <Table striped>
                             <thead>
                                 <tr>
@@ -95,6 +104,48 @@ export default function Tampa() {
                                     <td>63</td>
                                     <td>20</td>
                                     <td>4,5</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                    
+                    {/* Mobile Table */}
+                    <div className='table-responsive product-specs-section d-block d-md-none'>
+                        <Table striped>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Dimensões</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className='fw-bold'>30001</td>
+                                    <td>Ø12×10×2,5 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30002</td>
+                                    <td>Ø16×12×3 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30003</td>
+                                    <td>Ø38×16×3,5 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30004</td>
+                                    <td>Ø42×16×3,5 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30005</td>
+                                    <td>Ø48×18,5×4 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30006</td>
+                                    <td>Ø51×18,5×4 mm</td>
+                                </tr>
+                                <tr>
+                                    <td className='fw-bold'>30007</td>
+                                    <td>Ø63×20×4,5 mm</td>
                                 </tr>
                             </tbody>
                         </Table>

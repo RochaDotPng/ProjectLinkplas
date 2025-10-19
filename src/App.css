@@ -1545,7 +1545,7 @@ input:-webkit-autofill:active {
    }
 
    footer img {
-      width: 106px;
+      width: 90px;
       margin-right: 20px;
   }
 
@@ -1640,6 +1640,7 @@ input:-webkit-autofill:active {
    position: absolute;
    top: 0;
    left: 0;
+   width: 100%;
    right: -50vw;
    height: 100%;
    background: linear-gradient(238deg, #2D6576 -14.12%, #7C9299 93.45%);
@@ -1808,7 +1809,19 @@ input:-webkit-autofill:active {
    .products-content-area {
       padding-left: 1rem;
       padding-right: 1rem;
-      margin-top: 1rem;
+   }
+
+   .products-content-area::before {
+      right: 0;
+      width: 98%;
+   }
+
+   .products-content-area > div:nth-child(even)::before {
+   display : none !important;
+   }
+
+   .service-img {
+      width: 100%;
    }
 }
 
@@ -1932,6 +1945,10 @@ input:-webkit-autofill:active {
    
    .product-section {
       scroll-margin-top: 80px;
+   }
+
+   .service-img {
+      width: 100% !important;
    }
 }
 
@@ -2075,6 +2092,36 @@ input:-webkit-autofill:active {
 /* Infinite Scroll Animation - Disabled CSS animation to use JavaScript only */
 .infinite-scroll-container {
    /* CSS animation disabled - using JavaScript animation instead */
+}
+
+/* Alternating background for product sections using ::before pseudo-element */
+.products-content-area > div {
+   position: relative;
+}
+
+.products-content-area > div:nth-child(even)::before {
+   content: "";
+   position: absolute;
+   top: -20px;
+   height: 102%;
+   left: -32px;
+   right: -50vw;
+   bottom: 0;
+   background: #ffffff29;
+   z-index: -1;
+}
+
+/* Hide scroll up button on mobile products page */
+@media (max-width: 768px) {
+   .products-page #toTop {
+      display: none !important;
+   }
+   
+   /* Mobile layout adjustments */
+   .product-container-vertical {
+      display: flex;
+      flex-direction: column;
+   }
 }
 
 /* Products Services Layout */
@@ -2251,7 +2298,7 @@ input:-webkit-autofill:active {
    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
    z-index: 1000;
    display: none;
-   padding: 8px 0 20px 0;
+   padding: 0px 0 12px 0;
    will-change: transform;
 }
 
@@ -2326,7 +2373,7 @@ input:-webkit-autofill:active {
    white-space: nowrap;
    color: var(--bs-secondary);
    position: relative;
-   top: -1rem;
+   top: -1.4rem;
 }
 
 /* Product Showcase Section h1 styling */
@@ -2636,11 +2683,10 @@ input:-webkit-autofill:active {
    justify-content: center;
    cursor: pointer;
    transition: all 0.3s ease;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
    margin: 0 8px;
    flex-shrink: 0;
    position: relative;
-   top: -2rem;
+   top: -1.7rem;
 }
 
 .mobile-quote-btn:hover {
@@ -2663,7 +2709,7 @@ input:-webkit-autofill:active {
    /* Add bottom padding to body to prevent content from being hidden behind the bar */
    body {
       padding-bottom: 100px;
-      padding-top: 80px;
+      padding-top: 20px;
    }
    
    /* Add padding-bottom to footer on products page to account for mobile bottom bar */
