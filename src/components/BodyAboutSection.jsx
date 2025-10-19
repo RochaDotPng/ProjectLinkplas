@@ -39,8 +39,9 @@ export default function BodyAboutSection() {
     
     return (
         <>  
-            <Container className='circle-background-right'>
+            
             <CardSection jsonPath="./LinkplasData/cards.json"></CardSection>
+                <Container className='circle-background-right'>
                 <div 
                     ref={aboutRef}
                     className={`about-container ${isAboutVisible ? 'animate-in' : 'animate-out'}`}

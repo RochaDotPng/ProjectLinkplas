@@ -949,7 +949,7 @@ footer img {
 
 .form-contacts {
    width: 500px;
-   border-radius: 22px;
+   border-radius: 4px;
    background-color: rgba(255, 255, 255, 1);
    display: flex;
    flex-direction: column;
@@ -978,7 +978,7 @@ footer img {
    flex-direction: column;
    width: 280px;
    height: 410px;
-   border-radius: 22px;
+   border-radius: 4px;
    background-color: var(--bs-white);
 }
 
@@ -2070,6 +2070,11 @@ input:-webkit-autofill:active {
    .product-specs-section {
       padding: 1.5rem;
    }
+}
+
+/* Infinite Scroll Animation - Disabled CSS animation to use JavaScript only */
+.infinite-scroll-container {
+   /* CSS animation disabled - using JavaScript animation instead */
 }
 
 /* Products Services Layout */
