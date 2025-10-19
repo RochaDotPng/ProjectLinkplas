@@ -513,7 +513,7 @@ footer img {
    align-items: stretch;
    opacity: 0;
    transform: translateY(50px);
-   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .policy-container.animate-in {
@@ -523,11 +523,11 @@ footer img {
 
 /* Staggered animation for policy content */
 .policy-container.animate-in .policy-img-container {
-   animation: slideInFromLeft 0.8s ease-out 0.2s both;
+   animation: slideInFromLeft 0.5s ease-out 0.1s both;
 }
 
 .policy-container.animate-in .policy-text-container {
-   animation: slideInFromRight 0.8s ease-out 0.4s both;
+   animation: slideInFromRight 0.5s ease-out 0.2s both;
 }
 
 .policy-img-container {
@@ -623,7 +623,7 @@ footer img {
    align-items: stretch;
    opacity: 0;
    transform: translateY(50px);
-   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .about-container.animate-in {
@@ -633,11 +633,11 @@ footer img {
 
 /* Staggered animation for about content */
 .about-container.animate-in .about-text-container {
-   animation: slideInFromLeft 0.8s ease-out 0.2s both;
+   animation: slideInFromLeft 0.5s ease-out 0.1s both;
 }
 
 .about-container.animate-in .about-img-container {
-   animation: slideInFromRight 0.8s ease-out 0.4s both;
+   animation: slideInFromRight 0.5s ease-out 0.2s both;
 }
 
 .about-text-container p {
@@ -2497,7 +2497,7 @@ input:-webkit-autofill:active {
 .keepyfarma-showcase {
    opacity: 0;
    transform: translateY(50px);
-   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .keepylink-showcase.animate-in,
@@ -2509,12 +2509,12 @@ input:-webkit-autofill:active {
 /* Staggered animation for content within showcases */
 .keepylink-showcase.animate-in .keepylink-content,
 .keepylink-showcase.animate-in .keepylink-visual {
-   animation: slideInFromLeft 0.8s ease-out 0.2s both;
+   animation: slideInFromLeft 0.5s ease-out 0.1s both;
 }
 
 .keepyfarma-showcase.animate-in .keepyfarma-content,
 .keepyfarma-showcase.animate-in .keepyfarma-visual {
-   animation: slideInFromRight 0.8s ease-out 0.2s both;
+   animation: slideInFromRight 0.5s ease-out 0.1s both;
 }
 
 @keyframes slideInFromLeft {
