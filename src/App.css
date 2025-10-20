@@ -1790,19 +1790,6 @@ input:-webkit-autofill:active {
    max-width: 300px;
    max-height: unset !important;
 }
-
-.nav-product .product-link::before{
-   border-bottom-left-radius: 4px;
-   content: "";
-   width: 24px;
-   left: -10px;
-   height: 15px;
-   position: fixed;
-   display: block;
-   border-bottom: 2px solid #004357;
-   border-left: 2px solid #004357;
-}
-
 /* Mobile Responsive */
 @media (max-width: 991px) {
 
@@ -1820,7 +1807,7 @@ input:-webkit-autofill:active {
       width: 100%;
    }
 
-   .products-content-area > div:nth-child(even)::before {
+   .products-content-area > div > div:nth-child(even)::before {
    display : none !important;
    }
 
@@ -2092,18 +2079,16 @@ input:-webkit-autofill:active {
       padding: 1.5rem;
    }
 }
-
-/* Infinite Scroll Animation - Disabled CSS animation to use JavaScript only */
-.infinite-scroll-container {
-   /* CSS animation disabled - using JavaScript animation instead */
-}
-
 /* Alternating background for product sections using ::before pseudo-element */
 .products-content-area > div {
    position: relative;
 }
 
-.products-content-area > div:nth-child(even)::before {
+.products-content-area .desktop-products > div {
+   position: relative;
+}
+
+.products-content-area .desktop-products > div:nth-child(even)::before {
    content: "";
    position: absolute;
    top: -20px;

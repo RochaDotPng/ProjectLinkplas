@@ -214,7 +214,7 @@ export default function Products() {
           {/* Main Content */}
           <Col lg={9} className="products-content-area">
             {/* Desktop: Show all products */}
-            <div className="d-none d-lg-block">
+            <div className="desktop-products d-none d-lg-block">
               {/* KeepyFarma - First Product */}
               <div ref={keepyFarmaRef} id="keepyfarma">
                 <CaixaMedicamentos />
