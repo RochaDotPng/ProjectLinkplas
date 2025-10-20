@@ -2085,6 +2085,8 @@ input:-webkit-autofill:active {
 }
 
 .products-content-area .desktop-products > div {
+   padding-top: 2rem;
+   padding-bottom: 5rem;
    position: relative;
 }
 
