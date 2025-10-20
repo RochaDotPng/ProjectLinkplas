@@ -1790,7 +1790,7 @@ input:-webkit-autofill:active {
    max-width: 300px;
    max-height: unset !important;
 }
-/*
+
 .nav-product .product-link::before{
    border-bottom-left-radius: 4px;
    content: "";
@@ -1802,9 +1802,14 @@ input:-webkit-autofill:active {
    border-bottom: 2px solid #004357;
    border-left: 2px solid #004357;
 }
-*/
+
 /* Mobile Responsive */
 @media (max-width: 991px) {
+
+   .nav-product .product-link::before{
+      content: none;
+   }
+
    .products-content-area {
       padding-left: 1rem;
       padding-right: 1rem;
