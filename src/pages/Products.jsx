@@ -110,24 +110,25 @@ export default function Products() {
     }
   };
 
-  const handleProductChange = (product) => {
-    setSelectedProduct(product);
-    ChangeUrl(product);
-    
-    // On mobile, scroll to top when switching categories
-    if (window.innerWidth <= 991) { // lg breakpoint
-      // Force scroll to top with multiple methods to ensure it works
-      window.scrollTo(0, 0); // Immediate scroll
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 50);
+  const handleProductChange = (value) => {
+    const categories = ['Farmaceutica', 'Take-Away', 'Industria', 'Servicos'];
+    const isCategory = categories.includes(value);
+
+    if (isCategory) {
+      setSelectedProduct(value);
+      ChangeUrl(value);
+
+      // On mobile, scroll to top when switching categories
+      if (window.innerWidth <= 991) { // lg breakpoint
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      }
       return;
     }
-    
-    // Desktop: Scroll to the product section
+
+    // Product item clicked -> scroll to its section (or top for KeepyFarma)
     const productRefs = {
       'KeepyFarma': keepyFarmaRef,
       'KeepyLink': keepyLinkRef,
@@ -138,15 +139,19 @@ export default function Products() {
       'Anilha': anilhaRef,
       'UltraSons': ultraSonsRef
     };
-    
-    const targetRef = productRefs[product];
-    if (targetRef && targetRef.current) {
-      const offsetTop = targetRef.current.offsetTop - 100; // Offset for header
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+
+    if (value === 'KeepyFarma') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveProduct('KeepyFarma');
+      return;
     }
+
+    const targetRef = productRefs[value];
+    if (targetRef && targetRef.current) {
+      const offsetTop = Math.max(0, targetRef.current.offsetTop - 100);
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+    setActiveProduct(value);
   };
 
   // Scroll detection to highlight active product and auto-open accordions
@@ -154,6 +159,11 @@ export default function Products() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // Offset for header
       
+      // If we're at the very top, ensure KeepyFarma is active
+      if (window.scrollY <= 10) {
+        setActiveProduct('KeepyFarma');
+      }
+
       const productRefs = [
         { ref: keepyFarmaRef, id: 'KeepyFarma', section: 'Farmaceutica' },
         { ref: keepyLinkRef, id: 'KeepyLink', section: 'Take-Away' },

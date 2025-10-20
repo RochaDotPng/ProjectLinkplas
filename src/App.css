@@ -1725,8 +1725,6 @@ input:-webkit-autofill:active {
 .nav-section-content {
    background: white;
    padding: 0.5rem 0;
-   border-left: 2px dashed #004357;
-   margin-left: 1.5rem;
    transition: all 0.3s ease-in-out;
 }
 
@@ -1734,12 +1732,14 @@ input:-webkit-autofill:active {
    padding: 0.4rem 1rem;
    cursor: pointer;
    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-   border-radius: 4px;
+   border-radius: 2px;
    margin: 0.25rem 0.5rem;
    transform: translateX(-10px);
    opacity: 0;
    animation: slideInFromLeft 0.4s ease-out forwards;
+   border: 0.5px solid #3358a857;
 }
+
 
 .nav-product:nth-child(1) { animation-delay: 0.1s; }
 .nav-product:nth-child(2) { animation-delay: 0.15s; }
@@ -1760,10 +1760,13 @@ input:-webkit-autofill:active {
 
 .nav-product:hover {
    background: #f8f9fa;
+   border: 0.5px solid #fff;
 }
 
 .nav-product.active {
-   background: #58628614;
+   background: #35478a14;
+   font-size: 1.5rem;
+   border: 0.5px solid #fff;
 }
 
 .product-link {
