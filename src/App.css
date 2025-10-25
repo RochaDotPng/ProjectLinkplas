@@ -150,7 +150,7 @@ tr:last-child td:last-child {
 }
 
 .btn{
-   border-radius: 2px;
+   border-radius: 4px;
 }
 
 .bi-arrow-right::before {
@@ -491,6 +491,7 @@ footer img {
    border: #ffffff00;
    font-weight: 600;
    height: 26px;
+   text-decoration: underline;
 }
 
 .table-dropdown-button:hover{
@@ -1816,11 +1817,14 @@ input:-webkit-autofill:active {
    .products-content-area {
       padding-left: 1rem;
       padding-right: 1rem;
+      max-width: 100vw;
+      width: 100vw;
+      box-sizing: border-box;
    }
 
    .products-content-area::before {
       right: unset;
-      width: 100%;
+      width: 100vw;
    }
 
    .products-content-area > div > div:nth-child(even)::before {
@@ -1916,6 +1920,10 @@ input:-webkit-autofill:active {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
+   .row{
+      margin: 0;
+   }
    .products-industry-container .row {
       margin: 0;
    }
@@ -2095,7 +2103,7 @@ input:-webkit-autofill:active {
    }
    
    .product-specs-section {
-      padding: 1.5rem;
+      padding: 0.2rem;
    }
 }
 /* Alternating background for product sections using ::before pseudo-element */

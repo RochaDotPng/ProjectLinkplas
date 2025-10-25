@@ -134,7 +134,7 @@ export default function Anilha() {
                                     <td>6 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
@@ -155,7 +155,7 @@ export default function Anilha() {
                                     <td>7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
@@ -176,7 +176,7 @@ export default function Anilha() {
                                     <td>7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
@@ -210,7 +210,7 @@ export default function Anilha() {
                                     <td>40×9×6 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
@@ -229,7 +229,7 @@ export default function Anilha() {
                                     <td>60×9×7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
@@ -248,7 +248,7 @@ export default function Anilha() {
                                     <td>60×21×7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="primary" id="dropdown-basic">
+                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
                                                 <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
