@@ -6,6 +6,7 @@
    height: 100vh;
    --bs-secondary-light: #89a543;
    --bs-secondary-dark: #4f6122;
+   --bs-primary-dark: #004357;
    --primary-gradient: linear-gradient(234deg, #1A323F -14.82%, #457D8E 83.04%);
    --primary-gradient-darker: linear-gradient(234deg, #13252F 9.28%, #325A67 103.95%);
    --bs-primary-gradient: linear-gradient(234deg, #1A323F -14.82%, #457D8E 83.04%);
@@ -1656,28 +1657,20 @@ input:-webkit-autofill:active {
    z-index: 100;
 }
 
-.products-nav {
-   display: flex;
-   flex-direction: column;
-   gap: 0.5rem;
-}
+
 
 .nav-section {
-   margin-bottom: 0.5rem;
+
 }
 
-.nav-section > div {
-   box-shadow: var(--bs-box-shadow);
-}
 
 .nav-section-header {
+   background: #99b1b8a9;
    display: flex;
    gap: 1rem;
    align-items: center;
-   padding: 1rem 1.3rem;
-   background: #234d597c;
-   color: white;
-   border-radius: 2px;
+   padding: 0.5rem 0.8rem;
+   color: var(--bs-primary-dark);
    cursor: pointer;
    transition: all 0.3s ease;
    font-weight: 600;
@@ -1685,18 +1678,30 @@ input:-webkit-autofill:active {
    z-index: 5;
 }
 
-.nav-section-header:hover {
-   background: #234d59c7;
+.nav-section:first-child .nav-section-header{
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
 }
 
-.nav-section-header.expanded {
-   background: #234d59a2;
+.nav-section:last-child .nav-section-header.expanded{
+   border-bottom-left-radius: 0px;
+   border-bottom-right-radius: 0px;
+}
+
+.nav-section:last-child .nav-section-header{
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+}
+
+.nav-section-header:hover {
+   background: #bedbe4d7;
 }
 
 .section-arrow {
    transition: transform 0.3s ease;
    font-size: 1rem;
    font-weight: bold;
+   color: var(--bs-primary-dark);
 }
 
 .nav-section-header.expanded .section-arrow {
@@ -1706,7 +1711,6 @@ input:-webkit-autofill:active {
 .nav-section-content-container {
    z-index: 4;
    border-radius: 2px;
-   background: white;
    margin-left: 0.2rem;
    margin-right: 0.2rem;
    overflow: hidden;
@@ -1723,21 +1727,32 @@ input:-webkit-autofill:active {
 
 
 .nav-section-content {
-   background: white;
    padding: 0.5rem 0;
    transition: all 0.3s ease-in-out;
 }
 
 .nav-product {
-   padding: 0.4rem 1rem;
+   padding: 0.5rem 0.8rem;
    cursor: pointer;
    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-   border-radius: 2px;
-   margin: 0.25rem 0.5rem;
+   margin: 0.2rem 0.2rem;
    transform: translateX(-10px);
    opacity: 0;
+   border-radius: 4px;
    animation: slideInFromLeft 0.4s ease-out forwards;
-   border: 0.5px solid #3358a857;
+}
+
+.nav-producty::before {
+   content: "";
+   position: absolute;
+   top: -27px;
+   left: 9px;
+   width: 14px;
+   height: 48px;
+   
+   border-bottom-left-radius: 4px;
+   border-left: 1px solid var(--bs-primary-dark);
+   border-bottom: 1px solid var(--bs-primary-dark);
 }
 
 
@@ -1759,25 +1774,23 @@ input:-webkit-autofill:active {
 }
 
 .nav-product:hover {
-   background: #f8f9fa;
-   border: 0.5px solid #fff;
+   background: #ffffff;
 }
 
 .nav-product.active {
-   background: #35478a14;
-   font-size: 1.5rem;
-   border: 0.5px solid #fff;
+   background: #f7f7f7;
+   /*background: #35478a14;
+   /*font-size: 1.5rem;*/
+   /*border: 0.5px solid #fff;*/
 }
 
 .product-link {
    color: #004357;
    font-weight: 500;
-   font-size: 1.1rem;
 }
 
 .nav-product.active .product-link {
-   color: #1a4a5c;
-   font-weight: 600;
+   text-shadow: 1px 1px 1px #bebebe;
 }
 
 /* Tampa Veio Usage Image Styling */
@@ -1850,13 +1863,16 @@ input:-webkit-autofill:active {
 .products-nav {
    display: flex;
    flex-direction: column;
-   gap: 0.5rem;
+   gap: 0.1rem;
+   border-radius: 8px;
+   background: #e9ecef;
+   box-shadow: var(--bs-box-shadow);
 }
 
 .products-nav .nav-item {
    display: flex;
    align-items: center;
-   padding: 1rem 1.5rem;
+   padding: 1rem 5rem;
    background: none;
    border: none;
    border-radius: 8px;
