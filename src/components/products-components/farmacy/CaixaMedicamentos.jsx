@@ -11,7 +11,7 @@ export default function CaixaMedicamentos() {
         <Container>
             <h1 className="fw-bold mb-4 mt-5 text-white product-page-title">
                 <img
-                    src="/images/KeepyPharmaLogo.png"
+                    src="/images/KeepyPharmaLogo.svg"
                     alt="KeepyFarma"
                     className="product-page-title-logo"
                 />

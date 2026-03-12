@@ -60,9 +60,8 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                         <Col lg={7} md={6} className="keepylink-content">
                             <div className="keepylink-text">
                                 <h2 className="product-title">
-                                    
+                                    <img src="/images/KeepyLogo.svg" alt="KeepyLink" className="product-title-logo" />
                                     KeepyLink
-                                    <img src="/images/KeepyLogo.png" alt="Keepy" className="product-title-logo" />
                                 </h2>
                                 <div className="keepylink-description">
                                     <p>
@@ -111,7 +110,7 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                         <Col lg={7} md={6} className="keepyfarma-content">
                             <div className="keepyfarma-text">
                                 <h2 className="product-title">
-                                <img src="/images/KeepyPharmaLogo.png" alt="Keepy" className="product-title-logo" />
+                                <img src="/images/KeepyPharmaLogo.svg" alt="KeepyFarma" className="product-title-logo" />
                                 KeepyFarma
                                 </h2>
                                 <div className="keepyfarma-description">

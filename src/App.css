@@ -2446,6 +2446,8 @@ input:-webkit-autofill:active {
    height: 4rem;
    width: auto;
    flex-shrink: 0;
+   image-rendering: -webkit-optimize-contrast;
+   image-rendering: crisp-edges;
 }
 
 .keepylink-description p {

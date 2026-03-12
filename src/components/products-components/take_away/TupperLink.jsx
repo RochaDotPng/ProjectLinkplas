@@ -11,7 +11,7 @@ export default function TupperLink() {
         <Container>
             <h1 className="fw-bold mb-4 mt-5 text-white product-page-title">
                 <img
-                    src="/images/KeepyLogo.png"
+                    src="/images/KeepyLogo.svg"
                     alt="KeepyLink"
                     className="product-page-title-logo"
                 />
