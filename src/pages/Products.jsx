@@ -204,6 +204,7 @@ export default function Products() {
         <meta property="og:title" content={pageMeta.title} />
         <meta property="og:description" content={pageMeta.description} />
         <meta property="og:url" content={pageMeta.url} />
+        <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
         <link rel="canonical" href={pageMeta.url} />
       </Helmet>
       <Header />

@@ -12,6 +12,7 @@ export default function Policy() {
                 <meta property="og:title" content="Política de Qualidade - Linkplas | ISO 9001" />
                 <meta property="og:description" content="Conheça a política de qualidade da Linkplas, empresa certificada ISO 9001 com compromisso na excelência." />
                 <meta property="og:url" content="https://www.linkplas.pt/Policy" />
+                <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
                 <link rel="canonical" href="https://www.linkplas.pt/Policy" />
             </Helmet>
             <Header/>
@@ -20,24 +21,26 @@ export default function Policy() {
             </div>
             <Container>
                 <div className="policy-text">
-                    <p>Através de uma estratégia de Melhoria Contínua, a Linkplas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de Qualidade, reduzir e minimizar Perigos e Riscos da sua atividade tomando as medidas necessárias para atingir os seguintes objetivos:</p>
-                    <ul>
+                    <p>
+                        Através de uma estratégia de Melhoria Contínua, a Linkplas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de Qualidade, reduzir e minimizar Perigos e Riscos da sua atividade tomando as medidas necessárias para atingir os seus objetivos.
+                    </p>
+                    <p>
+                        A Linkplas compromete-se a:
+                    </p>
+                    <ol>
                         <li>
-                            Assegurar a divulgação e cumprimento dos requisitos do Sistema de Gestão da Qualidade.
-                        </li>
-                        <li>
-                            Agir continuamente na melhoria dos processos, projetando estratégias que potenciem o desempenho organizacional e a superação da satisfação das necessidades e expectativas dos clientes, colaboradores e partes interessadas.
-                        </li>
-                        <li>
-                            Promover a recolha e o tratamento de informação de suporte à decisão, proveniente da avaliação da satisfação de clientes e indicadores de desempenho.
-                        </li>
-                        <li >
-                            Assegurar a identificação e cumprimento dos requisitos normativos aplicáveis, assim como a integração de boas práticas.
+                            Assegurar o cumprimento dos requisitos do Sistema de Gestão, da legislação aplicável e das boas práticas do setor.
                         </li>
                         <li>
-                            Estimular o crescimento, compromisso e motivação de todos os colaboradores no alcance dos objetivos e metas da empresa através da formação contínua, do desenvolvimento de competências, da criatividade e do reconhecimento individual;
+                            Promover a excelência no design e a melhoria contínua dos processos para maximizar resultados e satisfação, liderando a transição para soluções mais sustentáveis através da consciencialização proativa da nossa cadeia de valor (clientes e fornecedores) para a escolha de produtos de reduzido impacto ambiental. Garantindo a superação da satisfação das necessidades e expectativas das partes interessadas relevantes.
                         </li>
-                    </ul>
+                        <li>
+                            Promover comportamentos orientados para o uso racional de energia e matérias-primas, incentivando a economia circular através da redução de desperdícios e da valorização de materiais reciclados sempre que tecnicamente viável.
+                        </li>
+                        <li>
+                            Promover o crescimento e a motivação através da formação contínua e do desenvolvimento de competências, consolidando uma cultura de segurança, responsabilidade ambiental e reconhecimento da criatividade individual como pilares do nosso sucesso.
+                        </li>
+                    </ol>
                 </div>
             </Container>
             <Footer />

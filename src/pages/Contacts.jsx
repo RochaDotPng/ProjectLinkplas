@@ -12,6 +12,7 @@ export default function Contacts() {
                 <meta property="og:title" content="Contactos - Linkplas | Entre em Contacto" />
                 <meta property="og:description" content="Contacte a Linkplas para soluções em peças plásticas. Telefone, email e morada disponíveis." />
                 <meta property="og:url" content="https://www.linkplas.pt/Contacts" />
+                <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
                 <link rel="canonical" href="https://www.linkplas.pt/Contacts" />
             </Helmet>
             <Header className="shadow z-3"/>

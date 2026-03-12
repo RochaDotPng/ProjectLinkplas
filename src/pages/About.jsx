@@ -13,6 +13,7 @@ export default function About() {
                 <meta property="og:title" content="Sobre Nós - Linkplas | História e Valores" />
                 <meta property="og:description" content="Conheça a história da Linkplas desde 2012. Empresa certificada ISO 9001 especializada em peças plásticas." />
                 <meta property="og:url" content="https://www.linkplas.pt/About" />
+                <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
                 <link rel="canonical" href="https://www.linkplas.pt/About" />
             </Helmet>
             <Header  />
@@ -47,21 +48,27 @@ export default function About() {
                 <div className="about-text">
                     <div className="flex-1">
                         <h5>Missão</h5>
-                        <p>A LinkPlas fornece peças e componentes plásticos de elevada qualidade e complexidade técnica, desenvolvendo as mais eficientes e inovadoras soluções em parceria com os seus clientes.</p>
+                        <p>
+                            A Linkplas fornece peças e componentes plásticos de elevada qualidade e complexidade técnica, desenvolvendo as mais eficientes e inovadoras soluções em parceria com os seus clientes, minimizando, sempre que possível, o impacto ambiental ao longo de todo o ciclo de vida do produto.
+                        </p>
                     </div>
                     <div className="flex-1">
                         <h5>Visão</h5>
-                        <p>Crescer como uma empresa de referência no setor dos componentes plásticos, com capacidade para dar uma resposta global às necessidades dos mais exigentes clientes nacionais e estrangeiros.</p>
+                        <p>
+                            Crescer como uma empresa de referência no setor dos componentes plásticos, com capacidade para dar uma resposta global às necessidades dos mais exigentes clientes nacionais e estrangeiros.
+                        </p>
+                        <p>
+                            A Linkplas posiciona-se pelo reconhecimento da sua capacidade de resposta tecnológica e pelo seu compromisso inabalável com o desenvolvimento sustentável.
+                        </p>
                     </div>
                     <div className="flex-1">
                         <h5>Valores</h5>
                         <p>A Linkplas rege-se pelos seguintes valores empresariais:</p>
                         <ul>
-                            <li>Confiança</li>
-                            <li>Qualidade</li>
-                            <li>Excelência</li>
-                            <li>Rigor</li>
-                            <li>Eficácia e Eficiência</li>
+                            <li>Confiança e Rigor</li>
+                            <li>Qualidade e Excelência</li>
+                            <li>Responsabilidade Ambiental e Social</li>
+                            <li>Eficácia e Eficiência Operacional</li>
                         </ul>
                     </div>
                 </div>

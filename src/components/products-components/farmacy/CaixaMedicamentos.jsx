@@ -9,7 +9,14 @@ export default function CaixaMedicamentos() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">KeepyFarma</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white product-page-title">
+                <img
+                    src="/images/KeepyPharmaLogo.png"
+                    alt="KeepyFarma"
+                    className="product-page-title-logo"
+                />
+                KeepyFarma
+            </h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}

@@ -9,7 +9,14 @@ export default function TupperLink() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">KeepyLink</h1>
+            <h1 className="fw-bold mb-4 mt-5 text-white product-page-title">
+                <img
+                    src="/images/KeepyLogo.png"
+                    alt="KeepyLink"
+                    className="product-page-title-logo"
+                />
+                KeepyLink
+            </h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}

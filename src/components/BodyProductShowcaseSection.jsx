@@ -59,7 +59,11 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                     <Row className="align-items-center">
                         <Col lg={7} md={6} className="keepylink-content">
                             <div className="keepylink-text">
-                                <h2 className="product-title">KeepyLink</h2>
+                                <h2 className="product-title">
+                                    
+                                    KeepyLink
+                                    <img src="/images/KeepyLogo.png" alt="Keepy" className="product-title-logo" />
+                                </h2>
                                 <div className="keepylink-description">
                                     <p>
                                     KeepyLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.
@@ -106,7 +110,10 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                         </Col>
                         <Col lg={7} md={6} className="keepyfarma-content">
                             <div className="keepyfarma-text">
-                                <h2 className="product-title">KeepyFarma</h2>
+                                <h2 className="product-title">
+                                <img src="/images/KeepyPharmaLogo.png" alt="Keepy" className="product-title-logo" />
+                                KeepyFarma
+                                </h2>
                                 <div className="keepyfarma-description">
                                     <p>
                                     Caixa de transporte de medicamentos fabricada em plástico de alta resistência, desenhada para a segurança e conservação de produtos farmacêuticos. Com dimensões otimizadas para facilidade de manuseamento e armazenamento, esta caixa possui um sistema de fecho seguro e é resistente a variações de temperatura e humidade.
