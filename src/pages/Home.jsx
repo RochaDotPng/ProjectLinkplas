@@ -18,11 +18,11 @@ export default function Home() {
     return (
         <div>
             <Helmet>
-                <title>Linkplas - Pe?as Pl?sticas & KeepyLink Take-Away</title>
-                <meta name="description" content="Linkplas - especialistas em pe?as pl?sticas e tupperwares take-away KeepyLink. Recipientes reutiliz?veis para delivery, tuppers ecol?gicos empilh?veis e componentes industriais desde 2012." />
-                <meta name="keywords" content="Linkplas, pe?as pl?sticas, tupperwares takeaway, tuppers take away, recipientes reutiliz?veis, delivery containers Portugal, KeepyLink, componentes industriais" />
-                <meta property="og:title" content="Linkplas - Pe?as Pl?sticas & Tupperwares Take-Away KeepyLink" />
-                <meta property="og:description" content="Linkplas - especialistas em pe?as pl?sticas e tupperwares take-away KeepyLink. Recipientes reutiliz?veis para delivery e componentes industriais desde 2012." />
+                <title>Linkplas - Peças Plásticas & KeepyLink Take-Away</title>
+                <meta name="description" content="Linkplas - especialistas em peças plásticas e tupperwares take-away KeepyLink. Recipientes reutilizáveis para delivery, tuppers ecológicos empilháveis e componentes industriais desde 2012." />
+                <meta name="keywords" content="Linkplas, peças plásticas, tupperwares takeaway, tuppers take away, recipientes reutilizáveis, delivery containers Portugal, KeepyLink, componentes industriais" />
+                <meta property="og:title" content="Linkplas - Peças Plásticas & Tupperwares Take-Away KeepyLink" />
+                <meta property="og:description" content="Linkplas - especialistas em peças plásticas e tupperwares take-away KeepyLink. Recipientes reutilizáveis para delivery e componentes industriais desde 2012." />
                 <meta property="og:url" content="https://www.linkplas.pt/" />
                 <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
                 <link rel="canonical" href="https://www.linkplas.pt/" />
