@@ -17,15 +17,17 @@
    --bs-table-striped-bg: #5c7322;
 }
 
-html{
+html {
    overflow-x: hidden;
+   /* Instant document scroll — required for GSAP ScrollTrigger pin/scrub (ZØR section).
+      CSS smooth scrolling fights the scroll position every frame and causes jank at pin start/end. */
+   scroll-behavior: auto;
 }
 
 * {
    margin: 0;
    font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
-   scroll-behavior: smooth;
 }
 
 
@@ -2756,5 +2758,157 @@ input:-webkit-autofill:active {
    /* Add padding-bottom to footer on products page to account for mobile bottom bar */
    .products-page footer {
       padding-bottom: 110px;
+   }
+}
+
+/* --- Linkplas × ZØR partnership showcase (scroll-driven layers) --- */
+.zor-partnership-section {
+   position: relative;
+   background: linear-gradient(
+      180deg,
+      rgba(69, 125, 142, 0.08) 0%,
+      rgba(26, 50, 63, 0.06) 50%,
+      rgba(255, 255, 255, 1) 100%
+   );
+   overflow: visible;
+}
+
+.zor-partnership-inner {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 2.5rem 1.25rem 3rem;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   justify-content: center;
+   gap: 2rem;
+}
+
+.zor-partnership-header {
+   text-align: center;
+   width: 100%;
+   margin-top: 80px;
+}
+
+.zor-partnership-eyebrow {
+   font-size: 0.85rem;
+   font-weight: 600;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: var(--bs-primary);
+   margin-bottom: 0.5rem;
+}
+
+.zor-partnership-title {
+   font-size: clamp(1.75rem, 4vw, 2.25rem);
+   font-weight: 700;
+   color: var(--bs-primary-dark);
+   margin: 0;
+   line-height: 1.2;
+}
+
+.zor-partnership-row {
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+   align-items: center;
+   gap: 2rem 3rem;
+   flex: 1;
+   width: 100%;
+   min-height: 0;
+}
+
+.zor-partnership-copy {
+   text-align: left;
+   max-width: 28rem;
+   justify-self: start;
+}
+
+.zor-partnership-lead {
+   font-size: 1.05rem;
+   line-height: 1.55;
+   color: var(--bs-body-color);
+   margin: 0;
+}
+
+.zor-partnership-lead--follow {
+   margin-top: 0.85rem;
+}
+
+.zor-layer-stack {
+   --zor-visual-scale: 0.6;
+   position: relative;
+   width: 100%;
+   max-width: min(100%, 560px);
+   min-height: calc(min(95vw, 520px) * var(--zor-visual-scale));
+   padding: 2.75rem 0;
+   flex-shrink: 0;
+   overflow: visible;
+   justify-self: end;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+/* Escala única para todas as camadas — mantém proporções entre PNGs. */
+.zor-layer-stack-scale {
+   position: relative;
+   width: 100%;
+   max-width: min(100%, 560px);
+   min-height: min(95vw, 520px);
+   transform: scale(var(--zor-visual-scale));
+   transform-origin: center center;
+   flex-shrink: 0;
+}
+
+/* Camadas ao tamanho intrínseco do PNG (sem esticar para o contentor). */
+.zor-layer-stack .zor-layer {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: auto;
+   height: auto;
+   max-width: none;
+   max-height: none;
+   object-fit: initial;
+   pointer-events: none;
+   user-select: none;
+}
+
+@media (max-width: 991px) {
+   .zor-partnership-header {
+      margin-top: 4.5rem;
+   }
+
+   .zor-partnership-row {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+   }
+
+   .zor-partnership-copy {
+      max-width: none;
+      justify-self: stretch;
+      text-align: center;
+   }
+
+   .zor-layer-stack {
+      --zor-visual-scale: 0.42;
+      justify-self: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+   }
+}
+
+@media (max-width: 576px) {
+   .zor-partnership-inner {
+      padding: 2rem 1rem 2.5rem;
+      gap: 1.5rem;
+   }
+
+   .zor-layer-stack {
+      --zor-visual-scale: 0.45;
+      padding: 1.5rem 0;
    }
 }

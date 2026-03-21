@@ -6,6 +6,7 @@ import BodySustainabilitySection from "../components/BodySustainabilitySection";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BodyProductShowcaseSection from "../components/BodyProductShowcaseSection";
+import BodyZorPartnershipSection from "../components/BodyZorPartnershipSection";
 import { Helmet } from 'react-helmet-async';
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
             <BodyHeroSection />
             {/*<BodySustainabilitySection/>*/}
             <BodyProductShowcaseSection onProductChange={handleProductChange}/>
+            <BodyZorPartnershipSection />
             <BodyAboutSection/>
             <BodyPolicySection/>
             <Footer />
