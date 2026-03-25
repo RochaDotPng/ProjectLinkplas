@@ -129,11 +129,6 @@ export default function BodyZorPartnershipSection() {
                             termossensíveis. Trata-se de uma solução fácil de utilizar, reutilizável e
                             qualificada até 20 horas.
                         </p>
-                        <p className="zor-partnership-lead zor-partnership-lead--follow">
-                            Intervalos de temperatura: [+2 °C a +8 °C] e [+15 °C a +25 °C]. Este kit é
-                            composto por uma caixa exterior polimérica, um reforço com isolamento térmico
-                            e acumuladores de frio que envolvem o(s) produto(s) a transportar.
-                        </p>
                     </div>
 
                     <div
