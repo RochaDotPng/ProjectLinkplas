@@ -19,6 +19,9 @@ const INITIAL_Y_PX = [130, 30, -50, -50, -20];
  */
 const SPREAD_Y_PX = [280, 90, -50, -170, -326];
 
+/** Mobile: animação começa um pouco antes (antes do topo da secção alinhar com o topo do ecrã). */
+const ZOR_SCROLL_START_MOBILE = 'top 88%';
+
 const LAYERS = [
     {
         src: `${IMAGE_BASE}/CaixaPlastica.png`,
@@ -47,6 +50,25 @@ const LAYERS = [
     },
 ];
 
+/** Índice em LAYERS por nota — o mesmo movimento vertical GSAP das imagens. */
+const CALLOUTS = [
+    {
+        layerIndex: 0,
+        variant: 'caixa',
+        lines: ['01. Caixa exterior', 'plástica com Tampa'],
+    },
+    {
+        layerIndex: 4,
+        variant: 'tampa',
+        label: '02. Reforço com isolamento térmico',
+    },
+    {
+        layerIndex: 2,
+        variant: 'acumulador',
+        label: '03. Acumuladores',
+    },
+];
+
 export default function BodyZorPartnershipSection() {
     const sectionRef = useRef(null);
     const stackRef = useRef(null);
@@ -67,8 +89,12 @@ export default function BodyZorPartnershipSection() {
         const stack = stackRef.current;
         if (!section || !stack) return undefined;
 
-        const ctx = gsap.context(() => {
+        const mm = gsap.matchMedia();
+
+        const build = (pin, scrollStart = 'top top') => {
             const allLayers = gsap.utils.toArray(stack.querySelectorAll('.zor-layer'));
+            const anchors = gsap.utils.toArray(stack.querySelectorAll('.zor-callout-anchor'));
+            const callouts = gsap.utils.toArray(stack.querySelectorAll('.zor-callout'));
 
             allLayers.forEach((layer, i) => {
                 gsap.set(layer, {
@@ -79,15 +105,27 @@ export default function BodyZorPartnershipSection() {
                 });
             });
 
+            anchors.forEach((anchor) => {
+                const i = parseInt(anchor.dataset.zorCalloutLayer, 10);
+                gsap.set(anchor, {
+                    xPercent: -50,
+                    yPercent: -50,
+                    y: INITIAL_Y_PX[i] ?? 0,
+                });
+            });
+
+            callouts.forEach((el) => {
+                gsap.set(el, { opacity: 0 });
+            });
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section,
-                    start: 'top top',
+                    start: scrollStart,
                     end: '+=80%',
-                    pin: true,
+                    pin,
                     scrub: 1,
-                    anticipatePin: 1,
-                    /* Reduces edge jitter when scroll velocity is high (pairs with instant document scroll). */
+                    anticipatePin: pin ? 1 : 0,
                     fastScrollEnd: true,
                 },
             });
@@ -103,9 +141,43 @@ export default function BodyZorPartnershipSection() {
                     0
                 );
             });
-        }, section);
 
-        return () => ctx.revert();
+            anchors.forEach((anchor) => {
+                const i = parseInt(anchor.dataset.zorCalloutLayer, 10);
+                tl.to(
+                    anchor,
+                    {
+                        y: SPREAD_Y_PX[i],
+                        duration: 1,
+                        ease: 'none',
+                    },
+                    0
+                );
+            });
+
+            /* Fade in with the spread; first beats align with CaixaPlastica (plastic box) motion start. */
+            tl.to(
+                callouts,
+                {
+                    opacity: 1,
+                    duration: 0.22,
+                    stagger: 0.05,
+                    ease: 'none',
+                },
+                0
+            );
+        };
+
+        /* Pin/unpin is what jumps on mobile when the browser chrome resizes the viewport. */
+        mm.add('(min-width: 992px)', () => {
+            build(true, 'top top');
+        });
+
+        mm.add('(max-width: 991px)', () => {
+            build(false, ZOR_SCROLL_START_MOBILE);
+        });
+
+        return () => mm.revert();
     }, [reducedMotion]);
 
     return (
@@ -153,6 +225,36 @@ export default function BodyZorPartnershipSection() {
                                     loading="lazy"
                                     draggable={false}
                                 />
+                            ))}
+
+                            {CALLOUTS.map(({ layerIndex, variant, label, lines }) => (
+                                <div
+                                    key={variant}
+                                    className={`zor-callout-anchor zor-callout-anchor--${variant}`}
+                                    data-zor-callout-layer={layerIndex}
+                                    style={
+                                        reducedMotion
+                                            ? {
+                                                  transform: `translate(-50%, calc(-50% + ${SPREAD_Y_PX[layerIndex]}px))`,
+                                              }
+                                            : undefined
+                                    }
+                                    aria-hidden="true"
+                                >
+                                    <div className={`zor-callout zor-callout--${variant}`}>
+                                        <span
+                                            className={`zor-callout__chip${lines ? ' zor-callout__chip--twoline' : ''}`}
+                                        >
+                                            {lines
+                                                ? lines.map((line) => (
+                                                      <span key={line} className="zor-callout__chip-row">
+                                                          {line}
+                                                      </span>
+                                                  ))
+                                                : label}
+                                        </span>
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     </div>

@@ -2875,14 +2875,87 @@ input:-webkit-autofill:active {
    user-select: none;
 }
 
+/* Legendas: âncoras partilham o mesmo movimento GSAP que as respetivas imagens (centro da arte). */
+.zor-callout-anchor {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: 0;
+   height: 0;
+   z-index: 50;
+   pointer-events: none;
+   overflow: visible;
+}
+
+.zor-callout {
+   position: absolute;
+   left: 0;
+   top: 0;
+   display: block;
+   opacity: 0;
+   /* Posição em px no espaço pré-escala, a partir do centro da respetiva camada. */
+   transform: translate(-50%, -50%);
+}
+
+.zor-layer-stack--static .zor-callout {
+   opacity: 1;
+}
+
+.zor-callout__chip {
+   display: block;
+   max-width: min(17rem, 82vw);
+   padding: 0.65rem 0.95rem;
+   background: #457d8e;
+   color: #fff;
+   font-weight: 700;
+   line-height: 1.35;
+   letter-spacing: 0.045em;
+   text-transform: uppercase;
+   text-align: left;
+   white-space: normal;
+   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+   /* Compensa o scale() do contentor — ~1.2rem no ecrã em qualquer breakpoint. */
+   font-size: calc(0.8rem / var(--zor-visual-scale, 0.6));
+}
+
+.zor-callout-anchor--caixa .zor-callout {
+   transform: translate(calc(-50% - 88px), calc(-50% + 132px));
+}
+
+/* Chip 01: no máximo duas linhas (duas frases); largura extra para evitar ellipsis. */
+.zor-callout__chip.zor-callout__chip--twoline {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 0.15em;
+   width: max-content;
+   max-width: min(42rem, 98vw);
+}
+
+.zor-callout__chip--twoline .zor-callout__chip-row {
+   display: block;
+   max-width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.zor-callout-anchor--tampa .zor-callout {
+   transform: translate(calc(-50% + 108px), calc(-50% - 168px));
+}
+
+.zor-callout-anchor--acumulador .zor-callout {
+   transform: translate(calc(-50% + 104px), calc(-50% - 28px));
+}
+
 @media (max-width: 991px) {
    .zor-partnership-header {
-      margin-top: 4.5rem;
+      margin-top: 3.5rem;
    }
 
    .zor-partnership-row {
       grid-template-columns: 1fr;
-      gap: 0.2rem;
+      gap: 3rem;
    }
 
    .zor-partnership-copy {
@@ -2898,6 +2971,28 @@ input:-webkit-autofill:active {
       margin-right: auto;
       margin-top: 0rem;
       margin-bottom: 2rem;
+   }
+
+   .zor-callout__chip {
+      max-width: min(16rem, 90vw);
+      padding: 0.55rem 0.8rem;
+   }
+
+   .zor-callout__chip.zor-callout__chip--twoline {
+      max-width: min(40rem, 98vw);
+      width: max-content;
+   }
+
+   .zor-callout-anchor--caixa .zor-callout {
+      transform: translate(calc(-50% - 74px), calc(-50% + 120px));
+   }
+
+   .zor-callout-anchor--tampa .zor-callout {
+      transform: translate(calc(-50% + 94px), calc(-50% - 150px));
+   }
+
+   .zor-callout-anchor--acumulador .zor-callout {
+      transform: translate(calc(-50% + 90px), calc(-50% - 20px));
    }
 }
 
