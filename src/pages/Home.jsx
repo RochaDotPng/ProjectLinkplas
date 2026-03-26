@@ -13,7 +13,20 @@ export default function Home() {
     const navigate = useNavigate();
 
     const handleProductChange = (product) => {
-        navigate(`/Products/${product}`);
+        if (typeof product === 'string') {
+            navigate(`/Products/${product}`);
+            return;
+        }
+
+        const category = product?.category;
+        const hash = product?.hash;
+        if (category) {
+            navigate(`/Products/${category}${hash ? `#${hash}` : ''}`);
+            return;
+        }
+
+        // Fallback (keeps previous behavior even if payload is unexpected)
+        navigate(`/Products/Farmaceutica`);
     };
 
     return (

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -26,6 +26,7 @@ export default function Products() {
     'Take-Away': false
   });
   let navigate = useNavigate();
+  const location = useLocation();
   
   // Refs for each product section
   const keepyFarmaRef = useRef(null);
@@ -185,6 +186,37 @@ export default function Products() {
 
     setActiveProduct(value);
   };
+
+  // If a hash is present (e.g. /Products/Farmaceutica#keepyfarma), scroll to it on load.
+  useEffect(() => {
+    const hash = (location.hash || '').replace('#', '').trim();
+    if (!hash) return;
+
+    const scrollToHash = () => {
+      const candidates = Array.from(document.querySelectorAll(`#${CSS.escape(hash)}`));
+      const targetEl =
+        candidates.find((el) => el.getClientRects().length > 0) ||
+        candidates[0];
+
+      if (!targetEl) return;
+
+      // Keep sidebar highlight consistent when deep-linking.
+      if (hash === 'keepyfarma') setActiveProduct('KeepyFarma');
+      if (hash === 'keepylink') setActiveProduct('KeepyLink');
+      if (hash === 'EPharma') setActiveProduct('EPharma');
+
+      if (typeof targetEl.scrollIntoView === 'function') {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        const top = targetEl.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    };
+
+    // Wait a tick to ensure DOM is mounted.
+    const t = window.setTimeout(scrollToHash, 0);
+    return () => window.clearTimeout(t);
+  }, [location.hash]);
 
   // Scroll detection to highlight active product and auto-open accordions
   useEffect(() => {

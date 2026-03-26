@@ -27,7 +27,15 @@ export default function CaixaMedicamentos() {
                                 <div className='size-indicator'>
                                     <span>Tamanho grande</span>
                                 </div>
-                                <img alt='Imagem da caixa de medicamentos maior' className='product-img img-fluid' src='../images/caixa-grande.png'></img>
+                                <img alt='Imagem da caixa de medicamentos (tamanho grande)' className='product-img img-fluid' src='/images/caixa-grande.png'></img>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <div className="farmacy-image-container">
+                                <div className='size-indicator'>
+                                    <span>Tamanho médio</span>
+                                </div>
+                                <img alt="Imagem da caixa de medicamentos (tamanho médio)" className='product-img img-fluid' src='/images/keepyfarma-white.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-3">
@@ -35,7 +43,7 @@ export default function CaixaMedicamentos() {
                                 <div className='size-indicator'>
                                     <span>Tamanho pequeno com tampa</span>
                                 </div>
-                                <img alt="Imagem da caixa de medicamentos mais pequena e a tampa" className='product-img img-fluid' src='../images/tampa-caixa.png'></img>
+                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/tampa-caixa.png'></img>
                             </div>
                         </div>
                     </div>
@@ -46,7 +54,7 @@ export default function CaixaMedicamentos() {
                     <p className='mb-4'>Caixa de transporte de medicamentos fabricada em plástico de alta resistência, desenhada para a segurança e conservação de produtos farmacêuticos. Com dimensões otimizadas para facilidade de manuseamento e armazenamento, esta caixa possui um sistema de fecho seguro e é resistente a variações de temperatura e humidade. Ideal para uso em farmácias, hospitais e clínicas, garante a integridade e a qualidade dos medicamentos durante o transporte.</p>
                     
                     <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/sontacts')} className='p-3'>Pedir cotação</Button>
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                     </div>
                 </div>
 
@@ -60,7 +68,15 @@ export default function CaixaMedicamentos() {
                                 <div className='size-indicator'>
                                     <span>Tamanho grande</span>
                                 </div>
-                                <img alt='Imagem da caixa de medicamentos maior' className='product-img img-fluid' src='../images/caixa-grande.png'></img>
+                                <img alt='Imagem da caixa de medicamentos (tamanho grande)' className='product-img img-fluid' src='/images/caixa-grande.png'></img>
+                            </div>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <div className="farmacy-image-container">
+                                <div className='size-indicator'>
+                                    <span>Tamanho médio</span>
+                                </div>
+                                <img alt="Imagem da caixa de medicamentos (tamanho médio)" className='product-img img-fluid' src='/images/keepyfarma-white.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-3">
@@ -68,7 +84,7 @@ export default function CaixaMedicamentos() {
                                 <div className='size-indicator'>
                                     <span>Tamanho pequeno com tampa</span>
                                 </div>
-                                <img alt="Imagem da caixa de medicamentos mais pequena e a tampa" className='product-img img-fluid' src='../images/tampa-caixa.png'></img>
+                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/tampa-caixa.png'></img>
                             </div>
                         </div>
                     </div>

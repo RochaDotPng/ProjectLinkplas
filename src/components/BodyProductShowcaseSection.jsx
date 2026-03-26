@@ -74,7 +74,7 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                                 <Button
                                     variant="outline-success"
                                     className="keepylink-cta"
-                                    onClick={() => handleProductButtonClick('Take-Away')}
+                                    onClick={() => handleProductButtonClick({ category: 'Take-Away', hash: 'keepylink' })}
                                 >
                                     Saber mais →
                                 </Button>
@@ -124,7 +124,7 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                                 <Button
                                     variant="outline-success"
                                     className="keepyfarma-cta"
-                                    onClick={() => handleProductButtonClick('Farmaceutica')}
+                                    onClick={() => handleProductButtonClick({ category: 'Farmaceutica', hash: 'keepyfarma' })}
                                 >
                                     Saber mais →
                                 </Button>
