@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 
 export default function ProductsSidebar({ selectedProduct, activeProduct, autoOpenSections, onProductChange }) {
   const [expandedSections, setExpandedSections] = useState({
@@ -14,7 +13,8 @@ export default function ProductsSidebar({ selectedProduct, activeProduct, autoOp
       id: 'Farmaceutica', 
       name: 'Farmaceutica',
       products: [
-        { id: 'KeepyFarma', name: 'KeepyFarma' }
+        { id: 'KeepyFarma', name: 'KeepyFarma' },
+        { id: 'EPharma', name: 'e-Pharma' }
       ]
     },
     {

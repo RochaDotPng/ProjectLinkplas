@@ -1661,12 +1661,6 @@ input:-webkit-autofill:active {
 }
 
 
-
-.nav-section {
-
-}
-
-
 .nav-section-header {
    background: #99b1b8a9;
    display: flex;
@@ -2771,6 +2765,22 @@ input:-webkit-autofill:active {
       rgba(255, 255, 255, 1) 100%
    );
    overflow: visible;
+}
+
+/* --- E-Pharma product (static variant) overrides --- */
+.epharma-product-section {
+   background: none !important;
+}
+
+.epharma-product-section .zor-partnership-header,
+.epharma-product-section .epharma-header {
+   text-align: right;
+}
+
+.epharma-product-section .zor-partnership-eyebrow,
+.epharma-product-section .zor-partnership-title,
+.epharma-product-section .zor-partnership-lead {
+   color: #fff !important;
 }
 
 .zor-partnership-inner {

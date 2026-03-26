@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import ProductsSidebar from "../components/ProductsSidebar";
 import TupperLink from '../components/products-components/take_away/TupperLink';
 import CaixaMedicamentos from '../components/products-components/farmacy/CaixaMedicamentos';
+import EPharma from '../components/products-components/farmacy/EPharma';
 import Abracadeira from '../components/products-components/industry/Abracadeira';
 import Tampa from '../components/products-components/industry/Tampa';
 import Intercalar from '../components/products-components/industry/Intercalar';
@@ -29,6 +30,7 @@ export default function Products() {
   // Refs for each product section
   const keepyFarmaRef = useRef(null);
   const keepyLinkRef = useRef(null);
+  const ePharmaRef = useRef(null);
   const abracadeiraRef = useRef(null);
   const tampaRef = useRef(null);
   const intercalarRef = useRef(null);
@@ -87,7 +89,8 @@ export default function Products() {
     switch(category) {
       case 'Farmaceutica':
         return [
-          { component: <CaixaMedicamentos />, ref: keepyFarmaRef, id: 'keepyfarma' }
+          { component: <CaixaMedicamentos />, ref: keepyFarmaRef, id: 'keepyfarma' },
+          { component: <EPharma />, ref: ePharmaRef, id: 'EPharma' },
         ];
       case 'Take-Away':
         return [
@@ -128,7 +131,7 @@ export default function Products() {
       return;
     }
 
-    // Product item clicked -> scroll to its section (or top for KeepyFarma)
+    // Product item clicked -> scroll to its section.
     const productRefs = {
       'KeepyFarma': keepyFarmaRef,
       'KeepyLink': keepyLinkRef,
@@ -137,8 +140,33 @@ export default function Products() {
       'Intercalar': intercalarRef,
       'TampaVeio': tampaVeioRef,
       'Anilha': anilhaRef,
-      'UltraSons': ultraSonsRef
+      'UltraSons': ultraSonsRef,
+      'EPharma': ePharmaRef,
     };
+
+    const idFallback = {
+      KeepyFarma: 'keepyfarma',
+      KeepyLink: 'keepylink',
+      EPharma: 'EPharma',
+      Abracadeira: 'abracadeira',
+      Tampa: 'tampa',
+      Intercalar: 'intercalar',
+      TampaVeio: 'tampaveio',
+      Anilha: 'anilha',
+      UltraSons: 'ultrasons',
+    };
+
+    const targetRef = productRefs[value];
+    // Desktop + mobile layouts are both mounted (Bootstrap toggles via CSS),
+    // so refs can end up pointing at the hidden element. Prefer the visible DOM node.
+    const idsToTry = [value, idFallback[value]].filter(Boolean);
+    const candidates = idsToTry.flatMap((id) =>
+      Array.from(document.querySelectorAll(`#${id}`))
+    );
+    const targetEl =
+      candidates.find((el) => el.getClientRects().length > 0) ||
+      candidates[0] ||
+      targetRef?.current;
 
     if (value === 'KeepyFarma') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -146,11 +174,15 @@ export default function Products() {
       return;
     }
 
-    const targetRef = productRefs[value];
-    if (targetRef && targetRef.current) {
-      const offsetTop = Math.max(0, targetRef.current.offsetTop - 100);
-      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    if (targetEl) {
+      if (typeof targetEl.scrollIntoView === 'function') {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        const top = targetEl.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
     }
+
     setActiveProduct(value);
   };
 
@@ -162,10 +194,12 @@ export default function Products() {
       // If we're at the very top, ensure KeepyFarma is active
       if (window.scrollY <= 10) {
         setActiveProduct('KeepyFarma');
+        return;
       }
 
       const productRefs = [
         { ref: keepyFarmaRef, id: 'KeepyFarma', section: 'Farmaceutica' },
+        { ref: ePharmaRef, id: 'EPharma', section: 'Farmaceutica' },
         { ref: keepyLinkRef, id: 'KeepyLink', section: 'Take-Away' },
         { ref: tampaRef, id: 'Tampa', section: 'Industria' },
         { ref: intercalarRef, id: 'Intercalar', section: 'Industria' },
@@ -229,6 +263,11 @@ export default function Products() {
               {/* KeepyFarma - First Product */}
               <div ref={keepyFarmaRef} id="keepyfarma">
                 <CaixaMedicamentos />
+              </div>
+
+              {/* EPharma - Second Product */}
+              <div ref={ePharmaRef} id="EPharma">
+                <EPharma />
               </div>
               
               {/* KeepyLink - Second Product */}
