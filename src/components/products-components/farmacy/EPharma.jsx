@@ -135,12 +135,13 @@ export default function EPharma() {
             [+15 ºC a +25 ºC].
             </p>
             <br></br>
-            <p className="zor-partnership-lead">O Kit Isotérmico é adequado para todos os tipos de transporte de produtos
-termossensíveis. Trata-se de uma solução fácil de utilizar, reutilizável e qualificada até 20
-horas. Intervalos de temperatura: [+2 ºC a +8 ºC] e [+15 ºC a +25 ºC].Este kit é composto
-por uma caixa exterior polimérica, um reforço com isolamento térmico e acumuladores
-de frio que envolvem o(s) produto(s) a transportar.</p>
-
+            <p className="zor-partnership-lead">
+              O Kit Isotérmico é adequado para todos os tipos de transporte de produtos
+              termossensíveis. Trata-se de uma solução fácil de utilizar, reutilizável e qualificada até 20
+              horas. Intervalos de temperatura: [+2 ºC a +8 ºC] e [+15 ºC a +25 ºC].Este kit é composto
+              por uma caixa exterior polimérica, um reforço com isolamento térmico e acumuladores
+              de frio que envolvem o(s) produto(s) a transportar.
+            </p>
             <div className="product-actions mt-4">
               <Button onClick={() => navigate('/Contacts')} className="p-3 me-3">
                 Pedir cotação
