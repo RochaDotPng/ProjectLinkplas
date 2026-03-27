@@ -41,13 +41,49 @@ export default function CaixaMedicamentos() {
                         <div className="col-md-6 mb-3">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
-                                    <span>Tamanho pequeno com tampa</span>
+                                    <span>Tamanho pequeno</span>
                                 </div>
-                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/tampa-caixa.png'></img>
+                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/caixa-pequena.png'></img>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Tampa — após as caixas (mobile) */}
+                <section
+                    className="keepyfarma-tampa-showcase mb-4 d-block d-md-none"
+                    aria-labelledby="keepyfarma-tampa-heading-mobile"
+                >
+                    <h2 id="keepyfarma-tampa-heading-mobile" className="h4 text-white fw-semibold mb-3">
+                        Tampa
+                    </h2>
+                    <div className="row g-3">
+                        <div className="col-md-6">
+                            <div className="farmacy-image-container">
+                                <div className="size-indicator">
+                                    <span>Tampa em plástico</span>
+                                </div>
+                                <img
+                                    src="/images/TampaPlastico.png"
+                                    alt="Tampa exterior em plástico para caixa de medicamentos KeepyFarma"
+                                    className="product-img img-fluid"
+                                />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="farmacy-image-container">
+                                <div className="size-indicator">
+                                    <span>Tampa na caixa</span>
+                                </div>
+                                <img
+                                    src="/images/tampa-caixa.png"
+                                    alt="Tampa aplicada à caixa de medicamentos KeepyFarma"
+                                    className="product-img img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Description Section */}
                 <div className='product-description-section mb-4'>
@@ -57,8 +93,6 @@ export default function CaixaMedicamentos() {
                         <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
                     </div>
                 </div>
-
-                {/* Features Section */}
 
                 {/* Desktop: Images after description */}
                 <div className="product-images-section d-none d-md-block">
@@ -82,13 +116,49 @@ export default function CaixaMedicamentos() {
                         <div className="col-md-6 mb-3">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
-                                    <span>Tamanho pequeno com tampa</span>
+                                    <span>Tamanho pequeno</span>
                                 </div>
-                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/tampa-caixa.png'></img>
+                                <img alt="Imagem da caixa de medicamentos (tamanho pequeno) com tampa" className='product-img img-fluid' src='/images/caixa-pequena.png'></img>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Tampa — após as caixas (desktop) */}
+                <section
+                    className="keepyfarma-tampa-showcase mb-4 d-none d-md-block"
+                    aria-labelledby="keepyfarma-tampa-heading-desktop"
+                >
+                    <h2 id="keepyfarma-tampa-heading-desktop" className="h4 text-white fw-semibold mb-3">
+                        Tampa
+                    </h2>
+                    <div className="row g-3">
+                        <div className="col-md-6">
+                            <div className="farmacy-image-container">
+                                <div className="size-indicator">
+                                    <span>Tampa em plástico</span>
+                                </div>
+                                <img
+                                    src="/images/TampaPlastico.png"
+                                    alt="Tampa exterior em plástico para caixa de medicamentos KeepyFarma"
+                                    className="product-img img-fluid"
+                                />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="farmacy-image-container">
+                                <div className="size-indicator">
+                                    <span>Tampa na caixa</span>
+                                </div>
+                                <img
+                                    src="/images/tampa-caixa.png"
+                                    alt="Tampa aplicada à caixa de medicamentos KeepyFarma"
+                                    className="product-img img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </Container>
     )

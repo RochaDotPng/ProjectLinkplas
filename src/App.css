@@ -2272,6 +2272,12 @@ input:-webkit-autofill:active {
    text-align: center;
 }
 
+.keepyfarma-tampa-showcase {
+   padding-top: 1rem;
+   margin-top: 0.25rem;
+   border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 .size-indicator {
    position: absolute;
    top: 4px;
@@ -2960,8 +2966,9 @@ input:-webkit-autofill:active {
 
 @media (max-width: 991px) {
    .zor-partnership-header {
-      margin-top: 3.5rem;
-   }
+      margin-bottom: 3rem;
+      margin-top: 0.5rem;
+  }
 
    .zor-partnership-row {
       grid-template-columns: 1fr;
