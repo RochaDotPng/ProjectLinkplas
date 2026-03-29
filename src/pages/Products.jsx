@@ -16,9 +16,13 @@ import UltraSons from '../components/products-components/services/UltraSons';
 import MobileBottomBar from '../components/MobileBottomBar';
 import { Helmet } from 'react-helmet-async';
 
+const PRODUCT_CATEGORIES = ['Farmaceutica', 'Take-Away', 'Industria', 'Servicos'];
+
 export default function Products() {
   let { parameter } = useParams();
-  const [selectedProduct, setSelectedProduct] = useState('Farmaceutica');
+  const [selectedProduct, setSelectedProduct] = useState(() =>
+    parameter && PRODUCT_CATEGORIES.includes(parameter) ? parameter : 'Farmaceutica'
+  );
   const [activeProduct, setActiveProduct] = useState('Farmaceutica');
   const [autoOpenSections, setAutoOpenSections] = useState({
     'Industria': false,
@@ -27,6 +31,15 @@ export default function Products() {
   });
   let navigate = useNavigate();
   const location = useLocation();
+
+  // Mobile layout renders only `selectedProduct`; keep it aligned with /Products/:parameter.
+  useEffect(() => {
+    if (parameter && PRODUCT_CATEGORIES.includes(parameter)) {
+      setSelectedProduct(parameter);
+    } else if (parameter == null || parameter === undefined) {
+      setSelectedProduct('Farmaceutica');
+    }
+  }, [parameter]);
   
   // Refs for each product section
   const keepyFarmaRef = useRef(null);
@@ -115,8 +128,7 @@ export default function Products() {
   };
 
   const handleProductChange = (value) => {
-    const categories = ['Farmaceutica', 'Take-Away', 'Industria', 'Servicos'];
-    const isCategory = categories.includes(value);
+    const isCategory = PRODUCT_CATEGORIES.includes(value);
 
     if (isCategory) {
       setSelectedProduct(value);
