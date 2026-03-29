@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
@@ -40,6 +41,7 @@ export default function App() {
     <>
       <TransitionGroup>
         <BrowserRouter basename="/">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>} />
             <Route path="/About" element={<SwitchTransition><CSSTransition key="about" classNames="page-fade" timeout={500}><About /></CSSTransition></SwitchTransition>} />

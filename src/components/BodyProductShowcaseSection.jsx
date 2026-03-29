@@ -101,9 +101,14 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                         <Col lg={5} md={6} className="keepyfarma-visual">
                             <div className="keepyfarma-image-container">
                                 <img
-                                    src="../images/keepyfarma-stacked.png"
+                                    src="/images/keepyfarma-stacked.png"
                                     alt="KeepyFarma containers stacked"
-                                    className="keepyfarma-image keepyfarma-stacked"
+                                    className="keepyfarma-image keepyfarma-stacked d-none d-md-block"
+                                />
+                                <img
+                                    src="/images/keepyfarma-stacked-mobile.png"
+                                    alt="KeepyFarma containers stacked"
+                                    className="keepyfarma-image keepyfarma-stacked-mobile d-md-none"
                                 />
                             </div>
                         </Col>
@@ -128,9 +133,9 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                                 >
                                     Saber mais →
                                 </Button>
-                                <Container className="text-center-mobile">
+                                <Container className="text-center-mobile d-none d-md-block">
                                     <img
-                                        src="../images/keepyfarma-white.png"
+                                        src="/images/keepyfarma-white.png"
                                         alt="KeepyFarma white containers"
                                         className="keepyfarma-bottom-img"
                                     />
