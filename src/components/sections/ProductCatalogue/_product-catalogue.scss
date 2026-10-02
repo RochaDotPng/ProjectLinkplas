@@ -1,0 +1,57 @@
+// The Produtos catalogue: brand filters above a grid of product cards.
+
+// The selector is doubled with `.container` to outrank the legacy mobile
+// `.container { padding: 2% }` in App.css. Page margins are 20px on mobile.
+.lp-product-catalogue__inner.container {
+  padding-top: var(--lp-space-32);
+  padding-bottom: var(--lp-space-64);
+
+  @include media-breakpoint-down(lg) {
+    padding-right: var(--lp-space-20);
+    padding-left: var(--lp-space-20);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: var(--lp-space-48);
+    padding-bottom: var(--lp-space-96);
+  }
+}
+
+.lp-product-catalogue__filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+}
+
+.lp-product-catalogue__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-12);
+
+  @include media-breakpoint-up(lg) {
+    gap: var(--lp-space-12) var(--lp-space-24);
+  }
+}
+
+.lp-product-catalogue__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-24);
+  padding: 0;
+  margin: var(--lp-space-32) 0 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: var(--lp-space-64);
+  }
+}
+
+.lp-product-catalogue__empty {
+  margin: var(--lp-space-48) 0 0;
+  color: var(--lp-text-secondary);
+}

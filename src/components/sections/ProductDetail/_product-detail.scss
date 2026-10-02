@@ -1,0 +1,147 @@
+// Product page ("ficha técnica"). There is no Figma frame for it yet, so the layout is a
+// first proposal built only from design-system components, text styles and spacing.
+
+// The selector is doubled with `.container` to outrank the legacy mobile
+// `.container { padding: 2% }` in App.css. Page margins are 20px on mobile.
+.lp-product-detail.container {
+  padding-top: var(--lp-space-24);
+  padding-bottom: var(--lp-space-64);
+
+  @include media-breakpoint-down(lg) {
+    padding-right: var(--lp-space-20);
+    padding-left: var(--lp-space-20);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: var(--lp-space-32);
+    padding-bottom: var(--lp-space-96);
+  }
+}
+
+.lp-product-detail__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-24);
+  margin-top: var(--lp-space-24);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--lp-space-48);
+    align-items: start;
+    margin-top: var(--lp-space-32);
+  }
+}
+
+.lp-product-detail__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--lp-radius-lg);
+}
+
+.lp-product-detail__preview-note {
+  @include lp-caption;
+  margin: var(--lp-space-8) 0 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-product-detail__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-16);
+}
+
+.lp-product-detail__name {
+  margin: 0;
+}
+
+.lp-product-detail__lead {
+  @include lp-body-m;
+  margin: 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-product-detail__variants {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  margin: var(--lp-space-8) 0;
+}
+
+.lp-product-detail__variants-label {
+  @include lp-label-m;
+  margin: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-product-detail__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-12);
+}
+
+.lp-product-detail__summary .btn {
+  // A full-width button is easier to reach on a phone.
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}
+
+.lp-product-detail__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-48);
+  margin: var(--lp-space-48) 0;
+
+  @include media-breakpoint-up(lg) {
+    gap: var(--lp-space-64);
+    margin: var(--lp-space-80) 0 var(--lp-space-64);
+  }
+}
+
+.lp-product-detail__section > h2 {
+  margin: 0 0 var(--lp-space-24);
+}
+
+.lp-product-detail__subheading {
+  margin: var(--lp-space-32) 0 var(--lp-space-16);
+}
+
+// Running text and the two-column table keep a readable measure on wide screens.
+.lp-product-detail__text,
+.lp-product-detail__spec-table {
+  max-width: 720px;
+}
+
+.lp-product-detail__text {
+  p,
+  ul {
+    margin: 0 0 var(--lp-space-16);
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    padding-left: var(--lp-space-20);
+  }
+
+  li + li {
+    margin-top: var(--lp-space-4);
+  }
+}
+
+.lp-product-detail__downloads {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-16);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--lp-space-24);
+  }
+}

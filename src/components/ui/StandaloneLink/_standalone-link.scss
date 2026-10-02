@@ -1,0 +1,19 @@
+.lp-standalone-link {
+  @include lp-label-l;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--lp-text-primary);
+  text-decoration: none;
+  border-radius: var(--lp-radius-xs);
+
+  &:hover {
+    color: var(--lp-text-brand);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}

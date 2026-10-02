@@ -1,0 +1,67 @@
+.lp-chip {
+  position: relative;
+  display: inline-flex;
+  margin: 0;
+}
+
+// Covers the chip and reaches 6px above and below it: the chip is 32px tall in Figma,
+// and this brings the touch target to 44px without changing how it looks.
+.lp-chip__input {
+  position: absolute;
+  inset: -6px 0;
+  width: 100%;
+  height: calc(100% + 12px);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.lp-chip__body {
+  @include lp-label-m;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  // 6px by 12px in Figma, less the 1px border.
+  padding: 5px 11px;
+  color: var(--lp-text-primary);
+  white-space: nowrap;
+  background-color: var(--lp-bg-page);
+  border: 1px solid var(--lp-border-strong);
+  border-radius: var(--lp-radius-full);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.lp-chip__check {
+  display: none;
+}
+
+.lp-chip__input:hover:not(:disabled, :checked) + .lp-chip__body {
+  background-color: var(--lp-bg-subtle);
+  border-color: var(--lp-border-hover);
+}
+
+.lp-chip__input:checked + .lp-chip__body {
+  color: var(--lp-text-inverse);
+  background-color: var(--lp-bg-inverse);
+  border-color: var(--lp-bg-inverse);
+
+  .lp-chip__check {
+    display: inline-block;
+  }
+}
+
+// Figma draws focus as a 2px border/focus stroke; the inset shadow adds the second pixel
+// without moving the label, and the outer ring keeps it visible on a selected chip.
+.lp-chip__input:focus-visible + .lp-chip__body {
+  border-color: var(--lp-border-focus);
+  box-shadow: inset 0 0 0 1px var(--lp-border-focus), var(--lp-focus-ring);
+}
+
+.lp-chip__input:disabled + .lp-chip__body {
+  color: var(--lp-text-disabled);
+  background-color: var(--lp-control-bg-disabled);
+}

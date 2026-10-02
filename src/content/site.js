@@ -50,16 +50,17 @@ const site = {
         {
           heading: 'Produtos',
           links: [
-            { label: 'TupperLink', to: '/Products/Take-Away' },
-            { label: 'PharmaLink', to: '/Products/Farmaceutica' },
+            { label: 'TupperLink', to: '/Products?marcas=tupperlink' },
+            { label: 'PharmaLink', to: '/Products?marcas=pharmalink' },
+            { label: 'FactoryLink', to: '/Products?marcas=factorylink' },
           ],
         },
         {
           heading: 'Setores',
           links: [
-            { label: 'Indústria', to: '/Products/Industria' },
-            { label: 'Farmácia', to: '/Products/Farmaceutica' },
-            { label: 'Take-away', to: '/Products/Take-Away' },
+            { label: 'Indústria', to: '/Products?marcas=factorylink' },
+            { label: 'Farmácia', to: '/Products?marcas=pharmalink' },
+            { label: 'Take-away', to: '/Products?marcas=tupperlink' },
           ],
         },
       ],
@@ -102,16 +103,17 @@ const site = {
         {
           heading: 'Products',
           links: [
-            { label: 'TupperLink', to: '/Products/Take-Away' },
-            { label: 'PharmaLink', to: '/Products/Farmaceutica' },
+            { label: 'TupperLink', to: '/Products?marcas=tupperlink' },
+            { label: 'PharmaLink', to: '/Products?marcas=pharmalink' },
+            { label: 'FactoryLink', to: '/Products?marcas=factorylink' },
           ],
         },
         {
           heading: 'Sectors',
           links: [
-            { label: 'Industry', to: '/Products/Industria' },
-            { label: 'Pharmacy', to: '/Products/Farmaceutica' },
-            { label: 'Take-away', to: '/Products/Take-Away' },
+            { label: 'Industry', to: '/Products?marcas=factorylink' },
+            { label: 'Pharmacy', to: '/Products?marcas=pharmalink' },
+            { label: 'Take-away', to: '/Products?marcas=tupperlink' },
           ],
         },
       ],

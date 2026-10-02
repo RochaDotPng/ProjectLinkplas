@@ -1,0 +1,28 @@
+// The accent only fills the square; the name uses the sub-brand's text shade, which is the
+// one that passes contrast on the tinted background.
+.lp-subbrand-tag {
+  @include lp-label-m;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lp-space-8);
+  padding: 6px var(--lp-space-12) 6px 10px;
+  color: var(--lp-subbrand-tag-text);
+  white-space: nowrap;
+  background-color: var(--lp-subbrand-tag-subtle);
+  border-radius: var(--lp-radius-xs);
+}
+
+.lp-subbrand-tag__square {
+  flex: none;
+  width: var(--lp-space-8);
+  height: var(--lp-space-8);
+  background-color: var(--lp-subbrand-tag-accent);
+}
+
+@each $brand in (tupperlink, pharmalink, factorylink) {
+  .lp-subbrand-tag--#{$brand} {
+    --lp-subbrand-tag-accent: var(--lp-subbrand-#{$brand}-accent);
+    --lp-subbrand-tag-subtle: var(--lp-subbrand-#{$brand}-subtle);
+    --lp-subbrand-tag-text: var(--lp-subbrand-#{$brand}-text);
+  }
+}

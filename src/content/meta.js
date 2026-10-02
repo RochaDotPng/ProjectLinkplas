@@ -70,51 +70,15 @@ export const pageMeta = {
     },
   },
 
-  'products/Industria': {
-    path: '/Products/Industria',
+  products: {
+    path: '/Products',
     pt: {
-      title: 'Produtos Industriais - LinkPlas',
-      description: 'Produtos industriais LinkPlas: abraçadeiras, tampas, intercalares, anilhas. Componentes plásticos de alta qualidade para aplicações industriais.',
+      title: 'Produtos - LinkPlas',
+      description: 'Catálogo LinkPlas: recipientes TupperLink para take-away, caixas de transporte de medicamentos PharmaLink e componentes plásticos e soldadura por ultrassons FactoryLink.',
     },
     en: {
-      title: 'Industrial Products - LinkPlas',
-      description: 'LinkPlas industrial products: clamps, caps, spacers and washers. High-quality plastic components for industrial applications.',
-    },
-  },
-
-  'products/Farmaceutica': {
-    path: '/Products/Farmaceutica',
-    pt: {
-      title: 'Produtos Farmacêuticos - LinkPlas',
-      description: 'Caixas de transporte de medicamentos LinkPlas. Produtos farmacêuticos em plástico de alta resistência, seguros e certificados.',
-    },
-    en: {
-      title: 'Pharmaceutical Products - LinkPlas',
-      description: 'LinkPlas medicine transport boxes. Pharmaceutical products in high-strength plastic, safe and certified.',
-    },
-  },
-
-  'products/Take-Away': {
-    path: '/Products/Take-Away',
-    pt: {
-      title: 'TupperLink - LinkPlas',
-      description: 'Tupperwares take-away TupperLink: recipientes reutilizáveis, tuppers ecológicos empilháveis. Alternativa sustentável aos descartáveis para restaurantes e delivery.',
-    },
-    en: {
-      title: 'TupperLink - LinkPlas',
-      description: 'TupperLink take-away containers: reusable, stackable, eco-friendly tubs. A sustainable alternative to disposables for restaurants and delivery.',
-    },
-  },
-
-  'products/Servicos': {
-    path: '/Products/Servicos',
-    pt: {
-      title: 'Serviços - LinkPlas',
-      description: 'Serviços LinkPlas: soldadura por ultra sons de peças plásticas. Soluções técnicas especializadas para a indústria.',
-    },
-    en: {
-      title: 'Services - LinkPlas',
-      description: 'LinkPlas services: ultrasonic welding of plastic parts. Specialised technical solutions for industry.',
+      title: 'Products - LinkPlas',
+      description: 'The LinkPlas catalogue: TupperLink take-away containers, PharmaLink medicine transport boxes, and FactoryLink plastic components and ultrasonic welding.',
     },
   },
 };

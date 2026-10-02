@@ -205,6 +205,9 @@ $lp-primitives: (
   --lp-subbrand-pharmalink-accent: #ab8fc2;
   --lp-subbrand-pharmalink-subtle: #f4f0f8;
   --lp-subbrand-pharmalink-text: #6e4f8a;
+  --lp-subbrand-factorylink-accent: #c2521a;
+  --lp-subbrand-factorylink-subtle: #fbe9e0;
+  --lp-subbrand-factorylink-text: #7e3511;
 
   // Spacing
   @each $step in $lp-space-scale {

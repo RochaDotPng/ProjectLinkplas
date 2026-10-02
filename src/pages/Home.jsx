@@ -12,21 +12,14 @@ import PageMeta from '../components/seo/PageMeta/PageMeta';
 export default function Home() {
     const navigate = useNavigate();
 
+    // The showcase still reports the old category and anchor; each maps to a product page.
+    const PRODUCT_PAGES = {
+        tupperlink: '/Products/recipiente-tupperlink',
+        pharmalink: '/Products/caixa-de-transporte-de-medicamentos',
+    };
+
     const handleProductChange = (product) => {
-        if (typeof product === 'string') {
-            navigate(`/Products/${product}`);
-            return;
-        }
-
-        const category = product?.category;
-        const hash = product?.hash;
-        if (category) {
-            navigate(`/Products/${category}${hash ? `#${hash}` : ''}`);
-            return;
-        }
-
-        // Fallback (keeps previous behavior even if payload is unexpected)
-        navigate(`/Products/Farmaceutica`);
+        navigate(PRODUCT_PAGES[product?.hash] ?? '/Products');
     };
 
     return (

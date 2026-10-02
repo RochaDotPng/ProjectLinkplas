@@ -1,0 +1,66 @@
+.lp-spec-table {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--lp-border-default);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-spec-table__table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+
+  th,
+  td {
+    height: 48px;
+    padding: var(--lp-space-12) var(--lp-space-16);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  thead th {
+    @include lp-label-m;
+    color: var(--lp-text-inverse);
+    white-space: nowrap;
+    background-color: var(--lp-bg-inverse);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--lp-border-default);
+
+    &:nth-child(even) {
+      background-color: var(--lp-bg-subtle);
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  tbody th {
+    @include lp-label-m;
+    color: var(--lp-text-secondary);
+  }
+
+  td {
+    @include lp-text(14, 22);
+    font-family: $lp-font-mono;
+    color: var(--lp-text-primary);
+    white-space: nowrap;
+  }
+}
+
+// The two-column layout of the Figma component: a 240px name column, then the value.
+.lp-spec-table--pairs .lp-spec-table__table {
+  th:first-child {
+    width: 45%;
+
+    @include media-breakpoint-up(md) {
+      width: 240px;
+    }
+  }
+
+  td {
+    white-space: normal;
+  }
+}

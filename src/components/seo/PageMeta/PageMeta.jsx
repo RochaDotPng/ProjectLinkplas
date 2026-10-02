@@ -6,9 +6,12 @@ import { pageMeta, SITE_ORIGIN, UPDATED_TIME } from '../../../content/meta';
 
 const urlFor = (code, path) => `${SITE_ORIGIN}${localizedPath(code, path)}`;
 
-export default function PageMeta({ page }) {
+// Fixed pages name their entry in content/meta.js with `page`. Pages generated from data,
+// such as a product, pass their own `path` and `meta` instead.
+export default function PageMeta({ page, path: ownPath, meta: ownMeta }) {
   const language = useLanguage();
-  const { path, [language]: meta } = pageMeta[page];
+  const path = ownPath ?? pageMeta[page].path;
+  const meta = ownMeta ?? pageMeta[page][language];
   const url = urlFor(language, path);
 
   return (
@@ -34,5 +37,10 @@ export default function PageMeta({ page }) {
 }
 
 PageMeta.propTypes = {
-  page: PropTypes.oneOf(Object.keys(pageMeta)).isRequired,
+  page: PropTypes.oneOf(Object.keys(pageMeta)),
+  path: PropTypes.string,
+  meta: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
 };

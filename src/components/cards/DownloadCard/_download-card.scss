@@ -1,0 +1,65 @@
+.lp-download-card {
+  display: flex;
+  align-items: center;
+  gap: var(--lp-space-16);
+  min-height: 80px;
+  padding: var(--lp-space-16) var(--lp-space-20);
+  font-weight: 400;
+  color: var(--lp-text-primary);
+  text-decoration: none;
+  background-color: var(--lp-bg-page);
+  border: 1px solid var(--lp-border-default);
+  border-radius: var(--lp-radius-lg);
+
+  &:hover {
+    color: var(--lp-text-primary);
+    border-color: var(--lp-border-strong);
+
+    .lp-download-card__action {
+      background-color: var(--lp-action-secondary-bg-hover);
+    }
+  }
+}
+
+.lp-download-card__file {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-control-height-md);
+  height: var(--lp-control-height-md);
+  color: var(--lp-icon-brand);
+  background-color: var(--lp-bg-brand-subtle);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-download-card__info {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--lp-space-2);
+  min-width: 0;
+}
+
+.lp-download-card__title {
+  @include lp-label-l;
+}
+
+.lp-download-card__meta {
+  @include lp-caption;
+  color: var(--lp-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.lp-download-card__action {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-control-height-md);
+  height: var(--lp-control-height-md);
+  color: var(--lp-action-secondary-fg);
+  background-color: var(--lp-action-secondary-bg);
+  border: 1.5px solid var(--lp-action-secondary-border);
+  transition: background-color 0.15s ease;
+}

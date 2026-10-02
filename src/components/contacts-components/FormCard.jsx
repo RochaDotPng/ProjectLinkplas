@@ -5,6 +5,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import emailjs from 'emailjs-com';
 import Alert from 'react-bootstrap/Alert';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useLocation } from 'react-router-dom';
 
 
 export default function FormCard() {
@@ -20,12 +21,11 @@ export default function FormCard() {
         email: '',
         mensagem: '',
     };
+    // A product page sends the visitor here with the product named, to start the message.
+    const { state } = useLocation();
     const [formData, setFormData] = useState({
-        nome: '',
-        empresa: '',
-        contacto: '',
-        email: '',
-        mensagem: '',
+        ...initialFormData,
+        mensagem: state?.message ? `${state.message}\n` : '',
     });
 
 

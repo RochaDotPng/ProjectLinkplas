@@ -6,6 +6,7 @@ import About from './pages/About'
 import Contacts from './pages/Contacts'
 import Policy from './pages/Policy'
 import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
 import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from './i18n/language-context';
@@ -53,7 +54,7 @@ export default function App() {
             <Route path="/Contacts" element={<SwitchTransition><CSSTransition key="contacts" classNames="page-fade" timeout={500}><Contacts /></CSSTransition></SwitchTransition>} />
             <Route path="/Policy" element={<SwitchTransition><CSSTransition key="policy" classNames="page-fade" timeout={500}><Policy /></CSSTransition></SwitchTransition>} />
             <Route path="/Products" element={<SwitchTransition><CSSTransition key="products" classNames="page-fade" timeout={500}><Products /></CSSTransition></SwitchTransition>} />
-            <Route path="/Products/:parameter" element={<SwitchTransition><CSSTransition key="products" classNames="page-fade" timeout={500}><Products /></CSSTransition></SwitchTransition>} />
+            <Route path="/Products/:slug" element={<SwitchTransition><CSSTransition key="product" classNames="page-fade" timeout={500}><ProductDetail /></CSSTransition></SwitchTransition>} />
             <Route path="*" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>}  />
           </Routes>
         </BrowserRouter>
