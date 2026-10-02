@@ -36,7 +36,9 @@ src/
     cards/                 # ProductCard, SectorCard, FeatureCard, NewsCard, TestimonialCard, Stat
     content/               # SectionHeading, Eyebrow, AccordionItem, ProcessStep, TimelineItem, SpecTable, Stepper
     sections/              # Hero, CTASection, Footer, CookieBanner
-  content/site.js          # pt-PT copy and links for the header and footer
+    seo/                   # PageMeta (title, description, canonical, hreflang)
+  content/                 # copy per language: site.js (header and footer), meta.js (page metadata)
+  i18n/                    # language list, URL prefix helpers, useLanguage()
   assets/brand/            # official logo SVGs only
   assets/icons/            # Figma icons, one file per size (name-size.svg)
 docs/brand/                # brand manual PDF
@@ -254,6 +256,8 @@ Open, not yet decided:
 
 Phase 1 (done): tokens and Bootstrap overrides in `src/styles/`, official logo and icon assets, `Logo`, `SubbrandLogo`, `Button`, `IconButton`, `Icon`, `Eyebrow`, `NavItem`, `LanguageSwitcher`, `CertificationBadge`, the rebuilt `Header` and `Footer`, and the company and product renames. Shell copy and links live in `src/content/site.js`.
 
+Language infrastructure (done): see "Languages" below. English is built but **not published**.
+
 Everything else is still the pre-rebrand implementation and is styled by `src/App.css`:
 - Its colour variables (`--bs-secondary-gradient`, `--bs-primary-dark`, …) are aliases onto the new tokens until those sections are rebuilt. Don't use them in new code.
 - It has a global `a { display: flex; color: white; font-weight: 300 }` and a mobile `.container { padding: 2% }`. New components set these properties explicitly.
@@ -261,7 +265,43 @@ Everything else is still the pre-rebrand implementation and is styled by `src/Ap
 - `Header` and `Footer` still sit in `src/components/`; they move to `navigation/` and `sections/` with the rest of the kit.
 - Several old sections have fixed pixel heights tuned to the previous font, so check them when type or spacing changes.
 
-Not built yet: the dark `Header` theme, mega menu, the remaining Figma components and page sections, a ThermaLink or KeepyLink section, a cookie banner, and a second language (the switcher lists Portuguese only).
+Not built yet: the dark `Header` theme, mega menu, the remaining Figma components and page sections, a ThermaLink or KeepyLink section, a cookie banner, and English page copy (only the header, footer and page metadata are translated).
+
+## Roadmap
+
+Page work is **on hold**: the client is preparing the page structure designs. Don't rebuild or restructure pages, and don't build page sections (Hero, CTA, stats band, contact section), until those designs arrive.
+
+Phase 2, not tied to page structure:
+- **English language.** The infrastructure is done and English is unpublished (see "Languages"). Page copy is translated page by page as each page is refactored, then English is published.
+- **3D product viewer.** An interactive viewer for the TupperLink and PharmaLink products, built as a standalone component that the future product pages will place. Agreed scope: rotate, zoom and colour variants. The client's source files are **STL**, which carries geometry only (no colour, material or separate parts), so they are converted to GLB in the repo by a script, with materials and colours applied in code. STL sources stay out of `public/`. The viewer needs a static image fallback, keyboard controls, an accessible name, and must load only when it scrolls into view. Colour variants must be real product colours supplied by the client.
+- **Component kit.** The remaining Figma components that don't depend on page structure (forms, cards, badges and tags, feedback, content blocks).
+
+Phase 3, after the page designs arrive: rebuild the five pages on the kit, retire `src/App.css`, the mega menu and dark header, and move `Header`/`Footer` into their folders. **Each page refactor includes its English translation** (see the reminder under "Languages").
+
+Phase 4, waiting on client content: the KeepyLink product, ThermaLink, the cookie banner and the multi-step quote form.
+
+---
+
+## Languages
+
+Portuguese (pt-PT) is the default and keeps the unprefixed URLs. English lives under `/en/...`.
+
+> **Reminder — a page refactor is not finished until it has English.** When a page is rebuilt, move its copy into a content module with `pt` and `en` entries (as `src/content/site.js` does), draft the English, and ask the client to review it. Remind the user of this when a page refactor is being wrapped up. When all five pages are done, publish English with the checklist below.
+
+How it works:
+- `src/i18n/languages.js` lists the languages. A language with `published: false` is served by the dev server only, so English can be reviewed at `localhost:5173/en` but is absent from production builds (there, `/en/...` falls through to the Portuguese catch-all and the switcher lists Portuguese only).
+- The language is read from the URL once at load (`src/main.jsx`) and its prefix is the router `basename` (`src/App.jsx`). Routes, `<Link>` and `navigate()` therefore never mention a language. Changing language is a full page load, which is why `LanguageSwitcher` renders plain links.
+- Copy comes from content modules through hooks: `useSiteContent()` for the header and footer, and `src/content/meta.js` for page titles and descriptions. `useLanguage()` gives the current language code.
+- Every page renders `<PageMeta page="…" />`, which sets the title, description, Open Graph tags, the canonical URL for the current language, and `hreflang` alternates when more than one language is served.
+- Reference files in `public/` with root-absolute paths (`/images/…`, `/files/…`). Relative paths such as `../images/…` break under `/en/...`.
+
+Publishing English (only after every page has reviewed English copy):
+1. Set `published: true` for `en` in `src/i18n/languages.js`.
+2. Add the `/en/...` URLs to `sitemap.xml` and `public/sitemap.xml`.
+3. Add English to `availableLanguage` in the JSON-LD in `index.html`.
+4. Remove the static canonical and `og:url` tags from `index.html`: they point every page at the home page and conflict with the per-page ones.
+
+The English header, footer and metadata copy are drafts awaiting client review.
 
 ---
 
@@ -272,9 +312,10 @@ The brand manual's product architecture **overrides** the current site's naming.
 - `KeepyFarma` → **PharmaLink** (pharmacy transport boxes). `e-Pharma` stays a product under PharmaLink; confirm final product name during the content pass.
 - Take-away tupperware line (currently branded `KeepyLink`) → **TupperLink**.
 - `KeepyLink` (the name) is **no longer the take-away line**. It is now a **new product, not yet on the site**: transparent pharmacy-style storage boxes — the same box shape as the PharmaLink medicine boxes, but transparent and without the ventilation holes, repurposed as general storage/organisation containers. This needs new content, photography/renders and copy written from scratch; don't reuse take-away copy for it.
+- **Until KeepyLink launches, the site must carry no trace of the name**: no copy, alt text, metadata, class names, file names, logo assets or tokens. The KeepyLink logo files and `subbrand/keepylink/*` tokens are deliberately absent from the repo; export them from Figma (`Logo / Submarca`, node `31:313`) when the product is added.
 - **ThermaLink is a future product line, out of scope for this pass.** Don't build a ThermaLink section or migrate any current content into it — just reserve the name/colour so it isn't reused elsewhere. Confirm with the client before adding any ThermaLink content later.
 - The current **Indústria** (Tampa, Intercalar, TampaVeio, Anilha, Abraçadeira) and **Serviços** (UltraSons) categories are **not** being folded into any sub-brand right now — they stay as parent-brand (LinkPlas) content, styled with the parent palette (Azul Profundo / Azul Petróleo), not a sub-brand accent.
-- Every occurrence of the company name itself must change from `Linkplas` to `LinkPlas` (copy, alt text, meta tags, structured data, emails, file names where practical).
+- Every occurrence of the company name itself must change from `Linkplas` to `LinkPlas` (copy, alt text, meta tags, structured data, emails, file names where practical). The one exception is the registered company name, which stays **`Linkplas, Lda`** wherever the legal entity is named (for example the address card on Contacts).
 
 Resulting product architecture for this rebrand:
 - **LinkPlas (parent)** — Indústria, Serviços

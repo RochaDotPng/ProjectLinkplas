@@ -147,7 +147,7 @@ export default function EPharma() {
                 Pedir cotação
               </Button>
               <Button
-                href="../files/ZØR_LINKPLAS_Kit.pdf"
+                href="/files/ZØR_LINKPLAS_Kit.pdf"
                 download
                 variant="secondary"
                 className="p-16 btn-secondary text-white"

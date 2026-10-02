@@ -1,20 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Container } from "react-bootstrap";
-import { Helmet } from 'react-helmet-async';
+import PageMeta from '../components/seo/PageMeta/PageMeta';
 
 export default function Policy() {
     return (
         <div>
-            <Helmet>
-                <title>Política de Qualidade - LinkPlas</title>
-                <meta name="description" content="Política de qualidade LinkPlas: empresa certificada ISO 9001, compromisso com melhoria contínua, satisfação do cliente e excelência na produção de peças plásticas." />
-                <meta property="og:title" content="Política de Qualidade - LinkPlas | ISO 9001" />
-                <meta property="og:description" content="Conheça a política de qualidade da LinkPlas, empresa certificada ISO 9001 com compromisso na excelência." />
-                <meta property="og:url" content="https://www.linkplas.pt/Policy" />
-                <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
-                <link rel="canonical" href="https://www.linkplas.pt/Policy" />
-            </Helmet>
+            <PageMeta page="policy" />
             <Header/>
             <main id="conteudo" tabIndex={-1}>
             <div className="policy-body-img">

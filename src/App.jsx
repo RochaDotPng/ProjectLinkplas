@@ -7,9 +7,12 @@ import Contacts from './pages/Contacts'
 import Policy from './pages/Policy'
 import Products from './pages/Products'
 import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
+import { useLanguage } from './i18n/language-context';
+import { getLanguage } from './i18n/languages';
 
 export default function App() {
+  const { locale, prefix } = getLanguage(useLanguage());
 
   window.onscroll = function () { scrollFunction() };
 
@@ -39,8 +42,10 @@ export default function App() {
   }
   return (
     <>
+      <Helmet htmlAttributes={{ lang: locale }} />
       <TransitionGroup>
-        <BrowserRouter basename="/">
+        {/* The language prefix is the router basename, so routes, links and navigate() calls stay language-agnostic. */}
+        <BrowserRouter basename={prefix || "/"}>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>} />

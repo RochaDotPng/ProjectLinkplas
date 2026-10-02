@@ -40,7 +40,7 @@ export default function BodyAboutSection() {
     return (
         <>  
             
-            <CardSection jsonPath="./LinkplasData/cards.json"></CardSection>
+            <CardSection jsonPath="/LinkplasData/cards.json"></CardSection>
                 <Container className='circle-background-right'>
                 <div 
                     ref={aboutRef}

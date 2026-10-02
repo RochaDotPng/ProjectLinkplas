@@ -15,13 +15,13 @@ export default function Abracadeira(){
                 <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="row">
                         <div className="col-md-4 mb-16">
-                            <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='../images/abracadeira.png'></img>
+                            <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='/images/abracadeira.png'></img>
                         </div>
                         <div className="col-md-4 mb-16">
-                            <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='product-img img-fluid' src='../images/perna1.png'></img>
+                            <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='product-img img-fluid' src='/images/perna1.png'></img>
                         </div>
                         <div className="col-md-4 mb-16">
-                            <img alt='Animação da montagem da abraçadeira na perna' className='product-animation img-fluid' src='../images/perna_animation.gif'></img>
+                            <img alt='Animação da montagem da abraçadeira na perna' className='product-animation img-fluid' src='/images/perna_animation.gif'></img>
                         </div>
                     </div>
                 </div>
@@ -37,11 +37,11 @@ export default function Abracadeira(){
                             <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
-                                <Dropdown.Item href="../files/Abracadeira/7017030008.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="../files/Abracadeira/7017030008.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="../files/Abracadeira/7017030008.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="../files/Abracadeira/7017030008.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="/files/catalogo_Linkplas_sem_taco.pdf" download>Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="/files/Abracadeira/7017030008.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="/files/Abracadeira/7017030008.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="/files/Abracadeira/7017030008.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="/files/Abracadeira/7017030008.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
@@ -51,13 +51,13 @@ export default function Abracadeira(){
                 <div className="product-images-section d-none d-md-block">
                     <div className="row">
                         <div className="col-md-4 mb-16">
-                            <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='../images/abracadeira.png'></img>
+                            <img alt='Imagem da abraçadeira plástica' className='product-img img-fluid' src='/images/abracadeira.png'></img>
                         </div>
                         <div className="col-md-4 mb-16">
-                            <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='product-img img-fluid' src='../images/perna1.png'></img>
+                            <img alt='Imagem da de uma perna com as abraçadeiras montadas' className='product-img img-fluid' src='/images/perna1.png'></img>
                         </div>
                         <div className="col-md-4 mb-16">
-                            <img alt='Animação da montagem da abraçadeira na perna' className='product-animation img-fluid' src='../images/perna_animation.gif'></img>
+                            <img alt='Animação da montagem da abraçadeira na perna' className='product-animation img-fluid' src='/images/perna_animation.gif'></img>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
     {
         "title": "Iniciar 2026 com união e ambição",
         "description": "Depois de um 2025 desafiante e bem-sucedido, iniciamos 2026 com ambição de crescer, agradecendo a clientes, parceiros e à nossa equipa pela união e dedicação.",
-        "image": "./LinkplasData/newyear.jpg",
+        "image": "/LinkplasData/newyear.jpg",
         "url": "https://www.linkedin.com/posts/linkplaspt_ap%C3%B3s-um-2025-que-teve-tanto-de-desafiante-activity-7415088926480048128-VP_G",
         "date": "Janeiro 08, 2026 - Linkedin"
     }
@@ -10,7 +10,7 @@
     {
         "title": "Feliz Natal",
         "description": "Desejamos que este Natal vos traga a vocês e às vossas famílias momentos de paz, alegria e renovação. Um Ano Novo repleto de saúde, felicidade e prosperidade.",
-        "image": "./LinkplasData/natal.jpeg",
+        "image": "/LinkplasData/natal.jpeg",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7277005348857663489",
         "date": "Dezembro 23, 2024 - Linkedin"
     }
@@ -18,7 +18,7 @@
     {
         "title": "Rabanadas frescas",   
         "description": "Com TupperLink ela nao 'murcha', mantém o seu sabor e textura crocante sem precisar de um milagre de Natal",
-        "image": "./LinkplasData/rabanada.jpeg",
+        "image": "/LinkplasData/rabanada.jpeg",
         "url": "https://www.instagram.com/p/DDvOZGfCb6sdpaIIO__HDVJVwVnwqTH-Tc9il80/",
         "date": "Dezembro 18, 2024 - Instagram"
     }
@@ -26,7 +26,7 @@
     {
         "title": "Selo Igualdade Salarial",
         "description": " Este reconhecimento reafirma o nosso compromisso com a igualdade de género e com um ambiente onde todos são valorizados pelo seu talento.",
-        "image": "./LinkplasData/igualdade.jpeg",
+        "image": "/LinkplasData/igualdade.jpeg",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7262842505405091840",
         "date": "Novembro 14, 2024 - Linkedin"
     }
@@ -34,7 +34,7 @@
     {
         "title": "Nos bastidores da LinkPlas",
         "description": "Aqui está um vislumbre do nosso compromisso com a qualidade enquanto preparamos cada embalagem com precisão.",
-        "image": "./LinkplasData/image.jpg",
+        "image": "/LinkplasData/image.jpg",
         "url": "https://www.instagram.com/p/DBrQHqqipX8-WmDx8uMIDVILqkWciNnASDN3-Q0/",
         "date": "Outubro 28, 2024 - Instagram"
     }
@@ -42,7 +42,7 @@
     {
         "title": "Introdução da gama TupperLink",
         "description": "Novidade para o seu restaurante/Take Away e para a organização da sua casa. + Empilháveis e compactas: Poupam espaço na cozinha e no restaurante.",
-        "image": "./LinkplasData/organizacao.jpeg",
+        "image": "/LinkplasData/organizacao.jpeg",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7254503911208722432",
         "date": "Outubro 22, 2024 - Linkedin"
     }

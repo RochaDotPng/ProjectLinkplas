@@ -12,37 +12,37 @@ export default function Anilha() {
         switch (filetype) {
             case 'PDF':
                 if (size == '16') {
-                    download('../files/Anilha/7017030011.pdf', '7017030011.pdf');
+                    download('/files/Anilha/7017030011.pdf', '7017030011.pdf');
                 } else {
-                    download('../files/Anilha/7017030009.pdf', '7017030009.pdf');
+                    download('/files/Anilha/7017030009.pdf', '7017030009.pdf');
                 }
                 break;
             case 'DWG':
                 if (size == '16') {
-                    download('../files/Anilha/7017030011.DWG', '7017030011.DWG');
+                    download('/files/Anilha/7017030011.DWG', '7017030011.DWG');
                 } else {
-                    download('../files/Anilha/7017030009.DWG', '7017030009.DWG');
+                    download('/files/Anilha/7017030009.DWG', '7017030009.DWG');
                 }
                 break;
             case 'IGS':
                 if (size == '16') {
-                    download('../files/Anilha/7017030011.IGS', '7017030011.IGS');
+                    download('/files/Anilha/7017030011.IGS', '7017030011.IGS');
                 } else {
-                    download('../files/Anilha/7017030009.IGS', '7017030009.IGS');
+                    download('/files/Anilha/7017030009.IGS', '7017030009.IGS');
                 }
                 break;
             case 'STEP':
                 if (size == '16') {
-                    download('../files/Anilha/7017030011.STEP', '7017030011.STEP');
+                    download('/files/Anilha/7017030011.STEP', '7017030011.STEP');
                 } else {
-                    download('../files/Anilha/7017030009.STEP', '7017030009.STEP');
+                    download('/files/Anilha/7017030009.STEP', '7017030009.STEP');
                 }
                 break;
             case 'SLDPRT':
                 if (size == '16') {
-                    download('../files/Anilha/7017030011.SLDPRT', '7017030011.SLDPRT');
+                    download('/files/Anilha/7017030011.SLDPRT', '7017030011.SLDPRT');
                 } else {
-                    download('../files/Anilha/7017030009.SLDPRT', '7017030009.SLDPRT');
+                    download('/files/Anilha/7017030009.SLDPRT', '7017030009.SLDPRT');
                 }
                 break;
             default:
@@ -72,12 +72,12 @@ export default function Anilha() {
                     <div className="row">
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
+                                <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='/images/anilha_intercalar.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='../images/anilha_intercalar-uso.png'></img>
+                                <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='/images/anilha_intercalar-uso.png'></img>
                             </div>
                         </div>
                     </div>
@@ -97,12 +97,12 @@ export default function Anilha() {
                     <div className="row">
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
+                                <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='/images/anilha_intercalar.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='../images/anilha_intercalar-uso.png'></img>
+                                <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='/images/anilha_intercalar-uso.png'></img>
                             </div>
                         </div>
                     </div>
@@ -138,10 +138,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -159,10 +159,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -180,10 +180,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -214,10 +214,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030014.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -233,10 +233,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030015.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
@@ -252,10 +252,10 @@ export default function Anilha() {
                                                 <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
-                                                <Dropdown.Item href="../files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.IGS" download>3D - IGS</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.STEP" download>3D - STEP</Dropdown.Item>
+                                                <Dropdown.Item href="/files/Anilha/7017030016.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>

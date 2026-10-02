@@ -14,7 +14,7 @@ import TampaVeio from '../components/products-components/industry/TampaVeio';
 import Anilha from '../components/products-components/industry/Anilha';
 import UltraSons from '../components/products-components/services/UltraSons';
 import MobileBottomBar from '../components/MobileBottomBar';
-import { Helmet } from 'react-helmet-async';
+import PageMeta from '../components/seo/PageMeta/PageMeta';
 
 const PRODUCT_CATEGORIES = ['Farmaceutica', 'Take-Away', 'Industria', 'Servicos'];
 
@@ -51,44 +51,6 @@ export default function Products() {
   const tampaVeioRef = useRef(null);
   const anilhaRef = useRef(null);
   const ultraSonsRef = useRef(null);
-
-  // SEO content based on selected product category
-  const getPageMeta = () => {
-    switch(selectedProduct) {
-      case 'Industria':
-        return {
-          title: 'Produtos Industriais - LinkPlas',
-          description: 'Produtos industriais LinkPlas: abraçadeiras, tampas, intercalares, anilhas. Componentes plásticos de alta qualidade para aplicações industriais.',
-          url: 'https://www.linkplas.pt/Products/Industria'
-        };
-      case 'Farmaceutica':
-        return {
-          title: 'Produtos Farmacêuticos - LinkPlas',
-          description: 'Caixas de transporte de medicamentos LinkPlas. Produtos farmacêuticos em plástico de alta resistência, seguros e certificados.',
-          url: 'https://www.linkplas.pt/Products/Farmaceutica'
-        };
-      case 'Take-Away':
-        return {
-          title: 'TupperLink - LinkPlas',
-          description: 'Tupperwares take-away TupperLink: recipientes reutilizáveis, tuppers ecológicos empilháveis. Alternativa sustentável aos descartáveis para restaurantes e delivery.',
-          url: 'https://www.linkplas.pt/Products/Take-Away'
-        };
-      case 'Servicos':
-        return {
-          title: 'Serviços - LinkPlas',
-          description: 'Serviços LinkPlas: soldadura por ultra sons de peças plásticas. Soluções técnicas especializadas para a indústria.',
-          url: 'https://www.linkplas.pt/Products/Servicos'
-        };
-      default:
-        return {
-          title: 'Produtos - LinkPlas',
-          description: 'Descubra todos os produtos LinkPlas: componentes industriais, produtos farmacêuticos, take-away TupperLink e serviços de soldadura.',
-          url: 'https://www.linkplas.pt/Products'
-        };
-    }
-  };
-
-  const pageMeta = getPageMeta();
 
   function ChangeUrl(param) {
     if (param == null || param == undefined) {
@@ -276,15 +238,7 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <Helmet>
-        <title>{pageMeta.title}</title>
-        <meta name="description" content={pageMeta.description} />
-        <meta property="og:title" content={pageMeta.title} />
-        <meta property="og:description" content={pageMeta.description} />
-        <meta property="og:url" content={pageMeta.url} />
-        <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
-        <link rel="canonical" href={pageMeta.url} />
-      </Helmet>
+      <PageMeta page={`products/${selectedProduct}`} />
       <Header />
 
       <main id="conteudo" tabIndex={-1}>

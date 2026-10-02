@@ -21,7 +21,7 @@ export default function TupperLink() {
                                     <span>Transparente</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='/images/tupperlink_large.png'></img>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ export default function TupperLink() {
                                     <span>Com cor</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
+                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='/images/tupperlink_colored.png'></img>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ export default function TupperLink() {
                                     <span>Transparente</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='/images/tupperlink_large.png'></img>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ export default function TupperLink() {
                                     <span>Com cor</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
+                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='/images/tupperlink_colored.png'></img>
                                 </div>
                             </div>
                         </div>

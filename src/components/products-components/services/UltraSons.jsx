@@ -15,7 +15,7 @@ export default function UltraSons() {
                 {/* Mobile: Images first */}
                 <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
-                        <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
+                        <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='/images/soldadura-ultrassons.jpg'></img>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@ export default function UltraSons() {
                 {/* Desktop: Images after description */}
                 <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="text-center">
-                        <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
+                        <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='/images/soldadura-ultrassons.jpg'></img>
                     </div>
                 </div>
             </div>

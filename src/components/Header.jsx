@@ -11,13 +11,14 @@ import menuIcon from '../assets/icons/menu-20.svg';
 import closeIcon from '../assets/icons/close-20.svg';
 import chevronRight from '../assets/icons/chevron-right-20.svg';
 import arrowRight from '../assets/icons/arrow-right-20.svg';
-import { brand, mainNav, skipLinkLabel } from '../content/site';
+import { useSiteContent } from '../content/site';
 
 const MOBILE_MENU_ID = 'lp-mobile-menu';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+  const { homeLabel, skipLinkLabel, mainNav } = useSiteContent();
 
   useEffect(() => {
     setMenuOpen(false);
@@ -28,7 +29,7 @@ export default function Header() {
       <a className="lp-skip-link" href="#conteudo">{skipLinkLabel}</a>
       <header className="lp-header">
         <div className="container lp-header__inner">
-          <Link to="/" className="lp-header__brand" aria-label={brand.homeLabel}>
+          <Link to="/" className="lp-header__brand" aria-label={homeLabel}>
             <Logo />
           </Link>
 
@@ -63,7 +64,7 @@ export default function Header() {
         aria-label={mainNav.mobileMenuLabel}
       >
         <div className="lp-mobile-menu__top">
-          <Link to="/" className="lp-header__brand" aria-label={brand.homeLabel}>
+          <Link to="/" className="lp-header__brand" aria-label={homeLabel}>
             <Logo />
           </Link>
           <IconButton

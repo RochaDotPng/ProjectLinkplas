@@ -15,7 +15,7 @@ export default function Intercalar() {
                 {/* Mobile: Images first */}
                 <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
-                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
+                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='/images/intercalar.png'></img>
                     </div>
                 </div>
 
@@ -30,10 +30,10 @@ export default function Intercalar() {
                             <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="../files/Intercalar/7017030013.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="../files/Intercalar/7017030013.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="../files/Intercalar/7017030013.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="../files/Intercalar/7017030013.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="/files/Intercalar/7017030013.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="/files/Intercalar/7017030013.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="/files/Intercalar/7017030013.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="/files/Intercalar/7017030013.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
@@ -42,7 +42,7 @@ export default function Intercalar() {
                 {/* Desktop: Images after description */}
                 <div className="product-images-section d-none d-md-block">
                     <div className="text-center">
-                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
+                        <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='/images/intercalar.png'></img>
                     </div>
                 </div>
             </div>

@@ -19,37 +19,37 @@ export default function TampaVeio() {
         switch (filetype) {
             case 'PDF':
                 if(size=='16'){
-                    download('../files/TampaVeio/7017030011.pdf','7017030011.pdf');
+                    download('/files/TampaVeio/7017030011.pdf','7017030011.pdf');
                 } else {
-                    download('../files/TampaVeio/7017030009.pdf','7017030009.pdf');
+                    download('/files/TampaVeio/7017030009.pdf','7017030009.pdf');
                 }
                 break;
             case 'DWG':
                 if(size=='16'){
-                    download('../files/TampaVeio/7017030011.DWG','7017030011.DWG');
+                    download('/files/TampaVeio/7017030011.DWG','7017030011.DWG');
                 } else {
-                    download('../files/TampaVeio/7017030009.DWG','7017030009.DWG');
+                    download('/files/TampaVeio/7017030009.DWG','7017030009.DWG');
                 }
                 break;
             case 'IGS':
                 if(size=='16'){
-                    download('../files/TampaVeio/7017030011.IGS','7017030011.IGS');
+                    download('/files/TampaVeio/7017030011.IGS','7017030011.IGS');
                 } else {
-                    download('../files/TampaVeio/7017030009.IGS','7017030009.IGS');
+                    download('/files/TampaVeio/7017030009.IGS','7017030009.IGS');
                 }
                 break;
             case 'STEP':
                 if(size=='16'){
-                    download('../files/TampaVeio/7017030011.STEP','7017030011.STEP');
+                    download('/files/TampaVeio/7017030011.STEP','7017030011.STEP');
                 } else {
-                    download('../files/TampaVeio/7017030009.STEP','7017030009.STEP');
+                    download('/files/TampaVeio/7017030009.STEP','7017030009.STEP');
                 }
                 break;
             case 'SLDPRT':
                 if(size=='16'){
-                    download('../files/TampaVeio/7017030011.SLDPRT','7017030011.SLDPRT');
+                    download('/files/TampaVeio/7017030011.SLDPRT','7017030011.SLDPRT');
                 } else {
-                    download('../files/TampaVeio/7017030009.SLDPRT','7017030009.SLDPRT');
+                    download('/files/TampaVeio/7017030009.SLDPRT','7017030009.SLDPRT');
                 }
                 break;
             default:
@@ -79,12 +79,12 @@ export default function TampaVeio() {
                     <div className="row">
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
+                                <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='/images/tampa-veio.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='../images/tampa-veio-uso.png'></img>
+                                <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='/images/tampa-veio-uso.png'></img>
                             </div>
                         </div>
                     </div>
@@ -125,12 +125,12 @@ export default function TampaVeio() {
                     <div className="row">
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
+                                <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='/images/tampa-veio.png'></img>
                             </div>
                         </div>
                         <div className="col-md-6 mb-16">
                             <div className="text-center">
-                                <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='../images/tampa-veio-uso.png'></img>
+                                <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='/images/tampa-veio-uso.png'></img>
                             </div>
                         </div>
                     </div>

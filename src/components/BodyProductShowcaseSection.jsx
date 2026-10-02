@@ -55,15 +55,15 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                 {/* TupperLink Product Showcase */}
                 <div 
                     ref={tupperLinkRef}
-                    className={`keepylink-showcase first-circle-background-right ${isTupperLinkVisible ? 'animate-in' : 'animate-out'}`}
+                    className={`tupperlink-showcase first-circle-background-right ${isTupperLinkVisible ? 'animate-in' : 'animate-out'}`}
                 >
                     <Row className="align-items-center">
-                        <Col lg={7} md={6} className="keepylink-content">
-                            <div className="keepylink-text">
+                        <Col lg={7} md={6} className="tupperlink-content">
+                            <div className="tupperlink-text">
                                 <h2 className="product-title">
                                     <SubbrandLogo brand="tupperlink" />
                                 </h2>
-                                <div className="keepylink-description">
+                                <div className="tupperlink-description">
                                     <p>
                                     TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.
                                     </p>
@@ -73,19 +73,19 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                                 </div>
                                 <Button
                                     variant="outline-success"
-                                    className="keepylink-cta"
+                                    className="tupperlink-cta"
                                     onClick={() => handleProductButtonClick({ category: 'Take-Away', hash: 'tupperlink' })}
                                 >
                                     Saber mais →
                                 </Button>
                             </div>
                         </Col>
-                        <Col lg={5} md={6} className="keepylink-visual">
-                            <div className="keepylink-image-container">
+                        <Col lg={5} md={6} className="tupperlink-visual">
+                            <div className="tupperlink-image-container">
                                 <img
-                                    src="../images/tupperlink_large.png"
+                                    src="/images/tupperlink_large.png"
                                     alt="TupperLink containers stacked"
-                                    className="keepylink-image"
+                                    className="tupperlink-image"
                                 />
                             </div>
                         </Col>

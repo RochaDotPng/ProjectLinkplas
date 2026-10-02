@@ -25,13 +25,6 @@ const SUBBRANDS = {
     wordmark: [0.45, 0, 0, 13.36],
     monoSymbol: [-1.15, -1.15, 0, 0],
   },
-  keepylink: {
-    name: 'KeepyLink',
-    size: [246.165, 41.648],
-    symbol: [0, 86.92, 23.17, 0],
-    wordmark: [-0.09, 0, 0, 14.82],
-    monoSymbol: [-1.16, -1.16, 0, 0],
-  },
 };
 
 // The symbol is 32px tall in every lockup at natural size, whatever the wordmark's descenders add.

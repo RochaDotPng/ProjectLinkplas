@@ -2,20 +2,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GreenCard from "../components/about-components/GreenCard";
 import { Container } from "react-bootstrap";
-import { Helmet } from 'react-helmet-async';
+import PageMeta from '../components/seo/PageMeta/PageMeta';
 
 export default function About() {
     return (
         <div>
-            <Helmet>
-                <title>Sobre Nós - LinkPlas</title>
-                <meta name="description" content="Conheça a história da LinkPlas desde 2012. Empresa certificada ISO 9001 especializada em peças plásticas. Missão, visão e valores da nossa empresa portuguesa." />
-                <meta property="og:title" content="Sobre Nós - LinkPlas | História e Valores" />
-                <meta property="og:description" content="Conheça a história da LinkPlas desde 2012. Empresa certificada ISO 9001 especializada em peças plásticas." />
-                <meta property="og:url" content="https://www.linkplas.pt/About" />
-                <meta property="og:updated_time" content="2026-03-12T00:00:00+00:00" />
-                <link rel="canonical" href="https://www.linkplas.pt/About" />
-            </Helmet>
+            <PageMeta page="about" />
             <Header  />
             <main id="conteudo" tabIndex={-1}>
             <div className="about-body-img">

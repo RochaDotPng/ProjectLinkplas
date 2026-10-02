@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import LogoLayers from './LogoLayers';
 import { brandAsset, COLOR_SUFFIX } from './brandAssets';
-import { brand } from '../../../content/site';
+import { BRAND_NAME } from '../../../content/site';
 
 // Layer offsets as [top, right, bottom, left] in % of the lockup, from the Figma `Logo` component.
 const FULL_INSETS = {
@@ -30,7 +30,7 @@ export default function Logo({ type = 'full', color = 'default', width, classNam
   if (type === 'symbol') {
     return (
       <LogoLayers
-        label={brand.name}
+        label={BRAND_NAME}
         width={resolvedWidth}
         aspectRatio={SYMBOL_RATIO}
         layers={[{ src: brandAsset(SYMBOL_FILE[color]), inset: [0, 0, 0, 0] }]}
@@ -44,7 +44,7 @@ export default function Logo({ type = 'full', color = 'default', width, classNam
 
   return (
     <LogoLayers
-      label={brand.name}
+      label={BRAND_NAME}
       width={resolvedWidth}
       aspectRatio={FULL_RATIO}
       layers={[

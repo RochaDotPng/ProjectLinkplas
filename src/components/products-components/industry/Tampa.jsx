@@ -15,7 +15,7 @@ export default function Tampa() {
                 {/* Mobile: Images first */}
                 <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
-                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
+                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='/images/tampa.png'></img>
                     </div>
                 </div>
 
@@ -30,11 +30,11 @@ export default function Tampa() {
                             <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
-                                <Dropdown.Item href="../files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
-                                <Dropdown.Item href="../files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
-                                <Dropdown.Item href="../files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
-                                <Dropdown.Item href="../files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
+                                <Dropdown.Item href="/files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
+                                <Dropdown.Item href="/files/Tampa/7017030005.DWG" download>2D - DWG </Dropdown.Item>
+                                <Dropdown.Item href="/files/Tampa/7017030005.IGS" download>3D - IGS</Dropdown.Item>
+                                <Dropdown.Item href="/files/Tampa/7017030005.STEP" download>3D - STEP</Dropdown.Item>
+                                <Dropdown.Item href="/files/Tampa/7017030005.SLDPRT" download>3D - SLDPRT</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
@@ -43,7 +43,7 @@ export default function Tampa() {
                 {/* Desktop: Images after description */}
                 <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="text-center">
-                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
+                        <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='/images/tampa.png'></img>
                     </div>
                 </div>
 

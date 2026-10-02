@@ -65,7 +65,7 @@ export default function BodyPolicySection() {
                 className={`policy-container overflow-hidden ${isPolicyVisible ? 'animate-in' : 'animate-out'}`}
             >
                 <div className="policy-img-container">
-                    <img alt="Foto da CEO Paula Rocha" src="../images/profile_ceo.jpg" ></img>
+                    <img alt="Foto da CEO Paula Rocha" src="/images/profile_ceo.jpg" ></img>
                     {orientation === 'portrait' && (<div className="policy-quote-container">
                         <p>Na LinkPlas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
                         <span className="fw-bold">Paula Rocha</span>
@@ -79,7 +79,7 @@ export default function BodyPolicySection() {
                     <div>
                         <Button onClick={handlePolicyButtonClick}
                         variant="outline-success"
-                        className="keepylink-cta">Saber mais →
+                        className="tupperlink-cta">Saber mais →
                         </Button>
                     </div>
                     {orientation === 'landscape' && (<div className="policy-quote-container">

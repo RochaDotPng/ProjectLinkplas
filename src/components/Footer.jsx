@@ -5,10 +5,10 @@ import Icon from './ui/Icon/Icon';
 import mapPin from '../assets/icons/map-pin-16.svg';
 import phone from '../assets/icons/phone-16.svg';
 import mail from '../assets/icons/mail-16.svg';
-import { footer } from '../content/site';
+import { useSiteContent } from '../content/site';
 
 export default function Footer() {
-  const { tagline, certification, columns, contacts, legal } = footer;
+  const { tagline, certification, columns, contacts, legal } = useSiteContent().footer;
 
   return (
     // The id is read by the scroll-to-top button in App.jsx to stay clear of the footer.

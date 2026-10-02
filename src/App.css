@@ -2245,13 +2245,13 @@ input:-webkit-autofill:active {
    font-weight: 700;
 }
 
-/* KeepyLink Showcase Styling */
-.keepylink-showcase {
+/* TupperLink Showcase Styling */
+.tupperlink-showcase {
    margin: 3rem 0;
    padding: 2rem 0;
 }
 
-.keepylink-content {
+.tupperlink-content {
    padding: 2rem;
 }
 
@@ -2277,14 +2277,14 @@ input:-webkit-autofill:active {
    image-rendering: crisp-edges;
 }
 
-.keepylink-description p {
+.tupperlink-description p {
    font-size: 1.1rem;
    line-height: 1.6;
    color: #495057;
    margin-bottom: 1rem;
 }
 
-.keepylink-cta {
+.tupperlink-cta {
    margin-top: 1.5rem;
    padding: 0.75rem 1.5rem;
    font-weight: 600;
@@ -2293,20 +2293,20 @@ input:-webkit-autofill:active {
    transition: all 0.3s ease;
 }
 
-.keepylink-cta:hover {
+.tupperlink-cta:hover {
    background-color: var(--bs-secondary);
    color: white;
    transform: translateY(-2px);
 }
 
-.keepylink-visual {
+.tupperlink-visual {
    display: flex;
    justify-content: center;
    align-items: center;
    padding: 2rem;
 }
 
-.keepylink-image-container {
+.tupperlink-image-container {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -2314,7 +2314,7 @@ input:-webkit-autofill:active {
    height: 100%;
 }
 
-.keepylink-image {
+.tupperlink-image {
    max-width: 100%;
    height: auto;
    max-height: 400px;
@@ -2322,7 +2322,7 @@ input:-webkit-autofill:active {
    transition: transform 0.3s ease;
 }
 
-.keepylink-image:hover {
+.tupperlink-image:hover {
    transform: scale(1.05);
 }
 
@@ -2408,22 +2408,22 @@ input:-webkit-autofill:active {
 }
 
 /* Scroll Animation Classes */
-.keepylink-showcase,
+.tupperlink-showcase,
 .keepyfarma-showcase {
    opacity: 0;
    transform: translateY(50px);
    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.keepylink-showcase.animate-in,
+.tupperlink-showcase.animate-in,
 .keepyfarma-showcase.animate-in {
    opacity: 1;
    transform: translateY(0);
 }
 
 /* Staggered animation for content within showcases */
-.keepylink-showcase.animate-in .keepylink-content,
-.keepylink-showcase.animate-in .keepylink-visual {
+.tupperlink-showcase.animate-in .tupperlink-content,
+.tupperlink-showcase.animate-in .tupperlink-visual {
    animation: slideInFromLeft 0.5s ease-out 0.1s both;
 }
 
@@ -2467,12 +2467,12 @@ input:-webkit-autofill:active {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-   .keepylink-showcase {
+   .tupperlink-showcase {
       margin: 2rem 0;
       padding: 1.5rem 0;
    }
    
-   .keepylink-content {
+   .tupperlink-content {
       padding: 1rem;
       text-align: center;
    }
@@ -2481,15 +2481,15 @@ input:-webkit-autofill:active {
       font-size: 2rem;
    }
    
-   .keepylink-description p {
+   .tupperlink-description p {
       font-size: 1rem;
    }
    
-   .keepylink-visual {
+   .tupperlink-visual {
       padding: 1rem;
    }
    
-   .keepylink-image {
+   .tupperlink-image {
       max-height: 300px;
    }
    
@@ -2525,7 +2525,7 @@ input:-webkit-autofill:active {
       font-size: 1.8rem;
    }
    
-   .keepylink-image {
+   .tupperlink-image {
       max-height: 250px;
    }
 
