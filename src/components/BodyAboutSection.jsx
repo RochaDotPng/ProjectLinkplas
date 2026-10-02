@@ -53,14 +53,14 @@ export default function BodyAboutSection() {
                         <br />
                         <span>Temos como compromisso fornecer soluções de alta qualidade e personalizadas para empresas industriais em todo o mundo.</span>
                     </div>
-                    <div aria-label='Imagem do escritorio da Linkplas' className="about-img-container">
+                    <div aria-label='Imagem do escritorio da LinkPlas' className="about-img-container">
                         <div className='about-vision-div'>
                             <div>
                                 <h5>Visão</h5>
                                 <p className='hightlight m-0'>Dar uma resposta global às necessidades dos mais exigentes clientes</p>
                             </div>
                             <div>
-                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center'>Saber mais<i className="bi bi-arrow-right ms-2"></i></a>
+                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center'>Saber mais<i className="bi bi-arrow-right ms-8"></i></a>
                             </div>
                         </div>
                         <div className='about-mission-div'>
@@ -69,7 +69,7 @@ export default function BodyAboutSection() {
                                 <p className='highlight m-0'>Fornecer peças e componentes plásticos de elevada qualidade e complexidade técnica, desenvolvendo as mais eficientes e inovadoras soluções</p>
                             </div>
                             <div>
-                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center gap-1'>Saber mais <i className="bi bi-arrow-right ms-2"></i></a>
+                                <a onClick={handleNavigate} className='pointer link-light text-decoration-none d-flex fw-semibold align-items-center gap-4'>Saber mais <i className="bi bi-arrow-right ms-8"></i></a>
                             </div>
                         </div>
                     </div>

@@ -9,36 +9,29 @@ export default function TupperLink() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white product-page-title">
-                <img
-                    src="/images/KeepyLogo.svg"
-                    alt="KeepyLink"
-                    className="product-page-title-logo"
-                />
-                KeepyLink
-            </h1>
+            <h1 className="fw-bold mb-24 mt-48 text-white product-page-title">TupperLink</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
                                     <span>Transparente</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='Tupperwares take-away KeepyLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
                                     <span>Com cor</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='KeepyLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
+                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
                                 </div>
                             </div>
                         </div>
@@ -46,35 +39,35 @@ export default function TupperLink() {
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <p className="mb-3"><strong>KeepyLink:</strong> a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.</p>
-                    <p className="mb-4">Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os KeepyLink oferecem praticidade sem igual.</p>
+                <div className='product-description-section mb-24'>
+                    <p className="mb-16"><strong>TupperLink:</strong> a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.</p>
+                    <p className="mb-24">Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os TupperLink oferecem praticidade sem igual.</p>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16'>Pedir cotação</Button>
                     </div>
                 </div>
 
                 {/* Desktop: Images after description */}
-                <div className="product-images-section mb-4 d-none d-md-block">
+                <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
                                     <span>Transparente</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='Tupperwares take-away KeepyLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
+                                    <img alt='Tupperwares take-away TupperLink empilhados - recipientes reutilizáveis para delivery e takeaway, mostrando design empilhável para restaurantes' className='product-img img-fluid' src='../images/tupperlink_large.png'></img>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="farmacy-image-container">
                                 <div className='size-indicator'>
                                     <span>Com cor</span>
                                 </div>
                                 <div className="text-center">
-                                    <img alt='KeepyLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
+                                    <img alt='TupperLink recipientes coloridos - recipientes reutilizáveis para delivery e takeaway em cores vibrantes' className='product-img img-fluid' src='../images/keepylink_colored.png'></img>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +76,7 @@ export default function TupperLink() {
 
                 {/* Specifications Table Section */}
                 <div>
-                    <h5 className="mb-3 text-white">Especificações Técnicas</h5>
+                    <h5 className="mb-16 text-white">Especificações Técnicas</h5>
                     
                     {/* Desktop Table */}
                     <div className='table-responsive product-specs-section d-none d-md-block'>

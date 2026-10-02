@@ -80,11 +80,11 @@ const CardSection = ({ jsonPath }) => {
 
   return (
     <>
-    <div className='container'><h2 className="mb-4 product-title">Novidades</h2></div>
+    <div className='container'><h2 className="mb-24 product-title">Novidades</h2></div>
     <div className="w-full overflow-x-hidden">
       <div 
         ref={scrollContainerRef}
-        className="flex space-x-4 pb-5 h-600 d-flex gap-60 infinite-scroll-container"
+        className="flex space-x-4 pb-48 h-600 d-flex gap-60 infinite-scroll-container"
         style={{ scrollBehavior: 'auto' }}
       >
         {/* First set of cards */}
@@ -97,12 +97,12 @@ const CardSection = ({ jsonPath }) => {
               <img 
                 src={`${card.image}`} 
                 alt={card.title || "Card image"} 
-                className="w-full h-48 object-cover rounded-md mb-1"
+                className="w-full h-48 object-cover rounded-md mb-4"
               />
             )}
-            {card.date && <p className="text-body-tertiary fw-lighter fs-7 mb-2">{card.date}</p>}
-            {card.title && <h4 className="text-xl fw-normal mb-2">{card.title}</h4>}
-            {card.description && <p className="text-body-secondary fs-7 mb-1">{card.description}</p>}
+            {card.date && <p className="text-body-tertiary fw-lighter fs-7 mb-8">{card.date}</p>}
+            {card.title && <h4 className="text-xl fw-normal mb-8">{card.title}</h4>}
+            {card.description && <p className="text-body-secondary fs-7 mb-4">{card.description}</p>}
             {card.url && (
               <a 
                 href={card.url}  
@@ -125,12 +125,12 @@ const CardSection = ({ jsonPath }) => {
               <img 
                 src={`${card.image}`} 
                 alt={card.title || "Card image"} 
-                className="w-full h-48 object-cover rounded-md mb-1"
+                className="w-full h-48 object-cover rounded-md mb-4"
               />
             )}
-            {card.date && <p className="text-body-tertiary fw-lighter fs-7 mb-2">{card.date}</p>}
-            {card.title && <h4 className="text-xl fw-normal mb-2">{card.title}</h4>}
-            {card.description && <p className="text-body-secondary fs-7 mb-1">{card.description}</p>}
+            {card.date && <p className="text-body-tertiary fw-lighter fs-7 mb-8">{card.date}</p>}
+            {card.title && <h4 className="text-xl fw-normal mb-8">{card.title}</h4>}
+            {card.description && <p className="text-body-secondary fs-7 mb-4">{card.description}</p>}
             {card.url && (
               <a 
                 href={card.url}  

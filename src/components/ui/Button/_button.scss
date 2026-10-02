@@ -1,0 +1,108 @@
+// Button and Icon Button. State colours are set on Bootstrap's component variables from the
+// action/* tokens, because Bootstrap's computed shades don't match the Figma hover/pressed values.
+
+@use "sass:math";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lp-space-8);
+  min-height: var(--lp-control-height-md);
+
+  --bs-btn-disabled-color: var(--lp-action-disabled-fg);
+  --bs-btn-disabled-bg: var(--lp-action-disabled-bg);
+  --bs-btn-disabled-border-color: var(--lp-action-disabled-bg);
+
+  // Figma keeps the resting fill on focus and adds a 3px border/focus stroke.
+  &:focus-visible {
+    color: var(--bs-btn-color);
+    background-color: var(--bs-btn-bg);
+    border-color: var(--bs-btn-border-color);
+    outline: 3px solid var(--lp-border-focus);
+    box-shadow: none;
+  }
+}
+
+.btn-sm {
+  min-height: var(--lp-control-height-sm);
+  line-height: math.div(20, 14);
+}
+
+.btn-lg {
+  gap: var(--lp-space-12);
+  min-height: var(--lp-control-height-lg);
+}
+
+.btn-icon {
+  width: var(--lp-control-height-md);
+  padding: 0;
+
+  &.btn-sm { width: var(--lp-control-height-sm); }
+  &.btn-lg { width: var(--lp-control-height-lg); }
+}
+
+.btn-primary {
+  --bs-btn-color: var(--lp-action-primary-fg);
+  --bs-btn-bg: var(--lp-action-primary-bg);
+  --bs-btn-border-color: var(--lp-action-primary-bg);
+  --bs-btn-hover-color: var(--lp-action-primary-fg);
+  --bs-btn-hover-bg: var(--lp-action-primary-bg-hover);
+  --bs-btn-hover-border-color: var(--lp-action-primary-bg-hover);
+  --bs-btn-active-color: var(--lp-action-primary-fg);
+  --bs-btn-active-bg: var(--lp-action-primary-bg-pressed);
+  --bs-btn-active-border-color: var(--lp-action-primary-bg-pressed);
+}
+
+.btn-accent {
+  --bs-btn-color: var(--lp-action-accent-fg);
+  --bs-btn-bg: var(--lp-action-accent-bg);
+  --bs-btn-border-color: var(--lp-action-accent-bg);
+  --bs-btn-hover-color: var(--lp-action-accent-fg);
+  --bs-btn-hover-bg: var(--lp-action-accent-bg-hover);
+  --bs-btn-hover-border-color: var(--lp-action-accent-bg-hover);
+  --bs-btn-active-color: var(--lp-action-accent-fg);
+  --bs-btn-active-bg: var(--lp-action-accent-bg-pressed);
+  --bs-btn-active-border-color: var(--lp-action-accent-bg-pressed);
+}
+
+.btn-lp-secondary {
+  --bs-btn-border-width: 1.5px;
+  --bs-btn-color: var(--lp-action-secondary-fg);
+  --bs-btn-bg: var(--lp-action-secondary-bg);
+  --bs-btn-border-color: var(--lp-action-secondary-border);
+  --bs-btn-hover-color: var(--lp-action-secondary-fg);
+  --bs-btn-hover-bg: var(--lp-action-secondary-bg-hover);
+  --bs-btn-hover-border-color: var(--lp-action-secondary-border);
+  --bs-btn-active-color: var(--lp-action-secondary-fg);
+  --bs-btn-active-bg: var(--lp-action-secondary-bg-pressed);
+  --bs-btn-active-border-color: var(--lp-action-secondary-border);
+  --bs-btn-disabled-bg: var(--lp-action-secondary-bg);
+  --bs-btn-disabled-border-color: var(--lp-border-default);
+}
+
+.btn-ghost {
+  --bs-btn-color: var(--lp-action-ghost-fg);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: var(--lp-action-ghost-fg);
+  --bs-btn-hover-bg: var(--lp-action-ghost-bg-hover);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: var(--lp-action-ghost-fg);
+  --bs-btn-active-bg: var(--lp-action-ghost-bg-pressed);
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: transparent;
+}
+
+.btn-inverse {
+  --bs-btn-color: var(--lp-action-inverse-fg);
+  --bs-btn-bg: var(--lp-action-inverse-bg);
+  --bs-btn-border-color: var(--lp-action-inverse-bg);
+  --bs-btn-hover-color: var(--lp-action-inverse-fg);
+  --bs-btn-hover-bg: var(--lp-action-inverse-bg-hover);
+  --bs-btn-hover-border-color: var(--lp-action-inverse-bg-hover);
+  --bs-btn-active-color: var(--lp-action-inverse-fg);
+  --bs-btn-active-bg: var(--lp-action-inverse-bg-pressed);
+  --bs-btn-active-border-color: var(--lp-action-inverse-bg-pressed);
+}

@@ -1,0 +1,175 @@
+.lp-footer {
+  color: var(--lp-text-inverse);
+  background-color: var(--lp-bg-inverse);
+}
+
+.lp-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-40);
+
+  @include media-breakpoint-up(lg) {
+    gap: var(--lp-space-64);
+  }
+
+  // Doubled with `.container` to outrank the legacy mobile `.container { padding: 2% }` in App.css.
+  &.container {
+    padding-top: 56px;
+    padding-bottom: var(--lp-space-32);
+
+    @include media-breakpoint-down(lg) {
+      padding-right: var(--lp-space-20);
+      padding-left: var(--lp-space-20);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: var(--lp-space-80);
+    }
+  }
+}
+
+.lp-footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-40);
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    gap: var(--lp-space-48);
+  }
+}
+
+.lp-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-20);
+
+  @include media-breakpoint-up(lg) {
+    flex: none;
+    width: 320px;
+  }
+}
+
+.lp-footer__tagline {
+  @include lp-body-s;
+  margin: 0;
+  color: var(--lp-text-inverse-secondary);
+}
+
+.lp-footer__columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-32) var(--lp-space-24);
+
+  @include media-breakpoint-up(lg) {
+    flex: 1 1 0;
+    flex-wrap: nowrap;
+    gap: var(--lp-space-48);
+  }
+}
+
+.lp-footer__column {
+  display: flex;
+  flex: 1 1 160px;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  min-width: 0;
+
+  @include media-breakpoint-up(lg) {
+    flex-basis: 0;
+  }
+}
+
+.lp-footer__heading {
+  @include lp-eyebrow;
+  margin: 0;
+  color: var(--lp-text-inverse-secondary);
+}
+
+.lp-footer__list {
+  @include lp-body-s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  list-style: none;
+}
+
+.lp-footer__contact {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lp-space-8);
+
+  // Centres the 16px icon on the first 22px text line when the address wraps.
+  .lp-icon {
+    margin-top: 3px;
+  }
+}
+
+.lp-footer__link {
+  display: inline-flex;
+  font-weight: inherit;
+  color: var(--lp-text-inverse);
+  text-decoration: none;
+  border-radius: var(--lp-radius-xs);
+
+  &:hover {
+    color: var(--lp-text-inverse-secondary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}
+
+.lp-footer__social {
+  @include lp-label-s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-8) var(--lp-space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .lp-footer__link {
+    text-decoration: underline;
+  }
+}
+
+.lp-footer__legal {
+  @include lp-caption;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  padding-top: var(--lp-space-24);
+  border-top: 1px solid var(--lp-border-inverse);
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.lp-footer__copyright {
+  margin: 0;
+  color: var(--lp-text-inverse-secondary);
+}
+
+.lp-footer__legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    gap: var(--lp-space-24);
+  }
+}

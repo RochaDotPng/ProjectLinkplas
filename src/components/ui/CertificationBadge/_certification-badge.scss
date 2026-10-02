@@ -1,0 +1,24 @@
+// Only the on-dark treatment exists so far (it is used in the footer).
+.lp-certification-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px var(--lp-space-16) 10px var(--lp-space-12);
+  color: var(--lp-text-inverse);
+  border: 1px solid var(--lp-border-inverse);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-certification-badge__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-certification-badge__title {
+  @include lp-label-m;
+}
+
+.lp-certification-badge__description {
+  @include lp-caption;
+  color: var(--lp-text-inverse-secondary);
+}

@@ -1,5 +1,5 @@
 import {createRoot} from 'react-dom/client'
-import './custom.scss';
+import './styles/main.scss';
 import App from './App.jsx'
 import { HelmetProvider } from 'react-helmet-async';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';

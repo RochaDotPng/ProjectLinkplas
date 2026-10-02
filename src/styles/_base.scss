@@ -1,0 +1,75 @@
+// Document defaults, type scale and focus treatment.
+
+@use "sass:math";
+
+:root {
+  --lp-header-height: 64px;
+
+  @include media-breakpoint-up(lg) {
+    --lp-header-height: 80px;
+  }
+}
+
+html {
+  // Keeps in-page anchors clear of the sticky header.
+  scroll-padding-top: var(--lp-header-height);
+}
+
+// Heading line heights and tracking from the Figma type scale (size / line height).
+h1, .h1 { line-height: math.div(56, 48); letter-spacing: -0.01em; }
+h2, .h2 { line-height: math.div(48, 40); letter-spacing: -0.01em; }
+h3, .h3 { line-height: math.div(40, 32); letter-spacing: -0.005em; }
+h4, .h4 { line-height: math.div(32, 24); }
+h5, .h5 { line-height: math.div(28, 20); }
+h6, .h6 { line-height: math.div(26, 18); }
+
+.display-1 { line-height: math.div(80, 72); letter-spacing: -0.02em; }
+.display-2 { line-height: math.div(64, 56); letter-spacing: -0.015em; }
+
+.lead { line-height: math.div(32, 20); }
+.text-body-m { @include lp-body-m; }
+.small { line-height: math.div(22, 14); }
+.caption { @include lp-caption; }
+
+// The manual reserves Bold for occasional emphasis; running-text emphasis is Medium.
+strong, b { font-weight: 500; }
+
+code, pre { font-size: 0.875rem; line-height: math.div(22, 14); }
+
+.container-wide {
+  @include make-container();
+  max-width: var(--lp-container-wide);
+}
+
+:focus-visible {
+  outline: 0;
+  box-shadow: var(--lp-focus-ring);
+}
+
+.lp-skip-link {
+  @include lp-label-m;
+  position: fixed;
+  top: var(--lp-space-8);
+  left: var(--lp-space-8);
+  z-index: $zindex-tooltip;
+  display: block;
+  padding: var(--lp-space-12) var(--lp-space-16);
+  color: var(--lp-action-primary-fg);
+  background-color: var(--lp-action-primary-bg);
+  text-decoration: none;
+  transform: translateY(calc(-100% - var(--lp-space-16)));
+
+  &:focus {
+    color: var(--lp-action-primary-fg);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

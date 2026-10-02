@@ -13,7 +13,7 @@ export default function ProductsSidebar({ selectedProduct, activeProduct, autoOp
       id: 'Farmaceutica', 
       name: 'Farmaceutica',
       products: [
-        { id: 'KeepyFarma', name: 'KeepyFarma' },
+        { id: 'PharmaLink', name: 'PharmaLink' },
         { id: 'EPharma', name: 'e-Pharma' }
       ]
     },
@@ -21,7 +21,7 @@ export default function ProductsSidebar({ selectedProduct, activeProduct, autoOp
       id: 'Take-Away',
       name: 'Take-Away',
       products: [
-        { id: 'KeepyLink', name: 'KeepyLink' }
+        { id: 'TupperLink', name: 'TupperLink' }
       ]
     },
     {

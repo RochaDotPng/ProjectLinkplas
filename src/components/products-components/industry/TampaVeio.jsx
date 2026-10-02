@@ -71,18 +71,18 @@ export default function TampaVeio() {
 
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">Tampa para veio</h1>
+            <h1 className="fw-bold mb-24 mt-48 text-white">Tampa para veio</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='../images/tampa-veio-uso.png'></img>
                             </div>
@@ -91,23 +91,23 @@ export default function TampaVeio() {
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <p className="mb-4">Topo de proteção exterior de veio</p>
+                <div className='product-description-section mb-24'>
+                    <p className="mb-24">Topo de proteção exterior de veio</p>
                     
                     {/* Size Selection */}
-                    <div className="mb-4">
-                        <h6 className="mb-3">Selecione a dimensão:</h6>
+                    <div className="mb-24">
+                        <h6 className="mb-16">Selecione a dimensão:</h6>
                         <ButtonGroup aria-label="Seleção da dimensão das tampas">
                             <Button onClick={() => { handleSize('16') }} className={size == '16' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 16mm </Button>
                             <Button onClick={() => { handleSize('20') }} className={size == '20' && ("text-white btn-checked") || ("text-white")} variant="secondary"><i className="bi-diameter"></i> 20mm </Button>
                         </ButtonGroup>
                     </div>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16 me-16'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
-                                <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
+                            <Dropdown.Toggle className="p-16 btn-secondary text-white" variant="secondary" id="dropdown-basic">
+                                <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item href="#!" onClick={() => downloadFile('PDF')} >Desenho - PDF </Dropdown.Item>
@@ -123,12 +123,12 @@ export default function TampaVeio() {
                 {/* Desktop: Images after description */}
                 <div className="product-images-section d-none d-md-block">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da perna com uma tampa de veio' className='product-img img-fluid' src='../images/tampa-veio.png'></img>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da tampa de veio em uso' className='product-img img-fluid tampa-veio-uso' src='../images/tampa-veio-uso.png'></img>
                             </div>

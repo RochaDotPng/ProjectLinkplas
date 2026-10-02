@@ -1,0 +1,19 @@
+.lp-eyebrow {
+  @include lp-eyebrow;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--lp-text-brand);
+}
+
+.lp-eyebrow--dark {
+  color: var(--lp-text-inverse-secondary);
+}
+
+.lp-eyebrow__square {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--lp-bg-brand);
+}

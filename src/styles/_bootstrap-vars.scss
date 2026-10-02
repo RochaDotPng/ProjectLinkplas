@@ -1,0 +1,121 @@
+// Bootstrap Sass variable overrides. Must be imported before Bootstrap.
+
+$primary: $lp-navy-900;
+$secondary: $lp-neutral-700;
+$success: $lp-green-500;
+$info: $lp-petrol-500;
+$warning: $lp-amber-500;
+$danger: $lp-red-500;
+$light: $lp-neutral-100;
+$dark: $lp-navy-900;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $lp-petrol-500,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+$body-color: $lp-navy-900;
+$body-bg: $lp-neutral-0;
+$body-secondary-color: $lp-neutral-700;
+$link-color: $lp-petrol-600;
+$link-hover-color: $lp-navy-900;
+$border-color: $lp-neutral-200;
+
+$focus-ring-width: 4px;
+$focus-ring-opacity: 0.35;
+$focus-ring-color: rgba($lp-petrol-500, $focus-ring-opacity);
+
+$border-radius-sm: 4px;
+$border-radius: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 16px;
+$border-radius-pill: 999px;
+
+$box-shadow-sm: $lp-shadow-sm;
+$box-shadow: $lp-shadow-md;
+$box-shadow-lg: $lp-shadow-lg;
+
+// Keys are the Figma pixel values, so `p-24` is `space/24`.
+$spacers: (
+  0: 0,
+  2: 2px,
+  4: 4px,
+  8: 8px,
+  12: 12px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  32: 32px,
+  40: 40px,
+  48: 48px,
+  64: 64px,
+  80: 80px,
+  96: 96px,
+  128: 128px,
+  160: 160px,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1200px,
+);
+
+$font-family-sans-serif: $lp-font-sans;
+$font-family-monospace: $lp-font-mono;
+$font-size-base: 1rem;
+$line-height-base: 1.625;
+$font-weight-bold: 700;
+$enable-rfs: true;
+
+$headings-font-weight: 500;
+$h1-font-size: 3rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1.125rem;
+
+$display-font-sizes: (
+  1: 4.5rem,
+  2: 3.5rem,
+);
+$display-font-weight: 500;
+$lead-font-size: 1.25rem;
+$lead-font-weight: 400;
+$small-font-size: 0.875rem;
+
+// Buttons take their height from control/height-* via min-height (_base.scss), not from padding.
+$btn-font-weight: 500;
+$btn-font-size: 1rem;
+$btn-line-height: 1.5;
+$btn-padding-y: 0;
+$btn-padding-x: 20px;
+$btn-font-size-sm: 0.875rem;
+$btn-padding-y-sm: 0;
+$btn-padding-x-sm: 16px;
+$btn-font-size-lg: 1rem;
+$btn-padding-y-lg: 0;
+$btn-padding-x-lg: 24px;
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+$btn-disabled-opacity: 1;

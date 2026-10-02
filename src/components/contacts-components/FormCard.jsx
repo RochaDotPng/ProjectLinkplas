@@ -173,7 +173,7 @@ export default function FormCard() {
                     />
                 </FloatingLabel>
                 <Button 
-                    className="px-4" 
+                    className="px-24" 
                     variant="primary" 
                     type="submit" 
                     disabled={isSubmitting}

@@ -3,12 +3,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect, useRef } from 'react';
+import SubbrandLogo from './brand/SubbrandLogo/SubbrandLogo';
 
 export default function BodyProductShowcaseSection({ className, onProductChange }) {
-    const [isKeepyLinkVisible, setIsKeepyLinkVisible] = useState(false);
-    const [isKeepyFarmaVisible, setIsKeepyFarmaVisible] = useState(false);
-    const keepyLinkRef = useRef(null);
-    const keepyFarmaRef = useRef(null);
+    const [isTupperLinkVisible, setIsTupperLinkVisible] = useState(false);
+    const [isPharmaLinkVisible, setIsPharmaLinkVisible] = useState(false);
+    const tupperLinkRef = useRef(null);
+    const pharmaLinkRef = useRef(null);
 
     const handleProductButtonClick = (label) => {
         onProductChange(label);
@@ -22,21 +23,21 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (entry.target === keepyLinkRef.current && entry.isIntersecting) {
-                    setIsKeepyLinkVisible(true);
+                if (entry.target === tupperLinkRef.current && entry.isIntersecting) {
+                    setIsTupperLinkVisible(true);
                     observer.unobserve(entry.target);
-                } else if (entry.target === keepyFarmaRef.current && entry.isIntersecting) {
-                    setIsKeepyFarmaVisible(true);
+                } else if (entry.target === pharmaLinkRef.current && entry.isIntersecting) {
+                    setIsPharmaLinkVisible(true);
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        if (keepyLinkRef.current) {
-            observer.observe(keepyLinkRef.current);
+        if (tupperLinkRef.current) {
+            observer.observe(tupperLinkRef.current);
         }
-        if (keepyFarmaRef.current) {
-            observer.observe(keepyFarmaRef.current);
+        if (pharmaLinkRef.current) {
+            observer.observe(pharmaLinkRef.current);
         }
 
         return () => {
@@ -51,30 +52,29 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                     <h1>Os nossos produtos</h1>
                 </div>
 
-                {/* KeepyLink Product Showcase */}
+                {/* TupperLink Product Showcase */}
                 <div 
-                    ref={keepyLinkRef}
-                    className={`keepylink-showcase first-circle-background-right ${isKeepyLinkVisible ? 'animate-in' : 'animate-out'}`}
+                    ref={tupperLinkRef}
+                    className={`keepylink-showcase first-circle-background-right ${isTupperLinkVisible ? 'animate-in' : 'animate-out'}`}
                 >
                     <Row className="align-items-center">
                         <Col lg={7} md={6} className="keepylink-content">
                             <div className="keepylink-text">
                                 <h2 className="product-title">
-                                    <img src="/images/KeepyLogo.svg" alt="KeepyLink" className="product-title-logo" />
-                                    KeepyLink
+                                    <SubbrandLogo brand="tupperlink" />
                                 </h2>
                                 <div className="keepylink-description">
                                     <p>
-                                    KeepyLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.
+                                    TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.
                                     </p>
                                     <p>
-                                    Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os KeepyLink oferecem praticidade sem igual.
+                                    Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os TupperLink oferecem praticidade sem igual.
                                     </p>
                                 </div>
                                 <Button
                                     variant="outline-success"
                                     className="keepylink-cta"
-                                    onClick={() => handleProductButtonClick({ category: 'Take-Away', hash: 'keepylink' })}
+                                    onClick={() => handleProductButtonClick({ category: 'Take-Away', hash: 'tupperlink' })}
                                 >
                                     Saber mais →
                                 </Button>
@@ -84,7 +84,7 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                             <div className="keepylink-image-container">
                                 <img
                                     src="../images/tupperlink_large.png"
-                                    alt="KeepyLink containers stacked"
+                                    alt="TupperLink containers stacked"
                                     className="keepylink-image"
                                 />
                             </div>
@@ -92,22 +92,22 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                     </Row>
                 </div>
 
-                {/* KeepyFarma Product Showcase */}
+                {/* PharmaLink Product Showcase */}
                 <div 
-                    ref={keepyFarmaRef}
-                    className={`keepyfarma-showcase circle-background-left ${isKeepyFarmaVisible ? 'animate-in' : 'animate-out'}`}
+                    ref={pharmaLinkRef}
+                    className={`keepyfarma-showcase circle-background-left ${isPharmaLinkVisible ? 'animate-in' : 'animate-out'}`}
                 >
                     <Row className="align-items-center wrap-reverse">
                         <Col lg={5} md={6} className="keepyfarma-visual">
                             <div className="keepyfarma-image-container">
                                 <img
                                     src="/images/keepyfarma-stacked.png"
-                                    alt="KeepyFarma containers stacked"
+                                    alt="PharmaLink containers stacked"
                                     className="keepyfarma-image keepyfarma-stacked d-none d-md-block"
                                 />
                                 <img
                                     src="/images/keepyfarma-stacked-mobile.png"
-                                    alt="KeepyFarma containers stacked"
+                                    alt="PharmaLink containers stacked"
                                     className="keepyfarma-image keepyfarma-stacked-mobile d-md-none"
                                 />
                             </div>
@@ -115,8 +115,7 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                         <Col lg={7} md={6} className="keepyfarma-content">
                             <div className="keepyfarma-text">
                                 <h2 className="product-title">
-                                <img src="/images/KeepyPharmaLogo.svg" alt="KeepyFarma" className="product-title-logo" />
-                                KeepyFarma
+                                    <SubbrandLogo brand="pharmalink" />
                                 </h2>
                                 <div className="keepyfarma-description">
                                     <p>
@@ -129,14 +128,14 @@ export default function BodyProductShowcaseSection({ className, onProductChange 
                                 <Button
                                     variant="outline-success"
                                     className="keepyfarma-cta"
-                                    onClick={() => handleProductButtonClick({ category: 'Farmaceutica', hash: 'keepyfarma' })}
+                                    onClick={() => handleProductButtonClick({ category: 'Farmaceutica', hash: 'pharmalink' })}
                                 >
                                     Saber mais →
                                 </Button>
                                 <Container className="text-center-mobile d-none d-md-block">
                                     <img
                                         src="/images/keepyfarma-white.png"
-                                        alt="KeepyFarma white containers"
+                                        alt="PharmaLink white containers"
                                         className="keepyfarma-bottom-img"
                                     />
                                 </Container>

@@ -9,19 +9,19 @@ export default function UltraSons() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-2 text-white">Soldadura por Ultra Sons</h1>
+            <h1 className="fw-bold mb-24 mt-8 text-white">Soldadura por Ultra Sons</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
                         <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
                     </div>
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <span>A Linkplas tem a capacidade interna para realizar soldadura de peças plásticas por ultra sons.</span>
+                <div className='product-description-section mb-24'>
+                    <span>A LinkPlas tem a capacidade interna para realizar soldadura de peças plásticas por ultra sons.</span>
                     <br></br>
                     <span>Temos assim a capacidade única de ajustar o processo de solda a variações peça-a-peça e materiais únicos.</span>
                     <p>Benefícios da soldadura por ultras som incluem:</p>
@@ -32,13 +32,13 @@ export default function UltraSons() {
                         <li>Sem consumíveis.</li>
                     </ul>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16'>Pedir cotação</Button>
                     </div>
                 </div>
 
                 {/* Desktop: Images after description */}
-                <div className="product-images-section mb-4 d-none d-md-block">
+                <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="text-center">
                         <img alt='Imagem de máquina de soldar com ultrasons' className='service-img img-fluid' src='../images/soldadura-ultrassons.jpg'></img>
                     </div>

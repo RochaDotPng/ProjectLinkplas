@@ -42,8 +42,8 @@ export default function Products() {
   }, [parameter]);
   
   // Refs for each product section
-  const keepyFarmaRef = useRef(null);
-  const keepyLinkRef = useRef(null);
+  const pharmaLinkRef = useRef(null);
+  const tupperLinkRef = useRef(null);
   const ePharmaRef = useRef(null);
   const abracadeiraRef = useRef(null);
   const tampaRef = useRef(null);
@@ -57,32 +57,32 @@ export default function Products() {
     switch(selectedProduct) {
       case 'Industria':
         return {
-          title: 'Produtos Industriais - Linkplas',
-          description: 'Produtos industriais Linkplas: abraçadeiras, tampas, intercalares, anilhas. Componentes plásticos de alta qualidade para aplicações industriais.',
+          title: 'Produtos Industriais - LinkPlas',
+          description: 'Produtos industriais LinkPlas: abraçadeiras, tampas, intercalares, anilhas. Componentes plásticos de alta qualidade para aplicações industriais.',
           url: 'https://www.linkplas.pt/Products/Industria'
         };
       case 'Farmaceutica':
         return {
-          title: 'Produtos Farmacêuticos - Linkplas',
-          description: 'Caixas de transporte de medicamentos Linkplas. Produtos farmacêuticos em plástico de alta resistência, seguros e certificados.',
+          title: 'Produtos Farmacêuticos - LinkPlas',
+          description: 'Caixas de transporte de medicamentos LinkPlas. Produtos farmacêuticos em plástico de alta resistência, seguros e certificados.',
           url: 'https://www.linkplas.pt/Products/Farmaceutica'
         };
       case 'Take-Away':
         return {
-          title: 'KeepyLink - Linkplas',
-          description: 'Tupperwares take-away KeepyLink: recipientes reutilizáveis, tuppers ecológicos empilháveis. Alternativa sustentável aos descartáveis para restaurantes e delivery.',
+          title: 'TupperLink - LinkPlas',
+          description: 'Tupperwares take-away TupperLink: recipientes reutilizáveis, tuppers ecológicos empilháveis. Alternativa sustentável aos descartáveis para restaurantes e delivery.',
           url: 'https://www.linkplas.pt/Products/Take-Away'
         };
       case 'Servicos':
         return {
-          title: 'Serviços - Linkplas',
-          description: 'Serviços Linkplas: soldadura por ultra sons de peças plásticas. Soluções técnicas especializadas para a indústria.',
+          title: 'Serviços - LinkPlas',
+          description: 'Serviços LinkPlas: soldadura por ultra sons de peças plásticas. Soluções técnicas especializadas para a indústria.',
           url: 'https://www.linkplas.pt/Products/Servicos'
         };
       default:
         return {
-          title: 'Produtos - Linkplas',
-          description: 'Descubra todos os produtos Linkplas: componentes industriais, produtos farmacêuticos, take-away KeepyLink e serviços de soldadura.',
+          title: 'Produtos - LinkPlas',
+          description: 'Descubra todos os produtos LinkPlas: componentes industriais, produtos farmacêuticos, take-away TupperLink e serviços de soldadura.',
           url: 'https://www.linkplas.pt/Products'
         };
     }
@@ -103,12 +103,12 @@ export default function Products() {
     switch(category) {
       case 'Farmaceutica':
         return [
-          { component: <CaixaMedicamentos />, ref: keepyFarmaRef, id: 'keepyfarma' },
+          { component: <CaixaMedicamentos />, ref: pharmaLinkRef, id: 'pharmalink' },
           { component: <EPharma />, ref: ePharmaRef, id: 'EPharma' },
         ];
       case 'Take-Away':
         return [
-          { component: <TupperLink />, ref: keepyLinkRef, id: 'keepylink' }
+          { component: <TupperLink />, ref: tupperLinkRef, id: 'tupperlink' }
         ];
       case 'Industria':
         return [
@@ -146,8 +146,8 @@ export default function Products() {
 
     // Product item clicked -> scroll to its section.
     const productRefs = {
-      'KeepyFarma': keepyFarmaRef,
-      'KeepyLink': keepyLinkRef,
+      'PharmaLink': pharmaLinkRef,
+      'TupperLink': tupperLinkRef,
       'Abracadeira': abracadeiraRef,
       'Tampa': tampaRef,
       'Intercalar': intercalarRef,
@@ -158,8 +158,8 @@ export default function Products() {
     };
 
     const idFallback = {
-      KeepyFarma: 'keepyfarma',
-      KeepyLink: 'keepylink',
+      PharmaLink: 'pharmalink',
+      TupperLink: 'tupperlink',
       EPharma: 'EPharma',
       Abracadeira: 'abracadeira',
       Tampa: 'tampa',
@@ -181,9 +181,9 @@ export default function Products() {
       candidates[0] ||
       targetRef?.current;
 
-    if (value === 'KeepyFarma') {
+    if (value === 'PharmaLink') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      setActiveProduct('KeepyFarma');
+      setActiveProduct('PharmaLink');
       return;
     }
 
@@ -199,7 +199,7 @@ export default function Products() {
     setActiveProduct(value);
   };
 
-  // If a hash is present (e.g. /Products/Farmaceutica#keepyfarma), scroll to it on load.
+  // If a hash is present (e.g. /Products/Farmaceutica#pharmalink), scroll to it on load.
   useEffect(() => {
     const hash = (location.hash || '').replace('#', '').trim();
     if (!hash) return;
@@ -213,8 +213,8 @@ export default function Products() {
       if (!targetEl) return;
 
       // Keep sidebar highlight consistent when deep-linking.
-      if (hash === 'keepyfarma') setActiveProduct('KeepyFarma');
-      if (hash === 'keepylink') setActiveProduct('KeepyLink');
+      if (hash === 'pharmalink') setActiveProduct('PharmaLink');
+      if (hash === 'tupperlink') setActiveProduct('TupperLink');
       if (hash === 'EPharma') setActiveProduct('EPharma');
 
       if (typeof targetEl.scrollIntoView === 'function') {
@@ -235,16 +235,16 @@ export default function Products() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // Offset for header
       
-      // If we're at the very top, ensure KeepyFarma is active
+      // If we're at the very top, ensure PharmaLink is active
       if (window.scrollY <= 10) {
-        setActiveProduct('KeepyFarma');
+        setActiveProduct('PharmaLink');
         return;
       }
 
       const productRefs = [
-        { ref: keepyFarmaRef, id: 'KeepyFarma', section: 'Farmaceutica' },
+        { ref: pharmaLinkRef, id: 'PharmaLink', section: 'Farmaceutica' },
         { ref: ePharmaRef, id: 'EPharma', section: 'Farmaceutica' },
-        { ref: keepyLinkRef, id: 'KeepyLink', section: 'Take-Away' },
+        { ref: tupperLinkRef, id: 'TupperLink', section: 'Take-Away' },
         { ref: tampaRef, id: 'Tampa', section: 'Industria' },
         { ref: intercalarRef, id: 'Intercalar', section: 'Industria' },
         { ref: tampaVeioRef, id: 'TampaVeio', section: 'Industria' },
@@ -286,7 +286,8 @@ export default function Products() {
         <link rel="canonical" href={pageMeta.url} />
       </Helmet>
       <Header />
-      
+
+      <main id="conteudo" tabIndex={-1}>
       <Container fluid className="products-main-container">
         <Container className="p-0">
         <Row>
@@ -304,8 +305,8 @@ export default function Products() {
           <Col lg={9} className="products-content-area">
             {/* Desktop: Show all products */}
             <div className="desktop-products d-none d-lg-block">
-              {/* KeepyFarma - First Product */}
-              <div ref={keepyFarmaRef} id="keepyfarma">
+              {/* PharmaLink - First Product */}
+              <div ref={pharmaLinkRef} id="pharmalink">
                 <CaixaMedicamentos />
               </div>
 
@@ -314,8 +315,8 @@ export default function Products() {
                 <EPharma />
               </div>
               
-              {/* KeepyLink - Second Product */}
-              <div ref={keepyLinkRef} id="keepylink">
+              {/* TupperLink - Second Product */}
+              <div ref={tupperLinkRef} id="tupperlink">
                 <TupperLink />
               </div>
               
@@ -358,7 +359,8 @@ export default function Products() {
         </Row>
         </Container>
       </Container>
-      
+      </main>
+
       <Footer />
       <MobileBottomBar selectedProduct={selectedProduct} onProductChange={handleProductChange} />
     </div>

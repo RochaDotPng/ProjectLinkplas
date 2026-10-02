@@ -25,7 +25,7 @@ const ZOR_SCROLL_START_MOBILE = 'top 88%';
 const LAYERS = [
     {
         src: `${IMAGE_BASE}/CaixaPlastica.png`,
-        alt: 'Caixa de farmácia Linkplas em plástico resistente',
+        alt: 'Caixa de farmácia LinkPlas em plástico resistente',
         zIndex: 3,
     },
     {
@@ -190,7 +190,7 @@ export default function BodyZorPartnershipSection() {
                 <header className="zor-partnership-header">
                     <p className="zor-partnership-eyebrow">Parceria</p>
                     <h2 id="zor-partnership-heading" className="zor-partnership-title">
-                        Linkplas × ZØR
+                        LinkPlas × ZØR
                     </h2>
                 </header>
 

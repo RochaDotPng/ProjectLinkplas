@@ -1,0 +1,34 @@
+.lp-nav-item {
+  @include lp-label-l;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lp-space-4);
+  padding: var(--lp-space-8) var(--lp-space-12);
+  color: var(--lp-text-secondary);
+  text-decoration: none;
+  border-radius: var(--lp-radius-sm);
+
+  &:hover {
+    color: var(--lp-text-primary);
+    background-color: var(--lp-bg-hover);
+  }
+
+  &.is-active {
+    color: var(--lp-text-primary);
+  }
+
+  &:focus-visible {
+    color: var(--lp-text-primary);
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+}
+
+// Echoes the petrol square of the symbol to mark the current section.
+.lp-nav-item__marker {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background-color: var(--lp-bg-brand);
+}

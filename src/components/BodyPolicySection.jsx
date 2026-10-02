@@ -67,15 +67,15 @@ export default function BodyPolicySection() {
                 <div className="policy-img-container">
                     <img alt="Foto da CEO Paula Rocha" src="../images/profile_ceo.jpg" ></img>
                     {orientation === 'portrait' && (<div className="policy-quote-container">
-                        <p>Na Linkplas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
+                        <p>Na LinkPlas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
                         <span className="fw-bold">Paula Rocha</span>
                         <br />
                         <span className="policy-quote-text">CEO</span>
                     </div>)}
                 </div>
                 <div className="policy-text-container">
-                    <h1 className="product-title mt-5">Estratégia</h1>
-                    <p>Através de uma estratégia de Melhoria Contínua, a Linkplas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de qualidade, reduzir e minimizar perigos e riscos da sua atividade tomando todas as medidas necessárias.</p>
+                    <h1 className="product-title mt-8">Estratégia</h1>
+                    <p>Através de uma estratégia de Melhoria Contínua, a LinkPlas compromete-se a desenvolver e implementar continuamente medidas e ações necessárias no sentido de manter os padrões de qualidade, reduzir e minimizar perigos e riscos da sua atividade tomando todas as medidas necessárias.</p>
                     <div>
                         <Button onClick={handlePolicyButtonClick}
                         variant="outline-success"
@@ -83,7 +83,7 @@ export default function BodyPolicySection() {
                         </Button>
                     </div>
                     {orientation === 'landscape' && (<div className="policy-quote-container">
-                        <p>Na Linkplas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
+                        <p>Na LinkPlas, acreditamos que a qualidade é mais do que um compromisso - é a essência do nosso DNA empresarial. Guiados pela inovação e pela busca constante pela excelência, estamos empenhados em não apenas atender, mas superar as expectativas dos nossos clientes.</p>
                         <span className="fw-bold">Paula Rocha</span>
                         <br />
                         <span className="policy-quote-text">CEO</span>

@@ -64,18 +64,18 @@ export default function Anilha() {
 
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">Anilha Intercalar</h1>
+            <h1 className="fw-bold mb-24 mt-48 text-white">Anilha Intercalar</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='../images/anilha_intercalar-uso.png'></img>
                             </div>
@@ -84,23 +84,23 @@ export default function Anilha() {
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <p className="mb-4">Anilhas intercalares POM</p>
+                <div className='product-description-section mb-24'>
+                    <p className="mb-24">Anilhas intercalares POM</p>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16'>Pedir cotação</Button>
                     </div>
                 </div>
 
                 {/* Desktop: Images after description */}
-                <div className="product-images-section mb-4 d-none d-md-block">
+                <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da anilha intercalar' className='product-img img-fluid' src='../images/anilha_intercalar.png'></img>
                             </div>
                         </div>
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-6 mb-16">
                             <div className="text-center">
                                 <img alt='Imagem da anilha intercalar em uso' className='product-img img-fluid anilha-intercalar-uso' src='../images/anilha_intercalar-uso.png'></img>
                             </div>
@@ -110,7 +110,7 @@ export default function Anilha() {
 
                 {/* Specifications Table Section */}
                 <div>
-                    <h5 className="mb-3 text-white">Especificações Técnicas</h5>
+                    <h5 className="mb-16 text-white">Especificações Técnicas</h5>
                     
                     {/* Desktop Table */}
                     <div className='table-responsive product-specs-section d-none d-md-block'>
@@ -134,8 +134,8 @@ export default function Anilha() {
                                     <td>6 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
@@ -155,8 +155,8 @@ export default function Anilha() {
                                     <td>7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
@@ -176,8 +176,8 @@ export default function Anilha() {
                                     <td>7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>
@@ -210,8 +210,8 @@ export default function Anilha() {
                                     <td>40×9×6 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030014.PDF" download >Desenho - PDF</Dropdown.Item>
@@ -229,8 +229,8 @@ export default function Anilha() {
                                     <td>60×9×7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030015.PDF" download >Desenho - PDF</Dropdown.Item>
@@ -248,8 +248,8 @@ export default function Anilha() {
                                     <td>60×21×7 mm</td>
                                     <td className='fw-bold'>
                                         <Dropdown className=''>
-                                            <Dropdown.Toggle className="table-dropdown-button px-1" variant="" id="dropdown-basic">
-                                                <span> Descarregar </span><i className='text-white ms-2 bi bi-download'></i>
+                                            <Dropdown.Toggle className="table-dropdown-button px-4" variant="" id="dropdown-basic">
+                                                <span> Descarregar </span><i className='text-white ms-8 bi bi-download'></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item href="../files/Anilha/7017030016.PDF" download >Desenho - PDF</Dropdown.Item>

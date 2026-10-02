@@ -9,25 +9,25 @@ export default function Tampa() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">Tampa para tubos</h1>
+            <h1 className="fw-bold mb-24 mt-48 text-white">Tampa para tubos</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
                         <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
                     </div>
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <p className="mb-4">Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
+                <div className='product-description-section mb-24'>
+                    <p className="mb-24">Tampas fabricadas em PE1000, reconhecido pela resistência ao desgaste, impacto e produtos químicos. Uma solução simples robusta.</p>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16 me-16'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
-                            <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
+                            <Dropdown.Toggle className="p-16 btn-secondary text-white" variant="secondary" id="dropdown-basic">
+                            <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item href="../files/catalogo_Linkplas_sem_taco.pdf" download >Catalogo</Dropdown.Item>
@@ -41,7 +41,7 @@ export default function Tampa() {
                 </div>
 
                 {/* Desktop: Images after description */}
-                <div className="product-images-section mb-4 d-none d-md-block">
+                <div className="product-images-section mb-24 d-none d-md-block">
                     <div className="text-center">
                         <img alt='Imagem da tampa de tubo' className='product-img img-fluid' src='../images/tampa.png'></img>
                     </div>
@@ -49,7 +49,7 @@ export default function Tampa() {
 
                 {/* Specifications Table Section */}
                 <div>
-                    <h5 className="mb-3 text-white">Especificações Técnicas</h5>
+                    <h5 className="mb-16 text-white">Especificações Técnicas</h5>
                     
                     {/* Desktop Table */}
                     <div className='table-responsive product-specs-section d-none d-md-block'>

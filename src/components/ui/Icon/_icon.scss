@@ -1,0 +1,11 @@
+// The Figma SVG is used as a mask so the icon takes its colour from the parent, as the
+// design system requires, without editing or inlining the exported file.
+.lp-icon {
+  display: inline-block;
+  flex: none;
+  width: var(--lp-icon-size);
+  height: var(--lp-icon-size);
+  background-color: currentColor;
+  -webkit-mask: var(--lp-icon-src) center / 100% 100% no-repeat;
+  mask: var(--lp-icon-src) center / 100% 100% no-repeat;
+}

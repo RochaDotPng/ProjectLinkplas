@@ -1,144 +1,105 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button'
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Logo from './brand/Logo/Logo';
+import Button from './ui/Button/Button';
+import IconButton from './ui/Button/IconButton';
+import Icon from './ui/Icon/Icon';
+import NavItem from './navigation/NavItem/NavItem';
+import LanguageSwitcher from './navigation/LanguageSwitcher/LanguageSwitcher';
+import menuIcon from '../assets/icons/menu-20.svg';
+import closeIcon from '../assets/icons/close-20.svg';
+import chevronRight from '../assets/icons/chevron-right-20.svg';
+import arrowRight from '../assets/icons/arrow-right-20.svg';
+import { brand, mainNav, skipLinkLabel } from '../content/site';
 
+const MOBILE_MENU_ID = 'lp-mobile-menu';
 
-export default function Header({ className }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const handleContactsClick = (path) => {
-    navigate(path);
-  };
-
-  const [orientation, setOrientation] = useState('portrait');
-
-  const handleResize = () => {
-    if (window.innerWidth > 768) {
-      setOrientation('landscape');
-    } else {
-      setOrientation('portrait');
-    }
-  };
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    // Check orientation on initial load
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
-    <Navbar expand="lg" className={`bg-body-tertiary px-4 container header  ${className}`}>
-      <Container>
-        <Navbar.Brand>
-          <Nav.Link as={Link} to="/">
-            <img
-              alt="Linkplas"
-              src="../images/logo-text.png"
-              height="36"
-              className="d-inline-block align-top"
-            />
-          </Nav.Link>
-        </Navbar.Brand>
-        <div className="justify-content-end">
-          {orientation === 'landscape' && (
-            <Nav className="gap-4 me-auto">
-              <Nav.Link
-                as={Link}
-                to="/Products/Farmaceutica"
-                className={`nav-link ${location.pathname.includes('/Products') ? 'active' : ''}`}
-              >
-                Produtos
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/Policy"
-                className={`nav-link ${location.pathname === '/Policy' ? 'active' : ''}`}
-              >
-                Politica de Qualidade
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/About"
-                className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`}
-              >
-                Sobre
-              </Nav.Link>
-              <Button onClick={() => handleContactsClick('/Contacts')}>Contactos</Button>
-            </Nav>
-          )}
-          {orientation === 'portrait' && (
-            <>
-              <a onClick={handleShow}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
-                  <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                </svg>
-              </a>
-              <Offcanvas show={show} onHide={handleClose}>
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>
-                    <img
-                      alt="Linkplas"
-                      src="../images/logo.png"
-                      width="139"
-                      height="73"
-                      className="d-inline-block align-top"
-                    />
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  <Nav className="me-auto justify-content-between full-height">
-                    <div className='d-flex flex-column gap-2'>
-                      <Nav.Link
-                        as={Link}
-                        to="/"
-                        className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-                      >
-                        Início
-                      </Nav.Link>
-                      <Nav.Link
-                        as={Link}
-                        to="/Products/Industria"
-                        className={`nav-link ${location.pathname.includes('/Products') ? 'active' : ''}`}
-                      >
-                        Produtos
-                      </Nav.Link>
-                      <Nav.Link
-                        as={Link}
-                        to="/Policy"
-                        className={`nav-link ${location.pathname === '/Policy' ? 'active' : ''}`}
-                      >
-                        Politica de Qualidade
-                      </Nav.Link>
-                      <Nav.Link
-                        as={Link}
-                        to="/About"
-                        className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`}
-                      >
-                        Sobre
-                      </Nav.Link>
-                    </div>
-                    <Button onClick={() => handleContactsClick('/Contacts')}>Contactos</Button>
-                  </Nav>
-                </Offcanvas.Body>
-              </Offcanvas>
-            </>
-          )}
+    <>
+      <a className="lp-skip-link" href="#conteudo">{skipLinkLabel}</a>
+      <header className="lp-header">
+        <div className="container lp-header__inner">
+          <Link to="/" className="lp-header__brand" aria-label={brand.homeLabel}>
+            <Logo />
+          </Link>
+
+          <nav className="lp-header__nav" aria-label={mainNav.label}>
+            {mainNav.items.map((item) => (
+              <NavItem key={item.to} to={item.to}>{item.label}</NavItem>
+            ))}
+          </nav>
+
+          <div className="lp-header__actions">
+            <LanguageSwitcher />
+            <Button as={Link} to={mainNav.cta.to} size="small">{mainNav.cta.label}</Button>
+          </div>
+
+          <IconButton
+            className="lp-header__menu-button"
+            label={mainNav.openMenuLabel}
+            icon={<Icon src={menuIcon} />}
+            aria-expanded={menuOpen}
+            aria-controls={MOBILE_MENU_ID}
+            onClick={() => setMenuOpen(true)}
+          />
         </div>
-      </Container>
-    </Navbar>
+      </header>
+
+      <Offcanvas
+        id={MOBILE_MENU_ID}
+        className="lp-mobile-menu"
+        placement="end"
+        show={menuOpen}
+        onHide={() => setMenuOpen(false)}
+        aria-label={mainNav.mobileMenuLabel}
+      >
+        <div className="lp-mobile-menu__top">
+          <Link to="/" className="lp-header__brand" aria-label={brand.homeLabel}>
+            <Logo />
+          </Link>
+          <IconButton
+            label={mainNav.closeMenuLabel}
+            icon={<Icon src={closeIcon} />}
+            onClick={() => setMenuOpen(false)}
+          />
+        </div>
+
+        <nav className="lp-mobile-menu__items" aria-label={mainNav.label}>
+          {mainNav.items.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => `lp-mobile-nav-item${isActive ? ' is-active' : ''}`}
+            >
+              {({ isActive }) => (
+                <>
+                  <span className="lp-mobile-nav-item__label">
+                    {isActive && <span className="lp-mobile-nav-item__marker" aria-hidden="true" />}
+                    {item.label}
+                  </span>
+                  <Icon src={chevronRight} className="lp-mobile-nav-item__chevron" />
+                </>
+              )}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="lp-mobile-menu__bottom">
+          <LanguageSwitcher drop="up" />
+          <Button as={Link} to={mainNav.cta.to} size="large" trailingIcon={<Icon src={arrowRight} />}>
+            {mainNav.cta.label}
+          </Button>
+        </div>
+      </Offcanvas>
+    </>
   );
 }

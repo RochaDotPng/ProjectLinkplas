@@ -2,7 +2,7 @@ export default function Card() {
     return (
         <div className="contacts-card shadow">
             <h5>Morada:</h5>
-            <p>Linkplas, Lda</p>
+            <p>LinkPlas, Lda</p>
             <p>Rua António Gomes Correia Júnior</p>
             <p>Zona Industrial do Mergulhão - Cesar</p>
             <p>3700-606 Oliveira de Azeméis</p>

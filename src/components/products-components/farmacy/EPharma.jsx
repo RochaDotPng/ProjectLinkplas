@@ -17,7 +17,7 @@ export default function EPharma() {
     () => [
       {
         src: `${IMAGE_BASE}/CaixaPlastica.png`,
-        alt: 'Caixa de farmácia Linkplas em plástico resistente',
+        alt: 'Caixa de farmácia LinkPlas em plástico resistente',
         zIndex: 3,
       },
       {
@@ -142,18 +142,18 @@ export default function EPharma() {
               por uma caixa exterior polimérica, um reforço com isolamento térmico e acumuladores
               de frio que envolvem o(s) produto(s) a transportar.
             </p>
-            <div className="product-actions mt-4">
-              <Button onClick={() => navigate('/Contacts')} className="p-3 me-3">
+            <div className="product-actions mt-24">
+              <Button onClick={() => navigate('/Contacts')} className="p-16 me-16">
                 Pedir cotação
               </Button>
               <Button
                 href="../files/ZØR_LINKPLAS_Kit.pdf"
                 download
                 variant="secondary"
-                className="p-3 btn-secondary text-white"
+                className="p-16 btn-secondary text-white"
               >
                 <span>Descarregar</span>
-                <i className="text-white ms-2 bi bi-download"></i>
+                <i className="text-white ms-8 bi bi-download"></i>
               </Button>
             </div>
           </div>

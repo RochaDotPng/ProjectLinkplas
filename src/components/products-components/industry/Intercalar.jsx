@@ -9,25 +9,25 @@ export default function Intercalar() {
     };
     return (
         <Container>
-            <h1 className="fw-bold mb-4 mt-5 text-white">Intercalar longarina</h1>
+            <h1 className="fw-bold mb-24 mt-48 text-white">Intercalar longarina</h1>
             <div className="product-container-vertical">
                 
                 {/* Mobile: Images first */}
-                <div className="product-images-section mb-4 d-block d-md-none">
+                <div className="product-images-section mb-24 d-block d-md-none">
                     <div className="text-center">
                         <img alt='Imagem da intercalar longarina' className='product-img img-fluid' src='../images/intercalar.png'></img>
                     </div>
                 </div>
 
                 {/* Description Section */}
-                <div className='product-description-section mb-4'>
-                    <p className="mb-4">Espaçador para longarinas em transportadores.</p>
+                <div className='product-description-section mb-24'>
+                    <p className="mb-24">Espaçador para longarinas em transportadores.</p>
                     
-                    <div className="product-actions mb-4">
-                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-3 me-3'>Pedir cotação</Button>
+                    <div className="product-actions mb-24">
+                        <Button onClick={() => handleContactsClick('/Contacts')} className='p-16 me-16'>Pedir cotação</Button>
                         <Dropdown className='products-download d-inline'>
-                            <Dropdown.Toggle className="p-3 btn-secondary text-white" variant="secondary" id="dropdown-basic">
-                            <span>Descarregar</span><i className='text-white ms-2 bi bi-download'></i>
+                            <Dropdown.Toggle className="p-16 btn-secondary text-white" variant="secondary" id="dropdown-basic">
+                            <span>Descarregar</span><i className='text-white ms-8 bi bi-download'></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item href="../files/Intercalar/7017030013.DWG" download>2D - DWG </Dropdown.Item>

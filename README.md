@@ -1,4 +1,4 @@
-# Linkplas Website
+# LinkPlas Website
 
 All development made by:
 

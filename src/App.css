@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import url('./fontello.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 #root {
    height: 100vh;
-   --bs-secondary-light: #89a543;
-   --bs-secondary-dark: #4f6122;
-   --bs-primary-dark: #004357;
-   --primary-gradient: linear-gradient(234deg, #1A323F -14.82%, #457D8E 83.04%);
-   --primary-gradient-darker: linear-gradient(234deg, #13252F 9.28%, #325A67 103.95%);
-   --bs-primary-gradient: linear-gradient(234deg, #1A323F -14.82%, #457D8E 83.04%);
-   --bs-primary-gradient-darker: linear-gradient(234deg, #13252F 9.28%, #325A67 103.95%);
-   --bs-secondary-gradient: linear-gradient(235deg, #1E240F -37.78%, #68802D 78.9%);
-   --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-   --bs-table-accent-bg: #718541;
-   --bs-table-striped-bg: #5c7322;
+   /* Legacy aliases, pointed at the 2026 design tokens until the sections that use them are rebuilt.
+      The old gradients and greens are not part of the new identity, so they resolve to flat brand colours. */
+   --bs-secondary-light: var(--lp-petrol-400);
+   --bs-secondary-dark: var(--lp-petrol-700);
+   --bs-primary-dark: var(--lp-navy-950);
+   --primary-gradient: var(--lp-bg-inverse);
+   --primary-gradient-darker: var(--lp-navy-950);
+   --bs-primary-gradient: var(--lp-bg-inverse);
+   --bs-primary-gradient-darker: var(--lp-navy-950);
+   --bs-secondary-gradient: var(--lp-bg-brand);
+   --bs-box-shadow: var(--lp-shadow-md);
 }
 
 html {
@@ -26,7 +25,6 @@ html {
 
 * {
    margin: 0;
-   font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
 }
 
@@ -102,7 +100,7 @@ html {
    --bs-table-color: var(--bs-white);
    --bs-table-striped-color: var(--bs-white);
    --bs-table-accent-bg: var(--bs-secondary);
-   --bs-table-striped-bg: #4E5F24;
+   --bs-table-striped-bg: var(--lp-petrol-700);
    border-radius: 2px;
    margin-bottom: 0;
 }
@@ -151,10 +149,6 @@ tr:last-child td:last-child {
    height: 100%;
 }
 
-.btn{
-   border-radius: 4px;
-}
-
 .bi-arrow-right::before {
    content: "\f138";
    padding-top: 7px;
@@ -170,10 +164,6 @@ tr:last-child td:last-child {
    font-weight: 700;
    border-color: var(--bs-nav-tabs-link-hover-border-color);
    border-bottom: 0px;
-}
-
-.offcanvas-header{
-   padding-top: 15px;
 }
 
 a {
@@ -286,73 +276,6 @@ i {
    color: rgb(214, 212, 212);
 }
 
-.socials i {
-   margin-right: 15px;
-}
-
-.icon-big-container {
-   display: flex;
-   gap: 20px;
-}
-
-.icon-container {
-   margin-top: 10px;
-   display: flex;
-   padding: 15px;
-}
-
-.icon-container i {
-   margin-right: 5px;
-   margin-bottom: 15px;
-}
-
-/* --------------------*/
-/* ------ FOOTER ------*/
-footer {
-   position: relative;
-   bottom: 0;
-   left: 0;
-   width: 100%;
-   background: var(--primary-gradient-darker);
-}
-
-.footer-up {
-   border-bottom: 1px solid var(--bs-white);
-}
-
-.footer-up-container {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   color: rgb(214, 212, 212);
-   padding: 25px 0;
-}
-
-footer img {
-   width: 139px;
-   margin-right: 20px;
-}
-
-.footer-down {
-   height: 70px;
-}
-
-.footer-down-container {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   padding: 25px 0;
-   align-items: center;
-   color: rgb(214, 212, 212);
-   height: 70px;
-}
-
-
-.footer-link {
-   color: rgb(214, 212, 212);
-}
-
 /* ----- Alerts ----- */
 
 .alert-container {
@@ -408,55 +331,6 @@ footer img {
    -webkit-text-stroke-color: black;
 }
 
-/* ------ NAVBAR ------- */
-
-/* Mobile navbar styling */
-@media (max-width: 768px) {
-   .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 1001;
-      background: var(--bs-white) !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 0;
-   }
-}
-
-/* Desktop navbar styling */
-@media (min-width: 769px) {
-   .header {
-      position: fixed;
-      top: 8px;
-      z-index: 999;
-      width: 90%;
-      border-radius: 90px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0rem 2rem 14px rgba(0, 0, 0, 0.175);
-   }
-}
-
-/* Primary button gradient styling */
-.btn-primary {
-   background: var(--primary-gradient) !important;
-   border: none !important;
-}
-
-.btn-primary:hover {
-   background: var(--primary-gradient) !important;
-   opacity: 0.9;
-}
-
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active {
-   background: var(--primary-gradient) !important;
-   box-shadow: 0 0 0 0.25rem rgba(26, 50, 63, 0.25);
-}
-
 /* Bootstrap background gradient overrides */
 .bg-primary {
    background: var(--bs-primary-gradient) !important;
@@ -493,6 +367,7 @@ footer img {
    border: #ffffff00;
    font-weight: 600;
    height: 26px;
+   min-height: 0;
    text-decoration: underline;
 }
 
@@ -981,7 +856,7 @@ footer img {
    display: flex;
    flex-direction: column;
    width: 280px;
-   height: 410px;
+   min-height: 410px;
    border-radius: 4px;
    background-color: var(--bs-white);
 }
@@ -995,7 +870,7 @@ footer img {
    padding: 20px 0 10px 15px;
    color: var(--bs-white);
    width: 60%;
-   height: 95px;
+   min-height: 95px;
 }
 
 .green-card-overlay {
@@ -1056,10 +931,6 @@ input:-webkit-autofill:active {
 /* ------------------- */
 
 @media (max-width: 1000px) {
-   .icon-container p {
-      display: none;
-   }
-
    .container-md,
    .container-sm,
    .container {
@@ -1125,18 +996,6 @@ input:-webkit-autofill:active {
 @media (max-width: 992px) {
 
 
-   .navbar-nav {
-      flex-direction: row;
-   }
-
-   .offcanvas-body .navbar-nav {
-      flex-direction: column;
-   }
-
-   .navbar-expand-lg .navbar-nav .nav-link {
-      padding-right: var(--bs-navbar-nav-link-padding-x);
-      padding-left: var(--bs-navbar-nav-link-padding-x);
-   }
 
    .container-half {
       max-width: 100%;
@@ -1523,7 +1382,7 @@ input:-webkit-autofill:active {
 
    .contacts-green-card {
       width: 100%;
-      height: 104px;
+      min-height: 104px;
    }
 
    .map-class{
@@ -1534,24 +1393,6 @@ input:-webkit-autofill:active {
       height: 100%;
    }
 
-   /* -- Footer --*/
-
-   .footer-up-container {
-      padding: 25px 20px;
-   }
-
-   .footer-down-container {
-      padding-left: 8px;
-   }
-
-   .icon-container {
-      padding: 4px;
-   }
-
-   footer img {
-      width: 90px;
-      margin-right: 20px;
-  }
 
   .table > :not(caption) > * > * {
    padding: 0.3rem 0.4rem;
@@ -1580,26 +1421,10 @@ input:-webkit-autofill:active {
 }
 
 @media (max-width: 380px) {
-   .btn{
-      --bs-btn-padding-y: 0.25rem;
-    --bs-btn-padding-x: 0.5rem;
-    --bs-btn-font-size: 0.875rem;
-    --bs-btn-border-radius: var(--bs-border-radius-sm);
-   }
-
    .ultrasons-img{
       width: 300px;
    }
 
-
-   footer img {
-      width: 80px;
-      margin-right: 20px;
-  }
-
-  .icon-big-container{
-   gap:10px;
-  }
 }
 
 @media (max-width: 364px) {
@@ -2752,7 +2577,6 @@ input:-webkit-autofill:active {
    /* Add bottom padding to body to prevent content from being hidden behind the bar */
    body {
       padding-bottom: 100px;
-      padding-top: 20px;
    }
    
    /* Add padding-bottom to footer on products page to account for mobile bottom bar */
@@ -2761,7 +2585,7 @@ input:-webkit-autofill:active {
    }
 }
 
-/* --- Linkplas × ZØR partnership showcase (scroll-driven layers) --- */
+/* --- LinkPlas × ZØR partnership showcase (scroll-driven layers) --- */
 .zor-partnership-section {
    position: relative;
    background: linear-gradient(

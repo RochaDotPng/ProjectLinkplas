@@ -1,0 +1,267 @@
+// Design tokens, generated from the Figma variables of "LinkPlas — Design System (Web)".
+// Figma `a/b/c` becomes `--lp-a-b-c`. Components consume the semantic tokens only.
+
+@use "sass:math";
+
+// Primitives (Sass copies exist because Bootstrap needs real colours at compile time).
+
+$lp-navy-50: #edf1f3;
+$lp-navy-100: #d3dde2;
+$lp-navy-200: #a9bac3;
+$lp-navy-300: #7c939f;
+$lp-navy-400: #536e7c;
+$lp-navy-500: #33505f;
+$lp-navy-600: #22404f;
+$lp-navy-700: #183342;
+$lp-navy-800: #122a36;
+$lp-navy-900: #0d222c; // Azul Profundo
+$lp-navy-950: #07151c;
+
+$lp-petrol-50: #eff5f7;
+$lp-petrol-100: #dae8ec;
+$lp-petrol-200: #b7d1d9;
+$lp-petrol-300: #8fb5c1;
+$lp-petrol-400: #6898a8;
+$lp-petrol-500: #457a8b; // Azul Petróleo
+$lp-petrol-600: #3a6676;
+$lp-petrol-700: #305461;
+$lp-petrol-800: #26434d;
+$lp-petrol-900: #1c323a;
+
+$lp-neutral-0: #ffffff;
+$lp-neutral-50: #f8fafa;
+$lp-neutral-100: #f2f5f6;
+$lp-neutral-200: #e4e9eb;
+$lp-neutral-300: #ced6d9;
+$lp-neutral-400: #a9b4b9;
+$lp-neutral-500: #8a989e;
+$lp-neutral-600: #6f7e85;
+$lp-neutral-700: #5b6b73;
+$lp-neutral-800: #3b4a51;
+$lp-neutral-900: #1e2c33;
+
+$lp-green-50: #e8f5ee;
+$lp-green-500: #2e8b5e;
+$lp-green-700: #1e6444;
+
+$lp-amber-50: #fdf5e4;
+$lp-amber-500: #d9951e;
+$lp-amber-700: #8a5a0b;
+
+$lp-red-50: #fcecea;
+$lp-red-500: #d0402f;
+$lp-red-700: #9e2a1e;
+
+$lp-shadow-xs: 0 1px 2px rgba($lp-navy-900, 0.06);
+$lp-shadow-sm: 0 1px 3px rgba($lp-navy-900, 0.08), 0 1px 2px rgba($lp-navy-900, 0.04);
+$lp-shadow-md: 0 4px 12px rgba($lp-navy-900, 0.08), 0 2px 4px rgba($lp-navy-900, 0.04);
+$lp-shadow-lg: 0 12px 32px rgba($lp-navy-900, 0.12), 0 4px 8px rgba($lp-navy-900, 0.04);
+$lp-shadow-xl: 0 24px 64px rgba($lp-navy-900, 0.18);
+
+$lp-space-scale: (2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 160);
+
+$lp-primitives: (
+  "navy-50": $lp-navy-50,
+  "navy-100": $lp-navy-100,
+  "navy-200": $lp-navy-200,
+  "navy-300": $lp-navy-300,
+  "navy-400": $lp-navy-400,
+  "navy-500": $lp-navy-500,
+  "navy-600": $lp-navy-600,
+  "navy-700": $lp-navy-700,
+  "navy-800": $lp-navy-800,
+  "navy-900": $lp-navy-900,
+  "navy-950": $lp-navy-950,
+  "petrol-50": $lp-petrol-50,
+  "petrol-100": $lp-petrol-100,
+  "petrol-200": $lp-petrol-200,
+  "petrol-300": $lp-petrol-300,
+  "petrol-400": $lp-petrol-400,
+  "petrol-500": $lp-petrol-500,
+  "petrol-600": $lp-petrol-600,
+  "petrol-700": $lp-petrol-700,
+  "petrol-800": $lp-petrol-800,
+  "petrol-900": $lp-petrol-900,
+  "neutral-0": $lp-neutral-0,
+  "neutral-50": $lp-neutral-50,
+  "neutral-100": $lp-neutral-100,
+  "neutral-200": $lp-neutral-200,
+  "neutral-300": $lp-neutral-300,
+  "neutral-400": $lp-neutral-400,
+  "neutral-500": $lp-neutral-500,
+  "neutral-600": $lp-neutral-600,
+  "neutral-700": $lp-neutral-700,
+  "neutral-800": $lp-neutral-800,
+  "neutral-900": $lp-neutral-900,
+  "green-50": $lp-green-50,
+  "green-500": $lp-green-500,
+  "green-700": $lp-green-700,
+  "amber-50": $lp-amber-50,
+  "amber-500": $lp-amber-500,
+  "amber-700": $lp-amber-700,
+  "red-50": $lp-red-50,
+  "red-500": $lp-red-500,
+  "red-700": $lp-red-700,
+);
+
+:root {
+  @each $name, $value in $lp-primitives {
+    --lp-#{$name}: #{$value};
+  }
+
+  // Background
+  --lp-bg-page: var(--lp-neutral-0);
+  --lp-bg-subtle: var(--lp-neutral-100);
+  --lp-bg-muted: var(--lp-neutral-200);
+  --lp-bg-inverse: var(--lp-navy-900);
+  --lp-bg-inverse-subtle: var(--lp-navy-800);
+  --lp-bg-brand: var(--lp-petrol-500);
+  --lp-bg-brand-subtle: var(--lp-petrol-50);
+  --lp-bg-overlay: #{rgba($lp-navy-900, 0.6)};
+  --lp-bg-hover: #{rgba($lp-navy-900, 0.08)};
+
+  // Text
+  --lp-text-primary: var(--lp-navy-900);
+  --lp-text-secondary: var(--lp-neutral-700);
+  --lp-text-tertiary: var(--lp-neutral-600);
+  --lp-text-disabled: var(--lp-neutral-400);
+  --lp-text-brand: var(--lp-petrol-600);
+  --lp-text-link: var(--lp-petrol-600);
+  --lp-text-link-hover: var(--lp-navy-900);
+  --lp-text-inverse: var(--lp-neutral-0);
+  --lp-text-inverse-secondary: var(--lp-navy-200);
+  --lp-text-on-brand: var(--lp-neutral-0);
+
+  // Border
+  --lp-border-default: var(--lp-neutral-200);
+  --lp-border-strong: var(--lp-neutral-300);
+  --lp-border-hover: var(--lp-neutral-500);
+  --lp-border-focus: var(--lp-petrol-500);
+  --lp-border-brand: var(--lp-petrol-500);
+  --lp-border-inverse: #{rgba($lp-neutral-0, 0.12)};
+  --lp-border-error: var(--lp-red-500);
+
+  // Icon
+  --lp-icon-primary: var(--lp-navy-900);
+  --lp-icon-secondary: var(--lp-neutral-600);
+  --lp-icon-brand: var(--lp-petrol-500);
+  --lp-icon-inverse: var(--lp-neutral-0);
+  --lp-icon-disabled: var(--lp-neutral-400);
+
+  // Action
+  --lp-action-primary-bg: var(--lp-navy-900);
+  --lp-action-primary-bg-hover: var(--lp-navy-700);
+  --lp-action-primary-bg-pressed: var(--lp-navy-950);
+  --lp-action-primary-fg: var(--lp-neutral-0);
+  --lp-action-accent-bg: var(--lp-petrol-500);
+  --lp-action-accent-bg-hover: var(--lp-petrol-600);
+  --lp-action-accent-bg-pressed: var(--lp-petrol-700);
+  --lp-action-accent-fg: var(--lp-neutral-0);
+  --lp-action-secondary-bg: var(--lp-neutral-0);
+  --lp-action-secondary-bg-hover: var(--lp-neutral-100);
+  --lp-action-secondary-bg-pressed: var(--lp-neutral-200);
+  --lp-action-secondary-fg: var(--lp-navy-900);
+  --lp-action-secondary-border: var(--lp-navy-900);
+  --lp-action-ghost-bg-hover: var(--lp-petrol-50);
+  --lp-action-ghost-bg-pressed: var(--lp-petrol-100);
+  --lp-action-ghost-fg: var(--lp-navy-900);
+  --lp-action-inverse-bg: var(--lp-neutral-0);
+  --lp-action-inverse-bg-hover: var(--lp-navy-100);
+  --lp-action-inverse-bg-pressed: var(--lp-navy-200);
+  --lp-action-inverse-fg: var(--lp-navy-900);
+  --lp-action-disabled-bg: var(--lp-neutral-200);
+  --lp-action-disabled-fg: var(--lp-neutral-400);
+
+  // Control
+  --lp-control-bg: var(--lp-neutral-0);
+  --lp-control-bg-disabled: var(--lp-neutral-100);
+  --lp-control-checked: var(--lp-petrol-500);
+  --lp-control-track: var(--lp-neutral-300);
+  --lp-control-height-sm: 36px;
+  --lp-control-height-md: 44px;
+  --lp-control-height-lg: 52px;
+
+  // Feedback
+  --lp-feedback-success-bg: var(--lp-green-50);
+  --lp-feedback-success-fg: var(--lp-green-700);
+  --lp-feedback-success-border: var(--lp-green-500);
+  --lp-feedback-warning-bg: var(--lp-amber-50);
+  --lp-feedback-warning-fg: var(--lp-amber-700);
+  --lp-feedback-warning-border: var(--lp-amber-500);
+  --lp-feedback-error-bg: var(--lp-red-50);
+  --lp-feedback-error-fg: var(--lp-red-700);
+  --lp-feedback-error-border: var(--lp-red-500);
+  --lp-feedback-info-bg: var(--lp-petrol-50);
+  --lp-feedback-info-fg: var(--lp-petrol-700);
+  --lp-feedback-info-border: var(--lp-petrol-500);
+
+  // Sub-brands. Accents are never used for text on white; use the -text shade.
+  --lp-subbrand-thermalink-accent: #77cae3;
+  --lp-subbrand-thermalink-subtle: #eaf7fb;
+  --lp-subbrand-thermalink-text: #1f7a96;
+  --lp-subbrand-tupperlink-accent: #c6d24b;
+  --lp-subbrand-tupperlink-subtle: #f7f9e4;
+  --lp-subbrand-tupperlink-text: #6b7415;
+  --lp-subbrand-pharmalink-accent: #ab8fc2;
+  --lp-subbrand-pharmalink-subtle: #f4f0f8;
+  --lp-subbrand-pharmalink-text: #6e4f8a;
+  // Manual value; Figma still has #0067b1 (decisions log, item 1).
+  --lp-subbrand-keepylink-accent: #0066b1;
+  --lp-subbrand-keepylink-subtle: #e5f0f8;
+  --lp-subbrand-keepylink-text: #004f8a;
+
+  // Spacing
+  @each $step in $lp-space-scale {
+    --lp-space-#{$step}: #{$step}px;
+  }
+
+  // Radius
+  --lp-radius-none: 0;
+  --lp-radius-xs: 2px;
+  --lp-radius-sm: 4px;
+  --lp-radius-md: 6px;
+  --lp-radius-lg: 8px;
+  --lp-radius-xl: 16px;
+  --lp-radius-full: 999px;
+
+  // Elevation
+  --lp-shadow-xs: #{$lp-shadow-xs};
+  --lp-shadow-sm: #{$lp-shadow-sm};
+  --lp-shadow-md: #{$lp-shadow-md};
+  --lp-shadow-lg: #{$lp-shadow-lg};
+  --lp-shadow-xl: #{$lp-shadow-xl};
+  --lp-focus-ring: 0 0 0 4px #{rgba($lp-petrol-500, 0.35)};
+
+  // Layout
+  --lp-container-max: 1200px;
+  --lp-container-wide: 1320px;
+}
+
+// Text styles, as size / line height in px from Figma. Line height is emitted as a ratio.
+
+$lp-font-sans: "Google Sans Flex", "Google Sans", Arial, sans-serif;
+$lp-font-mono: "Google Sans Code", ui-monospace, monospace;
+
+@mixin lp-text($size, $line-height, $weight: 400, $tracking: 0) {
+  font-size: #{$size * 0.0625}rem;
+  line-height: math.div($line-height, $size);
+  font-weight: $weight;
+  @if $tracking != 0 {
+    letter-spacing: #{$tracking}em;
+  }
+}
+
+@mixin lp-body-l { @include lp-text(20, 32); }
+@mixin lp-body-m { @include lp-text(18, 28); }
+@mixin lp-body-base { @include lp-text(16, 26); }
+@mixin lp-body-s { @include lp-text(14, 22); }
+@mixin lp-label-l { @include lp-text(16, 24, 500); }
+@mixin lp-label-m { @include lp-text(14, 20, 500); }
+@mixin lp-label-s { @include lp-text(12, 16, 500, 0.005); }
+@mixin lp-caption { @include lp-text(12, 18); }
+@mixin lp-heading-h5 { @include lp-text(20, 28, 500); }
+
+@mixin lp-eyebrow {
+  @include lp-text(13, 16, 500, 0.08);
+  text-transform: uppercase;
+}

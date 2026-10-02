@@ -1,0 +1,20 @@
+.lp-language-switcher__toggle {
+  @include lp-label-m;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--lp-space-8) 10px;
+  color: var(--lp-text-primary);
+  background: none;
+  border: 0;
+  border-radius: var(--lp-radius-sm);
+
+  &:hover {
+    background-color: var(--lp-bg-hover);
+  }
+}
+
+// The chevron is the Figma icon, so Bootstrap's generated caret (including the dropup one) is hidden.
+.lp-language-switcher .lp-language-switcher__toggle::after {
+  display: none;
+}
