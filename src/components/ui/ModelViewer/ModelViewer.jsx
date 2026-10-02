@@ -4,6 +4,9 @@ import Icon from '../Icon/Icon';
 import IconButton from '../Button/IconButton';
 import plus from '../../../assets/icons/plus-24.svg';
 import minus from '../../../assets/icons/minus-24.svg';
+import { CLEAR_FINISH, SOLID_ROUGHNESS, hexToLinear } from '../../../content/model-finishes';
+
+const NO_FINISHES = {};
 
 const supportsWebGl = () => {
   try {
@@ -14,10 +17,29 @@ const supportsWebGl = () => {
   }
 };
 
+// Recolours the parts of the loaded model. Each part is a material named after the part.
+function applyFinishes(model, finishes) {
+  for (const material of model?.materials ?? []) {
+    const finish = finishes[material.name];
+    if (!finish) continue;
+    const surface = material.pbrMetallicRoughness;
+    if (finish.color) {
+      surface.setBaseColorFactor([...hexToLinear(finish.color), 1]);
+      surface.setRoughnessFactor(SOLID_ROUGHNESS);
+      material.setAlphaMode('OPAQUE');
+    } else {
+      surface.setBaseColorFactor([...CLEAR_FINISH.color, CLEAR_FINISH.opacity]);
+      surface.setRoughnessFactor(CLEAR_FINISH.roughness);
+      material.setAlphaMode('BLEND');
+    }
+  }
+}
+
 // Interactive 3D preview (rotate and zoom). The viewer library is large, so it is only
 // downloaded when the preview is about to be seen; until then, and wherever WebGL is
-// missing, `fallback` is shown instead.
-export default function ModelViewer({ src, alt, labels, fallback }) {
+// missing, `fallback` is shown instead. `finishes` maps a part of the model to
+// `{ color: '#rrggbb' }` for a solid colour or `{}` for clear.
+export default function ModelViewer({ src, alt, labels, fallback, finishes = NO_FINISHES }) {
   const container = useRef(null);
   const viewer = useRef(null);
   const [status, setStatus] = useState('waiting');
@@ -53,6 +75,24 @@ export default function ModelViewer({ src, alt, labels, fallback }) {
     node.addEventListener('wheel', keepPageScroll, { capture: true });
     return () => node.removeEventListener('wheel', keepPageScroll, { capture: true });
   }, []);
+
+  // A newly loaded model (another size) arrives in its starting finish, so the chosen
+  // finishes are applied again on every load as well as whenever they change.
+  const latestFinishes = useRef(finishes);
+  latestFinishes.current = finishes;
+  const finishesKey = JSON.stringify(finishes);
+
+  useEffect(() => {
+    const node = viewer.current;
+    if (status !== 'ready' || !node) return undefined;
+    const onLoad = () => applyFinishes(node.model, latestFinishes.current);
+    node.addEventListener('load', onLoad);
+    return () => node.removeEventListener('load', onLoad);
+  }, [status]);
+
+  useEffect(() => {
+    applyFinishes(viewer.current?.model, latestFinishes.current);
+  }, [finishesKey, status]);
 
   return (
     <div className="lp-model-viewer">
@@ -106,4 +146,5 @@ ModelViewer.propTypes = {
     zoomOut: PropTypes.string.isRequired,
   }).isRequired,
   fallback: PropTypes.node.isRequired,
+  finishes: PropTypes.objectOf(PropTypes.shape({ color: PropTypes.string })),
 };

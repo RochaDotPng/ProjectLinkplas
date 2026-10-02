@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useSearchParams } from 'react-router-dom';
 import Breadcrumb from '../../navigation/Breadcrumb/Breadcrumb';
@@ -10,6 +10,7 @@ import StandaloneLink from '../../ui/StandaloneLink/StandaloneLink';
 import SubbrandTag from '../../ui/SubbrandTag/SubbrandTag';
 import SpecTable from '../../content/SpecTable/SpecTable';
 import DownloadCard from '../../cards/DownloadCard/DownloadCard';
+import ColourOptions from './ColourOptions';
 import { useProductsUi } from '../../../content/products';
 
 const VARIANT_PARAM = 'medida';
@@ -37,7 +38,21 @@ export default function ProductDetail({ product }) {
     setSearchParams(params, { replace: true, state: { keepScroll: true } });
   };
 
+  // Colour of each part of the 3D model, keyed by the part's material. An untouched part
+  // keeps the finish its model starts in: its `start` colour, or clear when it has none.
+  const { colours } = product;
+  const [chosenFinishes, setChosenFinishes] = useState({});
+  const finishOf = (part) => chosenFinishes[part.material] ?? (part.start ? { color: part.start } : {});
+  const showColours = Boolean(colours && previewed);
+
   const fullName = selected ? `${product.name} (${selected.label})` : product.name;
+  // The quote request names the colours, since a colour made to order is part of the request.
+  const quoteMessage = [
+    text.quoteMessage(fullName),
+    ...(showColours
+      ? colours.parts.map((part) => `${part.label}: ${finishOf(part).color?.toUpperCase() ?? text.clearFinish}`)
+      : []),
+  ].join('\n');
   const specRows = [...(selected?.specs ?? []), ...product.specs].map((spec) => [spec.label, spec.value]);
   const downloads = [...(selected?.downloads ?? []), ...product.downloads];
 
@@ -65,6 +80,7 @@ export default function ProductDetail({ product }) {
               alt={text.viewer.alt(`${product.name} (${previewed.label})`)}
               labels={text.viewer}
               fallback={<ImagePlaceholder />}
+              finishes={showColours ? Object.fromEntries(colours.parts.map((part) => [part.material, finishOf(part)])) : undefined}
             />
           ) : (
             <div className="lp-product-detail__image">
@@ -101,7 +117,21 @@ export default function ProductDetail({ product }) {
             </div>
           )}
 
-          <Button as={Link} to="/Contacts" state={{ message: text.quoteMessage(fullName) }} size="large">
+          {showColours &&
+            colours.parts.map((part) => (
+              <ColourOptions
+                key={part.material}
+                name={part.material}
+                label={part.label}
+                canBeClear={!part.start}
+                anyColour={part.start ?? colours.anyColour}
+                value={finishOf(part)}
+                onChange={(finish) => setChosenFinishes((current) => ({ ...current, [part.material]: finish }))}
+                text={text}
+              />
+            ))}
+
+          <Button as={Link} to="/Contacts" state={{ message: quoteMessage }} size="large">
             {text.requestQuote}
           </Button>
         </div>
@@ -181,6 +211,10 @@ ProductDetail.propTypes = {
     features: PropTypes.arrayOf(PropTypes.string),
     variantLabel: PropTypes.string,
     variants: PropTypes.array.isRequired,
+    colours: PropTypes.shape({
+      anyColour: PropTypes.string,
+      parts: PropTypes.array.isRequired,
+    }),
     specs: PropTypes.array.isRequired,
     downloads: PropTypes.array.isRequired,
   }).isRequired,

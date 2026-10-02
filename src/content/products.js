@@ -3,6 +3,7 @@
 
 import { useLanguage } from '../i18n/language-context';
 import { getLanguage } from '../i18n/languages';
+import { PHARMALINK_START_COLOURS } from './model-finishes';
 
 export const BRANDS = {
   tupperlink: 'TupperLink',
@@ -44,6 +45,16 @@ const products = [
     slug: 'recipiente-tupperlink',
     brand: 'tupperlink',
     variantSpec: 'volume',
+    // Sold mostly clear, but made in any colour, and the lid may differ from the container.
+    // `material` is the name of the part in the 3D model. A part with no `start` colour starts
+    // clear, and `anyColour` is where its colour picker opens.
+    colours: {
+      anyColour: '#2E6FA8',
+      parts: [
+        { material: 'base', label: { pt: 'Cor do recipiente', en: 'Container colour' } },
+        { material: 'tampa', label: { pt: 'Cor da tampa', en: 'Lid colour' } },
+      ],
+    },
     variants: [
       { id: '500ml', specs: { volume: 500, length: 210, width: 160, height: 28 }, model: '/models/tupperlink-500ml.glb' },
       { id: '1000ml', specs: { volume: 1000, length: 210, width: 160, height: 45 }, model: '/models/tupperlink-1000ml.glb' },
@@ -78,6 +89,13 @@ const products = [
     slug: 'caixa-de-transporte-de-medicamentos',
     brand: 'pharmalink',
     variantSpec: 'size',
+    // Any colour, chosen with a colour picker per part; each part starts in its usual colour.
+    colours: {
+      parts: [
+        { material: 'caixa', start: PHARMALINK_START_COLOURS.caixa, label: { pt: 'Cor da caixa', en: 'Box colour' } },
+        { material: 'tampa', start: PHARMALINK_START_COLOURS.tampa, label: { pt: 'Cor da tampa', en: 'Lid colour' } },
+      ],
+    },
     variants: [
       { id: 'grande', label: { pt: 'Grande', en: 'Large' }, model: '/models/pharmalink-caixa-grande.glb' },
       { id: 'medio', label: { pt: 'Médio', en: 'Medium' }, model: '/models/pharmalink-caixa-media.glb' },
@@ -314,6 +332,9 @@ const ui = {
     downloadAction: 'Descarregar',
     requestQuote: 'Pedir orçamento',
     quoteMessage: (name) => `Pedido de orçamento: ${name}`,
+    clearFinish: 'Transparente',
+    colouredFinish: 'Com cor',
+    chooseColour: 'escolher cor',
     allProducts: 'Ver todos os produtos',
     specHeader: ['Característica', 'Valor'],
     previewOf: (shown, selected) => `Ainda não há modelo 3D para ${selected}. A pré-visualização mostra ${shown}.`,
@@ -364,6 +385,9 @@ const ui = {
     downloadAction: 'Download',
     requestQuote: 'Request a quote',
     quoteMessage: (name) => `Quote request: ${name}`,
+    clearFinish: 'Clear',
+    colouredFinish: 'Coloured',
+    chooseColour: 'choose colour',
     allProducts: 'View all products',
     specHeader: ['Specification', 'Value'],
     previewOf: (shown, selected) => `There is no 3D model for ${selected} yet. The preview shows ${shown}.`,
@@ -445,6 +469,10 @@ function localize(product, language, locale) {
     featuresTitle: copy.featuresTitle,
     features: copy.features,
     variantLabel: product.variantSpec ? text.specLabels[product.variantSpec] : undefined,
+    colours: product.colours && {
+      anyColour: product.colours.anyColour,
+      parts: product.colours.parts.map(({ material, start, label }) => ({ material, start, label: label[language] })),
+    },
     variants,
     specs: toRows({ ...product.specs, ...copy.specs }),
     downloads: toDownloads(product.downloads),

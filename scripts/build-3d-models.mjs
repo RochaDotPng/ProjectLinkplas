@@ -3,11 +3,17 @@
 //
 // STL carries geometry only, so this script also: welds the triangles, simplifies heavy meshes,
 // computes normals, rotates Z-up parts to glTF's Y-up, scales millimetres to metres and
-// assigns the materials.
+// gives each part its starting material.
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { MeshoptSimplifier } from 'meshoptimizer';
+import {
+  CLEAR_FINISH,
+  PHARMALINK_START_COLOURS,
+  SOLID_ROUGHNESS,
+  hexToLinear,
+} from '../src/content/model-finishes.js';
 
 const SOURCE_DIR = 'content-inbox/3d';
 const OUTPUT_DIR = 'public/models';
@@ -18,35 +24,39 @@ const MAX_TRIANGLES = 25000;
 const CREASE_ANGLE_DEGREES = 35;
 const MILLIMETRES_TO_METRES = 0.001;
 
-// Materials are stand-ins until the client supplies the real product colours: `clear` is the
-// transparent finish TupperLink is sold in, the two `neutral` ones are plain greys.
-// Colour factors are linear values, not the sRGB ones a colour picker shows.
-const MATERIALS = {
-  clear: {
-    name: 'clear',
-    pbrMetallicRoughness: { baseColorFactor: [0.6, 0.7, 0.76, 0.45], metallicFactor: 0, roughnessFactor: 0.08 },
-    alphaMode: 'BLEND',
+// Every part gets its own material, named after the part, so the product page can recolour
+// the parts separately. A part starts either clear or in the solid colour given here.
+function materialFor(part) {
+  if (part.clear) {
+    return {
+      name: part.name,
+      pbrMetallicRoughness: {
+        baseColorFactor: [...CLEAR_FINISH.color, CLEAR_FINISH.opacity],
+        metallicFactor: 0,
+        roughnessFactor: CLEAR_FINISH.roughness,
+      },
+      alphaMode: 'BLEND',
+      doubleSided: true,
+    };
+  }
+  return {
+    name: part.name,
+    pbrMetallicRoughness: {
+      baseColorFactor: [...hexToLinear(part.color), 1],
+      metallicFactor: 0,
+      roughnessFactor: SOLID_ROUGHNESS,
+    },
     doubleSided: true,
-  },
-  neutral: {
-    name: 'neutral',
-    pbrMetallicRoughness: { baseColorFactor: [0.25, 0.31, 0.34, 1], metallicFactor: 0, roughnessFactor: 0.55 },
-    doubleSided: true,
-  },
-  neutralLight: {
-    name: 'neutral-light',
-    pbrMetallicRoughness: { baseColorFactor: [0.4, 0.44, 0.46, 1], metallicFactor: 0, roughnessFactor: 0.55 },
-    doubleSided: true,
-  },
-};
+  };
+}
 
 // Source files are matched by pattern so their original names never have to be repeated here.
 // TupperLink bases and lids are exported in assembly position, so the lid already sits on the base.
 const tupperLink = (millilitres) => ({
   output: `tupperlink-${millilitres}ml`,
   parts: [
-    { name: 'base', source: new RegExp(`^${millilitres}ML.*base`, 'i'), material: 'clear' },
-    { name: 'tampa', source: new RegExp(`^${millilitres}ML.*tampa`, 'i'), material: 'clear' },
+    { name: 'base', source: new RegExp(`^${millilitres}ML.*base`, 'i'), clear: true },
+    { name: 'tampa', source: new RegExp(`^${millilitres}ML.*tampa`, 'i'), clear: true },
   ],
 });
 
@@ -55,8 +65,8 @@ const tupperLink = (millilitres) => ({
 const pharmaLink = (size, source, up) => ({
   output: `pharmalink-caixa-${size}`,
   parts: [
-    { name: 'caixa', source, up, material: 'neutral' },
-    { name: 'tampa', source: /^tampa cx/i, up: 'y', material: 'neutralLight', liftAbove: 'caixa' },
+    { name: 'caixa', source, up, color: PHARMALINK_START_COLOURS.caixa },
+    { name: 'tampa', source: /^tampa cx/i, up: 'y', color: PHARMALINK_START_COLOURS.tampa, liftAbove: 'caixa' },
   ],
 });
 
@@ -237,12 +247,8 @@ function writeGlb(file, parts) {
     return gltf.bufferViews.length - 1;
   };
 
-  const materialIndex = new Map();
   for (const part of parts) {
-    if (!materialIndex.has(part.material)) {
-      materialIndex.set(part.material, gltf.materials.length);
-      gltf.materials.push(MATERIALS[part.material]);
-    }
+    gltf.materials.push(materialFor(part));
     const { positions, normals, indices } = part.mesh;
     const vertexCount = positions.length / 3;
     const compactIndices = vertexCount <= 65535 ? new Uint16Array(indices) : indices;
@@ -269,7 +275,7 @@ function writeGlb(file, parts) {
         {
           attributes: { POSITION: position, NORMAL: position + 1 },
           indices: position + 2,
-          material: materialIndex.get(part.material),
+          material: gltf.materials.length - 1,
         },
       ],
     });

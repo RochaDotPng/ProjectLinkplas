@@ -145,3 +145,49 @@
     gap: var(--lp-space-24);
   }
 }
+
+// Colour choice for one part of the product.
+.lp-colour-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+}
+
+.lp-colour-options__label {
+  @include lp-label-m;
+  margin: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-colour-options__choices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--lp-space-12);
+}
+
+// The browser's own colour picker, sized like a small control.
+.lp-colour-options__picker {
+  flex: none;
+  width: var(--lp-control-height-sm);
+  height: var(--lp-control-height-sm);
+  padding: var(--lp-space-2);
+  cursor: pointer;
+  background-color: var(--lp-control-bg);
+  border: 1px solid var(--lp-border-strong);
+  border-radius: var(--lp-radius-sm);
+
+  &:hover {
+    border-color: var(--lp-border-hover);
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch,
+  &::-moz-color-swatch {
+    border: 0;
+    border-radius: var(--lp-radius-xs);
+  }
+}

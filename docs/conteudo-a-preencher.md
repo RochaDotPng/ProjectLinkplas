@@ -163,7 +163,7 @@ Modelos recebidos em `content-inbox/3d/` e já no site:
 
 - Modelo do recipiente de 2000 ml (ficheiro): …
 - A tampa das caixas PharmaLink é a mesma para os três tamanhos? No site aparece levantada por cima da caixa, como nas imagens atuais. …
-- As cores dos modelos são provisórias: TupperLink transparente, caixa PharmaLink em cinzento. As cores reais pedem-se nas secções 4.1 e 4.2.
+- Cores: na ficha técnica já se pode mudar a cor do modelo. TupperLink: transparente ou qualquer cor, com recipiente e tampa separados. PharmaLink: qualquer cor à escolha, para a caixa e para a tampa; começa com a caixa em cinzento claro e a tampa em azul. Ver 4.1 e 4.2.
 
 **3.5 Ficheiros para descarregar**
 
@@ -217,11 +217,8 @@ O volume de 4000 ml veio com os modelos 3D e não está no site atual; no modelo
 - Medidas do recipiente de 4000 ml: …
 - No modelo 3D, o recipiente de 1500 ml tem 62 mm de altura; o site indica 64 mm. Qual é o valor certo? …
 
-**Cores** — as cores em que o produto é realmente vendido, para o visualizador 3D.
-
-| Peça (recipiente, tampa…) | Nome da cor | Referência (RAL, Pantone ou código da cor) | Transparente? |
-|---|---|---|---|
-| … | … | … | … |
+**Cores** — decidido: vende-se sobretudo transparente, mas faz-se em qualquer cor, e a tampa pode ter cor diferente do recipiente. No site, quem visita escolhe "Transparente" ou "Com cor" e, neste caso, uma cor à vontade, para o recipiente e para a tampa.
+- Há cores habituais que valha a pena propor logo (nome e referência)? …
 
 **Modelos 3D** — recebidos para 500, 1000, 1500, 2500 e 4000 ml (base e tampa). Falta o de 2000 ml (ver 3.4).
 
@@ -249,11 +246,9 @@ Medidas exteriores tiradas dos modelos 3D, para confirmar ou corrigir (não est�
 - Duração: até 20 horas
 - O nome "e-Pharma" mantém-se para este kit? …
 
-**Cores**
-
-| Peça (caixa, tampa…) | Nome da cor | Referência (RAL, Pantone ou código da cor) |
-|---|---|---|
-| … | … | … |
+**Cores** — no site, quem visita escolhe qualquer cor para a caixa e para a tampa. À partida a caixa aparece em cinzento claro (`#B2B2B2`) e a tampa em azul (`#505898`), tons tirados das imagens atuais **(a confirmar com o cliente)**.
+- Cor certa da caixa (nome e referência RAL, Pantone ou código): …
+- Cor certa da tampa (nome e referência): …
 
 **Modelos 3D** — recebidos para os três tamanhos de caixa e uma tampa (ver 3.4).
 

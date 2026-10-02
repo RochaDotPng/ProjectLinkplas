@@ -31,7 +31,8 @@ export default function ProductDetail() {
       />
       <Header />
       <main id="conteudo" tabIndex={-1}>
-        <ProductDetailSection product={product} />
+        {/* Keyed by product so the chosen size and colours never carry over to another product. */}
+        <ProductDetailSection key={product.slug} product={product} />
       </main>
       <Footer />
     </div>
