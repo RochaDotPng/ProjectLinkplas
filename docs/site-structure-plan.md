@@ -38,7 +38,7 @@ The home page summarises the company and sends people to the other pages. It rep
 
 | # | Section | Content | Source | Component |
 |---|---|---|---|---|
-| 1 | Hero | **Built** (2026-10-03) from the Figma `Hero` (Type=Home), with the production video `public/images/Hero.webm` where the design has a photograph. Eyebrow "Injeção de plásticos · Desde 2012"; title "Peças plásticas com rigor técnico, produzidas em Portugal."; line "Da ideia ao molde, da injeção à personalização: somos o parceiro de desenvolvimento para a indústria, a farmácia e o take-away." (the Figma copy); buttons Pedir orçamento, Ver produtos. The header above it stays white | Figma; p. 2 headline | Hero (Home), BackgroundVideo |
+| 1 | Hero | **Built** (2026-10-03) from the Figma `Hero` (Type=Home), with the production video `public/images/Hero.webm` where the design has a photograph. Eyebrow "Injeção de plásticos · Desde 2012"; title "Peças plásticas com rigor técnico, produzidas em Portugal."; line "Da ideia ao molde, da injeção à personalização: desenvolvemos consigo, não apenas para si." (the Figma line, ending with the presentation's closing phrase at the client's request, so it names no sector); buttons Pedir orçamento, Ver produtos. The header above it stays white | Figma; p. 2 headline | Hero (Home), BackgroundVideo |
 | 2 | Números | 14 anos de atividade contínua · 5 máquinas de injeção, de 50t a 550t · 12 colaboradores, 6 desde o início · +20 clientes ativos · 99% de entregas no prazo | p. 2 | Stats band |
 | 3 | Posicionamento | "O parceiro português de injeção de plásticos que junta capacidade técnica e sustentabilidade real, com a proximidade de quem acompanha cada projeto de perto." Four pillars with their quotes: Capacidade técnica, Sustentabilidade real, Parceria e proximidade, Pessoas e integridade | p. 6 | Section Heading + Feature Card ×4 |
 | 4 | Setores | Indústria · Farmácia · Restauração e take-away · Cadeia alimentar e pescas, each with who it serves and what LinkPlas supplies. Each links to its brand: Indústria to FactoryLink, Farmácia to PharmaLink, take-away to TupperLink, pescas to the ZØR partnership | p. 7 | Sector Card |
@@ -46,7 +46,7 @@ The home page summarises the company and sends people to the other pages. It rep
 | 6 | Como trabalhamos (teaser) | "Um só interlocutor, da ideia à produção em série." The four steps in short, link to the full page | p. 9 | Process Step ×4 |
 | 7 | Prova | One testimonial and the client names | p. 16–17, p. 12 | Testimonial Card + Logo Strip |
 | 8 | Notícias | The three most recent posts, link to Notícias | Site (`cards.json`) | News Card ×3 |
-| 9 | Fecho | "Desenvolvemos consigo, não apenas para si." + Pedir orçamento | p. 21, p. 6 | CTA Section |
+| 9 | Fecho | Pedir orçamento, with a closing line still to choose: "Desenvolvemos consigo, não apenas para si." now ends the hero line | p. 21, p. 6 | CTA Section |
 
 ### 2.2 Notícias
 

@@ -7,7 +7,7 @@ const home = {
     hero: {
       eyebrow: 'Injeção de plásticos · Desde 2012',
       title: 'Peças plásticas com rigor técnico, produzidas em Portugal.',
-      lead: 'Da ideia ao molde, da injeção à personalização: somos o parceiro de desenvolvimento para a indústria, a farmácia e o take-away.',
+      lead: 'Da ideia ao molde, da injeção à personalização: desenvolvemos consigo, não apenas para si.',
       primaryAction: { label: 'Pedir orçamento', to: '/Contacts' },
       secondaryAction: { label: 'Ver produtos', to: '/Products' },
     },
@@ -16,7 +16,7 @@ const home = {
     hero: {
       eyebrow: 'Plastic injection moulding · Since 2012',
       title: 'Precision plastic parts, made in Portugal.',
-      lead: 'From idea to mould, from injection to customisation: we are the development partner for industry, pharmacy and take-away.',
+      lead: 'From idea to mould, from injection to customisation: we develop with you, not just for you.',
       primaryAction: { label: 'Request a quote', to: '/Contacts' },
       secondaryAction: { label: 'View products', to: '/Products' },
     },
