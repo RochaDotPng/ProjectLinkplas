@@ -14,7 +14,46 @@
   @include media-breakpoint-up(lg) {
     display: block;
     padding-top: 0;
-    background-color: var(--lp-bg-inverse-subtle);
+    // Crops the pattern at the edges without letting the page scroll sideways.
+    overflow: hidden;
+    // Azul Profundo, as on mobile. The Figma hero uses the lighter bg/inverse-subtle for this
+    // panel; the client chose the darker one.
+    background-color: var(--lp-bg-inverse);
+  }
+}
+
+// The modular pattern, at 1.6 times its drawn size (486 × 989px), fills the margin left of the
+// copy and ends 80px before the text, so it never runs behind it. It is taller than the hero
+// and cropped top and bottom. On wide screens the drawing repeats to the left, with the same
+// gap as between its columns (9.53 units), so the grid runs on across the joins. The narrower
+// the screen, the less of it shows; below 1200px there is no room for it.
+$lp-hero-pattern-scale: 1.6;
+
+.lp-home-hero__pattern {
+  display: none;
+}
+
+@each $breakpoint in (xl, xxl) {
+  @include media-breakpoint-up($breakpoint) {
+    $container: map-get($container-max-widths, $breakpoint);
+    .lp-home-hero__pattern {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 9.53px * $lp-hero-pattern-scale;
+      width: max(0px, calc((100% - #{$container}) / 2 + 12px - var(--lp-space-80)));
+      overflow: hidden;
+
+      img {
+        flex: none;
+        width: 304px * $lp-hero-pattern-scale;
+        height: auto;
+      }
+    }
   }
 }
 

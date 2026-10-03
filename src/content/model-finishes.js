@@ -18,4 +18,4 @@ export function hexToLinear(hex) {
 
 // The colours the PharmaLink box and lid start in, keyed by the part's name in the model.
 // The models are built in these colours and the page's colour pickers start on them.
-export const PHARMALINK_START_COLOURS = { caixa: '#B2B2B2', tampa: '#505898' };
+export const PHARMALINK_START_COLOURS = { caixa: '#2B305F', tampa: '#89898B' };

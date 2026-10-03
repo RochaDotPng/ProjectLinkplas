@@ -4,6 +4,7 @@ import Button from '../../ui/Button/Button';
 import Icon from '../../ui/Icon/Icon';
 import BackgroundVideo from '../../ui/BackgroundVideo/BackgroundVideo';
 import Logo from '../../brand/Logo/Logo';
+import ModularPattern from '../../brand/ModularPattern/ModularPattern';
 import arrowRight from '../../../assets/icons/arrow-right-20.svg';
 import { useHomeContent } from '../../../content/home';
 
@@ -14,6 +15,8 @@ export default function HomeHero() {
 
   return (
     <section className="lp-home-hero" aria-labelledby="lp-home-hero-title">
+      {/* Enough tiles to fill the margin of a 4K screen; the extra ones are cropped. */}
+      <ModularPattern tiles={4} className="lp-home-hero__pattern" />
       <div className="container lp-home-hero__inner">
         <div className="lp-home-hero__content">
           <Eyebrow theme="dark">{hero.eyebrow}</Eyebrow>
