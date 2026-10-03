@@ -13,6 +13,7 @@ import DownloadCard from '../../cards/DownloadCard/DownloadCard';
 import ColourOptions from './ColourOptions';
 import ProductGallery from './ProductGallery';
 import { useProductsUi } from '../../../content/products';
+import { ROUTES } from '../../../content/routes';
 
 const VARIANT_PARAM = 'medida';
 const VARIANT_LABEL_ID = 'lp-product-variant';
@@ -81,9 +82,9 @@ export default function ProductDetail({ product }) {
       <Breadcrumb
         label={text.breadcrumbLabel}
         items={[
-          { label: text.home, to: '/' },
-          { label: text.catalogueTitle, to: '/Products' },
-          { label: product.brandName, to: `/Products?marcas=${product.brand}` },
+          { label: text.home, to: ROUTES.home },
+          { label: text.catalogueTitle, to: ROUTES.products },
+          { label: product.brandName, to: ROUTES.brand(product.brand) },
           { label: product.name },
         ]}
       />
@@ -154,7 +155,7 @@ export default function ProductDetail({ product }) {
               />
             ))}
 
-          <Button as={Link} to="/Contacts" state={{ message: quoteMessage }} size="large">
+          <Button as={Link} to={ROUTES.contact} state={{ message: quoteMessage }} size="large">
             {text.requestQuote}
           </Button>
         </div>
@@ -194,7 +195,7 @@ export default function ProductDetail({ product }) {
         )}
       </div>
 
-      <StandaloneLink to="/Products">{text.allProducts}</StandaloneLink>
+      <StandaloneLink to={ROUTES.products}>{text.allProducts}</StandaloneLink>
     </div>
   );
 }

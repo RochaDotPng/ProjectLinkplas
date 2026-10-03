@@ -1,7 +1,7 @@
 // The Produtos catalogue: brand filters above a grid of product cards.
 
-// The selector is doubled with `.container` to outrank the legacy mobile
-// `.container { padding: 2% }` in App.css. Page margins are 20px on mobile.
+// Doubled with `.container` so these paddings outrank Bootstrap's own. Page margins are
+// 20px on mobile.
 .lp-product-catalogue__inner.container {
   padding-top: var(--lp-space-32);
   padding-bottom: var(--lp-space-64);

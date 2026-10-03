@@ -1,0 +1,35 @@
+.lp-partner-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-8);
+  height: 100%;
+  padding: var(--lp-space-24);
+  background-color: var(--lp-bg-page);
+  border: 1px solid var(--lp-border-default);
+}
+
+.lp-partner-card__logo {
+  height: var(--lp-space-48);
+  margin-bottom: var(--lp-space-8);
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+  }
+}
+
+.lp-partner-card__name {
+  @include lp-heading-h5;
+  margin: 0;
+  letter-spacing: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-partner-card__line {
+  @include lp-body-s;
+  margin: 0;
+  color: var(--lp-text-secondary);
+}

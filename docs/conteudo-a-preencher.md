@@ -2,10 +2,12 @@
 
 Esta folha reúne tudo o que as novas páginas precisam e que ainda não existe na Apresentação Institucional 2026 nem no site atual. Acompanha o plano em `docs/site-structure-plan.md`.
 
+**Estado em 3 de outubro de 2026:** todas as páginas estão construídas, em português e em inglês. Onde falta conteúdo, a página mostra uma nota "Conteúdo a fornecer" com o que é preciso; cada nota desaparece quando o conteúdo chega. Esta folha lista as mesmas faltas, por página.
+
 **Como preencher**
 - Escreva a resposta por baixo de cada campo, no lugar de `…`.
 - O que já se sabe está preenchido e marcado com **(confirmar)**: basta corrigir se estiver errado.
-- Os textos são em português de Portugal. A versão inglesa é feita depois, página a página.
+- Os textos são em português de Portugal. A versão inglesa de tudo o que já está no site foi escrita a partir do português e está publicada como rascunho: precisa de revisão (ver 8.4).
 - Se um campo não se aplica, escreva "não se aplica" para sabermos que não ficou esquecido.
 
 **Onde colocar os ficheiros**
@@ -14,13 +16,13 @@ Fotografias, logótipos, vídeos, certificados e modelos 3D vão para a pasta `c
 
 | Pasta | O que colocar |
 |---|---|
-| `content-inbox/inicio/` | Fotografia do hero e outras imagens da página inicial |
+| `content-inbox/inicio/` | Vídeo do hero e outras imagens da página inicial |
 | `content-inbox/marcas/tupperlink/` | Fotografias da TupperLink |
 | `content-inbox/marcas/pharmalink/` | Fotografias da PharmaLink |
 | `content-inbox/marcas/factorylink/` | Fotografias da FactoryLink |
 | `content-inbox/produtos/` | Fotografias de cada produto, para o catálogo e a ficha técnica |
 | `content-inbox/3d/` | Modelos 3D em STL, um por peça e por tamanho |
-| `content-inbox/parcerias/logos/` | Logótipos dos parceiros, de preferência em SVG |
+| `src/assets/logos/` | Logótipos dos clientes e parceiros, de preferência em SVG. Esta pasta é do próprio site: um logótipo colocado aqui aparece sozinho na faixa de clientes da página inicial e na página Parcerias (a pasta tem um LEIA-ME com as regras do nome do ficheiro) |
 | `content-inbox/parcerias/portfolio/` | Fotografias dos projetos |
 | `content-inbox/empresa/timeline/` | Fotografias e vídeos da história |
 | `content-inbox/empresa/equipa/` | Fotografia de grupo e retratos |
@@ -33,17 +35,25 @@ Nome dos ficheiros: em minúsculas, sem espaços nem acentos, a dizer o que é. 
 
 ## 1. Início
 
-**1.1 Fotografia do hero**
-O design prevê uma fotografia da produção ao lado do título.
+**1.1 Vídeo do hero**
+A página usa o vídeo da produção (`Hero.webm`) no lugar da fotografia do design. O ficheiro tem cerca de 18 MB e só existe em WebM.
+- Versão mais leve (até 3 ou 4 MB), em MP4 e em WebM: …
+- Imagem para mostrar enquanto o vídeo carrega: …
+
+**1.2 Logótipos da faixa "Mais de 20 clientes ativos confiam na LinkPlas"**
+Enquanto não houver logótipos, a faixa mostra os nomes dos oito parceiros em texto.
+- Ficheiros colocados em `src/assets/logos/`: …
+- Outros clientes a acrescentar à faixa: …
+
+**1.3 "Respondemos no prazo de 2 dias úteis com uma proposta."**
+A frase veio com o design. O prazo está certo? …
+
+**1.4 Imagem do ecoCatch**
+O design ilustra "ecoCatch, desenvolvido com a ZØR" com a vista explodida do kit isotérmico de farmácia. Fica essa imagem ou uma do ecoCatch (ecoFish, ecoShell)?
 - Ficheiro: …
-- O que mostra (para o texto alternativo): …
 
-**1.2 Testemunho em destaque**
-Qual dos três testemunhos aparece na página inicial? (Plural · Platec · Coprax)
-- Escolha: …
-
-**1.3 Clientes a mostrar na faixa "Confiam em nós"**
-- Lista de nomes, pela ordem pretendida: …
+**1.5 Passos do processo**
+A página inicial mostra os passos do design (Desenvolvimento · Molde · Injeção · Personalização) e a página Como trabalhamos os da apresentação (Viabilidade · Molde e protótipos · Industrialização · Produção). Ficam os dois ou escolhe-se um? …
 
 ---
 
@@ -296,16 +306,21 @@ Parceiros ativos: Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog e Copr
 
 | Parceiro | Logótipo (ficheiro) | Site | Desde (ano) | A parceria em uma ou duas frases |
 |---|---|---|---|---|
-| Platec | … | … | … | … |
-| Plural | … | … | … | … |
-| ZØR | … | … | … | ecoCatch: sistema reutilizável para pescado, desenvolvido em conjunto **(confirmar)** |
-| Polisport | … | … | … | … |
-| Empifarma | … | … | … | … |
-| OCP | … | … | … | … |
-| Medlog | … | … | … | … |
-| Coprax | … | … | … | … |
+| Platec | … | … | … | Projeto concluído em dezembro de 2025. **(confirmar)** |
+| Plural | … | … | … | Mais de 10.000 caixas e tampas personalizadas com a marca do cliente. **(confirmar)** |
+| ZØR | … | … | … | ecoCatch: sistema reutilizável para pescado, desenvolvido em parceria. **(confirmar)** |
+| Polisport | … | … | … | Recomendou a LinkPlas à Coprax. **(confirmar)** |
+| Empifarma | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
+| OCP | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
+| Medlog | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
+| Coprax | … | … | … | Chegou à LinkPlas por indicação da Polisport. **(confirmar)** |
 
-A apresentação só refere a Polisport como a empresa que recomendou a LinkPlas à Coprax, e a Empifarma, a OCP e a Medlog apenas pelo nome. Falta dizer em que consiste cada parceria.
+As frases da última coluna são as que estão no site. Foram escritas a partir da apresentação, que só refere a Polisport como a empresa que recomendou a LinkPlas à Coprax, e a Empifarma, a OCP e a Medlog apenas pelo nome ("Desenvolvido para"). Corrija as que não estiverem certas.
+
+Os logótipos vão para `src/assets/logos/`, com o nome do parceiro em minúsculas (`platec.svg`, `zor.svg`…).
+
+**Imagem do ecoCatch** para a página Parcerias e para o Portfólio (a apresentação credita a imagem à ZØR):
+- Ficheiros: …
 
 A Monte Meão não entra no site: de momento não é uma parceria ativa.
 
@@ -422,30 +437,37 @@ A apresentação fala em conformidade para contacto alimentar e farmacêutico.
 
 ## 7. Contactos
 
-A apresentação e o site atual indicam contactos diferentes. Quais ficam na página?
+A apresentação e o site antigo indicam contactos diferentes. A página foi construída com os da coluna "Fica"; corrija se não forem estes.
 
-| Campo | Apresentação | Site atual | Fica |
+| Campo | Apresentação | Site antigo | Fica |
 |---|---|---|---|
-| Telefone | +351 919 827 175 | +351 256 601 535 | … |
-| Email | paula.rocha@linkplas.pt | geral@linkplas.pt | … |
-| Morada | Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis | igual, sem o número da porta | … |
+| Telefone | +351 919 827 175 | +351 256 601 535 | +351 256 601 535 **(confirmar)** |
+| Email | paula.rocha@linkplas.pt | geral@linkplas.pt no rodapé, paula.rocha@linkplas.pt na página Contactos | geral@linkplas.pt **(confirmar)** |
+| Morada | Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis | igual, sem o número da porta | a da apresentação, com "Linkplas, Lda" por cima **(confirmar)** |
 
-**Horário de atendimento** (se for para mostrar): …
+**Horário de atendimento** (a página mostra "Conteúdo a fornecer" até haver resposta): …
 
-**Formulário** — o design system prevê três campos que o formulário atual não tem. Quais se acrescentam?
-- Tipo de pedido (Orçamento · Informação · Parceria): …
-- Envio de desenhos técnicos (PDF, STEP, DWG): …
-- Caixa de consentimento RGPD, com ligação a uma política de privacidade: …
+**Formulário** — decidido: tem os campos Nome, Empresa, Email, Telefone, Tipo de pedido (Orçamento · Informação · Parceria) e Mensagem, e uma caixa de consentimento obrigatória. Não tem envio de ficheiros.
+
+- Texto do consentimento, enquanto não houver política de privacidade: "Autorizo a LinkPlas a utilizar os dados deste formulário para responder ao meu pedido." **(confirmar)**
+- O tipo de pedido chega no início da mensagem. Para aparecer também num campo próprio do email, é preciso acrescentar `{{tipo_pedido}}` ao modelo do EmailJS: …
 
 ---
 
 ## 8. Decisões gerais
 
 **8.1 Nome da empresa nos testemunhos**
-O testemunho da Coprax escreve "Linkplas". Mantém-se como foi escrito ou passa a "LinkPlas"? …
+O testemunho da Coprax escreve "Linkplas". No site está "LinkPlas". Fica assim ou mantém-se como foi escrito? …
 
 **8.2 Endereços das páginas**
-Passam para português (`/produtos`, `/empresa/sobre-nos`), com os antigos a redirecionar, ou mantêm-se como estão (`/Products`, `/About`)? …
+Decidido: os endereços são em português (`/produtos`, `/empresa/sobre-nos`…), iguais nas duas línguas (o inglês acrescenta `/en` no início), e os antigos redirecionam para os novos.
 
 **8.3 Páginas legais**
 O rodapé do design system tem ligações para Política de privacidade, Política de cookies e Termos de utilização. Estes textos existem? …
+Sem a política de privacidade não é possível publicar o aviso de cookies nem o texto de consentimento que o design prevê ("Li e aceito a política de privacidade"). O rodapé do site só tem, por agora, o Livro de Reclamações.
+
+**8.4 Revisão do inglês**
+Todas as páginas têm versão inglesa, escrita a partir do português e ainda não revista. Quem a revê e até quando? …
+
+**8.5 Páginas feitas sem design**
+As páginas das marcas, Parcerias, Portfólio, Sobre nós, Como trabalhamos, Qualidade e Contactos foram montadas com os componentes do design system, como primeira proposta. O que muda? …

@@ -21,8 +21,12 @@ export default function Button({
   children,
   ...rest
 }) {
+  // React-Bootstrap gives anything that is not a <button> the button role. A Button drawn on
+  // a link still goes somewhere, and must be announced as a link.
+  const linkRole = rest.to || rest.href ? { role: undefined } : null;
+
   return (
-    <BsButton variant={BS_VARIANT[variant]} size={BS_SIZE[size]} {...rest}>
+    <BsButton variant={BS_VARIANT[variant]} size={BS_SIZE[size]} {...rest} {...linkRole}>
       {leadingIcon}
       {children}
       {trailingIcon}

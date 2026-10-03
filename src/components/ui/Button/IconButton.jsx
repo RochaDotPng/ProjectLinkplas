@@ -13,7 +13,7 @@ export default function IconButton({ label, icon, variant = 'ghost', size = 'med
 IconButton.propTypes = {
   label: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'inverse']),
+  variant: PropTypes.oneOf(['primary', 'accent', 'secondary', 'ghost', 'inverse']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   className: PropTypes.string,
 };

@@ -12,7 +12,7 @@
     gap: var(--lp-space-64);
   }
 
-  // Doubled with `.container` to outrank the legacy mobile `.container { padding: 2% }` in App.css.
+  // Doubled with `.container` so these paddings outrank Bootstrap's own.
   &.container {
     padding-top: 56px;
     padding-bottom: var(--lp-space-32);

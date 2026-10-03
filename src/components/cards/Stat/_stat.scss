@@ -1,0 +1,28 @@
+.lp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-8);
+  padding-left: var(--lp-space-20);
+  margin: 0;
+  border-left: 3px solid var(--lp-border-brand);
+}
+
+// Stat/L (64/68) from desktop; a step smaller on phones, where the band is a 2×2 grid.
+.lp-stat__value {
+  @include lp-heading-h2;
+  color: var(--lp-text-primary);
+
+  @include media-breakpoint-up(lg) {
+    @include lp-stat-l;
+  }
+}
+
+.lp-stat__label {
+  @include lp-body-base;
+  color: var(--lp-text-secondary);
+}
+
+.lp-section--inverse {
+  .lp-stat__value { color: var(--lp-text-inverse); }
+  .lp-stat__label { color: var(--lp-text-inverse-secondary); }
+}

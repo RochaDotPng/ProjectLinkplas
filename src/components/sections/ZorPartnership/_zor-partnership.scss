@@ -1,0 +1,175 @@
+// LinkPlas × ZØR: the kit's layers are moved by GSAP (see ZorPartnership.jsx). The pixel
+// offsets in this file place the artwork and its labels; they are geometry, not spacing.
+.lp-zor {
+  position: relative;
+  overflow: visible;
+  background-color: var(--lp-bg-page);
+}
+
+.lp-zor__inner.container {
+  @include lp-page-gutter;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-48);
+  align-items: center;
+  padding-top: var(--lp-space-64);
+  padding-bottom: var(--lp-space-64);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: var(--lp-space-48);
+    // The section is pinned full-height while the kit opens; the sticky header covers its top.
+    min-height: 100vh;
+    padding-top: calc(var(--lp-header-height) + var(--lp-space-32));
+    padding-bottom: var(--lp-space-32);
+  }
+}
+
+.lp-zor__stack {
+  --lp-zor-scale: 0.42;
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: min(100%, 560px);
+  min-height: calc(min(95vw, 520px) * var(--lp-zor-scale));
+  padding: 24px 0;
+  margin: 0 auto 32px;
+  overflow: visible;
+
+  @include media-breakpoint-up(sm) {
+    padding: 44px 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --lp-zor-scale: 0.6;
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .lp-zor__stack {
+    --lp-zor-scale: 0.45;
+  }
+}
+
+// One scale for every layer keeps the images in proportion to each other.
+.lp-zor__scale {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: min(100%, 560px);
+  min-height: min(95vw, 520px);
+  transform: scale(var(--lp-zor-scale));
+  transform-origin: center center;
+}
+
+// Layers keep the intrinsic size of their image.
+.lp-zor__layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+// Anchors share the movement of their layer; the label is offset from the layer's centre.
+.lp-zor__anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.lp-zor__callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.lp-zor__stack--static .lp-zor__callout {
+  opacity: 1;
+}
+
+.lp-zor__chip {
+  display: block;
+  max-width: min(16rem, 90vw);
+  padding: 0.55rem 0.8rem;
+  // Divided by the scale so the label reads at the Eyebrow's 13px on screen.
+  font-size: calc(13px / var(--lp-zor-scale));
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--lp-text-on-brand);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+  white-space: normal;
+  background-color: var(--lp-bg-brand);
+  box-shadow: var(--lp-shadow-sm);
+
+  @include media-breakpoint-up(lg) {
+    max-width: min(20rem, 82vw);
+    padding: 0.65rem 0.95rem;
+  }
+}
+
+.lp-zor__chip--twoline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  align-items: flex-start;
+  width: max-content;
+  max-width: min(40rem, 98vw);
+
+  @include media-breakpoint-up(lg) {
+    max-width: min(42rem, 98vw);
+  }
+}
+
+.lp-zor__chip-row {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-zor__anchor--caixa .lp-zor__callout {
+  transform: translate(calc(-50% - 74px), calc(-50% + 120px));
+}
+
+.lp-zor__anchor--tampa .lp-zor__callout {
+  transform: translate(calc(-50% + 94px), calc(-50% - 150px));
+}
+
+.lp-zor__anchor--acumulador .lp-zor__callout {
+  transform: translate(calc(-50% + 90px), calc(-50% - 20px));
+}
+
+@include media-breakpoint-up(lg) {
+  .lp-zor__anchor--caixa .lp-zor__callout {
+    transform: translate(calc(-50% - 88px), calc(-50% + 132px));
+  }
+
+  .lp-zor__anchor--tampa .lp-zor__callout {
+    transform: translate(calc(-50% + 108px), calc(-50% - 168px));
+  }
+
+  .lp-zor__anchor--acumulador .lp-zor__callout {
+    transform: translate(calc(-50% + 104px), calc(-50% - 28px));
+  }
+}

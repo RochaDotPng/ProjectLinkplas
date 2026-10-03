@@ -1,0 +1,43 @@
+.lp-quote-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-16);
+  max-width: 960px;
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    gap: var(--lp-space-32);
+  }
+}
+
+.lp-quote-block__icon {
+  color: var(--lp-icon-brand);
+}
+
+.lp-quote-block__body {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--lp-space-20);
+  min-width: 0;
+}
+
+.lp-quote-block__quote {
+  margin: 0;
+
+  p {
+    @include lp-heading-h4;
+    margin: 0;
+    color: var(--lp-text-primary);
+
+    @include media-breakpoint-up(lg) {
+      @include lp-quote;
+    }
+  }
+}
+
+.lp-quote-block__author {
+  @include lp-label-m;
+  color: var(--lp-text-secondary);
+}

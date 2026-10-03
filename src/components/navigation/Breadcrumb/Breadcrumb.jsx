@@ -16,7 +16,12 @@ export default function Breadcrumb({ label, items }) {
                 <span className="lp-breadcrumb__current" aria-current="page">{item.label}</span>
               ) : (
                 <>
-                  <Link to={item.to} className="lp-breadcrumb__link">{item.label}</Link>
+                  {/* A menu group such as Marcas or Empresa has no page of its own. */}
+                  {item.to ? (
+                    <Link to={item.to} className="lp-breadcrumb__link">{item.label}</Link>
+                  ) : (
+                    <span className="lp-breadcrumb__group">{item.label}</span>
+                  )}
                   <Icon src={chevronRight} size={14} className="lp-breadcrumb__separator" />
                 </>
               )}

@@ -1,86 +1,380 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.linkplas.pt/</loc>
-    <lastmod>2026-03-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/About</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.linkplas.pt/en</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/produtos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/recipiente-tupperlink</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/produtos/recipiente-tupperlink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/recipiente-tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/recipiente-tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/recipiente-tupperlink"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/caixa-de-transporte-de-medicamentos</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos/recipiente-tupperlink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/recipiente-tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/recipiente-tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/recipiente-tupperlink"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/kit-isotermico-e-pharma</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/produtos/caixa-de-transporte-de-medicamentos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/caixa-de-transporte-de-medicamentos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/caixa-de-transporte-de-medicamentos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/caixa-de-transporte-de-medicamentos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/tampa-para-tubos</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos/caixa-de-transporte-de-medicamentos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/caixa-de-transporte-de-medicamentos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/caixa-de-transporte-de-medicamentos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/caixa-de-transporte-de-medicamentos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/intercalar-longarina</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/produtos/kit-isotermico-e-pharma</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/kit-isotermico-e-pharma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/kit-isotermico-e-pharma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/kit-isotermico-e-pharma"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/tampa-para-veio</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos/kit-isotermico-e-pharma</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/kit-isotermico-e-pharma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/kit-isotermico-e-pharma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/kit-isotermico-e-pharma"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/anilha-intercalar</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/produtos/tampa-para-tubos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/tampa-para-tubos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/tampa-para-tubos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/tampa-para-tubos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/abracadeira</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos/tampa-para-tubos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/tampa-para-tubos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/tampa-para-tubos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/tampa-para-tubos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Products/soldadura-por-ultrassons</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.linkplas.pt/produtos/intercalar-longarina</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/intercalar-longarina"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/intercalar-longarina"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/intercalar-longarina"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Policy</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://www.linkplas.pt/en/produtos/intercalar-longarina</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/intercalar-longarina"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/intercalar-longarina"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/intercalar-longarina"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/produtos/tampa-para-veio</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/tampa-para-veio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/tampa-para-veio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/tampa-para-veio"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/produtos/tampa-para-veio</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/tampa-para-veio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/tampa-para-veio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/tampa-para-veio"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/produtos/anilha-intercalar</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/anilha-intercalar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/anilha-intercalar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/anilha-intercalar"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/produtos/anilha-intercalar</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/anilha-intercalar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/anilha-intercalar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/anilha-intercalar"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/produtos/abracadeira</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/abracadeira"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/abracadeira"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/abracadeira"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/produtos/abracadeira</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/abracadeira"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/abracadeira"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/abracadeira"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/produtos/soldadura-por-ultrassons</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/soldadura-por-ultrassons"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/soldadura-por-ultrassons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/soldadura-por-ultrassons"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/produtos/soldadura-por-ultrassons</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/produtos/soldadura-por-ultrassons"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/produtos/soldadura-por-ultrassons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/produtos/soldadura-por-ultrassons"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/marcas/tupperlink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/tupperlink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/marcas/tupperlink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/tupperlink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/tupperlink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/marcas/pharmalink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/pharmalink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/pharmalink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/pharmalink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/marcas/pharmalink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/pharmalink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/pharmalink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/pharmalink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/marcas/factorylink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/factorylink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/factorylink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/factorylink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/marcas/factorylink</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/marcas/factorylink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/marcas/factorylink"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/marcas/factorylink"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/noticias</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/noticias"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/noticias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/noticias"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/noticias</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/noticias"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/noticias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/noticias"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/parcerias</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/parcerias"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/parcerias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/parcerias"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/parcerias</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/parcerias"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/parcerias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/parcerias"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/parcerias/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/parcerias/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/parcerias/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/parcerias/portfolio"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/parcerias/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/parcerias/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/parcerias/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/parcerias/portfolio"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/empresa/sobre-nos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/sobre-nos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/sobre-nos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/sobre-nos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/empresa/sobre-nos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/sobre-nos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/sobre-nos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/sobre-nos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/empresa/como-trabalhamos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/como-trabalhamos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/empresa/como-trabalhamos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/como-trabalhamos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/empresa/qualidade</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/qualidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/qualidade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/qualidade"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.linkplas.pt/Contacts</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://www.linkplas.pt/en/empresa/qualidade</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/empresa/qualidade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/empresa/qualidade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/empresa/qualidade"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/contactos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/contactos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/contactos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/contactos"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.linkplas.pt/en/contactos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.linkplas.pt/contactos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.linkplas.pt/en/contactos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.linkplas.pt/contactos"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

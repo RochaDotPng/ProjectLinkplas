@@ -1,0 +1,26 @@
+.lp-content-placeholder {
+  @include lp-body-s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-4);
+  max-width: 720px;
+  padding: var(--lp-space-16);
+  margin: 0;
+  color: var(--lp-text-secondary);
+  background-color: var(--lp-bg-subtle);
+  border: 1.5px dashed var(--lp-border-strong);
+}
+
+.lp-content-placeholder__label {
+  @include lp-label-s;
+  // text/tertiary is under 4.5:1 on bg/subtle.
+  color: var(--lp-text-secondary);
+  text-transform: uppercase;
+}
+
+// On a tinted band the note turns white so it still reads as a note.
+.lp-section--subtle .lp-content-placeholder,
+.lp-interior-hero .lp-content-placeholder,
+.lp-contact .lp-content-placeholder {
+  background-color: var(--lp-bg-page);
+}

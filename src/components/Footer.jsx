@@ -11,14 +11,13 @@ export default function Footer() {
   const { tagline, certification, columns, contacts, legal } = useSiteContent().footer;
 
   return (
-    // The id is read by the scroll-to-top button in App.jsx to stay clear of the footer.
-    <footer id="footerComponent" className="lp-footer">
+    <footer className="lp-footer">
       <div className="container lp-footer__inner">
         <div className="lp-footer__top">
           <div className="lp-footer__brand">
             <Logo color="inverse" />
             <p className="lp-footer__tagline">{tagline}</p>
-            <CertificationBadge title={certification.title} description={certification.description} />
+            <CertificationBadge theme="dark" title={certification.title} description={certification.description} />
           </div>
 
           <div className="lp-footer__columns">

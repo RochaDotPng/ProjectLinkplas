@@ -1,0 +1,102 @@
+.lp-logo-strip {
+  padding: var(--lp-space-48) 0;
+  background-color: var(--lp-bg-page);
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-64) 0;
+  }
+}
+
+.lp-logo-strip__inner.container {
+  @include lp-page-gutter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--lp-space-32);
+}
+
+.lp-logo-strip__title {
+  @include lp-label-m;
+  margin: 0;
+  color: var(--lp-text-secondary);
+  text-align: center;
+}
+
+.lp-logo-strip__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.lp-logo-strip__track {
+  display: flex;
+  justify-content: center;
+}
+
+.lp-logo-strip__group {
+  display: flex;
+  flex: none;
+  gap: var(--lp-space-24);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lp-logo-strip__item {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 72px;
+  padding: var(--lp-space-12) var(--lp-space-20);
+  background-color: var(--lp-bg-subtle);
+  border-radius: var(--lp-radius-md);
+
+  // Monochrome, at the same optical height, as the design system asks for client logos.
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+  }
+}
+
+.lp-logo-strip__name {
+  @include lp-label-l;
+  color: var(--lp-text-secondary);
+  white-space: nowrap;
+}
+
+// The row slides left by one group (plus the gap between the two copies) and starts again.
+.lp-logo-strip__viewport.is-marquee .lp-logo-strip__track {
+  justify-content: flex-start;
+  gap: var(--lp-space-24);
+  width: max-content;
+  animation: lp-logo-strip-slide 40s linear infinite;
+
+  &:hover,
+  &:focus-within {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes lp-logo-strip-slide {
+  to {
+    transform: translateX(calc(-50% - var(--lp-space-12)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-logo-strip__viewport.is-marquee {
+    overflow-x: auto;
+
+    .lp-logo-strip__track {
+      animation: none;
+    }
+
+    // Without motion the copy is not needed.
+    .lp-logo-strip__group[aria-hidden] {
+      display: none;
+    }
+  }
+}

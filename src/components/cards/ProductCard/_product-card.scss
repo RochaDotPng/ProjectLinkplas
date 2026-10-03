@@ -6,7 +6,7 @@
   overflow: hidden;
   background-color: var(--lp-bg-page);
   border: 1px solid var(--lp-border-default);
-  border-radius: var(--lp-radius-lg);
+  border-radius: var(--lp-radius-none);
   box-shadow: var(--lp-shadow-xs);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
@@ -67,7 +67,7 @@
     position: absolute;
     inset: 0;
     content: "";
-    border-radius: var(--lp-radius-lg);
+    border-radius: var(--lp-radius-none);
   }
 
   &:hover {

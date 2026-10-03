@@ -104,8 +104,8 @@ $lp-hero-pattern-scale: 1.6;
 }
 
 .lp-home-hero__inner.container {
-  // 20px page margins on mobile; doubled with `.container` to outrank the legacy
-  // mobile `.container { padding: 2% }` in App.css.
+  // 20px page margins on mobile; doubled with `.container` so the padding outranks
+  // Bootstrap's own.
   @include media-breakpoint-down(lg) {
     padding-right: var(--lp-space-20);
     padding-left: var(--lp-space-20);

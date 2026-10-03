@@ -25,12 +25,13 @@ export default function LanguageSwitcher({ drop = 'down' }) {
         {current.short}
         <Icon src={chevronDown} size={14} />
       </Dropdown.Toggle>
-      <Dropdown.Menu>
+      <Dropdown.Menu className="lp-dropdown-menu">
         {LANGUAGES.map((language) => (
           // A plain link, not a router link: the language prefix is the router basename,
           // so changing language has to reload the app under the other prefix.
           <Dropdown.Item
             key={language.code}
+            className="lp-menu-item"
             href={`${localizedPath(language.code, pathname)}${search}${hash}`}
             hrefLang={language.locale}
             lang={language.locale}

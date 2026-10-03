@@ -1,0 +1,145 @@
+// Dropdown menus of the main navigation: the design system's Dropdown Menu (a list of pages)
+// and Mega Menu (one column per brand).
+
+// The chevron is the Figma icon, so Bootstrap's generated caret is hidden.
+.lp-nav-dropdown .lp-nav-item::after {
+  display: none;
+}
+
+.lp-nav-dropdown .lp-nav-item {
+  background: none;
+  border: 0;
+}
+
+.lp-nav-item__chevron {
+  transition: transform 0.15s ease;
+}
+
+.lp-nav-dropdown.show .lp-nav-item__chevron {
+  transform: rotate(180deg);
+}
+
+// Dropdown Menu and Menu Item, also used by the language switcher.
+.lp-dropdown-menu {
+  --bs-dropdown-min-width: 220px;
+  --bs-dropdown-padding-x: 6px;
+  --bs-dropdown-padding-y: 6px;
+  --bs-dropdown-border-color: var(--lp-border-default);
+  --bs-dropdown-border-radius: var(--lp-radius-none);
+  --bs-dropdown-box-shadow: var(--lp-shadow-lg);
+  box-shadow: var(--lp-shadow-lg);
+
+  &.show {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lp-space-2);
+  }
+}
+
+.lp-menu-item {
+  @include lp-body-base;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--lp-space-8) var(--lp-space-12);
+  color: var(--lp-text-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--lp-text-primary);
+    background-color: var(--lp-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+
+  &.active,
+  &:active {
+    font-weight: 500;
+    color: var(--lp-text-brand);
+    background-color: var(--lp-bg-brand-subtle);
+  }
+}
+
+// The Mega Menu spans the container, 8px below the header, whichever item opened it, so the
+// dropdown itself is not its positioning parent: the header's inner row is.
+.lp-nav-dropdown--mega {
+  position: static;
+}
+
+.lp-mega-menu {
+  --bs-dropdown-padding-x: 0;
+  --bs-dropdown-padding-y: 0;
+  --bs-dropdown-border-color: var(--lp-border-default);
+  --bs-dropdown-border-radius: var(--lp-radius-none);
+  // React-Bootstrap positions menus with inline styles; the design fixes this one to the container.
+  inset: calc(100% + var(--lp-space-8)) calc(var(--bs-gutter-x) * 0.5) auto calc(var(--bs-gutter-x) * 0.5) !important;
+  transform: none !important;
+  overflow: hidden;
+  box-shadow: var(--lp-shadow-md);
+
+  &.show {
+    display: flex;
+  }
+}
+
+.lp-mega-menu__column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-12);
+  min-width: 0;
+  padding: var(--lp-space-32);
+  font-weight: 400;
+  color: var(--lp-text-primary);
+  text-decoration: none;
+  white-space: normal;
+
+  &:hover,
+  &:focus,
+  &.active,
+  &:active {
+    color: var(--lp-text-primary);
+    background-color: var(--lp-bg-subtle);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+}
+
+.lp-mega-menu__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-control-height-md);
+  height: var(--lp-control-height-md);
+  color: var(--lp-icon-brand);
+  background-color: var(--lp-bg-brand-subtle);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-mega-menu__title {
+  @include lp-heading-h5;
+}
+
+.lp-mega-menu__text {
+  @include lp-body-s;
+  color: var(--lp-text-secondary);
+}
+
+.lp-mega-menu__link {
+  @include lp-label-m;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--lp-text-brand);
+}

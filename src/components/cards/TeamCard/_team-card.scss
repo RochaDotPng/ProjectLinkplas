@@ -1,0 +1,49 @@
+.lp-team-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-16);
+}
+
+.lp-team-card__photo {
+  height: 320px;
+  overflow: hidden;
+  background-color: var(--lp-bg-muted);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.lp-team-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-4);
+}
+
+.lp-team-card__name {
+  @include lp-heading-h5;
+  margin: 0;
+  letter-spacing: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-team-card__role {
+  @include lp-label-m;
+  margin: 0;
+  color: var(--lp-text-brand);
+}
+
+.lp-team-card__since {
+  @include lp-caption;
+  margin: 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-team-card__bio {
+  @include lp-body-s;
+  margin: var(--lp-space-8) 0 0;
+  color: var(--lp-text-secondary);
+}

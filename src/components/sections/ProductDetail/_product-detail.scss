@@ -1,8 +1,8 @@
 // Product page ("ficha técnica"). There is no Figma frame for it yet, so the layout is a
 // first proposal built only from design-system components, text styles and spacing.
 
-// The selector is doubled with `.container` to outrank the legacy mobile
-// `.container { padding: 2% }` in App.css. Page margins are 20px on mobile.
+// Doubled with `.container` so these paddings outrank Bootstrap's own. Page margins are
+// 20px on mobile.
 .lp-product-detail.container {
   padding-top: var(--lp-space-24);
   padding-bottom: var(--lp-space-64);
@@ -164,7 +164,7 @@
   cursor: pointer;
   background-color: var(--lp-control-bg);
   border: 1px solid var(--lp-border-strong);
-  border-radius: var(--lp-radius-sm);
+  border-radius: var(--lp-radius-none);
 
   &:hover {
     border-color: var(--lp-border-hover);
@@ -177,7 +177,7 @@
   &::-webkit-color-swatch,
   &::-moz-color-swatch {
     border: 0;
-    border-radius: var(--lp-radius-xs);
+    border-radius: var(--lp-radius-none);
   }
 }
 
@@ -186,7 +186,7 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: var(--lp-bg-subtle);
-  border-radius: var(--lp-radius-lg);
+  border-radius: var(--lp-radius-none);
 }
 
 .lp-product-gallery__image {
@@ -224,7 +224,7 @@
   overflow: hidden;
   background-color: var(--lp-bg-subtle);
   border: 1px solid var(--lp-border-default);
-  border-radius: var(--lp-radius-md);
+  border-radius: var(--lp-radius-none);
   cursor: pointer;
 
   &:hover {

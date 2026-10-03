@@ -1,4 +1,15 @@
 {
+  "redirects": [
+    { "source": "/About", "destination": "/empresa/sobre-nos", "statusCode": 301 },
+    { "source": "/Policy", "destination": "/empresa/qualidade", "statusCode": 301 },
+    { "source": "/Contacts", "destination": "/contactos", "statusCode": 301 },
+    { "source": "/Products", "destination": "/produtos", "statusCode": 301 },
+    { "source": "/Products/Take-Away", "destination": "/produtos?marcas=tupperlink", "statusCode": 301 },
+    { "source": "/Products/Farmaceutica", "destination": "/produtos?marcas=pharmalink", "statusCode": 301 },
+    { "source": "/Products/Industria", "destination": "/produtos?marcas=factorylink", "statusCode": 301 },
+    { "source": "/Products/Servicos", "destination": "/produtos/soldadura-por-ultrassons", "statusCode": 301 },
+    { "source": "/Products/:slug", "destination": "/produtos/:slug", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

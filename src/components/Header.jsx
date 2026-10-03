@@ -6,10 +6,12 @@ import Button from './ui/Button/Button';
 import IconButton from './ui/Button/IconButton';
 import Icon from './ui/Icon/Icon';
 import NavItem from './navigation/NavItem/NavItem';
+import NavDropdown from './navigation/NavDropdown/NavDropdown';
 import LanguageSwitcher from './navigation/LanguageSwitcher/LanguageSwitcher';
 import menuIcon from '../assets/icons/menu-20.svg';
 import closeIcon from '../assets/icons/close-20.svg';
 import chevronRight from '../assets/icons/chevron-right-20.svg';
+import chevronDown from '../assets/icons/chevron-down-16.svg';
 import arrowRight from '../assets/icons/arrow-right-20.svg';
 import { useSiteContent } from '../content/site';
 
@@ -17,12 +19,34 @@ const MOBILE_MENU_ID = 'lp-mobile-menu';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState(null);
   const { pathname } = useLocation();
   const { homeLabel, skipLinkLabel, mainNav } = useSiteContent();
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  const mobileLink = (item, isChild = false) => (
+    <NavLink
+      key={item.to}
+      to={item.to}
+      end={item.end}
+      className={({ isActive }) =>
+        `lp-mobile-nav-item${isChild ? ' lp-mobile-nav-item--child' : ''}${isActive ? ' is-active' : ''}`
+      }
+    >
+      {({ isActive }) => (
+        <>
+          <span className="lp-mobile-nav-item__label">
+            {isActive && <span className="lp-mobile-nav-item__marker" aria-hidden="true" />}
+            {item.label}
+          </span>
+          <Icon src={chevronRight} className="lp-mobile-nav-item__chevron" />
+        </>
+      )}
+    </NavLink>
+  );
 
   return (
     <>
@@ -34,9 +58,13 @@ export default function Header() {
           </Link>
 
           <nav className="lp-header__nav" aria-label={mainNav.label}>
-            {mainNav.items.map((item) => (
-              <NavItem key={item.to} to={item.to}>{item.label}</NavItem>
-            ))}
+            {mainNav.items.map((item) =>
+              item.children ? (
+                <NavDropdown key={item.label} item={item} megaLinkLabel={mainNav.megaLinkLabel} />
+              ) : (
+                <NavItem key={item.to} to={item.to}>{item.label}</NavItem>
+              )
+            )}
           </nav>
 
           <div className="lp-header__actions">
@@ -75,23 +103,34 @@ export default function Header() {
         </div>
 
         <nav className="lp-mobile-menu__items" aria-label={mainNav.label}>
-          {mainNav.items.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => `lp-mobile-nav-item${isActive ? ' is-active' : ''}`}
-            >
-              {({ isActive }) => (
-                <>
+          {mainNav.items.map((item) => {
+            if (!item.children) return mobileLink(item);
+            // A group is a disclosure: its button shows or hides the pages under it.
+            const groupId = `lp-mobile-group-${item.base.slice(1)}`;
+            const isOpen = openGroup === item.base || (openGroup === null && pathname.startsWith(item.base));
+            return (
+              <div key={item.base} className="lp-mobile-nav-group">
+                <button
+                  type="button"
+                  className="lp-mobile-nav-item lp-mobile-nav-item--group"
+                  aria-expanded={isOpen}
+                  aria-controls={groupId}
+                  onClick={() => setOpenGroup(isOpen ? '' : item.base)}
+                >
                   <span className="lp-mobile-nav-item__label">
-                    {isActive && <span className="lp-mobile-nav-item__marker" aria-hidden="true" />}
+                    {pathname.startsWith(item.base) && (
+                      <span className="lp-mobile-nav-item__marker" aria-hidden="true" />
+                    )}
                     {item.label}
                   </span>
-                  <Icon src={chevronRight} className="lp-mobile-nav-item__chevron" />
-                </>
-              )}
-            </NavLink>
-          ))}
+                  <Icon src={chevronDown} size={16} className="lp-mobile-nav-item__chevron" />
+                </button>
+                <div id={groupId} className="lp-mobile-nav-group__items" hidden={!isOpen}>
+                  {item.children.map((child) => mobileLink(child, true))}
+                </div>
+              </div>
+            );
+          })}
         </nav>
 
         <div className="lp-mobile-menu__bottom">

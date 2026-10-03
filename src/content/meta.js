@@ -1,11 +1,13 @@
 // Page titles and descriptions per language. `path` is the router path of the page.
 
+import { ROUTES } from './routes';
+
 export const SITE_ORIGIN = 'https://www.linkplas.pt';
-export const UPDATED_TIME = '2026-03-12T00:00:00+00:00';
+export const UPDATED_TIME = '2026-10-03T00:00:00+00:00';
 
 export const pageMeta = {
   home: {
-    path: '/',
+    path: ROUTES.home,
     pt: {
       title: 'LinkPlas - Peças Plásticas & TupperLink Take-Away',
       description: 'LinkPlas - especialistas em peças plásticas e tupperwares take-away TupperLink. Recipientes reutilizáveis para delivery, tuppers ecológicos empilháveis e componentes industriais desde 2012.',
@@ -22,56 +24,20 @@ export const pageMeta = {
     },
   },
 
-  about: {
-    path: '/About',
+  news: {
+    path: ROUTES.news,
     pt: {
-      title: 'Sobre Nós - LinkPlas',
-      description: 'Conheça a história da LinkPlas desde 2012. Empresa certificada ISO 9001 especializada em peças plásticas. Missão, visão e valores da nossa empresa portuguesa.',
-      ogTitle: 'Sobre Nós - LinkPlas | História e Valores',
-      ogDescription: 'Conheça a história da LinkPlas desde 2012. Empresa certificada ISO 9001 especializada em peças plásticas.',
+      title: 'Notícias - LinkPlas',
+      description: 'Novidades da LinkPlas: projetos, produtos, reconhecimentos e presença no setor.',
     },
     en: {
-      title: 'About Us - LinkPlas',
-      description: 'Discover the history of LinkPlas since 2012. An ISO 9001 certified company specialising in plastic parts. The mission, vision and values of our Portuguese company.',
-      ogTitle: 'About Us - LinkPlas | History and Values',
-      ogDescription: 'Discover the history of LinkPlas since 2012. An ISO 9001 certified company specialising in plastic parts.',
-    },
-  },
-
-  contacts: {
-    path: '/Contacts',
-    pt: {
-      title: 'Contactos - LinkPlas',
-      description: 'Contacte a LinkPlas: telefone +351 256 601 535, email geral@linkplas.pt. Localização em Oliveira de Azeméis. Pedir cotação para peças plásticas.',
-      ogTitle: 'Contactos - LinkPlas | Entre em Contacto',
-      ogDescription: 'Contacte a LinkPlas para soluções em peças plásticas. Telefone, email e morada disponíveis.',
-    },
-    en: {
-      title: 'Contact - LinkPlas',
-      description: 'Contact LinkPlas: phone +351 256 601 535, email geral@linkplas.pt. Located in Oliveira de Azeméis. Request a quote for plastic parts.',
-      ogTitle: 'Contact - LinkPlas | Get in Touch',
-      ogDescription: 'Contact LinkPlas for plastic part solutions. Phone, email and address available.',
-    },
-  },
-
-  policy: {
-    path: '/Policy',
-    pt: {
-      title: 'Política de Qualidade - LinkPlas',
-      description: 'Política de qualidade LinkPlas: empresa certificada ISO 9001, compromisso com melhoria contínua, satisfação do cliente e excelência na produção de peças plásticas.',
-      ogTitle: 'Política de Qualidade - LinkPlas | ISO 9001',
-      ogDescription: 'Conheça a política de qualidade da LinkPlas, empresa certificada ISO 9001 com compromisso na excelência.',
-    },
-    en: {
-      title: 'Quality Policy - LinkPlas',
-      description: 'LinkPlas quality policy: an ISO 9001 certified company committed to continuous improvement, customer satisfaction and excellence in the production of plastic parts.',
-      ogTitle: 'Quality Policy - LinkPlas | ISO 9001',
-      ogDescription: 'Read the quality policy of LinkPlas, an ISO 9001 certified company committed to excellence.',
+      title: 'News - LinkPlas',
+      description: 'News from LinkPlas: projects, products, recognition and presence in the sector.',
     },
   },
 
   products: {
-    path: '/Products',
+    path: ROUTES.products,
     pt: {
       title: 'Produtos - LinkPlas',
       description: 'Catálogo LinkPlas: recipientes TupperLink para take-away, caixas de transporte de medicamentos PharmaLink e componentes plásticos e soldadura por ultrassons FactoryLink.',
@@ -79,6 +45,84 @@ export const pageMeta = {
     en: {
       title: 'Products - LinkPlas',
       description: 'The LinkPlas catalogue: TupperLink take-away containers, PharmaLink medicine transport boxes, and FactoryLink plastic components and ultrasonic welding.',
+    },
+  },
+
+  partners: {
+    path: ROUTES.partners,
+    pt: {
+      title: 'Parcerias - LinkPlas',
+      description: 'Os parceiros da LinkPlas na indústria, na distribuição farmacêutica, na restauração e nas pescas, e a parceria com a ZØR no ecoCatch.',
+    },
+    en: {
+      title: 'Partnerships - LinkPlas',
+      description: "LinkPlas's partners in industry, pharmaceutical distribution, catering and fishing, and the partnership with ZØR on ecoCatch.",
+    },
+  },
+
+  portfolio: {
+    path: ROUTES.portfolio,
+    pt: {
+      title: 'Portfólio - LinkPlas',
+      description: 'Projetos entregues pela LinkPlas: Plural, Platec, Coprax e o sistema ecoCatch desenvolvido com a ZØR.',
+    },
+    en: {
+      title: 'Portfolio - LinkPlas',
+      description: 'Projects delivered by LinkPlas: Plural, Platec, Coprax and the ecoCatch system developed with ZØR.',
+    },
+  },
+
+  about: {
+    path: ROUTES.about,
+    pt: {
+      title: 'Sobre nós - LinkPlas',
+      description: 'Conheça a história da LinkPlas desde 2012: uma empresa portuguesa de injeção de peças plásticas, certificada ISO 9001. Missão, visão, valores e equipa.',
+      ogTitle: 'Sobre nós - LinkPlas | História e valores',
+    },
+    en: {
+      title: 'About us - LinkPlas',
+      description: 'Discover the history of LinkPlas since 2012: a Portuguese plastic injection moulding company, ISO 9001 certified. Mission, vision, values and team.',
+      ogTitle: 'About us - LinkPlas | History and values',
+    },
+  },
+
+  process: {
+    path: ROUTES.process,
+    pt: {
+      title: 'Como trabalhamos - LinkPlas',
+      description: 'Do desenho da peça ao produto pronto a usar: desenvolvimento de produto, injeção de peças técnicas de 50 a 550 t, soldadura por ultrassons e acabamento.',
+    },
+    en: {
+      title: 'How we work - LinkPlas',
+      description: 'From the drawing of the part to the ready-to-use product: product development, injection of technical parts from 50 to 550 t, ultrasonic welding and finishing.',
+    },
+  },
+
+  quality: {
+    path: ROUTES.quality,
+    pt: {
+      title: 'Qualidade - LinkPlas',
+      description: 'Qualidade certificada ISO 9001, política da qualidade, sustentabilidade e responsabilidade social na LinkPlas.',
+      ogTitle: 'Qualidade - LinkPlas | ISO 9001',
+    },
+    en: {
+      title: 'Quality - LinkPlas',
+      description: 'ISO 9001 certified quality, the quality policy, sustainability and social responsibility at LinkPlas.',
+      ogTitle: 'Quality - LinkPlas | ISO 9001',
+    },
+  },
+
+  contact: {
+    path: ROUTES.contact,
+    pt: {
+      title: 'Contactos - LinkPlas',
+      description: 'Contacte a LinkPlas: telefone +351 256 601 535, email geral@linkplas.pt. Oliveira de Azeméis. Peça um orçamento para peças plásticas.',
+      ogTitle: 'Contactos - LinkPlas | Peça um orçamento',
+    },
+    en: {
+      title: 'Contact - LinkPlas',
+      description: 'Contact LinkPlas: phone +351 256 601 535, email geral@linkplas.pt. Oliveira de Azeméis. Request a quote for plastic parts.',
+      ogTitle: 'Contact - LinkPlas | Request a quote',
     },
   },
 };

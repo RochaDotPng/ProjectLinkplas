@@ -7,11 +7,11 @@ LinkPlas (Engineered Plastic Solutions) is a parent brand with five sub-brands: 
 2. Figma design system, file key `T90TiwsFvl1GxlF2AHvqgb` ("LinkPlas — Design System (Web)"). It wins on UI: components, spacing, states and layout.
 3. This file. It records the decisions taken where 1 and 2 disagree.
 
-Page layouts come from a second Figma file, key `cBcn3v2KdluyJjrBgMFvKE` ("Linkplas-Website"), which is built from the design system. So far it has one page design: "Produtos (Desktop)", node `2:2037`. Where a page frame and the design system differ on a component, the design system wins and the difference is flagged.
+Page layouts come from a second Figma file, key `cBcn3v2KdluyJjrBgMFvKE` ("Linkplas-Website"), which is built from the design system. It has two page designs: "Produtos (Desktop)", node `2:2037`, and the home page, node `2:1222`. Where a page frame and the design system differ on a component, the design system wins and the difference is flagged. The other pages have no frame: they are composed from design-system components only.
 
 If something isn't covered by any of these, ask before inventing it. Don't add new colours, radii, shadows or font sizes.
 
-**The brand name is spelled `LinkPlas`** (capital P), not `Linkplas` — the current codebase, copy and all metadata use the old spelling throughout and need to be updated as part of the rebrand.
+**The brand name is spelled `LinkPlas`** (capital P), not `Linkplas`. The one exception is the registered company name, `Linkplas, Lda`. Email addresses, the domain and social-network addresses keep their own spelling.
 
 ---
 
@@ -21,34 +21,41 @@ If something isn't covered by any of these, ask before inventing it. Don't add n
 - Bootstrap 5.3 compiled from **Sass source**, never the CDN CSS, so tokens can override its variables. Use React-Bootstrap for interactive primitives (Modal, Dropdown, Accordion, Tabs, Toast, Tooltip), because their keyboard and ARIA handling is already correct.
 - UI copy is **European Portuguese**: `<html lang="pt-PT">`. The design system includes a Language Switcher, so keep strings out of components so they can be translated.
 
-## Folder structure (target — being migrated to)
+## Folder structure
 
 ```
 src/
   styles/
-    _tokens.scss          # CSS custom properties generated from Figma variables (--lp-*)
+    _tokens.scss          # CSS custom properties from Figma variables (--lp-*), text-style mixins, lp-page-gutter
     _bootstrap-vars.scss  # Bootstrap Sass variable overrides (imported BEFORE bootstrap)
-    _base.scss            # html/body, typography classes, focus ring
+    _base.scss            # html, typography classes, focus ring, page fade, skip link
     main.scss             # entry: tokens → bootstrap-vars → bootstrap → base → components
   components/
     brand/                # Logo, SubbrandLogo, ModularPattern
-    ui/                    # Button, IconButton, Badge, Tag, Chip, Link, Alert, ...
-    forms/                 # FormField, Input, Select, Textarea, Checkbox, Radio, Toggle, FileUpload
-    navigation/            # Header, NavItem, MobileNav, Breadcrumb, Pagination, Tabs, LanguageSwitcher
-    cards/                 # ProductCard, SectorCard, FeatureCard, NewsCard, TestimonialCard, Stat
-    content/               # SectionHeading, Eyebrow, AccordionItem, ProcessStep, TimelineItem, SpecTable, Stepper
-    sections/              # Hero, CTASection, Footer, CookieBanner, ProductCatalogue, ProductDetail
-    seo/                   # PageMeta (title, description, canonical, hreflang)
-  content/                 # copy per language: site.js (header and footer), meta.js (page metadata), products.js (catalogue)
-  i18n/                    # language list, URL prefix helpers, useLanguage()
-  assets/brand/            # official logo SVGs only
-  assets/icons/            # Figma icons, one file per size (name-size.svg)
-docs/brand/                # brand manual PDF
-scripts/                   # build-3d-models.mjs: STL sources → public/models/*.glb (`npm run models`)
-content-inbox/             # files supplied by the client; never published
+    ui/                   # Button, IconButton, Icon (+ icons.js), Badge, Chip, SubbrandTag, Alert, StandaloneLink,
+                          # CertificationBadge, ImagePlaceholder, ContentPlaceholder, ModelViewer, BackgroundVideo
+    forms/                # FormField, Input, Textarea, Select, Checkbox
+    navigation/           # NavItem, NavDropdown (dropdown and mega menu), LanguageSwitcher, Breadcrumb, BackToTop
+    cards/                # ProductCard, DownloadCard, FeatureCard, NewsCard, PartnerCard, TeamCard, TestimonialCard, Stat
+    content/              # Section, SectionHeading, Eyebrow, ProcessStep, TimelineItem, CheckList, QuoteBlock, SpecList, SpecTable
+    sections/             # PageLayout, HomeHero, InteriorHero, BrandHero, SectorShowcase, StatsBand, CtaSection, LogoStrip,
+                          # ContactSection, ZorPartnership, ProductCatalogue, ProductDetail
+    seo/                  # PageMeta (title, description, canonical, hreflang)
+    Header.jsx, Footer.jsx, ScrollToTop.jsx   # still at the top of components/, with _header.scss and _footer.scss
+  pages/                  # one file per route: Home, News, Products, ProductDetail, Brand, Partners, Portfolio,
+                          # About, Process, Quality, Contact
+  content/                # copy per language and site data: routes.js, site.js, meta.js, home.js, news.js, products.js,
+                          # brands.js, partners.js, company.js, contact.js, model-finishes.js
+  i18n/                   # language list, URL prefix helpers, useLanguage()
+  assets/brand/           # official logo SVGs only
+  assets/icons/           # Figma icons, one file per size (name-size.svg)
+  assets/logos/           # client and partner logos for the logo strip and Parcerias (see its LEIA-ME.md)
+docs/brand/               # brand manual PDF
+scripts/                  # build-3d-models.mjs (`npm run models`), build-sitemap.mjs (`npm run sitemap`)
+content-inbox/            # files supplied by the client; never published
 ```
 
-Each component lives in its own folder, with its `.jsx` file and a `_name.scss` partial when it needs one; the partial is imported from `styles/main.scss`. Components only consume tokens through `var(--lp-*)` or Bootstrap variables, never raw hex values.
+Each component lives in its own folder, with its `.jsx` file and a `_name.scss` partial when it needs one; the partial is imported from `styles/main.scss`. Components only consume tokens through `var(--lp-*)` or Bootstrap variables, never raw hex values. A page file only composes sections and reads its copy from a content module; it holds no copy and no styles of its own.
 
 ---
 
@@ -131,7 +138,7 @@ Don't use Bootstrap's default `1`–`5` spacing utilities anywhere, because thos
 ### Layout and breakpoints
 
 - `$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px)`. The Figma frames are 390 (mobile), 768 (tablet) and 1440 (desktop).
-- Content width (`container/max`) is 1200px. Set `$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1200px)` and add a `.container-wide` class at 1320px (`container/wide`).
+- Content width (`container/max`) is 1200px. Set `$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1200px)` and add a `.container-wide` class at 1320px (`container/wide`). Below 992px `.container` runs the full width of the screen (`_base.scss`) and each section adds a 20px page gutter with the `lp-page-gutter` mixin, as the 390 and 768 frames do.
 - Control heights are 36, 44 and 52px (`control/height-sm`, `-md`, `-lg`). Buttons, inputs and selects must hit these exactly. Enforce them with `min-height` from the tokens, not with padding guesses. 44px is the default, and it is also the minimum touch target.
 
 ### Typography
@@ -253,79 +260,96 @@ These resolve differences between the manual and the Figma file. Update the Figm
 6. **FactoryLink is a fifth sub-brand**, for the technical parts and services the old site showed under Indústria and Serviços. It exists in Figma only (`subbrand/factorylink/*` variables and the `Logo / Submarca` variants with Brand=FactoryLink); the manual should gain it. The sub-brand rules above apply to it unchanged. In the design system the matching `Tag / Submarca` variant is named "Industrial" and should be renamed.
 7. **Inner pages use the light header**, confirmed by the client. The "Produtos (Desktop)" frame draws the dark one, but the design system reserves dark for the home hero; the dark version is left for a possible future dark mode. The frame also spaces its sections with 50px, 10px and 112px, which are not on the spacing scale; the build uses 48px, 12px and 96px. The filter chips are 12px apart rather than the frame's 24px, at the client's request.
 8. **The home hero video has no pause button**, at the client's request (2026-10-03). This falls short of WCAG 2.2.2 (moving content longer than five seconds needs a way to pause it), which the rest of the site meets. The video still does not start on its own for visitors who ask for reduced motion.
+9. **Page addresses are Portuguese and shared by both languages** (client decision, 2026-10-03): `/noticias`, `/produtos`, `/produtos/<slug>`, `/marcas/<marca>`, `/parcerias`, `/parcerias/portfolio`, `/empresa/sobre-nos`, `/empresa/como-trabalhamos`, `/empresa/qualidade`, `/contactos`. English adds `/en` in front. All of them are in `src/content/routes.js`; never write an address as a string anywhere else. The addresses the site used before (`/About`, `/Policy`, `/Contacts`, `/Products…`) redirect permanently: see "Deployment".
+10. **Content the client has not supplied yet is shown on the page as a visible placeholder** (client decision, 2026-10-03): `ContentPlaceholder` ("Conteúdo a fornecer: …") for text and `ImagePlaceholder` for photographs. In content modules these are the `missing` and `photo` fields. Remove each one as its content arrives; never fill a gap with invented copy.
+11. **Corners are square almost everywhere**, following the design-system update of October 2026: Button, Product Card, Tag / Submarca, Download Card, Certification Badge, Language Switcher, Nav Item, inputs and checkboxes use `radius/none`. Chip stays `radius/full`; icon boxes and the logo-strip boxes are `radius/md`; the map is `radius/lg`; the CTA box and the contact form card are `radius/xl`; the check-list tick is `radius/xs`. This settles the old open question about the button radius.
+12. **The home page's sectors change by themselves every four seconds** (client request): `SectorShowcase` advances the active item like a slide show until the visitor hovers, clicks or focuses an item, and from then on only changes when they choose. It does not advance under reduced motion, nor while the section is off screen. The Figma frame draws the four states one under the other; the page shows one at a time. The design's "Ver KeepyLink" link reads "Ver TupperLink", and its "Novo" tag, drawn in ThermaLink's colours, is a brand-tone Badge.
+13. **The logo strip reads its logos from a folder**: any image dropped in `src/assets/logos/` appears in the strip and, when its file name matches a partner, on Parcerias (see the LEIA-ME.md there). Until a partner has a logo its name is shown as text. When the row is wider than the page it scrolls slowly and endlessly, pausing on hover and focus; under reduced motion it is a row the visitor scrolls.
+14. **The contact form has no file upload** (client decision; the EmailJS plan does not carry attachments). It has the previous fields plus a request type and a required consent checkbox. The consent text does not mention a privacy policy, because the site has none yet; the design's "Li e aceito a política de privacidade" should replace it once that page exists.
+15. **Transitions last 200ms**, the page fade included (it was 250ms inside a 500ms wait), and scrolling is instant (`$enable-smooth-scroll: false`): smooth scrolling fought the pinned ZØR animation.
 
 Open, not yet decided:
-- **Button corner radius.** The Figma `Button` component has square corners, which is what the code uses. The text on the Figma "Espaçamento, raios e grelhas" page says buttons use `radius/md` (6px).
-- **Header call to action.** The Figma "Navegação" page text says "Pedir orçamento" is always visible, but the desktop `Header` component only shows the language switcher, and so does the header in the "Produtos (Desktop)" page frame. The code shows the button on desktop.
+- **Header call to action.** The Figma "Navegação" page text says "Pedir orçamento" is always visible, but the desktop `Header` component only shows the language switcher, and so do the page frames. The code shows the button on desktop.
+- **Form control borders.** Figma draws inputs, selects and checkboxes with `border/strong` (`#CED6D9`), which is 1.47:1 on white, below the 3:1 that WCAG 1.4.11 asks of a control's boundary. The code uses two tokens that Figma does not have yet, `control/border` (`neutral/600`, 4.2:1) and `control/border-hover` (`neutral/800`). Either add them to Figma or accept the lighter border.
+- **`text/tertiary` on small text.** It is 4.2:1 on white and 3.8:1 on `bg/subtle`, under the 4.5:1 body text needs. The new components use `text/secondary` where Figma has tertiary (captions, dates, the contact labels). The Product Card's reference line still uses tertiary, as designed.
+- **Off-scale gaps in Figma.** Several components use 6px, 10px or 14px gaps that are not bound to a spacing variable (Form Field, Checkbox, Contact Section rows, the 112px between page sections). The code uses the nearest step of the scale (8, 12, 16 and 96px).
+- **The ecoCatch picture on the home page.** The Figma frame illustrates "ecoCatch, desenvolvido com a ZØR" with the exploded view of the pharmacy isothermal kit, not with the fish boxes. The home page uses it as designed; Parcerias and Portfólio show a placeholder until ZØR's ecoCatch images arrive.
 
 ---
 
 ## Implementation status
 
-Phase 1 (done): tokens and Bootstrap overrides in `src/styles/`, official logo and icon assets, `Logo`, `SubbrandLogo`, `Button`, `IconButton`, `Icon`, `Eyebrow`, `NavItem`, `LanguageSwitcher`, `CertificationBadge`, the rebuilt `Header` and `Footer`, and the company and product renames. Shell copy and links live in `src/content/site.js`.
+Every page is built on the design system. The pre-rebrand components and `src/App.css` are gone; nothing styles the site but `src/styles/` and the component partials.
 
-Language infrastructure (done): see "Languages" below. English is built but **not published**.
+| Page | Address | Page file | Copy |
+|---|---|---|---|
+| Início | `/` | `pages/Home.jsx` | `content/home.js` |
+| Notícias | `/noticias` | `pages/News.jsx` | `content/news.js` |
+| Produtos | `/produtos` | `pages/Products.jsx` | `content/products.js` |
+| Ficha técnica | `/produtos/<slug>` | `pages/ProductDetail.jsx` | `content/products.js` |
+| Marca | `/marcas/tupperlink`, `/pharmalink`, `/factorylink` | `pages/Brand.jsx` | `content/brands.js` |
+| Parceiros | `/parcerias` | `pages/Partners.jsx` | `content/partners.js` |
+| Portfólio | `/parcerias/portfolio` | `pages/Portfolio.jsx` | `content/partners.js` |
+| Sobre nós | `/empresa/sobre-nos` | `pages/About.jsx` | `content/company.js` |
+| Como trabalhamos | `/empresa/como-trabalhamos` | `pages/Process.jsx` | `content/company.js` |
+| Qualidade | `/empresa/qualidade` | `pages/Quality.jsx` | `content/company.js` |
+| Contactos | `/contactos` | `pages/Contact.jsx` | `content/contact.js` |
 
-Everything else is still the pre-rebrand implementation and is styled by `src/App.css`:
-- Its colour variables (`--bs-secondary-gradient`, `--bs-primary-dark`, …) are aliases onto the new tokens until those sections are rebuilt. Don't use them in new code.
-- It has a global `a { display: flex; color: white; font-weight: 300 }` and a mobile `.container { padding: 2% }`. New components set these properties explicitly.
-- Bootstrap's `btn-secondary` is still used by the old product pages, so the Figma "Secondary" button is the class `btn-lp-secondary` (`<Button variant="secondary">` maps to it).
-- `Header` and `Footer` still sit in `src/components/`; they move to `navigation/` and `sections/` with the rest of the kit.
-- Several old sections have fixed pixel heights tuned to the previous font, so check them when type or spacing changes.
+Only Início and Produtos follow a Figma page frame. The product page, the brand pages, Parcerias, Portfólio, the three Empresa pages, Contactos and **every mobile layout** were built without one, from design-system components only, as a first proposal the client will iterate on. Copy comes from the 2026 institutional presentation, the Figma frames and the previous site; where none of them has it, the page shows a placeholder (decision 10).
 
-Produtos (done, first version): the catalogue at `/Products` (`sections/ProductCatalogue`, from the Figma frame) and one page per product at `/Products/<slug>` (`sections/ProductDetail`). The detail page and every mobile layout were built **without a Figma design**, from design-system components only, as a first proposal the client will iterate on. New components: `Chip`, `SubbrandTag`, `ImagePlaceholder`, `StandaloneLink`, `ModelViewer`, `ProductCard`, `DownloadCard`, `Breadcrumb`, `SpecTable`, `SpecList`; `SubbrandLogo` knows FactoryLink. How it works:
-- All product data and copy is in `src/content/products.js` (`pt` and `en`). Add or change a product there; nothing else lists products except the two sitemaps.
+How the pages are put together:
+- **Every page** is `<PageLayout>`: header, `<main id="conteudo">`, the closing call to action (`closingCta` in `site.js`; Início places it mid-page and Contactos has none) and footer. Inside it, `<PageMeta>` first, then one hero with the page's only `h1` (`HomeHero`, `InteriorHero`, `BrandHero` or `ContactSection`), then `Section` bands that alternate `tone="page"` and `tone="subtle"`.
+- **Section helpers** in `content/Section/_section.scss`: `.lp-grid` (`--3`, `--4`) for card grids, `.lp-split` for two columns, `.lp-stack`, `.lp-prose`, `.lp-media`, `.lp-subheading`, `.lp-note`, `.lp-tag-list`.
+- **Header**: Notícias, Produtos, Marcas, Parcerias, Empresa, Contactos, from `mainNav` in `site.js`. Produtos has no dropdown. Marcas opens the mega menu and Parcerias and Empresa a dropdown menu (`NavDropdown`, on React-Bootstrap's Dropdown); on mobile they are disclosure groups in the off-canvas menu. The header is always the light one.
+- **Início** (Figma `2:1222`): `HomeHero`, sectors (`SectorShowcase`, decision 12), `StatsBand`, `CtaSection`, the four process steps, `LogoStrip` (decision 13).
+- **Home hero**: the Figma `Hero` (Type=Home) with `BackgroundVideo` (`public/images/Hero.webm`, muted, looping, decorative) in place of the photograph. The copy panel is Azul Profundo (`bg/inverse`) rather than the Figma `bg/inverse-subtle`, at the client's request. The brand pattern (`ModularPattern`, the client's `public/images/elemento-grafico.svg`) is shown at 1.6 times its size in the margin left of the copy from 1200px up, cropped by the hero's edges and ending 80px before the text; past one drawing's width it repeats to the left. The video does not start on its own under reduced motion and has no pause button (decision 8). It is about 18 MB at 1920 × 1080 and WebM only: it needs a compressed version, an MP4 fallback and a poster image.
+- **Marcas**: one template, `pages/Brand.jsx`, for the three brands: hero on the brand's tint (`BrandHero`), Propósito, Vantagens, Características with the brand's products, Origem, Clientes. A brand's tint and logo appear only on its own page.
+- **Parcerias**: the ZØR scroll animation of the old home page lives here (`sections/ZorPartnership`, GSAP ScrollTrigger; pinned on desktop, open and static under reduced motion), then ecoCatch, the eight active partners and the Coprax recommendation. Monte Meão is not shown.
+- **Notícias**: posts are added by hand to `content/news.js`, newest first, each linking to the original post.
+- **Contactos**: `ContactSection`. The form validates in the page's language (`noValidate`), ties every message to its field (`aria-describedby`, `aria-invalid`), moves focus to the first field to fix, and sends through EmailJS after reCAPTCHA v3. It sends `nome`, `empresa`, `contacto`, `email`, `mensagem`, `tipo_pedido` and `recaptcha_token`; the request type is also written at the top of `mensagem`, so it reaches the inbox even while the EmailJS template has no `{{tipo_pedido}}` field. A product page opens it with the product, size and colours already in the message. The opening hours are a placeholder.
+- **Buttons that are links** (`<Button as={Link}>`) are announced as links: `Button` removes the `role="button"` React-Bootstrap would add.
+- **The page transition** in `App.jsx` keeps the outgoing page mounted for 200ms under the *new* route, so a page must not redirect or read its route params as if it were still current while it fades out (see `pages/ProductDetail.jsx` and `pages/Brand.jsx`).
+
+Produtos, in more detail:
+- All product data and copy is in `src/content/products.js` (`pt` and `en`). Add or change a product there; run `npm run sitemap` afterwards.
 - Brand filters start with none selected, and none selected shows every product. They live in the address as `?marcas=…` and the selected size as `?medida=…`. Both rewrite the query with `state: { keepScroll: true }`, which `ScrollToTop` honours so the page does not jump.
-- The old category addresses (`/Products/Industria` and so on) redirect into the catalogue (`LEGACY_PRODUCT_PATHS`).
 - Product images are the old site's files in `public/images/`, listed per product in `products.js` (`images`, the first one is the card image), as stand-ins until new photographs arrive; they are large (about 10 MB for the nine card images), so replace them with web-sized files. On the detail page `ProductGallery` shows the 3D model and the photographs with thumbnails. Product copy was carried over from the old site unchanged.
-- Home hero: the brand pattern (`ModularPattern`, the client's `public/images/elemento-grafico.svg`) is shown at 1.6 times its size in the margin left of the copy from 1200px up, cropped by the hero's edges and ending 80px before the text, so wide screens show more of it (about four columns at 1920px, a sliver at 1440px); past one drawing's width it repeats to the left, keeping the column spacing across the joins. The copy panel is Azul Profundo (`bg/inverse`) rather than the Figma `bg/inverse-subtle`, at the client's request. The Figma `Hero` (Type=Home) with `BackgroundVideo` (`public/images/Hero.webm`, muted, looping, decorative) in place of the photograph. The video does not start on its own under reduced motion. It has no pause button, by the client's choice (decision 8). It is about 18 MB at 1920 × 1080 and WebM only: it needs a compressed version, an MP4 fallback for browsers that cannot play WebM, and a poster image before going live.
 - Specifications are not tables: `SpecList` shows the selected size's measurements and the product's other facts under the size chips (client decision). `SpecTable` is built but no longer used; it is the component to reach for if the client wants a size chart back, for example on Tampa para tubos.
-- "Pedir orçamento" passes the product and size to the Contacts form through router state.
 - 3D: `npm run models` converts the STL files in `content-inbox/3d/` to `public/models/*.glb` (see the script for orientation, simplification and materials). `ModelViewer` wraps `@google/model-viewer`, loaded on demand; plain wheel scrolling is left to the page and zoom is on buttons, pinch and the keyboard. Models exist for the TupperLink container, the PharmaLink box and four FactoryLink parts (Intercalar longarina and Abraçadeira on the product, Tampa para veio 16 mm and Anilha intercalar 30015 on that size); the FactoryLink ones keep the colour of their current photos and have no colour choice. The script reads binary and text STL; some of the client's text exports are in metres rather than millimetres, so a part can set `units: 'm'`, and the script warns when a model comes out implausibly small or large. Without a size in the address, a page opens on the first size that has a model.
 - Colours: each part of a model (body, lid) is a material named after the part, and `ModelViewer` recolours them live from its `finishes` prop. The choices are per product in `products.js` (`colours`): TupperLink is clear by default or any colour through the browser's colour picker, body and lid separately; PharmaLink has only the colour picker, starting on a dark blue box (`#2B305F`) and a grey lid (`#89898B`), as given by the client (`PHARMALINK_START_COLOURS`). The clear finish and the colour conversion are in `src/content/model-finishes.js`, shared with the conversion script so a model's starting finish matches the page's default. The chosen colours are added to the quote request.
-- The page transition in `App.jsx` keeps the outgoing page mounted for 500ms under the *new* route, so a page must not redirect or read its route params as if it were still current while it fades out (see `pages/ProductDetail.jsx`).
 
-Not built yet: the dark `Header` theme, mega menu, the new menu (Notícias, Marcas, Parcerias, Empresa: their pages do not exist), the remaining Figma components and page sections, the brand pages, a ThermaLink or KeepyLink section, a cookie banner, and English copy for the four older pages (the header, footer, page metadata and the product pages are translated, as drafts).
+Not built yet: the dark `Header` theme, a ThermaLink or KeepyLink section, the cookie banner, a privacy-policy page, pagination on Notícias, the multi-step quote form with file upload, and the design-system components no page uses yet (Radio, Toggle, File Upload, Tabs, Accordion, Modal, Toast, Tooltip, Stepper, Pagination).
 
 ## Roadmap
 
-The agreed navigation is Notícias, Produtos, Marcas, Parcerias, Empresa and Contactos. `docs/site-structure-plan.md` maps the 2026 institutional presentation and the current site content onto those pages, and lists the open questions. `docs/conteudo-a-preencher.md` is the worksheet (in Portuguese) the client fills in for the content that is still missing; the files they supply arrive in `content-inbox/`, which is not published. The design system's header, mega menu and footer still show the older menu; the "Produtos (Desktop)" page frame has the new one.
+The navigation is Notícias, Produtos, Marcas, Parcerias, Empresa and Contactos, and every page behind it exists. `docs/site-structure-plan.md` maps the 2026 institutional presentation and the previous site's content onto the pages and says what each section's source is. `docs/conteudo-a-preencher.md` is the worksheet (in Portuguese) the client fills in for the content that is still missing; the files they supply arrive in `content-inbox/`, which is not published.
 
-Produtos has **no dropdown**: it is one catalogue page filtered by brand with multi-select chips (TupperLink, PharmaLink, FactoryLink), and **every product has its own detail page** ("ficha técnica"). Both are built (see "Implementation status"). The frame also shows KeepyLink and ThermaLink chips and footer links, which are left out until those products launch. ecoCatch is not in the catalogue: it stays on Parcerias. FactoryLink gets its own page under Marcas. FactoryLink products have the 3D viewer where the client has supplied an STL file.
-
-Pages are rebuilt one at a time as the client asks. Done: Produtos. In progress: Início, starting with the hero (`sections/HomeHero`, copy in `src/content/home.js`); the sections below it are still the old ones. Other pages are **on hold**: the client is preparing the page structure designs. Don't rebuild or restructure pages, and don't build page sections (Hero, CTA, stats band, contact section), until those designs arrive.
-
-Phase 2, not tied to page structure:
-- **English language.** The infrastructure is done and English is unpublished (see "Languages"). Page copy is translated page by page as each page is refactored, then English is published.
-- **3D product viewer.** Built for the TupperLink container, the PharmaLink box and four FactoryLink parts (see "Implementation status"). Colour selection is built too. Still to do: the exact PharmaLink colour references; the 2000 ml TupperLink model, which was not supplied; a static image fallback once photographs exist (today the fallback is the placeholder). STL sources go in `content-inbox/3d/`, never in `public/`.
-- **Component kit.** The remaining Figma components that don't depend on page structure (forms, cards, badges and tags, feedback, content blocks).
-
-Phase 3, after the page designs arrive: rebuild the remaining pages on the kit, retire `src/App.css`, the mega menu and dark header, and move `Header`/`Footer` into their folders. **Each page refactor includes its English translation** (see the reminder under "Languages").
-
-Phase 4, waiting on client content: the KeepyLink product, ThermaLink, the cookie banner and the multi-step quote form.
+What comes next, in the order the client asks for it:
+- **Iterating on the pages built without a design** (everything except Início and Produtos). Expect layout changes; keep them inside the design system.
+- **Replacing placeholders with content**: search the content modules for `missing` and `photo`, and the pages for `ContentPlaceholder` and `ImagePlaceholder`. The worksheet lists the same gaps for the client.
+- **Client review of the English copy.** All of it is a draft written here from the Portuguese.
+- **Media weight**: the hero video (18 MB, WebM only) and the old product images.
+- **3D viewer**: the exact PharmaLink colour references; the 2000 ml TupperLink model, which was not supplied; models for the remaining FactoryLink sizes. STL sources go in `content-inbox/3d/`, never in `public/`.
+- **Waiting on client content**: the KeepyLink product, ThermaLink (the name under which ecoCatch will be sold), the cookie banner, a privacy policy, the multi-step quote form.
+- **Tidying**: `Header` and `Footer` still sit at the top of `src/components/` and belong in `navigation/` and `sections/`. `public/font/`, `public/LinkplasData/cards.json`, `src/_redirects` and `src/Untitled` are left over from the old site and are no longer used.
 
 ---
 
 ## Languages
 
-Portuguese (pt-PT) is the default and keeps the unprefixed URLs. English lives under `/en/...`.
+Portuguese (pt-PT) is the default and keeps the unprefixed URLs. English lives under `/en/...`, with the same Portuguese addresses after the prefix (`/en/empresa/sobre-nos`). **English is published** (2026-10-03): the language switcher lists both languages in production.
 
-> **Reminder — a page refactor is not finished until it has English.** When a page is rebuilt, move its copy into a content module with `pt` and `en` entries (as `src/content/site.js` does), draft the English, and ask the client to review it. Remind the user of this when a page refactor is being wrapped up. When every page is done, publish English with the checklist below.
+> **Reminder — nothing is finished until it has English.** Every new page, section or piece of copy goes into a content module with `pt` and `en` entries, in the same change. The English is a draft until the client has reviewed it; say so when the work is handed over.
 
 How it works:
-- `src/i18n/languages.js` lists the languages. A language with `published: false` is served by the dev server only, so English can be reviewed at `localhost:5173/en` but is absent from production builds (there, `/en/...` falls through to the Portuguese catch-all and the switcher lists Portuguese only).
+- `src/i18n/languages.js` lists the languages. A language with `published: false` would be served by the dev server only, which is how a new language can be reviewed before launch.
 - The language is read from the URL once at load (`src/main.jsx`) and its prefix is the router `basename` (`src/App.jsx`). Routes, `<Link>` and `navigate()` therefore never mention a language. Changing language is a full page load, which is why `LanguageSwitcher` renders plain links.
-- Copy comes from content modules through hooks: `useSiteContent()` for the header and footer, and `src/content/meta.js` for page titles and descriptions. `useLanguage()` gives the current language code.
-- Every page renders `<PageMeta page="…" />`, which sets the title, description, Open Graph tags, the canonical URL for the current language, and `hreflang` alternates when more than one language is served.
+- Copy comes from content modules through hooks (`useSiteContent()`, `useHomeContent()`, `useProducts()`, `useBrand()`, `usePartnersContent()`, `useCompanyContent()`, `useContactContent()`, `useNews()`), and `src/content/meta.js` holds page titles and descriptions. `useLanguage()` gives the current language code.
+- Every page renders `<PageMeta page="…" />` (or `path` and `meta` for pages generated from data: products and brands), which sets the title, description, Open Graph tags, the canonical URL for the current language, and the `hreflang` alternates.
 - Reference files in `public/` with root-absolute paths (`/images/…`, `/files/…`). Relative paths such as `../images/…` break under `/en/...`.
+- `npm run sitemap` writes `sitemap.xml` and `public/sitemap.xml` from the routes, the product and brand slugs and the published languages, with the `hreflang` alternates. Run it when a page, product, brand or language is added or removed.
 
-Publishing English (only after every page has reviewed English copy):
-1. Set `published: true` for `en` in `src/i18n/languages.js`.
-2. Add the `/en/...` URLs to `sitemap.xml` and `public/sitemap.xml`.
-3. Add English to `availableLanguage` in the JSON-LD in `index.html`.
-4. Remove the static canonical and `og:url` tags from `index.html`: they point every page at the home page and conflict with the per-page ones.
-
-The English header, footer and metadata copy are drafts awaiting client review.
+Adding another language: add it to `languages.js` with `published: false`, add its entry to every content module, review it on the dev server, then set `published: true`, add it to `availableLanguage` in the JSON-LD in `index.html`, and run `npm run sitemap`.
 
 ---
 
@@ -358,6 +382,7 @@ npm run build     # production build to dist/
 npm run preview   # preview the production build
 npm run lint      # eslint over src, max-warnings 0
 npm run models    # rebuild public/models/*.glb from the STL files in content-inbox/3d/
+npm run sitemap   # rewrite sitemap.xml and public/sitemap.xml from the routes, products, brands and languages
 ```
 
 No test suite is configured.
@@ -366,4 +391,4 @@ Env vars (Vite `import.meta.env`, not committed):
 - `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` — EmailJS config for the contact form.
 - `VITE_RECAPTCHA_SITE_KEY` — Google reCAPTCHA v3 site key.
 
-Deployment: `vercel.json` rewrites all paths to `index.html` for Vercel; `web.config` does the IIS/Windows equivalent (also forces a `www.` redirect). Keep both in sync if SPA routing behavior changes.
+Deployment: `vercel.json` rewrites all paths to `index.html` for Vercel; `web.config` does the IIS/Windows equivalent (also forces a `www.` redirect). Both also redirect the pre-rebrand addresses permanently (301) to their new pages, and `LEGACY_ROUTES` in `src/content/routes.js` does the same in the browser for any other host. Keep the three in step when an address changes.

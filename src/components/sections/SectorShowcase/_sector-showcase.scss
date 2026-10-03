@@ -1,0 +1,242 @@
+// Home "Setores": the design system's Mega Menu as a row of four items, and a panel for the
+// active one (Figma Linkplas-Website, nodes 36:2841 to 36:2466).
+
+// Each item carries its tone. Only the active item and the panel show it, so two sub-brand
+// accents never appear together.
+.lp-sector-tone--brand {
+  --lp-sector-subtle: var(--lp-bg-brand-subtle);
+  --lp-sector-text: var(--lp-text-brand);
+  --lp-sector-body: var(--lp-text-primary);
+}
+
+@each $brand in (tupperlink, pharmalink, factorylink) {
+  .lp-sector-tone--#{$brand} {
+    --lp-sector-subtle: var(--lp-subbrand-#{$brand}-subtle);
+    --lp-sector-text: var(--lp-subbrand-#{$brand}-text);
+    --lp-sector-body: var(--lp-subbrand-#{$brand}-text);
+  }
+}
+
+.lp-sector-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-8);
+}
+
+// Menu: 2×2 on phones, one row of four from desktop.
+.lp-sector-menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background-color: var(--lp-bg-page);
+  border: 1px solid var(--lp-border-default);
+  box-shadow: var(--lp-shadow-md);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.lp-sector-menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-12);
+  padding: var(--lp-space-16);
+  transition: background-color 0.2s ease;
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-32);
+  }
+
+  &.is-active {
+    background-color: var(--lp-sector-subtle);
+  }
+}
+
+.lp-sector-menu__button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-12);
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: 4px;
+    box-shadow: none;
+  }
+}
+
+.lp-sector-menu__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-control-height-md);
+  height: var(--lp-control-height-md);
+  color: var(--lp-icon-brand);
+  background-color: var(--lp-bg-subtle);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-sector-menu__title {
+  @include lp-label-l;
+  color: var(--lp-text-primary);
+
+  @include media-breakpoint-up(lg) {
+    @include lp-heading-h5;
+  }
+}
+
+.lp-sector-menu__text {
+  @include lp-body-s;
+  display: none;
+  color: var(--lp-text-secondary);
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+// On phones the panel's own button is the way in, so the menu stays compact.
+.lp-sector-menu__link {
+  @include lp-label-m;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  color: var(--lp-text-brand);
+  text-decoration: none;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-flex;
+  }
+
+  &:hover {
+    color: var(--lp-text-link-hover);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lp-border-focus);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}
+
+.lp-sector-menu__item.is-active {
+  .lp-sector-menu__icon,
+  .lp-badge {
+    color: var(--lp-sector-text);
+    background-color: var(--lp-bg-page);
+  }
+
+  // The sub-brand's text shade, not its accent: the accent fails contrast on the tint.
+  .lp-sector-menu__title,
+  .lp-sector-menu__link {
+    color: var(--lp-sector-text);
+  }
+}
+
+// Panel: stacked on phones (image, text, button); from desktop the image fills the right side.
+.lp-sector-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-24);
+  padding: var(--lp-space-24);
+  background-color: var(--lp-sector-subtle);
+  transition: background-color 0.2s ease;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: space-between;
+    min-height: 453px;
+    padding: var(--lp-space-64);
+  }
+}
+
+.lp-sector-panel__media {
+  width: calc(100% + var(--lp-space-48));
+  height: 220px;
+  margin: calc(var(--lp-space-24) * -1) calc(var(--lp-space-24) * -1) 0;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    // 461px of the 1200px panel in the design.
+    width: 38.4%;
+    height: auto;
+    margin: 0;
+  }
+}
+
+.lp-sector-panel__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lp-sector-panel__image--cover {
+  object-fit: cover;
+}
+
+.lp-sector-panel__image--contain {
+  padding: var(--lp-space-24);
+  object-fit: contain;
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-32);
+  }
+}
+
+.lp-sector-panel__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-12);
+
+  @include media-breakpoint-up(lg) {
+    width: 46%;
+  }
+}
+
+.lp-sector-panel__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--lp-space-12);
+  color: var(--lp-icon-secondary);
+}
+
+.lp-sector-panel__partner-logo {
+  width: auto;
+  height: var(--lp-space-32);
+}
+
+.lp-sector-panel__description {
+  @include lp-body-m;
+  margin: 0;
+  color: var(--lp-sector-body);
+
+  @include media-breakpoint-up(lg) {
+    @include lp-body-l;
+  }
+}
+
+.lp-sector-panel__action.btn {
+  --bs-btn-color: var(--lp-sector-text);
+  --bs-btn-hover-color: var(--lp-sector-text);
+  --bs-btn-active-color: var(--lp-sector-text);
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}

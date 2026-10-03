@@ -17,7 +17,7 @@
   height: 100%;
 
   // 20px page margins on mobile, as in the 390px frame. The selector is doubled with
-  // `.container` to outrank the legacy mobile `.container { padding: 2% }` in App.css.
+  // `.container` so the padding outranks Bootstrap's own.
   &.container {
     @include media-breakpoint-down(lg) {
       padding: 0 var(--lp-space-20);
@@ -28,6 +28,7 @@
 .lp-header__brand {
   display: inline-flex;
   flex: none;
+  text-decoration: none;
   border-radius: var(--lp-radius-xs);
 }
 
@@ -130,4 +131,37 @@
   .btn {
     width: 100%;
   }
+}
+
+// The Mega Menu is positioned against this row (see NavDropdown).
+.lp-header__inner {
+  position: relative;
+}
+
+// Mobile menu groups (Marcas, Parcerias, Empresa): a disclosure button and its pages.
+.lp-mobile-nav-item--group {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--lp-border-default);
+
+  &[aria-expanded="true"] .lp-mobile-nav-item__chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.lp-mobile-nav-group__items {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--lp-space-20);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.lp-mobile-nav-item--child {
+  @include lp-label-l;
 }

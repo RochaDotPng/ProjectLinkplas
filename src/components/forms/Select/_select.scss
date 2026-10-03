@@ -1,0 +1,19 @@
+.lp-select {
+  position: relative;
+  display: block;
+}
+
+.lp-select__control {
+  // Room for the chevron: its 20px, the 12px inset and an 8px gap.
+  padding-right: var(--lp-space-40);
+  cursor: pointer;
+}
+
+.lp-select__chevron {
+  position: absolute;
+  top: 50%;
+  right: var(--lp-space-12);
+  color: var(--lp-icon-primary);
+  pointer-events: none;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,57 @@
+.lp-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-24);
+  height: 100%;
+  padding: var(--lp-space-24);
+  margin: 0;
+  background-color: var(--lp-bg-subtle);
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-40);
+  }
+}
+
+.lp-testimonial__accent {
+  flex: none;
+  width: var(--lp-space-32);
+  height: var(--lp-space-4);
+  background-color: var(--lp-bg-brand);
+}
+
+.lp-testimonial__quote {
+  margin: 0;
+
+  p {
+    @include lp-heading-h5;
+    margin: 0;
+    color: var(--lp-text-primary);
+
+    @include media-breakpoint-up(lg) {
+      @include lp-quote;
+    }
+  }
+}
+
+.lp-testimonial__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-2);
+  margin-top: auto;
+}
+
+.lp-testimonial__name {
+  @include lp-label-l;
+  color: var(--lp-text-primary);
+}
+
+.lp-testimonial__role {
+  @include lp-body-s;
+  color: var(--lp-text-secondary);
+}
+
+// On a tinted section the card turns white so it still stands out.
+.lp-section--subtle .lp-testimonial {
+  background-color: var(--lp-bg-page);
+}

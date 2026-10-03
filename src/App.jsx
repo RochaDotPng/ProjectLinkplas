@@ -1,66 +1,83 @@
-import './App.css'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
+import { Helmet } from 'react-helmet-async';
+import PropTypes from 'prop-types';
 import ScrollToTop from './components/ScrollToTop';
+import BackToTop from './components/navigation/BackToTop/BackToTop';
 import Home from './pages/Home'
-import About from './pages/About'
-import Contacts from './pages/Contacts'
-import Policy from './pages/Policy'
+import News from './pages/News'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
-import { SwitchTransition, CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Helmet } from 'react-helmet-async';
+import Brand from './pages/Brand'
+import Partners from './pages/Partners'
+import Portfolio from './pages/Portfolio'
+import About from './pages/About'
+import Process from './pages/Process'
+import Quality from './pages/Quality'
+import Contact from './pages/Contact'
+import { LEGACY_ROUTES, ROUTES } from './content/routes';
 import { useLanguage } from './i18n/language-context';
 import { getLanguage } from './i18n/languages';
+
+// The length of the page fade, which is defined in styles/_base.scss.
+const PAGE_FADE_MS = 200;
+
+// Pages fade in and out. Pages that share a key swap without the fade (one product to another).
+const page = (key, element) => (
+  <SwitchTransition>
+    <CSSTransition key={key} classNames="page-fade" timeout={PAGE_FADE_MS}>{element}</CSSTransition>
+  </SwitchTransition>
+);
+
+// An address from before the rebrand. A filter or a size in the old address (?marcas=…,
+// ?medida=…) is carried over, unless the new address already sets its own.
+function LegacyRedirect({ to }) {
+  const { search } = useLocation();
+  return <Navigate to={to.includes('?') ? to : `${to}${search}`} replace />;
+}
+
+LegacyRedirect.propTypes = {
+  to: PropTypes.string.isRequired,
+};
+
+// Product pages kept their slugs when the catalogue moved from /Products to /produtos.
+function LegacyProductRedirect() {
+  const { slug } = useParams();
+  return <LegacyRedirect to={ROUTES.product(slug)} />;
+}
 
 export default function App() {
   const { locale, prefix } = getLanguage(useLanguage());
 
-  window.onscroll = function () { scrollFunction() };
-
-  function scrollFunction() {
-    var button = document.getElementById('toTop');
-    var footerHeight =  document.getElementById('footerComponent').offsetHeight;
-    var windowBottom = window.scrollY + window.innerHeight;
-    var footerTop = document.documentElement.scrollHeight - footerHeight;
-
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      button.classList.remove("d-none");
-      button.classList.add("d-block");
-    } else {
-      button.classList.remove("d-block");
-      button.classList.add("d-none");
-    }
-    if (windowBottom > footerTop + 150) {
-      button.style.bottom = (windowBottom-footerTop) + 20 + 'px'; // Adjust this value to suit your needs
-    } else {
-      button.style.bottom = '160px'; // Distance from bottom when fixed
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
   return (
     <>
       <Helmet htmlAttributes={{ lang: locale }} />
-      <TransitionGroup>
-        {/* The language prefix is the router basename, so routes, links and navigate() calls stay language-agnostic. */}
-        <BrowserRouter basename={prefix || "/"}>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>} />
-            <Route path="/About" element={<SwitchTransition><CSSTransition key="about" classNames="page-fade" timeout={500}><About /></CSSTransition></SwitchTransition>} />
-            <Route path="/Contacts" element={<SwitchTransition><CSSTransition key="contacts" classNames="page-fade" timeout={500}><Contacts /></CSSTransition></SwitchTransition>} />
-            <Route path="/Policy" element={<SwitchTransition><CSSTransition key="policy" classNames="page-fade" timeout={500}><Policy /></CSSTransition></SwitchTransition>} />
-            <Route path="/Products" element={<SwitchTransition><CSSTransition key="products" classNames="page-fade" timeout={500}><Products /></CSSTransition></SwitchTransition>} />
-            <Route path="/Products/:slug" element={<SwitchTransition><CSSTransition key="product" classNames="page-fade" timeout={500}><ProductDetail /></CSSTransition></SwitchTransition>} />
-            <Route path="*" element={<SwitchTransition><CSSTransition key="home" classNames="page-fade" timeout={500}><Home /></CSSTransition></SwitchTransition>}  />
-          </Routes>
-        </BrowserRouter>
-      </TransitionGroup>
-      <button id='toTop' onClick={topFunction} className='btn scroll-up-button btn-secondary d-none'><i className="bi bi-chevron-up"></i></button>
-    </>
+      {/* The language prefix is the router basename, so routes, links and navigate() calls stay language-agnostic. */}
+      <BrowserRouter basename={prefix || "/"}>
+        <ScrollToTop />
+        <Routes>
+          <Route path={ROUTES.home} element={page('home', <Home />)} />
+          <Route path={ROUTES.news} element={page('news', <News />)} />
+          <Route path={ROUTES.products} element={page('products', <Products />)} />
+          <Route path={ROUTES.product(':slug')} element={page('product', <ProductDetail />)} />
+          <Route path={ROUTES.brand(':brand')} element={page('brand', <Brand />)} />
+          <Route path={ROUTES.partners} element={page('partners', <Partners />)} />
+          <Route path={ROUTES.portfolio} element={page('portfolio', <Portfolio />)} />
+          <Route path={ROUTES.about} element={page('about', <About />)} />
+          <Route path={ROUTES.process} element={page('process', <Process />)} />
+          <Route path={ROUTES.quality} element={page('quality', <Quality />)} />
+          <Route path={ROUTES.contact} element={page('contact', <Contact />)} />
 
+          {/* Addresses from before the rebrand. The hosts redirect them too (vercel.json, web.config). */}
+          {Object.entries(LEGACY_ROUTES).map(([from, to]) => (
+            <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
+          ))}
+          <Route path="/Products/:slug" element={<LegacyProductRedirect />} />
+
+          <Route path="*" element={page('home', <Home />)} />
+        </Routes>
+      </BrowserRouter>
+      <BackToTop />
+    </>
   )
 }

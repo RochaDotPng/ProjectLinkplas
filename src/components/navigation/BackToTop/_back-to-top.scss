@@ -1,0 +1,13 @@
+// Petrol, so it stays visible over both the white pages and the dark footer.
+.lp-back-to-top {
+  position: fixed;
+  right: var(--lp-space-16);
+  bottom: var(--lp-space-16);
+  z-index: $zindex-fixed;
+  box-shadow: var(--lp-shadow-md);
+
+  @include media-breakpoint-up(lg) {
+    right: var(--lp-space-24);
+    bottom: var(--lp-space-24);
+  }
+}

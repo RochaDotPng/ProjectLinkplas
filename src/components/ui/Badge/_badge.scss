@@ -1,0 +1,20 @@
+.lp-badge {
+  @include lp-label-s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--lp-space-2) var(--lp-space-8);
+  color: var(--lp-text-brand);
+  white-space: nowrap;
+  background-color: var(--lp-bg-brand-subtle);
+}
+
+.lp-badge--medium {
+  @include lp-label-m;
+  padding: var(--lp-space-4) 10px;
+}
+
+// bg/brand-subtle all but disappears on bg/subtle, so tinted bands get a white badge.
+.lp-section--subtle .lp-badge {
+  background-color: var(--lp-bg-page);
+}

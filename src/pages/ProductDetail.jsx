@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import PageMeta from '../components/seo/PageMeta/PageMeta';
 import ProductDetailSection from '../components/sections/ProductDetail/ProductDetail';
 import { BRAND_NAME } from '../content/site';
-import { LEGACY_PRODUCT_PATHS, useProduct } from '../content/products';
+import { useProduct } from '../content/products';
+import { ROUTES } from '../content/routes';
 
 export default function ProductDetail() {
   const params = useParams();
@@ -19,8 +20,7 @@ export default function ProductDetail() {
 
   if (!product) {
     if (!params.slug) return null;
-    // Addresses of the old category pages land on the matching part of the catalogue.
-    return <Navigate to={LEGACY_PRODUCT_PATHS[slug] ?? '/Products'} replace />;
+    return <Navigate to={ROUTES.products} replace />;
   }
 
   return (

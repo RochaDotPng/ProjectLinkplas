@@ -7,19 +7,12 @@
 import { useLanguage } from '../i18n/language-context';
 import { getLanguage } from '../i18n/languages';
 import { PHARMALINK_START_COLOURS } from './model-finishes';
+import { ROUTES } from './routes';
 
 export const BRANDS = {
   tupperlink: 'TupperLink',
   pharmalink: 'PharmaLink',
   factorylink: 'FactoryLink',
-};
-
-// Old category addresses, kept working by redirecting them into the new catalogue.
-export const LEGACY_PRODUCT_PATHS = {
-  'Take-Away': '/Products?marcas=tupperlink',
-  Farmaceutica: '/Products?marcas=pharmalink',
-  Industria: '/Products?marcas=factorylink',
-  Servicos: '/Products/soldadura-por-ultrassons',
 };
 
 // Unit of each numeric specification. Text specifications have no entry.
@@ -517,7 +510,7 @@ function localize(product, language, locale) {
 
   return {
     slug: product.slug,
-    path: `/Products/${product.slug}`,
+    path: ROUTES.product(product.slug),
     brand: product.brand,
     brandName: BRANDS[product.brand],
     name: copy.name,

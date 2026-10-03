@@ -1,0 +1,178 @@
+.lp-contact {
+  padding: var(--lp-space-32) 0 var(--lp-space-64);
+  background-color: var(--lp-bg-subtle);
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-48) 0 var(--lp-space-96);
+  }
+}
+
+// One column on phones: heading, form, then contacts. From desktop the form takes the
+// right-hand column, beside the heading and the contacts.
+.lp-contact__inner.container {
+  @include lp-page-gutter;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-32);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas:
+      "heading form"
+      "info form";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: minmax(0, 1fr) 592px;
+    column-gap: var(--lp-space-64);
+  }
+}
+
+.lp-contact__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-16);
+
+  @include media-breakpoint-up(lg) {
+    grid-area: heading;
+  }
+
+  .lp-breadcrumb {
+    margin-bottom: var(--lp-space-16);
+  }
+}
+
+.lp-contact__title {
+  @include lp-heading-h2-responsive;
+  margin: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-contact__lead {
+  @include lp-body-l;
+  margin: 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-20);
+  padding: var(--lp-space-24);
+  background-color: var(--lp-bg-page);
+  border-radius: var(--lp-radius-xl);
+  box-shadow: var(--lp-shadow-sm);
+
+  @include media-breakpoint-up(md) {
+    padding: var(--lp-space-40);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-area: form;
+  }
+}
+
+.lp-contact__form-title {
+  @include lp-heading-h4;
+  margin: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-contact__note {
+  @include lp-caption;
+  margin: calc(var(--lp-space-12) * -1) 0 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-contact__fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-20) var(--lp-space-16);
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lp-contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-32);
+
+  @include media-breakpoint-up(lg) {
+    grid-area: info;
+  }
+}
+
+.lp-contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-20);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// Figma's gap is 14px, off the spacing scale; 16px is used.
+.lp-contact__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lp-space-16);
+}
+
+.lp-contact__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-space-40);
+  height: var(--lp-space-40);
+  color: var(--lp-icon-primary);
+  background-color: var(--lp-bg-page);
+  border: 1px solid var(--lp-border-default);
+  border-radius: var(--lp-radius-md);
+}
+
+.lp-contact__label {
+  @include lp-caption;
+  margin: 0 0 var(--lp-space-2);
+  color: var(--lp-text-secondary);
+}
+
+.lp-contact__value {
+  @include lp-text(16, 26, 500);
+  display: block;
+  margin: 0;
+  font-style: normal;
+  color: var(--lp-text-primary);
+}
+
+.lp-contact__line {
+  display: block;
+}
+
+.lp-contact__link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--lp-text-link);
+  }
+}
+
+.lp-contact__map {
+  height: 240px;
+  overflow: hidden;
+  background-color: var(--lp-bg-muted);
+  border-radius: var(--lp-radius-lg);
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

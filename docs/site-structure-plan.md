@@ -6,19 +6,23 @@ Source references: **p. N** is a page of the presentation. **Site** is content o
 
 Section names and copy are kept in Portuguese, as they will appear on the site.
 
+**Status, 2026-10-03: every page in this plan is built**, in Portuguese and English, at the addresses in the table below. Início and Produtos follow their Figma frames; the other pages were composed from design-system components as a first proposal to iterate on. Where the plan names content nobody has supplied (a **Gap**), the page shows a visible "Conteúdo a fornecer" note in its place. Each page section below ends with an "As built" note where the page differs from the plan.
+
 ---
 
 ## 1. Navigation
 
-| Nav item | Dropdown | Pages |
-|---|---|---|
-| *(logo)* | — | Início |
-| Notícias | — | Notícias |
-| Produtos | — | Produtos (catalogue), and one detail page per product |
-| Marcas | TupperLink · PharmaLink · FactoryLink | one page per sub-brand |
-| Parcerias | Parceiros · Portfólio | Parceiros, Portfólio |
-| Empresa | Sobre nós · Como trabalhamos · Qualidade | three pages |
-| Contactos | — | Contactos |
+| Nav item | Dropdown | Pages | Address |
+|---|---|---|---|
+| *(logo)* | — | Início | `/` |
+| Notícias | — | Notícias | `/noticias` |
+| Produtos | — | Produtos (catalogue), and one detail page per product | `/produtos`, `/produtos/<produto>` |
+| Marcas | TupperLink · PharmaLink · FactoryLink (a mega menu on desktop) | one page per sub-brand | `/marcas/tupperlink`, `/marcas/pharmalink`, `/marcas/factorylink` |
+| Parcerias | Parceiros · Portfólio | Parceiros, Portfólio | `/parcerias`, `/parcerias/portfolio` |
+| Empresa | Sobre nós · Como trabalhamos · Qualidade | three pages | `/empresa/sobre-nos`, `/empresa/como-trabalhamos`, `/empresa/qualidade` |
+| Contactos | — | Contactos | `/contactos` |
+
+English uses the same addresses after `/en`. The old addresses (`/About`, `/Policy`, `/Contacts`, `/Products…`) redirect permanently to the new ones.
 
 "Pedir orçamento" stays as the header button and leads to Contactos.
 
@@ -34,19 +38,24 @@ For each section: what it says, where the content comes from, and which design-s
 
 ### 2.1 Início
 
-The home page summarises the company and sends people to the other pages. It repeats little; each block links onward.
+**Built** (2026-10-03) from the Figma home frame (file `cBcn3v2KdluyJjrBgMFvKE`, node `2:1222`), which is shorter than the first plan for this page.
 
 | # | Section | Content | Source | Component |
 |---|---|---|---|---|
-| 1 | Hero | **Built** (2026-10-03) from the Figma `Hero` (Type=Home), with the production video `public/images/Hero.webm` where the design has a photograph. Eyebrow "Injeção de plásticos · Desde 2012"; title "Peças plásticas com rigor técnico, produzidas em Portugal."; line "Da ideia ao molde, da injeção à personalização: desenvolvemos consigo, não apenas para si." (the Figma line, ending with the presentation's closing phrase at the client's request, so it names no sector); buttons Pedir orçamento, Ver produtos. The header above it stays white | Figma; p. 2 headline | Hero (Home), BackgroundVideo |
-| 2 | Números | 14 anos de atividade contínua · 5 máquinas de injeção, de 50t a 550t · 12 colaboradores, 6 desde o início · +20 clientes ativos · 99% de entregas no prazo | p. 2 | Stats band |
-| 3 | Posicionamento | "O parceiro português de injeção de plásticos que junta capacidade técnica e sustentabilidade real, com a proximidade de quem acompanha cada projeto de perto." Four pillars with their quotes: Capacidade técnica, Sustentabilidade real, Parceria e proximidade, Pessoas e integridade | p. 6 | Section Heading + Feature Card ×4 |
-| 4 | Setores | Indústria · Farmácia · Restauração e take-away · Cadeia alimentar e pescas, each with who it serves and what LinkPlas supplies. Each links to its brand: Indústria to FactoryLink, Farmácia to PharmaLink, take-away to TupperLink, pescas to the ZØR partnership | p. 7 | Sector Card |
-| 5 | Marcas | TupperLink, PharmaLink and FactoryLink, one line each, linking to the brand pages | p. 12, p. 13, p. 10 | Product Card with sub-brand tag |
-| 6 | Como trabalhamos (teaser) | "Um só interlocutor, da ideia à produção em série." The four steps in short, link to the full page | p. 9 | Process Step ×4 |
-| 7 | Prova | One testimonial and the client names | p. 16–17, p. 12 | Testimonial Card + Logo Strip |
-| 8 | Notícias | The three most recent posts, link to Notícias | Site (`cards.json`) | News Card ×3 |
-| 9 | Fecho | Pedir orçamento, with a closing line still to choose: "Desenvolvemos consigo, não apenas para si." now ends the hero line | p. 21, p. 6 | CTA Section |
+| 1 | Hero | Eyebrow "Injeção de plásticos · Desde 2012"; title "Peças plásticas com rigor técnico, produzidas em Portugal."; line "Da ideia ao molde, da injeção à personalização: desenvolvemos consigo, não apenas para si." (the Figma line, ending with the presentation's closing phrase at the client's request); buttons Pedir orçamento, Ver produtos. The production video `public/images/Hero.webm` stands where the design has a photograph. The header above it stays white | Figma; p. 2 headline, p. 21 | Hero (Home), BackgroundVideo |
+| 2 | Setores | "Três setores, a mesma exigência técnica." Four items in a row: Indústria (FactoryLink), Farmácia (PharmaLink), Take-away (TupperLink) and "ecoCatch, desenvolvido com a ZØR", tagged "Novo". Below them, a panel for the active item: the brand's logo, one line, "Saber mais" to the brand page (ecoCatch: to Parcerias) and a photograph. The active item changes by itself every four seconds, like a slide show, until the visitor hovers, clicks or focuses one. Each item also links to the catalogue filtered by its brand | Figma; p. 7 | Section Heading, Sector showcase |
+| 3 | Números | 14 anos de atividade contínua · 5 máquinas de injeção, de 50 a 550 t · +20 clientes ativos · 99% de entregas no prazo | Figma; p. 2 | Stats band |
+| 4 | Fecho | "Tem um projeto em mente?" "Envie-nos o desenho ou a ideia. Respondemos no prazo de 2 dias úteis com uma proposta." Pedir orçamento | Figma | CTA Section |
+| 5 | Como trabalhamos | "Do desenho à peça final." 01 Desenvolvimento · 02 Molde · 03 Injeção · 04 Personalização, with a link to the full page | Figma | Process Step ×4 |
+| 6 | Clientes | "Mais de 20 clientes ativos confiam na LinkPlas", with the partners' logos | Figma; p. 2 | Logo Strip |
+
+As built:
+- The Figma frame draws the four states of the sectors block one under the other; the page shows one at a time.
+- The frame's take-away link says "Ver KeepyLink"; the page says "Ver TupperLink". Its "Novo" tag is drawn in ThermaLink's colours; the page uses a brand-tone badge.
+- The frame's picture for ecoCatch is the exploded view of the pharmacy isothermal kit, not the fish boxes. It is used as designed; say if it should change.
+- "Respondemos em até 2 dias úteis" in the frame is written "no prazo de 2 dias úteis" (European Portuguese). **Confirm the two working days**: the claim came with the design.
+- The logo strip shows the eight active partners' names as text until their logos are supplied. A logo is added by dropping its file into `src/assets/logos/` (the folder has a LEIA-ME); when the row is wider than the page it scrolls slowly and endlessly.
+- Not on the frame, so not on the page: the positioning statement and its four pillars (p. 6), the brands row, a testimonial and the three latest news posts. The ZØR scroll animation of the old home page moved to Parcerias.
 
 ### 2.2 Notícias
 
@@ -57,11 +66,13 @@ A feed of recent posts about the company, newest first. Posts are added by hand,
 | 1 | Cabeçalho | Title and one-line intro | Gap (one sentence) | Hero (Interior) |
 | 2 | Feed | Image, date, origin (LinkedIn, Instagram…), title, short text, link to the original post | Site: the six posts in `cards.json` | News Card, Pagination |
 
+As built: the six posts, three per row on desktop, each card linking to the original post in a new tab. The page introduction is a placeholder, and there is no pagination yet (six posts fit on one page). Posts are added in `src/content/news.js`.
+
 Candidate posts the presentation mentions that are not in the feed yet: presence at ExpoFarma (p. 20), ecoCatch with ZØR (p. 3, p. 14), the Platec project concluded in December 2025 (p. 16), the Plural delivery (p. 17). The Selo Igualdade Salarial 2024 (p. 20) is already there.
 
 ### 2.3 Produtos
 
-One catalogue page, with no dropdown in the menu. It follows the Figma frame "Produtos (Desktop)" (file `cBcn3v2KdluyJjrBgMFvKE`, node `2:2037`). **Built** on 2026-10-02, with the detail pages below; addresses are `/Products` and `/Products/<product>` until the address question in section 6 is settled.
+One catalogue page, with no dropdown in the menu. It follows the Figma frame "Produtos (Desktop)" (file `cBcn3v2KdluyJjrBgMFvKE`, node `2:2037`). **Built** on 2026-10-02, with the detail pages below, at `/produtos` and `/produtos/<produto>`.
 
 | # | Section | Content | Source | Component |
 |---|---|---|---|---|
@@ -102,7 +113,7 @@ One page per product, reached from its card. There is no Figma frame for it, so 
 
 | # | Section | Content | Applies to | Component |
 |---|---|---|---|---|
-| 1 | Caminho | Início › Produtos › brand › product. The brand links to the catalogue filtered by that brand until the brand pages exist | all | Breadcrumb |
+| 1 | Caminho | Início › Produtos › brand › product. The brand links to its brand page | all | Breadcrumb |
 | 2 | Pré-visualização | The 3D viewer (rotate and zoom) when the product has a 3D file, and the product photographs; thumbnails under the preview switch between them. Changing a size or a colour brings the 3D model back. Old-site photographs for now | all; viewer where a 3D model exists (see the table above) | 3D viewer, image |
 | 3 | Identificação | Brand tag, product name, reference line | all | Tag / Submarca, heading |
 | 4 | Seletor de tamanho ou volume | One option per size or volume. Choosing one changes the preview, the reference, the measurements listed under the chips and the downloads shown, and is kept in the address (`?medida=1000ml`) | only products with more than one size or volume | Chip (single choice) |
@@ -110,7 +121,7 @@ One page per product, reached from its card. There is no Figma frame for it, so 
 | 6 | Descrição | What the product is and what it is for | all | text |
 | 7 | Especificações | No tables (client decision, 2026-10-03). The measurements of the selected size, the reference, the material and similar facts are listed under the size chips and change with the size. A size chart could still help on Tampa para tubos (seven sizes, chosen by tube diameter); not built unless the client asks | products with specifications | Spec list (label over value) |
 | 8 | Downloads | Technical drawings and CAD files for the selected size (PDF, DWG, IGS, STEP, SLDPRT), catalogue | products with files | Download Card |
-| 9 | Fecho | "Pedir orçamento" opens Contactos with the product and size already written in the message; "Ver todos os produtos" returns to the catalogue. The link to the brand page waits for the brand pages | all | Button, Link |
+| 9 | Fecho | "Pedir orçamento" opens Contactos with the product and size already written in the message; "Ver todos os produtos" returns to the catalogue | all | Button, Link |
 
 How the size selector and the preview work together:
 - If there is a 3D file for the chosen size, the viewer loads that model.
@@ -132,6 +143,8 @@ Every brand page has the same four blocks you asked for, plus proof and a call t
 | 5 | Origem | How and when LinkPlas created it |
 | 6 | Prova | Clients and testimonials |
 | 7 | Fecho | Pedir orçamento |
+
+As built (2026-10-03, one template for the three brands, no Figma frame): the hero sits on the brand's light tint with its logo, the promise as the page title, one line, the buttons "Ver produtos <marca>" and "Pedir orçamento", and the sector photograph from the home design. Then Propósito (with "Para quem"), Vantagens, Características (ending with the brand's product cards, which lead to the pages with the 3D viewer), Origem (the dated milestones, and a placeholder for the story) and Clientes (a placeholder where nothing was supplied).
 
 **TupperLink**
 
@@ -179,6 +192,8 @@ The brand for technical parts made to specification and for the finishing servic
 | 3 | Lista de parceiros | The eight active partners: **Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog, Coprax**, each with logo and a line on the partnership. "+20 clientes ativos" | p. 14, p. 16, p. 17, p. 2 | Logo Strip or name list |
 | 4 | Como chegam até nós | "Clientes que chegam por recomendação de outros clientes." The Coprax and Polisport story, with Tiago Cunha's quote | p. 17 | Quote Block |
 
+As built (2026-10-03): after the header comes "LinkPlas × ZØR", the scroll animation of the isothermal kit that used to be on the home page; then ecoCatch (with a placeholder for its picture, since the only image available shows the pharmacy kit), the eight partners as cards (name, or logo once it is in `src/assets/logos/`, and one line each) and the recommendation story with the quote. The one-line descriptions of Polisport, Empifarma, OCP and Medlog were inferred from the presentation and need confirming.
+
 **Monte Meão is left out**: it is not an active partnership at the moment, so its project (Accor Hotels Arena, Paris, 2015) and António Pimentel's testimonial on p. 16 are not used on the site. Permission to publish the partners' names, logos and testimonials is confirmed.
 
 **Portfólio** — projects delivered.
@@ -190,7 +205,9 @@ The brand for technical parts made to specification and for the finishing servic
 | Coprax | Arrived by recommendation of Polisport. Testimonial: Tiago Cunha, CEO | p. 17 |
 | ecoCatch, with ZØR | ecoFish, ecoShell, ecoTrace. Impact: "6 toneladas de EPP reutilizável substituem 720 toneladas de EPS descartável" (3 anos, numa operação típica). Menos perdas de pescado · operações mais simples, sem gelo · controlo térmico até 24 h em veículos não refrigerados · conformidade com o Green Deal e a PPWR | p. 14, p. 15 |
 
-Components: Testimonial Card, Stat, Quote Block, a project card (image, client, year, result).
+Components: Testimonial Card, Stat, Check List, Feature Card.
+
+As built: one band per project, with the client and period, a title, the figure where there is one, the testimonial, and a photograph placeholder. The Platec project has no description yet, so it shows a placeholder.
 
 ### 2.6 Empresa
 
@@ -206,6 +223,8 @@ Components: Testimonial Card, Stat, Quote Block, a project card (image, client, 
 | 6 | A nossa equipa | "12 colaboradores, 6 desde o início." "Entreajuda, boa disposição e compromisso. Uma equipa que celebra junta cada conquista e cumpre o que promete." Group photo | p. 18 | image + Stat |
 | 7 | Liderança | "As pessoas que acompanham cada projeto." Paula Rocha, Ana Paula, António Filipe, Sandra Tavares: role, since when, short bio, portrait | p. 19 | Team Card ×4 |
 | 8 | Fecho | Link to Como trabalhamos and Contactos | — | CTA Section |
+
+As built (2026-10-03): all eight sections. The timeline shows the eight dated entries below (the two undated ones are left out until they have a year); the photographs for the timeline, the team photo and the four portraits are placeholders.
 
 Timeline entries available today:
 
@@ -233,6 +252,8 @@ Timeline entries available today:
 | 5 | Parceria e proximidade | "Desenvolvemos consigo, não apenas para si." Acompanhamento direto do projeto à produção, com resposta rápida | p. 6 | Quote Block |
 | 6 | Fecho | Pedir orçamento | — | CTA Section |
 
+As built: the five sections above, in that order, with the existing ultrasonic welding photograph. The injection section links to the FactoryLink page.
+
 **Qualidade**
 
 | # | Section | Content | Source | Component |
@@ -245,6 +266,8 @@ Timeline entries available today:
 | 6 | Responsabilidade social | Selo Igualdade Salarial 2024, with its explanation | p. 20 | image + text |
 | 7 | Presença no setor | ExpoFarma, with photo | p. 20 | image |
 
+As built: the seven sections. The quality-policy text is the previous site's, with its four commitments. The certificate files and the ExpoFarma photograph are placeholders; the Selo Igualdade Salarial uses the image from the news post.
+
 ### 2.7 Contactos
 
 Layout as in the design system's "Contacto e pedido de orçamento": contacts and map on the left, form on the right.
@@ -253,7 +276,9 @@ Layout as in the design system's "Contacto e pedido de orçamento": contacts and
 |---|---|---|---|
 | 1 | Cabeçalho | "Desenvolvemos consigo, não apenas para si." | p. 21 |
 | 2 | Contactos | Address: Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis. Phone and email. LinkedIn, Instagram, Facebook. Map | p. 21; Site |
-| 3 | Formulário | Nome, Empresa, Contacto, Email, Mensagem, as today. The design system also shows a request type, a file upload for drawings and a consent checkbox | Site; design system |
+| 3 | Formulário | Nome, Empresa, Email, Telefone, Tipo de pedido (Orçamento, Informação, Parceria), Mensagem and a consent checkbox. No file upload (client decision) | Site; design system |
+
+As built (2026-10-03): the page title is the design system's "Vamos falar sobre o seu projeto." with its line "Envie o desenho, a amostra ou apenas a ideia. Analisamos a viabilidade e respondemos com uma proposta." The contacts are the landline +351 256 601 535 and geral@linkplas.pt, with the legal name "Linkplas, Lda" over the address; the opening hours are a placeholder. On phones the form comes before the contacts. The consent text is "Autorizo a LinkPlas a utilizar os dados deste formulário para responder ao meu pedido.": it names no privacy policy because the site has none yet. The request type is sent as a separate field and also written at the top of the message, so it reaches the inbox even before the EmailJS template gains a field for it.
 
 ---
 
@@ -300,7 +325,7 @@ Every page of the presentation is placed at least once.
 | Política de Qualidade | Qualidade |
 | Contactos (card, map, form) | Contactos |
 
-The existing addresses `/About`, `/Policy`, `/Contacts`, `/Products` and `/Products/<categoria>` are indexed by search engines. Whatever the new addresses are, the old ones must keep leading somewhere sensible.
+The old addresses `/About`, `/Policy`, `/Contacts`, `/Products`, `/Products/<categoria>` and `/Products/<produto>` are indexed by search engines. Each one redirects permanently to its new page, on Vercel, on IIS and in the browser.
 
 ---
 
@@ -312,17 +337,18 @@ The existing addresses `/About`, `/Policy`, `/Contacts`, `/Products` and `/Produ
 | 2 | Sector 05, "Organização — embalagens de arrumação" (p. 7) | This is the unreleased KeepyLink product | Left out until launch |
 | 3 | No mention of ISO 9001 by name (p. 20 says "certificações de qualidade") | The site and the design system say ISO 9001 since 2014 | ISO 9001, to be confirmed |
 | 4 | Paula Rocha is "Fundadora · Comercial e Projetos" on p. 19 and "Fundadora · Vendas e Projetos" on p. 21 | The site uses the title CEO | One title to be chosen |
-| 5 | Contact is Paula Rocha's mobile and direct email (p. 21) | The site publishes the landline +351 256 601 535 and geral@linkplas.pt | To be chosen |
-| 6 | The Coprax testimonial spells the company "Linkplas" (p. 17) | The brand is written LinkPlas | To be chosen: quote as written, or normalise |
-| 7 | Process shown as Viabilidade → Molde e protótipos → Industrialização → Produção (p. 9) | The design system's example says Desenvolvimento → Molde → Injeção → Personalização | The presentation's four steps |
-| 8 | — | The design system's header and footer list Empresa, Produtos, Setores, Qualidade, Notícias, Contactos | The new menu in section 1; the Figma header, mega menu and footer need updating |
+| 5 | Contact is Paula Rocha's mobile and direct email (p. 21) | The site publishes the landline +351 256 601 535 and geral@linkplas.pt | Built with the landline and geral@linkplas.pt (the old Contactos card showed paula.rocha@linkplas.pt); to be confirmed |
+| 6 | The Coprax testimonial spells the company "Linkplas" (p. 17) | The brand is written LinkPlas | Written LinkPlas on the site; say if the quote should stay as the client wrote it |
+| 7 | Process shown as Viabilidade → Molde e protótipos → Industrialização → Produção (p. 9) | The home design says Desenvolvimento → Molde → Injeção → Personalização | Both are on the site: the home page has the design's four steps and Como trabalhamos the presentation's. One set should be chosen |
+| 8 | — | The design system's header and footer list Empresa, Produtos, Setores, Qualidade, Notícias, Contactos; the home frame's footer links to Sustentabilidade, Trabalhe connosco, ThermaLink, KeepyLink and to privacy, cookies and terms pages | The new menu in section 1 is built. The footer lists only pages that exist (Empresa, Marcas, Parcerias, Contactos, Livro de Reclamações) |
 | 9 | — | The Produtos frame has filter chips for KeepyLink and ThermaLink, and its footer lists both | Left out until those products launch |
 | 10 | — | The brand manual defines four sub-brands; FactoryLink is a fifth, added in Figma only | FactoryLink is used; the manual should gain it |
 | 11 | — | In the design system, the FactoryLink tag is a variant named "Industrial" | Treated as FactoryLink; the variant should be renamed |
 | 12 | — | The Produtos frame uses the dark header; the design system says dark is for the home hero and light for inner pages | Light header kept, confirmed by the client. A dark mode may be built later; the frame's dark header belongs to that |
 | 13 | — | The Produtos frame spaces its sections with 50px, 10px and 112px, which are not on the spacing scale | Built with the nearest steps: 48px, 12px and 96px |
 | 15 | — | The Produtos frame spaces the filter chips 24px apart | 12px, at the client's request: 24px looked too loose |
-| 14 | — | The Produtos frame's header has no "Pedir orçamento" button and shows the new menu | The current header stays (four items and the button) until the other pages exist |
+| 14 | — | The page frames' header has no "Pedir orçamento" button, and draws a dropdown arrow on Produtos | The header has the new menu and keeps the button; Produtos has no dropdown, as decided |
+| 16 | — | The design system draws inputs with a border of 1.47:1 against white, and small grey text at 4.2:1 | The form uses a darker border and the secondary text colour, to meet WCAG AA; the design system should follow or the lighter values be accepted |
 
 ---
 
@@ -341,14 +367,23 @@ Decided:
 - **Active partners** are Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog and Coprax. Permission to publish names, logos and testimonials is in place.
 - **Monte Meão** is not an active partnership and is not shown.
 - **Notícias** are added by hand for now.
+- **Addresses are Portuguese**, the same in both languages, with the old ones redirected.
+- **Missing content shows as a visible placeholder** on the page until it is supplied.
+- **The logo strip** shows partner names as text until logos are dropped into `src/assets/logos/`.
+- **The contact form** gains the request type and a consent checkbox, and has no file upload.
+- **English is published.** Every page has English copy, drafted from the Portuguese and still to be reviewed by the client.
+- **The ZØR scroll animation** moved from the home page to Parcerias.
 
 Still open:
 1. **3D models.** There is no model for the 2000 ml TupperLink, and the 4000 ml one has no measurements on the site. Is the PharmaLink lid the same for the three boxes? The PharmaLink starting colours are set by the client: dark blue box `#2B305F`, grey lid `#89898B`.
 2. **Product data.** Reference, material and measurements are missing for several products (see the worksheet, section 3).
 3. **Product copy.** The descriptions were carried over from the current site as they were; the English versions are drafts to review.
 4. **Timeline.** Confirm the dated list in 2.6 and say which entries have photos or videos. The older deck adds three entries the 2026 presentation and the site do not have: 2024 moldes próprios, 2025 ecoFish (caixa reutilizável), 2026 ecoFish em produção.
-5. **Addresses.** New pages need URLs. Should the site move to Portuguese addresses (`/produtos`, `/empresa/sobre-nos`) with the old ones redirected, or keep the current English-style ones?
-6. **Contact form.** Should it gain the request type, drawing upload and consent checkbox shown in the design system? A file upload needs a different sending service from the one used today.
+5. **Pages built without a design.** The brand pages, Parcerias, Portfólio, the Empresa pages and Contactos are a first proposal: say what to change.
+6. **Privacy policy.** The site has none; the cookie banner and the design's consent wording wait for it.
+7. **"Respondemos no prazo de 2 dias úteis."** Confirm the promise on the call to action.
+8. **Which contact to publish**, which process steps to use, and the ecoCatch picture on the home page: see section 5, rows 5 and 7, and the notes under 2.1.
+9. **Partner descriptions** for Polisport, Empifarma, OCP and Medlog, written here from the presentation, need confirming.
 
 ## 7. Content still to be supplied
 
@@ -360,6 +395,7 @@ In short:
 - **Parcerias**: for each partner, the logo and a description of the partnership (Polisport has no content in the presentation); for each portfolio project, what was supplied and a photo.
 - **Sobre nós**: years for the undated milestones, and photos and videos for the timeline; a team photo.
 - **Qualidade**: the list of certifications and the certificates as files.
-- **Início**: the hero photograph and the testimonial to feature.
+- **Início**: the partners' logos for the logo strip; a lighter hero video with an MP4 version and a poster image.
 - **Notícias**: a one-line page introduction and the next posts.
-- **English**: each page is translated when it is rebuilt.
+- **Contactos**: the opening hours; confirmation of the phone and email to publish.
+- **English**: every page is translated; the client should review the English copy.

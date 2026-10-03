@@ -1,0 +1,153 @@
+// Sections are 64px apart on mobile and 96px from desktop (the Figma frames use 112px,
+// which is not on the spacing scale).
+.lp-section {
+  padding: var(--lp-space-64) 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: var(--lp-space-96) 0;
+  }
+}
+
+.lp-section--subtle {
+  background-color: var(--lp-bg-subtle);
+}
+
+.lp-section--inverse {
+  color: var(--lp-text-inverse);
+  background-color: var(--lp-bg-inverse);
+}
+
+// A section that follows one of the same tone needs no second gap.
+.lp-section--page + .lp-section--page,
+.lp-section--subtle + .lp-section--subtle {
+  padding-top: 0;
+}
+
+.lp-section__inner.container {
+  @include lp-page-gutter;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-32);
+
+  @include media-breakpoint-up(lg) {
+    gap: var(--lp-space-48);
+  }
+}
+
+// Running text keeps a readable measure.
+.lp-prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-16);
+  max-width: 720px;
+  color: var(--lp-text-secondary);
+
+  p {
+    margin: 0;
+  }
+
+  ol,
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lp-space-12);
+    padding-left: var(--lp-space-20);
+    margin: 0;
+  }
+}
+
+.lp-prose--lead p:first-child {
+  @include lp-body-l;
+  color: var(--lp-text-primary);
+}
+
+// Grids of cards: one column on phones, then two, then the desktop count.
+.lp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-24);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .lp-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lp-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+// Text beside an image or a second block of text.
+.lp-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-32);
+  align-items: start;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--lp-space-64);
+  }
+}
+
+.lp-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-24);
+}
+
+.lp-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--lp-bg-muted);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.lp-media__caption {
+  @include lp-caption;
+  margin: var(--lp-space-8) 0 0;
+  color: var(--lp-text-secondary);
+}
+
+.lp-media--contain {
+  background-color: var(--lp-bg-page);
+
+  img {
+    object-fit: contain;
+  }
+}
+
+// A heading inside a section, below its Section Heading.
+.lp-subheading {
+  @include lp-heading-h4;
+  margin: 0;
+  color: var(--lp-text-primary);
+}
+
+.lp-note {
+  @include lp-body-m;
+  max-width: 720px;
+  margin: 0;
+  color: var(--lp-text-secondary);
+}
+
+// A row of badges: materials, client names.
+.lp-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-8);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

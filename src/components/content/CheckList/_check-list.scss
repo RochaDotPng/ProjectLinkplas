@@ -1,0 +1,34 @@
+.lp-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lp-check-list__item {
+  @include lp-body-base;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lp-space-12);
+  color: var(--lp-text-primary);
+}
+
+.lp-check-list__check {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-space-24);
+  height: var(--lp-space-24);
+  // Lines up with the first line of text (26px line height).
+  margin-top: 1px;
+  color: var(--lp-icon-brand);
+  background-color: var(--lp-bg-brand-subtle);
+  border-radius: var(--lp-radius-xs);
+}
+
+.lp-section--subtle .lp-check-list__check {
+  background-color: var(--lp-bg-page);
+}

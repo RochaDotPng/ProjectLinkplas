@@ -1,0 +1,63 @@
+.lp-timeline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-32) 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.lp-timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-12);
+  padding-right: var(--lp-space-24);
+}
+
+.lp-timeline-item__rail {
+  display: flex;
+  align-items: center;
+  // The line runs on to the next item, across the padding.
+  margin-right: calc(var(--lp-space-24) * -1);
+}
+
+.lp-timeline-item__marker {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background-color: var(--lp-bg-inverse);
+}
+
+.lp-timeline-item__line {
+  flex: 1 1 0;
+  height: 2px;
+  background-color: var(--lp-border-default);
+}
+
+.lp-timeline-item__year {
+  @include lp-heading-h3;
+  color: var(--lp-text-primary);
+}
+
+.lp-timeline-item__title {
+  @include lp-label-l;
+  color: var(--lp-text-primary);
+}
+
+.lp-timeline-item__description {
+  @include lp-body-s;
+  color: var(--lp-text-secondary);
+}
+
+.lp-timeline-item--current {
+  .lp-timeline-item__marker { background-color: var(--lp-bg-brand); }
+  .lp-timeline-item__year { color: var(--lp-text-brand); }
+}

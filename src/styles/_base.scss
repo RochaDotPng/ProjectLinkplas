@@ -13,6 +13,16 @@
 html {
   // Keeps in-page anchors clear of the sticky header.
   scroll-padding-top: var(--lp-header-height);
+  // The page never scrolls sideways; wide content scrolls inside its own wrapper.
+  overflow-x: hidden;
+}
+
+// Below desktop the content runs the full width of the screen, inside the page gutter
+// (the Figma mobile and tablet frames have no narrower column).
+@include media-breakpoint-down(lg) {
+  .container {
+    max-width: 100%;
+  }
 }
 
 // Heading line heights and tracking from the Figma type scale (size / line height).
@@ -44,6 +54,28 @@ code, pre { font-size: 0.875rem; line-height: math.div(22, 14); }
 :focus-visible {
   outline: 0;
   box-shadow: var(--lp-focus-ring);
+}
+
+// Pages fade in and out as the route changes (see App.jsx, which waits the same 200ms).
+.page-fade-enter {
+  opacity: 0;
+  transform: translateY(var(--lp-space-20));
+}
+
+.page-fade-enter-active,
+.page-fade-exit {
+  opacity: 1;
+  transform: none;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  transform: translateY(var(--lp-space-20));
+}
+
+.page-fade-enter-active,
+.page-fade-exit-active {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .lp-skip-link {

@@ -177,6 +177,10 @@ $lp-primitives: (
   --lp-control-bg-disabled: var(--lp-neutral-100);
   --lp-control-checked: var(--lp-petrol-500);
   --lp-control-track: var(--lp-neutral-300);
+  // Not in Figma yet (see "Open" in CLAUDE.md): border/strong is 1.47:1 on white, under the
+  // 3:1 WCAG 1.4.11 asks of a control's boundary, so controls get a darker border.
+  --lp-control-border: var(--lp-neutral-600);
+  --lp-control-border-hover: var(--lp-neutral-800);
   --lp-control-height-sm: 36px;
   --lp-control-height-md: 44px;
   --lp-control-height-lg: 52px;
@@ -263,4 +267,38 @@ $lp-font-mono: "Google Sans Code", ui-monospace, monospace;
 @mixin lp-eyebrow {
   @include lp-text(13, 16, 500, 0.08);
   text-transform: uppercase;
+}
+
+@mixin lp-heading-h4 { @include lp-text(24, 32, 500); }
+@mixin lp-heading-h3 { @include lp-text(32, 40, 500, -0.005); }
+@mixin lp-heading-h2 { @include lp-text(40, 48, 500, -0.01); }
+@mixin lp-heading-h1 { @include lp-text(48, 56, 500, -0.01); }
+@mixin lp-quote { @include lp-text(28, 40, 500, -0.005); }
+@mixin lp-stat-l { @include lp-text(64, 68, 500, -0.02); }
+
+// Headings step down one level on small screens, as the mobile frames in Figma do
+// (H1 48/56 becomes 40/48, H2 40/48 becomes 32/40).
+@mixin lp-heading-h1-responsive {
+  @include lp-heading-h2;
+
+  @include media-breakpoint-up(lg) {
+    @include lp-heading-h1;
+  }
+}
+
+@mixin lp-heading-h2-responsive {
+  @include lp-heading-h3;
+
+  @include media-breakpoint-up(lg) {
+    @include lp-heading-h2;
+  }
+}
+
+// Page margins: 20px on mobile, the Bootstrap container from 992px. The selector using it is
+// written with `.container` so it also outranks any plain `.container` rule.
+@mixin lp-page-gutter {
+  @include media-breakpoint-down(lg) {
+    padding-right: var(--lp-space-20);
+    padding-left: var(--lp-space-20);
+  }
 }

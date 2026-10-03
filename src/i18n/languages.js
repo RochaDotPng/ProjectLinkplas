@@ -2,12 +2,11 @@ export const DEFAULT_LANGUAGE = 'pt';
 
 const ALL_LANGUAGES = [
   { code: 'pt', locale: 'pt-PT', short: 'PT', name: 'Português', prefix: '', published: true },
-  // Not live yet: page copy is still Portuguese only. Publish once every page is translated
-  // (see "Roadmap" in CLAUDE.md for the checklist).
-  { code: 'en', locale: 'en', short: 'EN', name: 'English', prefix: '/en', published: false },
+  { code: 'en', locale: 'en', short: 'EN', name: 'English', prefix: '/en', published: true },
 ];
 
-// Unpublished languages are served by the dev server only, so they can be reviewed before launch.
+// A language with `published: false` is served by the dev server only, so it can be reviewed
+// before launch. scripts/build-sitemap.mjs reads the list above: keep one language per line.
 export const LANGUAGES = ALL_LANGUAGES.filter((language) => language.published || import.meta.env.DEV);
 
 export function getLanguage(code) {
