@@ -1,5 +1,8 @@
 // The product catalogue: one entry per product, with its copy per language.
 // Measurements are numbers so each language formats them its own way; `slug` is the page address.
+// `model` is the 3D model (built by `npm run models`), on the product when it has one size and
+// on each size otherwise. `images` are the photographs from the old site, in public/images,
+// kept until new ones arrive; the first one is also the catalogue card's image.
 
 import { useLanguage } from '../i18n/language-context';
 import { getLanguage } from '../i18n/languages';
@@ -44,6 +47,10 @@ const products = [
   {
     slug: 'recipiente-tupperlink',
     brand: 'tupperlink',
+    images: [
+      { src: '/images/tupperlink_large.png', alt: { pt: 'Recipientes TupperLink transparentes, empilhados', en: 'Stacked clear TupperLink containers' } },
+      { src: '/images/tupperlink_colored.png', alt: { pt: 'Recipientes TupperLink com cor', en: 'Coloured TupperLink containers' } },
+    ],
     variantSpec: 'volume',
     // Sold mostly clear, but made in any colour, and the lid may differ from the container.
     // `material` is the name of the part in the 3D model. A part with no `start` colour starts
@@ -71,7 +78,6 @@ const products = [
         'TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.',
         'Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os TupperLink oferecem praticidade sem igual.',
       ],
-      specs: { finish: 'Transparente ou com cor' },
     },
     en: {
       name: 'TupperLink container',
@@ -81,13 +87,19 @@ const products = [
         'TupperLink: the versatile, sustainable storage solution. Stackable to save space, these containers go from the freezer to the dishwasher, making storage and cleaning easy. The conscious choice for your kitchen: practical, convenient and eco-friendly in every container.',
         'Designed to fit take-away service perfectly, TupperLink containers are exceptionally practical.',
       ],
-      specs: { finish: 'Clear or coloured' },
     },
   },
 
   {
     slug: 'caixa-de-transporte-de-medicamentos',
     brand: 'pharmalink',
+    images: [
+      { src: '/images/keepyfarma-white.png', alt: { pt: 'Caixa de transporte de medicamentos, tamanho médio', en: 'Medicine transport box, medium size' } },
+      { src: '/images/caixa-grande.png', alt: { pt: 'Caixa de transporte de medicamentos, tamanho grande', en: 'Medicine transport box, large size' } },
+      { src: '/images/caixa-pequena.png', alt: { pt: 'Caixa de transporte de medicamentos, tamanho pequeno', en: 'Medicine transport box, small size' } },
+      { src: '/images/tampa-caixa.png', alt: { pt: 'Caixa com a tampa por cima', en: 'Box with its lid above it' } },
+      { src: '/images/TampaPlastico.png', alt: { pt: 'Tampa em plástico', en: 'Plastic lid' } },
+    ],
     variantSpec: 'size',
     // Any colour, chosen with a colour picker per part; each part starts in its usual colour.
     colours: {
@@ -120,6 +132,11 @@ const products = [
   {
     slug: 'kit-isotermico-e-pharma',
     brand: 'pharmalink',
+    images: [
+      { src: '/images/CaixaEsferovite.png', alt: { pt: 'Inserção em esferovite para conservação térmica', en: 'Polystyrene insert for thermal protection' } },
+      { src: '/images/acumulador.png', alt: { pt: 'Acumulador de frio', en: 'Cold pack' } },
+      { src: '/images/TampaEsferovite.png', alt: { pt: 'Tampa do invólucro em esferovite', en: 'Polystyrene insert lid' } },
+    ],
     downloads: [{ kind: 'datasheet', file: '/files/ZØR_LINKPLAS_Kit.pdf' }],
     pt: {
       name: 'Kit isotérmico e-Pharma',
@@ -144,6 +161,9 @@ const products = [
   {
     slug: 'tampa-para-tubos',
     brand: 'factorylink',
+    images: [
+      { src: '/images/tampa.png', alt: { pt: 'Tampa para tubos', en: 'Tube cap' } },
+    ],
     variantSpec: 'diameter',
     specs: { material: 'PE1000' },
     downloads: [catalogue],
@@ -179,6 +199,10 @@ const products = [
   {
     slug: 'intercalar-longarina',
     brand: 'factorylink',
+    images: [
+      { src: '/images/intercalar.png', alt: { pt: 'Intercalar longarina', en: 'Stringer spacer' } },
+    ],
+    model: '/models/factorylink-intercalar-longarina.glb',
     downloads: cadFiles('Intercalar', '7017030013', ['dwg', 'igs', 'step', 'sldprt']),
     pt: {
       name: 'Intercalar longarina',
@@ -195,11 +219,16 @@ const products = [
   {
     slug: 'tampa-para-veio',
     brand: 'factorylink',
+    images: [
+      { src: '/images/tampa-veio.png', alt: { pt: 'Tampa para veio', en: 'Shaft cap' } },
+      { src: '/images/tampa-veio-uso.png', alt: { pt: 'Tampa para veio em uso', en: 'Shaft cap in use' } },
+    ],
     variantSpec: 'diameter',
     variants: [
       {
         id: '16mm',
         specs: { diameter: 16 },
+        model: '/models/factorylink-tampa-para-veio-16mm.glb',
         downloads: cadFiles('TampaVeio', '7017030011', ['drawing', 'dwg', 'igs', 'step', 'sldprt']),
       },
       {
@@ -225,7 +254,12 @@ const products = [
   {
     slug: 'anilha-intercalar',
     brand: 'factorylink',
-    variantSpec: 'reference',
+    images: [
+      { src: '/images/anilha_intercalar.png', alt: { pt: 'Anilha intercalar', en: 'Spacer washer' } },
+      { src: '/images/anilha_intercalar-uso.png', alt: { pt: 'Anilha intercalar em uso', en: 'Spacer washer in use' } },
+    ],
+    // Two sizes share an outer diameter, so the chips show outer × inner diameter.
+    variantSpec: ['outerDiameter', 'innerDiameter'],
     specs: { material: 'POM' },
     variants: [
       {
@@ -239,6 +273,7 @@ const products = [
       {
         id: '30015',
         specs: { reference: '30015', outerDiameter: 60, innerDiameter: 9, thickness: 7 },
+        model: '/models/factorylink-anilha-intercalar-30015.glb',
         downloads: [
           { kind: 'drawing', code: '7017030015', file: '/files/Anilha/7017030015.PDF' },
           ...cadFiles('Anilha', '7017030015', ['igs', 'step', 'sldprt']),
@@ -256,12 +291,14 @@ const products = [
     pt: {
       name: 'Anilha intercalar',
       summary: 'Anilhas intercalares em POM.',
+      variantLabel: 'Diâmetro exterior × interior',
       cardSpecs: ['REF. 30014–30016', 'POM', 'Ø40–60 mm'],
       description: ['Anilhas intercalares em POM.'],
     },
     en: {
       name: 'Spacer washer',
       summary: 'Spacer washers in POM.',
+      variantLabel: 'Outer × inner diameter',
       cardSpecs: ['REF. 30014–30016', 'POM', 'Ø40–60 mm'],
       description: ['Spacer washers in POM.'],
     },
@@ -270,6 +307,11 @@ const products = [
   {
     slug: 'abracadeira',
     brand: 'factorylink',
+    images: [
+      { src: '/images/abracadeira.png', alt: { pt: 'Abraçadeira de plástico', en: 'Plastic tube clamp' } },
+      { src: '/images/perna1.png', alt: { pt: 'Perna com as abraçadeiras montadas', en: 'A leg with the clamps fitted' } },
+    ],
+    model: '/models/factorylink-abracadeira.glb',
     downloads: [catalogue, ...cadFiles('Abracadeira', '7017030008', ['dwg', 'igs', 'step', 'sldprt'])],
     pt: {
       name: 'Abraçadeira',
@@ -290,6 +332,9 @@ const products = [
   {
     slug: 'soldadura-por-ultrassons',
     brand: 'factorylink',
+    images: [
+      { src: '/images/soldadura-ultrassons.jpg', alt: { pt: 'Máquina de soldadura por ultrassons', en: 'Ultrasonic welding machine' }, fit: 'cover' },
+    ],
     pt: {
       name: 'Soldadura por ultrassons',
       summary: 'Soldadura de peças plásticas por ultrassons, com ciclos curtos e união imediata.',
@@ -322,12 +367,9 @@ const ui = {
     filtersLabel: 'Filtros',
     cardLink: 'Ver ficha técnica',
     resultCount: (count) => (count === 1 ? '1 produto' : `${count} produtos`),
-    noBrandSelected: 'Nenhuma marca selecionada. Escolha pelo menos uma marca para ver os produtos.',
     breadcrumbLabel: 'Caminho',
     home: 'Início',
     description: 'Descrição',
-    specifications: 'Especificações',
-    allVariants: 'Todas as medidas',
     downloads: 'Ficheiros para descarregar',
     downloadAction: 'Descarregar',
     requestQuote: 'Pedir orçamento',
@@ -336,8 +378,11 @@ const ui = {
     colouredFinish: 'Com cor',
     chooseColour: 'escolher cor',
     allProducts: 'Ver todos os produtos',
-    specHeader: ['Característica', 'Valor'],
     previewOf: (shown, selected) => `Ainda não há modelo 3D para ${selected}. A pré-visualização mostra ${shown}.`,
+    gallery: {
+      model: 'Ver o modelo 3D',
+      image: (number, total) => `Ver imagem ${number} de ${total}`,
+    },
     viewer: {
       alt: (name) => `Modelo 3D: ${name}`,
       hint: 'Arraste para rodar. Use os botões para ampliar ou, com o teclado, as setas.',
@@ -375,12 +420,9 @@ const ui = {
     filtersLabel: 'Filters',
     cardLink: 'View data sheet',
     resultCount: (count) => (count === 1 ? '1 product' : `${count} products`),
-    noBrandSelected: 'No brand selected. Choose at least one brand to see the products.',
     breadcrumbLabel: 'Breadcrumb',
     home: 'Home',
     description: 'Description',
-    specifications: 'Specifications',
-    allVariants: 'All sizes',
     downloads: 'Files to download',
     downloadAction: 'Download',
     requestQuote: 'Request a quote',
@@ -389,8 +431,11 @@ const ui = {
     colouredFinish: 'Coloured',
     chooseColour: 'choose colour',
     allProducts: 'View all products',
-    specHeader: ['Specification', 'Value'],
     previewOf: (shown, selected) => `There is no 3D model for ${selected} yet. The preview shows ${shown}.`,
+    gallery: {
+      model: 'View the 3D model',
+      image: (number, total) => `View image ${number} of ${total}`,
+    },
     viewer: {
       alt: (name) => `3D model: ${name}`,
       hint: 'Drag to rotate. Use the buttons to zoom or, on a keyboard, the arrow keys.',
@@ -427,10 +472,20 @@ const ui = {
 
 const DIAMETER_SPECS = ['diameter', 'outerDiameter', 'innerDiameter'];
 
+function formatAmount(key, value, locale) {
+  const amount = new Intl.NumberFormat(locale, { useGrouping: false }).format(value);
+  return `${DIAMETER_SPECS.includes(key) ? 'Ø' : ''}${amount}`;
+}
+
 function formatSpec(key, value, locale) {
   if (typeof value !== 'number') return value;
-  const amount = new Intl.NumberFormat(locale, { useGrouping: false }).format(value);
-  return `${DIAMETER_SPECS.includes(key) ? 'Ø' : ''}${amount} ${SPEC_UNITS[key]}`;
+  return `${formatAmount(key, value, locale)} ${SPEC_UNITS[key]}`;
+}
+
+// The name of a size: one specification ("500 ml") or several in the same unit ("Ø40 × Ø9 mm").
+function formatVariant(keys, specs, locale) {
+  if (keys.length === 1) return formatSpec(keys[0], specs[keys[0]], locale);
+  return `${keys.map((key) => formatAmount(key, specs[key], locale)).join(' × ')} ${SPEC_UNITS[keys[0]]}`;
 }
 
 const fileFormat = (file) => file.slice(file.lastIndexOf('.') + 1).toUpperCase();
@@ -449,9 +504,12 @@ function localize(product, language, locale) {
       meta: [fileFormat(file), code].filter(Boolean).join(' · '),
     }));
 
+  // The specifications that name a size; they show on the size chips.
+  const variantSpecs = [product.variantSpec ?? []].flat();
+
   const variants = (product.variants ?? []).map((variant) => ({
     id: variant.id,
-    label: variant.label?.[language] ?? formatSpec(product.variantSpec, variant.specs[product.variantSpec], locale),
+    label: variant.label?.[language] ?? formatVariant(variantSpecs, variant.specs, locale),
     model: variant.model,
     specs: toRows(variant.specs),
     downloads: toDownloads(variant.downloads),
@@ -468,12 +526,15 @@ function localize(product, language, locale) {
     description: copy.description,
     featuresTitle: copy.featuresTitle,
     features: copy.features,
-    variantLabel: product.variantSpec ? text.specLabels[product.variantSpec] : undefined,
+    variantSpecs,
+    variantLabel: copy.variantLabel ?? (variantSpecs.length ? text.specLabels[variantSpecs[0]] : undefined),
     colours: product.colours && {
       anyColour: product.colours.anyColour,
       parts: product.colours.parts.map(({ material, start, label }) => ({ material, start, label: label[language] })),
     },
     variants,
+    model: product.model,
+    images: (product.images ?? []).map(({ src, alt, fit }) => ({ src: encodeURI(src), alt: alt[language], fit })),
     specs: toRows({ ...product.specs, ...copy.specs }),
     downloads: toDownloads(product.downloads),
   };

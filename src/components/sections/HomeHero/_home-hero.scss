@@ -1,0 +1,129 @@
+// Home hero, from the Figma `Hero` component (Type=Home, desktop 1440 and mobile 390).
+// Mobile: copy on Azul Profundo with the video below it. Desktop: the copy on the
+// darker panel (bg/inverse-subtle) at the left, the video filling the right side.
+
+.lp-home-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-32);
+  padding-top: var(--lp-space-40);
+  color: var(--lp-text-inverse);
+  background-color: var(--lp-bg-inverse);
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    padding-top: 0;
+    background-color: var(--lp-bg-inverse-subtle);
+  }
+}
+
+// The video sits on Azul Profundo at 54% opacity, as the photograph does in the design.
+.lp-home-hero__media {
+  position: relative;
+  height: 280px;
+  margin: 0 var(--lp-space-20);
+  overflow: hidden;
+  background-color: var(--lp-bg-inverse-subtle);
+
+  .lp-background-video__media {
+    opacity: 0.54;
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    margin: 0;
+    background-color: var(--lp-bg-inverse);
+  }
+}
+
+// The copy column takes 52% of the container (743px of 1440 in the design); the video
+// starts where it ends, so its left edge follows the container at every width.
+@each $breakpoint in (lg, xl, xxl) {
+  @include media-breakpoint-up($breakpoint) {
+    $container: map-get($container-max-widths, $breakpoint);
+    .lp-home-hero__media {
+      left: calc((100% - #{$container}) / 2 + #{$container * 0.52});
+    }
+  }
+}
+
+.lp-home-hero__symbol {
+  position: absolute;
+  top: var(--lp-space-20);
+  right: var(--lp-space-20);
+  display: flex;
+
+  @include media-breakpoint-up(lg) {
+    top: var(--lp-space-40);
+    right: var(--lp-space-40);
+  }
+}
+
+.lp-home-hero__inner.container {
+  // 20px page margins on mobile; doubled with `.container` to outrank the legacy
+  // mobile `.container { padding: 2% }` in App.css.
+  @include media-breakpoint-down(lg) {
+    padding-right: var(--lp-space-20);
+    padding-left: var(--lp-space-20);
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+    min-height: 640px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    min-height: 732px;
+  }
+}
+
+.lp-home-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lp-space-24);
+
+  @include media-breakpoint-up(lg) {
+    width: 52%;
+    padding: var(--lp-space-80) var(--lp-space-64) var(--lp-space-80) 0;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding: var(--lp-space-128) var(--lp-space-128) var(--lp-space-128) 0;
+  }
+}
+
+// Heading/H1 on mobile (36/44), Display/L from desktop (56/64), as in the two Figma frames.
+.lp-home-hero__title {
+  @include lp-text(36, 44, 500, -0.01);
+  margin: 0;
+  color: var(--lp-text-inverse);
+
+  @include media-breakpoint-up(lg) {
+    @include lp-text(56, 64, 500, -0.015);
+  }
+}
+
+.lp-home-hero__lead {
+  @include lp-body-l;
+  margin: 0;
+  color: var(--lp-text-inverse-secondary);
+}
+
+.lp-home-hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: var(--lp-space-12);
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-self: flex-start;
+  }
+}

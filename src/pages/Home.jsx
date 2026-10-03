@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import BodyHeroSection from "../components/BodyHeroSection";
 import BodyAboutSection from "../components/BodyAboutSection";
 import BodyPolicySection from "../components/BodyPolicySection";
 import BodySustainabilitySection from "../components/BodySustainabilitySection";
@@ -8,6 +7,7 @@ import Footer from "../components/Footer";
 import BodyProductShowcaseSection from "../components/BodyProductShowcaseSection";
 import BodyZorPartnershipSection from "../components/BodyZorPartnershipSection";
 import PageMeta from '../components/seo/PageMeta/PageMeta';
+import HomeHero from '../components/sections/HomeHero/HomeHero';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function Home() {
             <PageMeta page="home" />
             <Header/>
             <main id="conteudo" tabIndex={-1}>
-                <BodyHeroSection />
+                <HomeHero />
                 {/*<BodySustainabilitySection/>*/}
                 <BodyProductShowcaseSection onProductChange={handleProductChange}/>
                 <BodyZorPartnershipSection />

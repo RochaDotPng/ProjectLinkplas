@@ -23,14 +23,12 @@
   gap: var(--lp-space-12);
 }
 
+// 12px at every width. The Figma frame spaces the chips 24px apart, which the client
+// found too loose.
 .lp-product-catalogue__chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--lp-space-12);
-
-  @include media-breakpoint-up(lg) {
-    gap: var(--lp-space-12) var(--lp-space-24);
-  }
 }
 
 .lp-product-catalogue__grid {
@@ -49,9 +47,4 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: var(--lp-space-64);
   }
-}
-
-.lp-product-catalogue__empty {
-  margin: var(--lp-space-48) 0 0;
-  color: var(--lp-text-secondary);
 }

@@ -32,12 +32,6 @@
   }
 }
 
-.lp-product-detail__image {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: var(--lp-radius-lg);
-}
-
 .lp-product-detail__preview-note {
   @include lp-caption;
   margin: var(--lp-space-8) 0 0;
@@ -103,13 +97,8 @@
   margin: 0 0 var(--lp-space-24);
 }
 
-.lp-product-detail__subheading {
-  margin: var(--lp-space-32) 0 var(--lp-space-16);
-}
-
-// Running text and the two-column table keep a readable measure on wide screens.
-.lp-product-detail__text,
-.lp-product-detail__spec-table {
+// Running text keeps a readable measure on wide screens.
+.lp-product-detail__text {
   max-width: 720px;
 }
 
@@ -190,4 +179,71 @@
     border: 0;
     border-radius: var(--lp-radius-xs);
   }
+}
+
+// Preview: the 3D model or a photograph, with thumbnails to switch between them.
+.lp-product-gallery__stage {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--lp-bg-subtle);
+  border-radius: var(--lp-radius-lg);
+}
+
+.lp-product-gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// Product renders have transparent backgrounds and are shown whole; photographs fill the frame.
+.lp-product-gallery__image--contain {
+  padding: var(--lp-space-24);
+  object-fit: contain;
+}
+
+.lp-product-gallery__image--cover {
+  object-fit: cover;
+}
+
+.lp-product-gallery__thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-8);
+  padding: 0;
+  margin: var(--lp-space-12) 0 0;
+  list-style: none;
+}
+
+.lp-product-gallery__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-space-64);
+  height: var(--lp-space-64);
+  padding: var(--lp-space-4);
+  overflow: hidden;
+  background-color: var(--lp-bg-subtle);
+  border: 1px solid var(--lp-border-default);
+  border-radius: var(--lp-radius-md);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--lp-border-hover);
+  }
+
+  &[aria-pressed="true"] {
+    border-color: var(--lp-border-brand);
+    box-shadow: inset 0 0 0 1px var(--lp-border-brand);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.lp-product-gallery__thumb-label {
+  @include lp-label-m;
+  color: var(--lp-text-primary);
 }

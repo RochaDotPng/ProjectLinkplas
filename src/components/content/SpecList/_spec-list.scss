@@ -1,0 +1,25 @@
+.lp-spec-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-space-12) var(--lp-space-32);
+  margin: 0;
+
+  dt {
+    @include lp-caption;
+    color: var(--lp-text-secondary);
+  }
+
+  // Values use the code face, as in the design system's Spec Table, for quick reading.
+  dd {
+    @include lp-text(14, 22);
+    margin: 0;
+    font-family: $lp-font-mono;
+    color: var(--lp-text-primary);
+  }
+}
+
+.lp-spec-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-space-2);
+}

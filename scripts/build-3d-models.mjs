@@ -22,7 +22,9 @@ const OUTPUT_DIR = 'public/models';
 const MAX_TRIANGLES = 25000;
 // Edges sharper than this stay sharp; flatter ones are shaded smooth.
 const CREASE_ANGLE_DEGREES = 35;
-const MILLIMETRES_TO_METRES = 0.001;
+// STL files carry no unit. Most of the client's files are in millimetres; a part exported in
+// metres says so with `units: 'm'`.
+const TO_METRES = { mm: 0.001, m: 1 };
 
 // Every part gets its own material, named after the part, so the product page can recolour
 // the parts separately. A part starts either clear or in the solid colour given here.
@@ -70,6 +72,12 @@ const pharmaLink = (size, source, up) => ({
   ],
 });
 
+// FactoryLink parts are one piece each, shown in the colour of their current product photos.
+const factoryLink = (output, source, color, units) => ({
+  output: `factorylink-${output}`,
+  parts: [{ name: 'peca', source, color, units }],
+});
+
 const MODELS = [
   tupperLink(500),
   tupperLink(1000),
@@ -79,6 +87,10 @@ const MODELS = [
   pharmaLink('grande', /^caixa grande/i, 'y'),
   pharmaLink('media', /^caixa m/i, '-z'),
   pharmaLink('pequena', /^caixa pequena/i, 'z'),
+  factoryLink('intercalar-longarina', /^7017030013\./, '#D8D4C8', 'm'),
+  factoryLink('tampa-para-veio-16mm', /^7017030011\./, '#2B2725', 'm'),
+  factoryLink('anilha-intercalar-30015', /^7017030015\./, '#2E2E2E'),
+  factoryLink('abracadeira', /^7017030008\./, '#3C3C3C'),
 ];
 
 // How far the lid floats above the box, as a share of the box height.
@@ -92,26 +104,44 @@ function findSource(pattern) {
   return path.join(SOURCE_DIR, matches[0]);
 }
 
+// The corner coordinates of every triangle, in file order.
 // Binary STL: 80-byte header, triangle count, then 50 bytes per triangle (normal, 3 vertices, attribute).
-function readStl(file, up) {
+// Text STL: `vertex x y z` lines inside `facet` blocks.
+function readCorners(file) {
   const data = fs.readFileSync(file);
-  const count = data.readUInt32LE(80);
-  if (data.length !== 84 + count * 50) throw new Error(`${file} is not a binary STL`);
-  const corners = new Float32Array(count * 9);
-  for (let triangle = 0; triangle < count; triangle += 1) {
-    for (let vertex = 0; vertex < 3; vertex += 1) {
-      const offset = 84 + triangle * 50 + 12 + vertex * 12;
-      const x = data.readFloatLE(offset);
-      const y = data.readFloatLE(offset + 4);
-      const z = data.readFloatLE(offset + 8);
-      const target = triangle * 9 + vertex * 3;
-      // A part drawn with its height along Z is rotated a quarter turn about X so that the
-      // height runs along Y; '-z' is a part drawn upside down.
-      const [height, depth] = { y: [y, z], z: [z, -y], '-z': [-z, y] }[up ?? 'y'];
-      corners[target] = x * MILLIMETRES_TO_METRES;
-      corners[target + 1] = height * MILLIMETRES_TO_METRES;
-      corners[target + 2] = depth * MILLIMETRES_TO_METRES;
+  const count = data.length >= 84 ? data.readUInt32LE(80) : 0;
+  if (data.length === 84 + count * 50) {
+    const values = new Float32Array(count * 9);
+    for (let triangle = 0; triangle < count; triangle += 1) {
+      for (let index = 0; index < 9; index += 1) {
+        values[triangle * 9 + index] = data.readFloatLE(84 + triangle * 50 + 12 + index * 4);
+      }
     }
+    return values;
+  }
+  const text = data.toString('latin1');
+  if (!/^\s*solid/.test(text)) throw new Error(`${file} is not an STL file`);
+  const numbers = [];
+  for (const match of text.matchAll(/vertex\s+(\S+)\s+(\S+)\s+(\S+)/g)) {
+    numbers.push(Number(match[1]), Number(match[2]), Number(match[3]));
+  }
+  if (numbers.length === 0 || numbers.length % 9 !== 0 || numbers.some(Number.isNaN)) {
+    throw new Error(`${file} could not be read as a text STL`);
+  }
+  return Float32Array.from(numbers);
+}
+
+function readStl(file, up, units = 'mm') {
+  const source = readCorners(file);
+  const corners = new Float32Array(source.length);
+  for (let corner = 0; corner < source.length; corner += 3) {
+    const [x, y, z] = [source[corner], source[corner + 1], source[corner + 2]];
+    // A part drawn with its height along Z is rotated a quarter turn about X so that the
+    // height runs along Y; '-z' is a part drawn upside down.
+    const [height, depth] = { y: [y, z], z: [z, -y], '-z': [-z, y] }[up ?? 'y'];
+    corners[corner] = x * TO_METRES[units];
+    corners[corner + 1] = height * TO_METRES[units];
+    corners[corner + 2] = depth * TO_METRES[units];
   }
   return corners;
 }
@@ -306,7 +336,7 @@ fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
 for (const model of MODELS) {
   const parts = model.parts.map((part) => {
-    const mesh = shade(simplify(weld(readStl(findSource(part.source), part.up))));
+    const mesh = shade(simplify(weld(readStl(findSource(part.source), part.up, part.units))));
     return { ...part, mesh, box: bounds(mesh.positions) };
   });
 
@@ -329,5 +359,10 @@ for (const model of MODELS) {
   const file = path.join(OUTPUT_DIR, `${model.output}.glb`);
   writeGlb(file, parts);
   const triangles = parts.reduce((total, part) => total + part.mesh.indices.length / 3, 0);
+  // A part that comes out microscopic or huge was almost certainly read in the wrong unit.
+  const largest = Math.max(...parts.flatMap(({ box }) => box.max.map((value, axis) => value - box.min[axis])));
+  if (largest < 0.005 || largest > 2) {
+    console.warn(`  check the units of ${model.output}: its largest side is ${(largest * 1000).toFixed(2)} mm`);
+  }
   console.log(`${file}  ${triangles} triangles  ${(fs.statSync(file).size / 1024).toFixed(0)} kB`);
 }

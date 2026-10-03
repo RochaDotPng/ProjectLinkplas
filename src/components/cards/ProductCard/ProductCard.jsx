@@ -9,7 +9,18 @@ export default function ProductCard({ product, linkLabel, headingLevel: Heading 
   return (
     <article className="lp-product-card">
       <div className="lp-product-card__image">
-        <ImagePlaceholder />
+        {product.images?.[0] ? (
+          // The title already names the product, so the picture is not announced again.
+          <img
+            className={`lp-product-card__photo lp-product-card__photo--${product.images[0].fit ?? 'contain'}`}
+            src={product.images[0].src}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <ImagePlaceholder />
+        )}
       </div>
       <div className="lp-product-card__body">
         <SubbrandTag brand={product.brand} />
@@ -36,6 +47,7 @@ ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     cardSpecs: PropTypes.arrayOf(PropTypes.string),
+    images: PropTypes.arrayOf(PropTypes.shape({ src: PropTypes.string, fit: PropTypes.string })),
   }).isRequired,
   linkLabel: PropTypes.string.isRequired,
   headingLevel: PropTypes.elementType,

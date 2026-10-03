@@ -38,7 +38,7 @@ The home page summarises the company and sends people to the other pages. It rep
 
 | # | Section | Content | Source | Component |
 |---|---|---|---|---|
-| 1 | Hero | "Peças plásticas com rigor técnico, produzidas em Portugal desde 2012." Supporting line: "Injeção de peças plásticas e soluções reutilizáveis para a indústria, a farmácia e a restauração." Buttons: Pedir orçamento, Ver produtos | p. 2 headline, p. 1 tagline | Hero (Home) |
+| 1 | Hero | **Built** (2026-10-03) from the Figma `Hero` (Type=Home), with the production video `public/images/Hero.webm` where the design has a photograph. Eyebrow "Injeção de plásticos · Desde 2012"; title "Peças plásticas com rigor técnico, produzidas em Portugal."; line "Da ideia ao molde, da injeção à personalização: somos o parceiro de desenvolvimento para a indústria, a farmácia e o take-away." (the Figma copy); buttons Pedir orçamento, Ver produtos. The header above it stays white | Figma; p. 2 headline | Hero (Home), BackgroundVideo |
 | 2 | Números | 14 anos de atividade contínua · 5 máquinas de injeção, de 50t a 550t · 12 colaboradores, 6 desde o início · +20 clientes ativos · 99% de entregas no prazo | p. 2 | Stats band |
 | 3 | Posicionamento | "O parceiro português de injeção de plásticos que junta capacidade técnica e sustentabilidade real, com a proximidade de quem acompanha cada projeto de perto." Four pillars with their quotes: Capacidade técnica, Sustentabilidade real, Parceria e proximidade, Pessoas e integridade | p. 6 | Section Heading + Feature Card ×4 |
 | 4 | Setores | Indústria · Farmácia · Restauração e take-away · Cadeia alimentar e pescas, each with who it serves and what LinkPlas supplies. Each links to its brand: Indústria to FactoryLink, Farmácia to PharmaLink, take-away to TupperLink, pescas to the ZØR partnership | p. 7 | Sector Card |
@@ -65,7 +65,7 @@ One catalogue page, with no dropdown in the menu. It follows the Figma frame "Pr
 
 | # | Section | Content | Source | Component |
 |---|---|---|---|---|
-| 1 | Filtros | Eyebrow "Filtros" and one chip per brand: TupperLink · PharmaLink · FactoryLink. Several can be selected at once. As in the frame, every brand starts selected and deselecting one hides its products; with none selected the page asks for a brand to be chosen. A narrowed selection is kept in the address (`?marcas=factorylink`), so a filtered catalogue can be linked to | Figma frame | Eyebrow, Chip (multi-select) |
+| 1 | Filtros | Eyebrow "Filtros" and one chip per brand: TupperLink · PharmaLink · FactoryLink. Several can be selected at once. No brand is selected at first, and with none selected every product shows; selecting brands narrows the list to them. The selection is kept in the address (`?marcas=factorylink`), so a filtered catalogue can be linked to. (The Figma frame draws three chips selected; the client chose this behaviour instead.) | Figma frame | Eyebrow, Chip (multi-select) |
 | 2 | Grelha de produtos | Three cards per row on desktop. Each card: image, brand tag, product name, one- or two-line description, reference line ("REF. · material · capacidade"), link "Ver ficha técnica" to the product's detail page | Figma frame; product data in the table below | Product Card, Tag / Submarca |
 
 The frame has no page title. The page has a visually hidden "Produtos" heading for screen readers and search engines.
@@ -76,21 +76,21 @@ The frame's chips also include KeepyLink and ThermaLink. Those two are left out 
 
 **Products in the catalogue**
 
-Each row is one card and one detail page. Every image is a placeholder until the photographs arrive.
+Each row is one card and one detail page. Until new photographs arrive, the cards and pages use the product images of the old site (`public/images/`); the e-Pharma kit shows its polystyrene insert, cold pack and lid.
 
 | Brand | Product | Sizes or volumes | 3D source available today | Content today |
 |---|---|---|---|---|
 | TupperLink | Recipiente TupperLink | 500 ml, 1000 ml, 1500 ml, 2000 ml, 2500 ml, 4000 ml; transparent and coloured | STL received for every volume except 2000 ml (base and lid) | Site: description, sizes table, photos. 4000 ml is new: it came with the 3D files and has no measurements on the site |
 | PharmaLink | Caixa de transporte de medicamentos | Grande, Médio, Pequeno; lid | STL received for the three boxes and one lid | Site: description, photos; p. 12 |
 | PharmaLink | Kit isotérmico (e-Pharma) | one | none yet | Site: description, temperature ranges, PDF; p. 12 |
-| FactoryLink | Tampa para tubos | seven sizes (30001–30007) | STEP for one size | Site: description, sizes table, CAD files, catalogue PDF |
-| FactoryLink | Intercalar longarina | one | STEP | Site: description, CAD files |
-| FactoryLink | Tampa para veio | 16 mm, 20 mm | STEP for both | Site: description, CAD files, PDF |
-| FactoryLink | Anilha intercalar | three sizes (30014, 30015, 30016) | STEP for all three | Site: description, sizes table, CAD files |
-| FactoryLink | Abraçadeira | one | STEP | Site: description, CAD files |
+| FactoryLink | Tampa para tubos | seven sizes (30001–30007) | none (STEP for one size, not used by the viewer) | Site: description, sizes table, CAD files, catalogue PDF |
+| FactoryLink | Intercalar longarina | one | STL received | Site: description, CAD files |
+| FactoryLink | Tampa para veio | 16 mm, 20 mm | STL received for 16 mm | Site: description, CAD files, PDF |
+| FactoryLink | Anilha intercalar | three sizes (30014, 30015, 30016) | STL received for 30015 | Site: description, sizes table, CAD files |
+| FactoryLink | Abraçadeira | one | STL received | Site: description, CAD files |
 | FactoryLink | Soldadura por ultrassons | none (a service) | not applicable | Site: description, benefits; p. 11 |
 
-FactoryLink gathers what the current site shows under "Indústria" and "Serviços". Its products show an image, not the 3D viewer, for now.
+FactoryLink gathers what the current site shows under "Indústria" and "Serviços". Four of its products have the 3D viewer (from 2026-10-03): Intercalar longarina, Abraçadeira, Tampa para veio (16 mm) and Anilha intercalar (30015). Tampa para tubos and Soldadura por ultrassons show an image.
 
 ecoCatch (ecoFish, ecoShell, ecoTrace) is not in the catalogue: it stays on Parcerias until ThermaLink launches.
 
@@ -103,12 +103,12 @@ One page per product, reached from its card. There is no Figma frame for it, so 
 | # | Section | Content | Applies to | Component |
 |---|---|---|---|---|
 | 1 | Caminho | Início › Produtos › brand › product. The brand links to the catalogue filtered by that brand until the brand pages exist | all | Breadcrumb |
-| 2 | Pré-visualização | The 3D viewer (rotate and zoom) when the product has a 3D file; otherwise the product image. Placeholder image for now | all; viewer on the TupperLink container and the PharmaLink box | 3D viewer, image |
+| 2 | Pré-visualização | The 3D viewer (rotate and zoom) when the product has a 3D file, and the product photographs; thumbnails under the preview switch between them. Changing a size or a colour brings the 3D model back. Old-site photographs for now | all; viewer where a 3D model exists (see the table above) | 3D viewer, image |
 | 3 | Identificação | Brand tag, product name, reference line | all | Tag / Submarca, heading |
-| 4 | Seletor de tamanho ou volume | One option per size or volume. Choosing one changes the preview, the reference, the measurements and the downloads shown, and is kept in the address (`?medida=1000ml`) | only products with more than one size or volume | Chip (single choice) |
+| 4 | Seletor de tamanho ou volume | One option per size or volume. Choosing one changes the preview, the reference, the measurements listed under the chips and the downloads shown, and is kept in the address (`?medida=1000ml`) | only products with more than one size or volume | Chip (single choice) |
 | 5 | Seletor de cor | Recolours the 3D preview as it is chosen, one choice per part (body and lid). **TupperLink**: "Transparente" (the default) or "Com cor", which opens a colour picker for any colour. **PharmaLink**: a colour picker only, for any colour; the box starts light grey (`#B2B2B2`) and the lid blue (`#505898`). The chosen colours go into the quote request | products with a 3D file: the TupperLink container and the PharmaLink box | Chip (single choice) for clear or coloured, browser colour picker |
 | 6 | Descrição | What the product is and what it is for | all | text |
-| 7 | Especificações | Measurements, capacity and material for the selected size, and the full table of sizes | all except the welding service | Spec Table |
+| 7 | Especificações | No tables (client decision, 2026-10-03). The measurements of the selected size, the reference, the material and similar facts are listed under the size chips and change with the size. A size chart could still help on Tampa para tubos (seven sizes, chosen by tube diameter); not built unless the client asks | products with specifications | Spec list (label over value) |
 | 8 | Downloads | Technical drawings and CAD files for the selected size (PDF, DWG, IGS, STEP, SLDPRT), catalogue | products with files | Download Card |
 | 9 | Fecho | "Pedir orçamento" opens Contactos with the product and size already written in the message; "Ver todos os produtos" returns to the catalogue. The link to the brand page waits for the brand pages | all | Button, Link |
 
@@ -321,6 +321,7 @@ The existing addresses `/About`, `/Policy`, `/Contacts`, `/Products` and `/Produ
 | 11 | — | In the design system, the FactoryLink tag is a variant named "Industrial" | Treated as FactoryLink; the variant should be renamed |
 | 12 | — | The Produtos frame uses the dark header; the design system says dark is for the home hero and light for inner pages | Light header kept, confirmed by the client. A dark mode may be built later; the frame's dark header belongs to that |
 | 13 | — | The Produtos frame spaces its sections with 50px, 10px and 112px, which are not on the spacing scale | Built with the nearest steps: 48px, 12px and 96px |
+| 15 | — | The Produtos frame spaces the filter chips 24px apart | 12px, at the client's request: 24px looked too loose |
 | 14 | — | The Produtos frame's header has no "Pedir orçamento" button and shows the new menu | The current header stays (four items and the button) until the other pages exist |
 
 ---
@@ -331,10 +332,10 @@ Decided:
 - **ThermaLink** is the future own-brand name for what is now ecoCatch. Today ecoCatch is shown as the ZØR partnership.
 - **Produtos** has no dropdown. It is one catalogue page filtered by brand, following the Figma frame, and **every product has its own detail page** with a description, a 3D viewer where a 3D file exists, and a size or volume selector where there is more than one.
 - **FactoryLink** is a new brand for what the current site shows under Indústria and Serviços.
-- **Images** are placeholders until the photographs are supplied.
+- **Images**: the old site's product images stand in until new photographs are supplied.
 - **ecoCatch** stays on Parcerias only, and is not in the Produtos catalogue, for now.
 - **FactoryLink** has its own page under Marcas.
-- **FactoryLink products have no 3D viewer** for now; the viewer is on the TupperLink container and the PharmaLink box.
+- **3D viewer** on the TupperLink container, the PharmaLink box and four FactoryLink parts (Intercalar longarina, Abraçadeira, Tampa para veio 16 mm, Anilha intercalar 30015), shown in the colours of their current photos with no colour choice. A page opens on the first size that has a model.
 - **The product detail page and the mobile catalogue** were built without a Figma design, as a first proposal to iterate on.
 - **Inner pages keep the white (light) header.** A dark mode may be built in the future; nothing is built for it now.
 - **Active partners** are Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog and Coprax. Permission to publish names, logos and testimonials is in place.

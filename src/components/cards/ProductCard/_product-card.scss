@@ -23,6 +23,23 @@
 .lp-product-card__image {
   flex: none;
   height: 260px;
+  background-color: var(--lp-bg-muted);
+}
+
+.lp-product-card__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// Product renders have transparent backgrounds and are shown whole; photographs fill the frame.
+.lp-product-card__photo--contain {
+  padding: var(--lp-space-24);
+  object-fit: contain;
+}
+
+.lp-product-card__photo--cover {
+  object-fit: cover;
 }
 
 .lp-product-card__body {

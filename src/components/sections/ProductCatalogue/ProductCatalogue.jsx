@@ -13,16 +13,14 @@ export default function ProductCatalogue() {
   const text = useProductsUi();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // As in the Figma frame, every brand starts selected. The address only carries the
-  // selection once it has been narrowed, so a filtered catalogue can be linked to.
-  const selected = searchParams.has(BRAND_PARAM)
-    ? searchParams.get(BRAND_PARAM).split(',').filter((brand) => ALL_BRANDS.includes(brand))
-    : ALL_BRANDS;
+  // No brand is selected at first, and no selection means every product. Selected brands are
+  // kept in the address, so a filtered catalogue can be linked to.
+  const selected = (searchParams.get(BRAND_PARAM) ?? '').split(',').filter((brand) => ALL_BRANDS.includes(brand));
 
   const toggle = (brand) => {
     const next = ALL_BRANDS.filter((entry) => (entry === brand ? !selected.includes(entry) : selected.includes(entry)));
     const params = new URLSearchParams(searchParams);
-    if (next.length === ALL_BRANDS.length) {
+    if (next.length === 0) {
       params.delete(BRAND_PARAM);
     } else {
       params.set(BRAND_PARAM, next.join(','));
@@ -31,7 +29,7 @@ export default function ProductCatalogue() {
     setSearchParams(params, { replace: true, state: { keepScroll: true } });
   };
 
-  const visible = products.filter((product) => selected.includes(product.brand));
+  const visible = selected.length ? products.filter((product) => selected.includes(product.brand)) : products;
 
   return (
     <div className="lp-product-catalogue">
@@ -52,17 +50,13 @@ export default function ProductCatalogue() {
         {/* Announces the effect of a filter change to screen reader users. */}
         <p className="visually-hidden" role="status">{text.resultCount(visible.length)}</p>
 
-        {visible.length > 0 ? (
-          <ul className="lp-product-catalogue__grid">
-            {visible.map((product) => (
-              <li key={product.slug}>
-                <ProductCard product={product} linkLabel={text.cardLink} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="lp-product-catalogue__empty">{text.noBrandSelected}</p>
-        )}
+        <ul className="lp-product-catalogue__grid">
+          {visible.map((product) => (
+            <li key={product.slug}>
+              <ProductCard product={product} linkLabel={text.cardLink} />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -150,7 +150,7 @@ Intercalar longarina e Abraçadeira: o site atual não indica medidas.
 
 **3.4 Modelos 3D e pré-visualização por tamanho**
 
-Na ficha técnica, quem visita escolhe o tamanho ou o volume e a pré-visualização 3D muda. Quando não há modelo para um tamanho, a pré-visualização mantém-se e a página diz que tamanho está a mostrar. Por agora só o recipiente TupperLink e a caixa PharmaLink têm visualizador 3D; as peças FactoryLink mostram a fotografia.
+Na ficha técnica, quem visita escolhe o tamanho ou o volume e a pré-visualização 3D muda. Quando não há modelo para um tamanho, a pré-visualização mantém-se e a página diz que tamanho está a mostrar. Têm visualizador 3D o recipiente TupperLink, a caixa PharmaLink e quatro peças FactoryLink.
 
 Modelos recebidos em `content-inbox/3d/` e já no site:
 
@@ -160,8 +160,17 @@ Modelos recebidos em `content-inbox/3d/` e já no site:
 | Recipiente TupperLink | 2000 ml | **em falta** |
 | Caixa de transporte de medicamentos | Grande, Médio, Pequeno | caixa |
 | Caixa de transporte de medicamentos | — | uma tampa (`tampa cx med`) |
+| Intercalar longarina | único | peça |
+| Abraçadeira | único | peça |
+| Tampa para veio | 16 mm | peça |
+| Tampa para veio | 20 mm | **em falta** |
+| Anilha intercalar | 30015 | peça |
+| Anilha intercalar | 30014 e 30016 | **em falta** |
+| Tampa para tubos | 30001 a 30007 | **em falta** |
 
 - Modelo do recipiente de 2000 ml (ficheiro): …
+- Modelos em falta das peças FactoryLink (ficheiros STL): …
+- As peças FactoryLink aparecem nas cores das fotografias atuais (intercalar bege, as outras pretas ou cinzento-escuro). Estão certas? …
 - A tampa das caixas PharmaLink é a mesma para os três tamanhos? No site aparece levantada por cima da caixa, como nas imagens atuais. …
 - Cores: na ficha técnica já se pode mudar a cor do modelo. TupperLink: transparente ou qualquer cor, com recipiente e tampa separados. PharmaLink: qualquer cor à escolha, para a caixa e para a tampa; começa com a caixa em cinzento claro e a tampa em azul. Ver 4.1 e 4.2.
 
@@ -173,7 +182,7 @@ Os desenhos e ficheiros CAD do site atual (PDF, DWG, IGS, STEP, SLDPRT), o catá
 
 **3.6 Fotografias**
 
-Uma fotografia por produto para o cartão (formato horizontal, fundo neutro) e, se existirem, mais fotografias para a ficha técnica. Colocar em `content-inbox/produtos/`.
+Uma fotografia por produto para o cartão (formato horizontal, fundo neutro) e, se existirem, mais fotografias para a ficha técnica. Colocar em `content-inbox/produtos/`. Por agora o site usa as imagens do site antigo, que são pesadas (cerca de 10 MB só nas imagens do catálogo): as novas devem vir num tamanho próprio para a web.
 - Ficheiros: …
 
 **3.7 ecoCatch**
