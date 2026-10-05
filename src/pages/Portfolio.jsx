@@ -47,7 +47,7 @@ export default function Portfolio() {
               <div className="lp-stack">
                 <div className={`lp-media${project.image ? ' lp-media--contain' : ''}`}>
                   {project.image ? (
-                    <img src={project.image} alt="" loading="lazy" decoding="async" />
+                    <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
                   ) : (
                     <ImagePlaceholder />
                   )}

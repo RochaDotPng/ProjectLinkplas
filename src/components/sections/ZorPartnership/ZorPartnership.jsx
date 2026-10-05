@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionHeading from '../../content/SectionHeading/SectionHeading';
+import StandaloneLink from '../../ui/StandaloneLink/StandaloneLink';
 import { usePartnersContent } from '../../../content/partners';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,8 +35,8 @@ const CALLOUTS = [
   { layerIndex: 2, variant: 'acumulador' },
 ];
 
-// LinkPlas × ZØR: the isothermal kit opens into its parts as the visitor scrolls. With
-// reduced motion the kit is shown already open, with its labels.
+// LinkPlas × ZØR: ecoCatch, the isothermal kit, opens into its parts as the visitor scrolls.
+// With reduced motion the kit is shown already open, with its labels.
 export default function ZorPartnership() {
   const { zor } = usePartnersContent();
   const sectionRef = useRef(null);
@@ -121,7 +122,10 @@ export default function ZorPartnership() {
   return (
     <section ref={sectionRef} className="lp-zor" aria-labelledby="zor-titulo">
       <div className="container lp-zor__inner">
-        <SectionHeading id="zor-titulo" eyebrow={zor.eyebrow} title={zor.title} description={zor.lead} />
+        <div className="lp-stack">
+          <SectionHeading id="zor-titulo" eyebrow={zor.eyebrow} title={zor.title} description={zor.lead} />
+          <StandaloneLink to={zor.action.to}>{zor.action.label}</StandaloneLink>
+        </div>
 
         <div ref={stackRef} className={`lp-zor__stack${reducedMotion ? ' lp-zor__stack--static' : ''}`}>
           <div className="lp-zor__scale">

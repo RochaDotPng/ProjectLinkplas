@@ -52,8 +52,8 @@ For each section: what it says, where the content comes from, and which design-s
 As built:
 - The Figma frame draws the four states of the sectors block one under the other; the page shows one at a time.
 - The frame's take-away link says "Ver KeepyLink"; the page says "Ver TupperLink". Its "Novo" tag is drawn in ThermaLink's colours; the page uses a brand-tone badge.
-- The frame's picture for ecoCatch is the exploded view of the pharmacy isothermal kit, not the fish boxes. It is used as designed; say if it should change.
-- "Respondemos em até 2 dias úteis" in the frame is written "no prazo de 2 dias úteis" (European Portuguese). **Confirm the two working days**: the claim came with the design.
+- The frame's picture for ecoCatch is the exploded view of the isothermal kit. The client confirmed (2026-10-05) that this is ecoCatch: it shares its plastic container with the PharmaLink boxes but is put to another use and is not a pharmacy product.
+- "Respondemos em até 2 dias úteis" in the frame is written "no prazo de 2 dias úteis" (European Portuguese). The client confirmed the two working days (2026-10-05).
 - The logo strip shows the eight active partners' names as text until their logos are supplied. A logo is added by dropping its file into `src/assets/logos/` (the folder has a LEIA-ME); when the row is wider than the page it scrolls slowly and endlessly.
 - Not on the frame, so not on the page: the positioning statement and its four pillars (p. 6), the brands row, a testimonial and the three latest news posts. The ZØR scroll animation of the old home page moved to Parcerias.
 
@@ -192,7 +192,7 @@ The brand for technical parts made to specification and for the finishing servic
 | 3 | Lista de parceiros | The eight active partners: **Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog, Coprax**, each with logo and a line on the partnership. "+20 clientes ativos" | p. 14, p. 16, p. 17, p. 2 | Logo Strip or name list |
 | 4 | Como chegam até nós | "Clientes que chegam por recomendação de outros clientes." The Coprax and Polisport story, with Tiago Cunha's quote | p. 17 | Quote Block |
 
-As built (2026-10-03): after the header comes "LinkPlas × ZØR", the scroll animation of the isothermal kit that used to be on the home page; then ecoCatch (with a placeholder for its picture, since the only image available shows the pharmacy kit), the eight partners as cards (name, or logo once it is in `src/assets/logos/`, and one line each) and the recommendation story with the quote. The one-line descriptions of Polisport, Empifarma, OCP and Medlog were inferred from the presentation and need confirming.
+As built (2026-10-05): after the header comes the featured partnership, "ecoCatch · em parceria com a ZØR — LinkPlas × ZØR": the scroll animation of the isothermal kit that used to be on the home page, with the old site's line about the kit and a link to the ecoCatch project on Portfólio. Then the eight partners as cards (name, or logo once it is in `src/assets/logos/`, and one line each, confirmed by the client) and the recommendation story with the quote. The separate ecoCatch block with the presentation's "Caixas reutilizáveis para pescado" title was folded into the animation once the client confirmed the kit is ecoCatch; that title and its text are on Portfólio.
 
 **Monte Meão is left out**: it is not an active partnership at the moment, so its project (Accor Hotels Arena, Paris, 2015) and António Pimentel's testimonial on p. 16 are not used on the site. Permission to publish the partners' names, logos and testimonials is confirmed.
 
@@ -207,7 +207,7 @@ As built (2026-10-03): after the header comes "LinkPlas × ZØR", the scroll ani
 
 Components: Testimonial Card, Stat, Check List, Feature Card.
 
-As built: one band per project, with the client and period, a title, the figure where there is one, the testimonial, and a photograph placeholder. The Platec project has no description yet, so it shows a placeholder.
+As built: one band per project, with the client and period, a title, the figure where there is one, the testimonial, and a photograph placeholder (ecoCatch shows the exploded view of the kit). The Platec project has no description yet, so it shows a placeholder.
 
 ### 2.6 Empresa
 
@@ -337,7 +337,7 @@ The old addresses `/About`, `/Policy`, `/Contacts`, `/Products`, `/Products/<cat
 | 2 | Sector 05, "Organização — embalagens de arrumação" (p. 7) | This is the unreleased KeepyLink product | Left out until launch |
 | 3 | No mention of ISO 9001 by name (p. 20 says "certificações de qualidade") | The site and the design system say ISO 9001 since 2014 | ISO 9001, to be confirmed |
 | 4 | Paula Rocha is "Fundadora · Comercial e Projetos" on p. 19 and "Fundadora · Vendas e Projetos" on p. 21 | The site uses the title CEO | One title to be chosen |
-| 5 | Contact is Paula Rocha's mobile and direct email (p. 21) | The site publishes the landline +351 256 601 535 and geral@linkplas.pt | Built with the landline and geral@linkplas.pt (the old Contactos card showed paula.rocha@linkplas.pt); to be confirmed |
+| 5 | Contact is Paula Rocha's mobile and direct email (p. 21) | The site publishes the landline +351 256 601 535 and geral@linkplas.pt | The landline and geral@linkplas.pt, confirmed by the client (2026-10-05) |
 | 6 | The Coprax testimonial spells the company "Linkplas" (p. 17) | The brand is written LinkPlas | Written LinkPlas on the site; say if the quote should stay as the client wrote it |
 | 7 | Process shown as Viabilidade → Molde e protótipos → Industrialização → Produção (p. 9) | The home design says Desenvolvimento → Molde → Injeção → Personalização | Both are on the site: the home page has the design's four steps and Como trabalhamos the presentation's. One set should be chosen |
 | 8 | — | The design system's header and footer list Empresa, Produtos, Setores, Qualidade, Notícias, Contactos; the home frame's footer links to Sustentabilidade, Trabalhe connosco, ThermaLink, KeepyLink and to privacy, cookies and terms pages | The new menu in section 1 is built. The footer lists only pages that exist (Empresa, Marcas, Parcerias, Contactos, Livro de Reclamações) |
@@ -372,7 +372,9 @@ Decided:
 - **The logo strip** shows partner names as text until logos are dropped into `src/assets/logos/`.
 - **The contact form** gains the request type and a consent checkbox, and has no file upload.
 - **English is published.** Every page has English copy, drafted from the Portuguese and still to be reviewed by the client.
-- **The ZØR scroll animation** moved from the home page to Parcerias.
+- **The ZØR scroll animation** moved from the home page to Parcerias, where it presents ecoCatch.
+- **ecoCatch is the isothermal kit** in the home picture and the animation: the PharmaLink plastic container put to another use, not a pharmacy product.
+- **"Respondemos no prazo de 2 dias úteis"** is confirmed, and so are the published contacts (+351 256 601 535, geral@linkplas.pt) and the one-line partner descriptions.
 
 Still open:
 1. **3D models.** There is no model for the 2000 ml TupperLink, and the 4000 ml one has no measurements on the site. Is the PharmaLink lid the same for the three boxes? The PharmaLink starting colours are set by the client: dark blue box `#2B305F`, grey lid `#89898B`.
@@ -381,9 +383,9 @@ Still open:
 4. **Timeline.** Confirm the dated list in 2.6 and say which entries have photos or videos. The older deck adds three entries the 2026 presentation and the site do not have: 2024 moldes próprios, 2025 ecoFish (caixa reutilizável), 2026 ecoFish em produção.
 5. **Pages built without a design.** The brand pages, Parcerias, Portfólio, the Empresa pages and Contactos are a first proposal: say what to change.
 6. **Privacy policy.** The site has none; the cookie banner and the design's consent wording wait for it.
-7. **"Respondemos no prazo de 2 dias úteis."** Confirm the promise on the call to action.
-8. **Which contact to publish**, which process steps to use, and the ecoCatch picture on the home page: see section 5, rows 5 and 7, and the notes under 2.1.
-9. **Partner descriptions** for Polisport, Empifarma, OCP and Medlog, written here from the presentation, need confirming.
+7. **Process steps.** The home page has the design's four steps and Como trabalhamos the presentation's (section 5, row 7). One set should be chosen.
+8. **20 or 24 hours.** The kit's line on Parcerias says "qualificada até 20 horas"; the ecoCatch pages of the presentation, used on Portfólio, say up to 24 h.
+9. **Third-party services and consent.** reCAPTCHA, the Google Maps embed and Google Fonts all contact Google; see the privacy notes given to the client on 2026-10-05.
 
 ## 7. Content still to be supplied
 

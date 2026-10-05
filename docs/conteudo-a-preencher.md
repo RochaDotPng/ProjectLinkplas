@@ -46,11 +46,12 @@ Enquanto não houver logótipos, a faixa mostra os nomes dos oito parceiros em t
 - Outros clientes a acrescentar à faixa: …
 
 **1.3 "Respondemos no prazo de 2 dias úteis com uma proposta."**
-A frase veio com o design. O prazo está certo? …
+A frase veio com o design. O prazo está certo? **Sim, confirmado (5 de outubro de 2026).**
 
 **1.4 Imagem do ecoCatch**
-O design ilustra "ecoCatch, desenvolvido com a ZØR" com a vista explodida do kit isotérmico de farmácia. Fica essa imagem ou uma do ecoCatch (ecoFish, ecoShell)?
-- Ficheiro: …
+Confirmado (5 de outubro de 2026): a vista explodida do kit isotérmico é o ecoCatch. Usa o mesmo recipiente plástico das caixas PharmaLink, com outra utilização, e não é um produto de farmácia. A imagem fica.
+- A imagem tem as legendas desenhadas em português. Existe uma versão sem legendas, ou em inglês, para a página inglesa? …
+- A página Parcerias diz que o kit é "qualificado até 20 horas" (texto do site antigo) e o Portfólio diz "até 24 h" (apresentação). Qual é o valor certo? …
 
 **1.5 Passos do processo**
 A página inicial mostra os passos do design (Desenvolvimento · Molde · Injeção · Personalização) e a página Como trabalhamos os da apresentação (Viabilidade · Molde e protótipos · Industrialização · Produção). Ficam os dois ou escolhe-se um? …
@@ -306,20 +307,20 @@ Parceiros ativos: Platec, Plural, ZØR, Polisport, Empifarma, OCP, Medlog e Copr
 
 | Parceiro | Logótipo (ficheiro) | Site | Desde (ano) | A parceria em uma ou duas frases |
 |---|---|---|---|---|
-| Platec | … | … | … | Projeto concluído em dezembro de 2025. **(confirmar)** |
-| Plural | … | … | … | Mais de 10.000 caixas e tampas personalizadas com a marca do cliente. **(confirmar)** |
-| ZØR | … | … | … | ecoCatch: sistema reutilizável para pescado, desenvolvido em parceria. **(confirmar)** |
-| Polisport | … | … | … | Recomendou a LinkPlas à Coprax. **(confirmar)** |
-| Empifarma | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
-| OCP | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
-| Medlog | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. **(confirmar)** |
-| Coprax | … | … | … | Chegou à LinkPlas por indicação da Polisport. **(confirmar)** |
+| Platec | … | … | … | Projeto concluído em dezembro de 2025. |
+| Plural | … | … | … | Mais de 10.000 caixas e tampas personalizadas com a marca do cliente. |
+| ZØR | … | … | … | ecoCatch: sistema reutilizável para pescado, desenvolvido em parceria. |
+| Polisport | … | … | … | Recomendou a LinkPlas à Coprax. |
+| Empifarma | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. |
+| OCP | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. |
+| Medlog | … | … | … | Caixas de transporte de medicamentos para a distribuição farmacêutica. |
+| Coprax | … | … | … | Chegou à LinkPlas por indicação da Polisport. |
 
-As frases da última coluna são as que estão no site. Foram escritas a partir da apresentação, que só refere a Polisport como a empresa que recomendou a LinkPlas à Coprax, e a Empifarma, a OCP e a Medlog apenas pelo nome ("Desenvolvido para"). Corrija as que não estiverem certas.
+As frases da última coluna são as que estão no site, confirmadas a 5 de outubro de 2026.
 
 Os logótipos vão para `src/assets/logos/`, com o nome do parceiro em minúsculas (`platec.svg`, `zor.svg`…).
 
-**Imagem do ecoCatch** para a página Parcerias e para o Portfólio (a apresentação credita a imagem à ZØR):
+A página Parcerias abre com o ecoCatch (a animação do kit isotérmico) e o Portfólio mostra a vista explodida do kit. Fotografias do ecoCatch em utilização, se existirem, são bem-vindas:
 - Ficheiros: …
 
 A Monte Meão não entra no site: de momento não é uma parceria ativa.
@@ -437,12 +438,12 @@ A apresentação fala em conformidade para contacto alimentar e farmacêutico.
 
 ## 7. Contactos
 
-A apresentação e o site antigo indicam contactos diferentes. A página foi construída com os da coluna "Fica"; corrija se não forem estes.
+A apresentação e o site antigo indicam contactos diferentes. A página usa os da coluna "Fica"; o telefone e o email foram confirmados a 5 de outubro de 2026.
 
 | Campo | Apresentação | Site antigo | Fica |
 |---|---|---|---|
-| Telefone | +351 919 827 175 | +351 256 601 535 | +351 256 601 535 **(confirmar)** |
-| Email | paula.rocha@linkplas.pt | geral@linkplas.pt no rodapé, paula.rocha@linkplas.pt na página Contactos | geral@linkplas.pt **(confirmar)** |
+| Telefone | +351 919 827 175 | +351 256 601 535 | +351 256 601 535 (confirmado) |
+| Email | paula.rocha@linkplas.pt | geral@linkplas.pt no rodapé, paula.rocha@linkplas.pt na página Contactos | geral@linkplas.pt (confirmado) |
 | Morada | Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis | igual, sem o número da porta | a da apresentação, com "Linkplas, Lda" por cima **(confirmar)** |
 
 **Horário de atendimento** (a página mostra "Conteúdo a fornecer" até haver resposta): …

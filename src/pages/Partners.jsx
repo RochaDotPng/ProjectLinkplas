@@ -6,42 +6,20 @@ import Section from '../components/content/Section/Section';
 import SectionHeading from '../components/content/SectionHeading/SectionHeading';
 import QuoteBlock from '../components/content/QuoteBlock/QuoteBlock';
 import PartnerCard from '../components/cards/PartnerCard/PartnerCard';
-import ContentPlaceholder from '../components/ui/ContentPlaceholder/ContentPlaceholder';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder/ImagePlaceholder';
-import StandaloneLink from '../components/ui/StandaloneLink/StandaloneLink';
 import { usePartnersContent } from '../content/partners';
 
 export default function Partners() {
-  const { crumb, hero, ecocatch, list, referral, partners } = usePartnersContent();
+  const { crumb, hero, list, referral, partners } = usePartnersContent();
 
   return (
     <PageLayout>
       <PageMeta page="partners" />
       <InteriorHero current={crumb} eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead} />
 
+      {/* The featured partnership: ecoCatch, with ZØR. */}
       <ZorPartnership />
 
-      <Section tone="subtle" labelledBy="parcerias-ecocatch">
-        <div className="lp-split">
-          <div className="lp-stack">
-            <SectionHeading
-              id="parcerias-ecocatch"
-              eyebrow={ecocatch.eyebrow}
-              title={ecocatch.title}
-              description={ecocatch.text}
-            />
-            <StandaloneLink to={ecocatch.action.to}>{ecocatch.action.label}</StandaloneLink>
-          </div>
-          <div className="lp-stack">
-            <div className="lp-media">
-              <ImagePlaceholder />
-            </div>
-            <ContentPlaceholder>{ecocatch.missing}</ContentPlaceholder>
-          </div>
-        </div>
-      </Section>
-
-      <Section labelledBy="parcerias-lista">
+      <Section tone="subtle" labelledBy="parcerias-lista">
         <SectionHeading id="parcerias-lista" eyebrow={list.eyebrow} title={list.title} description={list.description} />
         <ul className="lp-grid lp-grid--4">
           {partners.map((partner) => (
@@ -52,7 +30,7 @@ export default function Partners() {
         </ul>
       </Section>
 
-      <Section tone="subtle" labelledBy="parcerias-recomendacao">
+      <Section labelledBy="parcerias-recomendacao">
         <SectionHeading
           id="parcerias-recomendacao"
           eyebrow={referral.eyebrow}

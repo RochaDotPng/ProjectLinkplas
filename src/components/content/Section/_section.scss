@@ -17,9 +17,11 @@
   background-color: var(--lp-bg-inverse);
 }
 
-// A section that follows one of the same tone needs no second gap.
+// A section that follows one of the same tone needs no second gap. The call-to-action
+// banner sits on the page tone and brings its own space below, so the same goes after it.
 .lp-section--page + .lp-section--page,
-.lp-section--subtle + .lp-section--subtle {
+.lp-section--subtle + .lp-section--subtle,
+.lp-cta + .lp-section--page {
   padding-top: 0;
 }
 
