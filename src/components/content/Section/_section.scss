@@ -102,6 +102,15 @@
   gap: var(--lp-space-24);
 }
 
+// A heading with its own paragraph, and a column of such pairs.
+.lp-stack--tight { gap: var(--lp-space-12); }
+.lp-stack--loose { gap: var(--lp-space-40); }
+
+// Text beside a photograph of about the same height reads better centred on it.
+.lp-split--center {
+  align-items: center;
+}
+
 .lp-media {
   width: 100%;
   aspect-ratio: 4 / 3;

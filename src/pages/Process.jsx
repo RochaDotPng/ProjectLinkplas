@@ -5,7 +5,6 @@ import Section from '../components/content/Section/Section';
 import SectionHeading from '../components/content/SectionHeading/SectionHeading';
 import ProcessStep from '../components/content/ProcessStep/ProcessStep';
 import CheckList from '../components/content/CheckList/CheckList';
-import QuoteBlock from '../components/content/QuoteBlock/QuoteBlock';
 import FeatureCard from '../components/cards/FeatureCard/FeatureCard';
 import Stat from '../components/cards/Stat/Stat';
 import Badge from '../components/ui/Badge/Badge';
@@ -14,7 +13,7 @@ import { useCompanyContent } from '../content/company';
 
 export default function Process() {
   const { crumb, process } = useCompanyContent();
-  const { hero, development, injection, finishing, partnership } = process;
+  const { hero, development, injection, finishing } = process;
 
   return (
     <PageLayout>
@@ -71,11 +70,6 @@ export default function Process() {
             <img src={finishing.image} alt={finishing.imageAlt} loading="lazy" decoding="async" />
           </div>
         </div>
-      </Section>
-
-      <Section tone="subtle" labelledBy="processo-parceria">
-        <SectionHeading id="processo-parceria" title={partnership.title} />
-        <QuoteBlock quote={partnership.quote} author={partnership.text} />
       </Section>
     </PageLayout>
   );

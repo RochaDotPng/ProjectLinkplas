@@ -66,7 +66,7 @@ A feed of recent posts about the company, newest first. Posts are added by hand,
 | 1 | Cabeçalho | Title and one-line intro | Gap (one sentence) | Hero (Interior) |
 | 2 | Feed | Image, date, origin (LinkedIn, Instagram…), title, short text, link to the original post | Site: the six posts in `cards.json` | News Card, Pagination |
 
-As built: the six posts, three per row on desktop, each card linking to the original post in a new tab. The page introduction is a placeholder, and there is no pagination yet (six posts fit on one page). Posts are added in `src/content/news.js`.
+As built: the six posts, three per row on desktop, each card linking to the original post in a new tab. The page has no introduction line (the client had its placeholder removed on 2026-10-08), and there is no pagination yet (six posts fit on one page). Posts are added in `src/content/news.js`.
 
 Candidate posts the presentation mentions that are not in the feed yet: presence at ExpoFarma (p. 20), ecoCatch with ZØR (p. 3, p. 14), the Platec project concluded in December 2025 (p. 16), the Plural delivery (p. 17). The Selo Igualdade Salarial 2024 (p. 20) is already there.
 
@@ -132,7 +132,9 @@ How the size selector and the preview work together:
 
 ### 2.4 Marcas — one page per sub-brand
 
-Every brand page has the same four blocks you asked for, plus proof and a call to action. The brand's accent colour is used only on that page.
+**Superseded on 2026-10-08:** the client supplied a brand presentation (a PowerPoint with one slide per brand, two for PharmaLink) and asked for the brand pages to carry exactly its text. Each page is now the slide's sector, title, paragraph and points in the hero, a second band for PharmaLink's "Proteção térmica" slide, and the brand's products. The blocks and tables below describe the earlier version, built from the institutional presentation, and are kept as a record.
+
+Every brand page has the same blocks and a call to action. **Origem and Prova ("Clientes") were removed from the pages at the client's request on 2026-10-08**; their rows below are kept as a record of the content that exists for them. The brand's accent colour is used only on that page.
 
 | # | Block | What it answers |
 |---|---|---|
@@ -140,11 +142,11 @@ Every brand page has the same four blocks you asked for, plus proof and a call t
 | 2 | Propósito | Why the brand exists and who it is for |
 | 3 | Vantagens | What the customer gains |
 | 4 | Características | What the product is: parts, sizes, materials, variants, 3D viewer |
-| 5 | Origem | How and when LinkPlas created it |
-| 6 | Prova | Clients and testimonials |
+| 5 | Origem (removed) | How and when LinkPlas created it |
+| 6 | Prova (removed) | Clients and testimonials |
 | 7 | Fecho | Pedir orçamento |
 
-As built (2026-10-03, one template for the three brands, no Figma frame): the hero sits on the brand's light tint with its logo, the promise as the page title, one line, the buttons "Ver produtos <marca>" and "Pedir orçamento", and the sector photograph from the home design. Then Propósito (with "Para quem"), Vantagens, Características (ending with the brand's product cards, which lead to the pages with the 3D viewer), Origem (the dated milestones, and a placeholder for the story) and Clientes (a placeholder where nothing was supplied).
+As built (2026-10-03, one template for the three brands, no Figma frame): the hero sits on the brand's light tint with its logo, the promise as the page title, one line, the buttons "Ver produtos <marca>" and "Pedir orçamento", and the sector photograph from the home design. Then Propósito (with "Para quem"), Vantagens, Características (ending with the brand's product cards, which lead to the pages with the 3D viewer). Origem and Clientes were built at first and removed on 2026-10-08.
 
 **TupperLink**
 
@@ -224,7 +226,7 @@ As built: one band per project, with the client and period, a title, the figure 
 | 7 | Liderança | "As pessoas que acompanham cada projeto." Paula Rocha, Ana Paula, António Filipe, Sandra Tavares: role, since when, short bio, portrait | p. 19 | Team Card ×4 |
 | 8 | Fecho | Link to Como trabalhamos and Contactos | — | CTA Section |
 
-As built (2026-10-03): all eight sections. The timeline shows the eight dated entries below (the two undated ones are left out until they have a year); the photographs for the timeline, the team photo and the four portraits are placeholders.
+As built (2026-10-03): all eight sections. The timeline shows the eight dated entries below (the two undated ones are left out until they have a year); four photographs supplied by the client on 2026-10-08 (`public/images/empresa/`) run down the page: the injection machine beside the hero text, the mould racks beside the history heading, the outfeed conveyor beside Missão and Visão, and the reception beside the values heading. Since the same day the team section shows the client's group photograph, and the people section is the client's team slide: the title "As pessoas por trás de cada peça." and six people with portrait, name and role (Paula Rocha, Ana Paula, Rui Silva, Sandra Tavares, António Filipe, André Silva). The four people who were already there keep their start dates and short biographies from the institutional presentation; Rui Silva and André Silva have none yet, and the client is to supply them. The "Conteúdo a fornecer" notes that asked for those photographs (and for timeline photographs) were removed from the page on 2026-10-08, at the client's request; the worksheet still lists them.
 
 Timeline entries available today:
 
@@ -249,10 +251,10 @@ Timeline entries available today:
 | 2 | Desenvolvimento de produto | "Um só interlocutor, da ideia à produção em série." 01 Viabilidade · 02 Molde e protótipos · 03 Industrialização · 04 Produção. Benefits: menos riscos e menos iterações · produto otimizado para produção · equipa com experiência em injeção, materiais e conformidade | p. 9 | Process Step ×4, Check List |
 | 3 | Injeção de peças técnicas | "Componentes à especificação, da precisão às grandes séries." 50t–550t de força de fecho, em 5 máquinas. Materiais: PP, PE, PA, ABS, PC e outros. Da análise à produção · Controlo em cada série · Produção em Portugal (99% de entregas no prazo) | p. 10 | Stat, Feature Card ×3, tags |
 | 4 | Soldadura e acabamento | "Uniões limpas e resistentes, sem colas." Soldadura por ultrassons · colocação de componentes · etiquetagem e personalização com a marca do cliente. "Menos fornecedores para gerir e a identidade da marca do cliente no próprio produto." Photo of the sonotrode and fixture | p. 11; Site (ultrasonic welding page) | image + Check List |
-| 5 | Parceria e proximidade | "Desenvolvemos consigo, não apenas para si." Acompanhamento direto do projeto à produção, com resposta rápida | p. 6 | Quote Block |
+| 5 | Parceria e proximidade (removed from the page on 2026-10-08, at the client's request) | "Desenvolvemos consigo, não apenas para si." Acompanhamento direto do projeto à produção, com resposta rápida | p. 6 | Quote Block |
 | 6 | Fecho | Pedir orçamento | — | CTA Section |
 
-As built: the five sections above, in that order, with the existing ultrasonic welding photograph. The injection section links to the FactoryLink page.
+As built: sections 1 to 4 above, in that order, with the existing ultrasonic welding photograph, then the call to action. The "Parceria e proximidade" quote was built at first and removed on 2026-10-08. The injection section links to the FactoryLink page.
 
 **Qualidade**
 
@@ -278,7 +280,7 @@ Layout as in the design system's "Contacto e pedido de orçamento": contacts and
 | 2 | Contactos | Address: Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis. Phone and email. LinkedIn, Instagram, Facebook. Map | p. 21; Site |
 | 3 | Formulário | Nome, Empresa, Email, Telefone, Tipo de pedido (Orçamento, Informação, Parceria), Mensagem and a consent checkbox. No file upload (client decision) | Site; design system |
 
-As built (2026-10-03): the page title is the design system's "Vamos falar sobre o seu projeto." with its line "Envie o desenho, a amostra ou apenas a ideia. Analisamos a viabilidade e respondemos com uma proposta." The contacts are the landline +351 256 601 535 and geral@linkplas.pt, with the legal name "Linkplas, Lda" over the address; the opening hours are a placeholder. On phones the form comes before the contacts. The consent text is "Autorizo a LinkPlas a utilizar os dados deste formulário para responder ao meu pedido.": it names no privacy policy because the site has none yet. The request type is sent as a separate field and also written at the top of the message, so it reaches the inbox even before the EmailJS template gains a field for it.
+As built (2026-10-03): the page title is the design system's "Vamos falar sobre o seu projeto." with its line "Envie o desenho, a amostra ou apenas a ideia. Analisamos a viabilidade e respondemos com uma proposta." The contacts are the landline +351 256 601 535 and geral@linkplas.pt, with the legal name "Linkplas, Lda" over the address; the opening hours are Monday to Friday, 9h00–18h00 (added on 2026-10-08). On phones the form comes before the contacts. The consent text is "Autorizo a LinkPlas a utilizar os dados deste formulário para responder ao meu pedido.": it names no privacy policy because the site has none yet. The request type is sent as a separate field and also written at the top of the message, so it reaches the inbox even before the EmailJS template gains a field for it.
 
 ---
 
@@ -399,5 +401,5 @@ In short:
 - **Qualidade**: the list of certifications and the certificates as files.
 - **Início**: the partners' logos for the logo strip; a lighter hero video with an MP4 version and a poster image.
 - **Notícias**: a one-line page introduction and the next posts.
-- **Contactos**: the opening hours; confirmation of the phone and email to publish.
+- **Contactos**: nothing outstanding (phone, email and opening hours are confirmed).
 - **English**: every page is translated; the client should review the English copy.

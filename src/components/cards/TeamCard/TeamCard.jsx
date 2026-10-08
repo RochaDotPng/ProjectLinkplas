@@ -10,7 +10,7 @@ export default function TeamCard({ name, role, since, bio, photo, headingLevel: 
       <div className="lp-team-card__info">
         <Heading className="lp-team-card__name">{name}</Heading>
         <p className="lp-team-card__role">{role}</p>
-        <p className="lp-team-card__since">{since}</p>
+        {since && <p className="lp-team-card__since">{since}</p>}
         {bio && <p className="lp-team-card__bio">{bio}</p>}
       </div>
     </article>
@@ -20,7 +20,7 @@ export default function TeamCard({ name, role, since, bio, photo, headingLevel: 
 TeamCard.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
-  since: PropTypes.string.isRequired,
+  since: PropTypes.string,
   bio: PropTypes.string,
   photo: PropTypes.string,
   headingLevel: PropTypes.elementType,

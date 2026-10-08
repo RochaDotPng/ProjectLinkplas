@@ -87,6 +87,9 @@
   }
 }
 
+// A column looks like an item of the home page's sectors: plain at rest, and in its brand's
+// tone (tint, white icon box, title and link in the brand's text shade) when it is the one
+// in play.
 .lp-mega-menu__column {
   display: flex;
   flex: 1 1 0;
@@ -99,13 +102,15 @@
   color: var(--lp-text-primary);
   text-decoration: none;
   white-space: normal;
+  transition: background-color 0.2s ease;
 
+  // Bootstrap's own hover, focus and current-page colours give way to the tone below.
   &:hover,
   &:focus,
   &.active,
   &:active {
     color: var(--lp-text-primary);
-    background-color: var(--lp-bg-subtle);
+    background-color: transparent;
   }
 
   &:focus-visible {
@@ -123,7 +128,7 @@
   width: var(--lp-control-height-md);
   height: var(--lp-control-height-md);
   color: var(--lp-icon-brand);
-  background-color: var(--lp-bg-brand-subtle);
+  background-color: var(--lp-bg-subtle);
   border-radius: var(--lp-radius-md);
 }
 
@@ -141,5 +146,34 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  margin-top: auto;
   color: var(--lp-text-brand);
+}
+
+@mixin lp-mega-menu-tone {
+  background-color: var(--lp-tone-subtle);
+
+  .lp-mega-menu__icon {
+    color: var(--lp-tone-text);
+    background-color: var(--lp-bg-page);
+  }
+
+  // The sub-brand's text shade, not its accent: the accent fails contrast on the tint.
+  .lp-mega-menu__title,
+  .lp-mega-menu__link {
+    color: var(--lp-tone-text);
+  }
+}
+
+// One tone at a time, since two sub-brands' accents never appear together: the column under
+// the pointer or, failing that, the one with keyboard focus.
+.lp-mega-menu__column:hover,
+.lp-mega-menu:not(:hover) .lp-mega-menu__column:focus-visible {
+  @include lp-mega-menu-tone;
+}
+
+// Failing both, the brand whose page is open. A rule of its own: a browser without :has()
+// drops it and keeps the one above.
+.lp-mega-menu:not(:hover):not(:has(:focus-visible)) .lp-mega-menu__column.active {
+  @include lp-mega-menu-tone;
 }

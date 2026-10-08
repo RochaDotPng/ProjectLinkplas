@@ -39,3 +39,33 @@
   margin: 0;
   color: var(--lp-text-secondary);
 }
+
+// With a photograph: stacked on phones, side by side from desktop.
+.lp-interior-hero__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--lp-space-32);
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--lp-space-64);
+  }
+}
+
+.lp-interior-hero__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--lp-bg-muted);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// The frame is narrower than the photograph; these keep the side that matters in view.
+.lp-interior-hero__media--left img { object-position: left; }
+.lp-interior-hero__media--right img { object-position: right; }

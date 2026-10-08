@@ -1,21 +1,8 @@
 // Home "Setores": the design system's Mega Menu as a row of four items, and a panel for the
 // active one (Figma Linkplas-Website, nodes 36:2841 to 36:2466).
 
-// Each item carries its tone. Only the active item and the panel show it, so two sub-brand
-// accents never appear together.
-.lp-sector-tone--brand {
-  --lp-sector-subtle: var(--lp-bg-brand-subtle);
-  --lp-sector-text: var(--lp-text-brand);
-  --lp-sector-body: var(--lp-text-primary);
-}
-
-@each $brand in (tupperlink, pharmalink, factorylink) {
-  .lp-sector-tone--#{$brand} {
-    --lp-sector-subtle: var(--lp-subbrand-#{$brand}-subtle);
-    --lp-sector-text: var(--lp-subbrand-#{$brand}-text);
-    --lp-sector-body: var(--lp-subbrand-#{$brand}-text);
-  }
-}
+// Each item carries its tone (the lp-tone classes in styles/_base.scss). Only the active item
+// and the panel show it, so two sub-brand accents never appear together.
 
 .lp-sector-showcase {
   display: flex;
@@ -49,7 +36,7 @@
   }
 
   &.is-active {
-    background-color: var(--lp-sector-subtle);
+    background-color: var(--lp-tone-subtle);
   }
 }
 
@@ -131,14 +118,14 @@
 .lp-sector-menu__item.is-active {
   .lp-sector-menu__icon,
   .lp-badge {
-    color: var(--lp-sector-text);
+    color: var(--lp-tone-text);
     background-color: var(--lp-bg-page);
   }
 
   // The sub-brand's text shade, not its accent: the accent fails contrast on the tint.
   .lp-sector-menu__title,
   .lp-sector-menu__link {
-    color: var(--lp-sector-text);
+    color: var(--lp-tone-text);
   }
 }
 
@@ -150,7 +137,7 @@
   align-items: flex-start;
   gap: var(--lp-space-24);
   padding: var(--lp-space-24);
-  background-color: var(--lp-sector-subtle);
+  background-color: var(--lp-tone-subtle);
   transition: background-color 0.2s ease;
 
   @include media-breakpoint-up(lg) {
@@ -224,7 +211,7 @@
 .lp-sector-panel__description {
   @include lp-body-m;
   margin: 0;
-  color: var(--lp-sector-body);
+  color: var(--lp-tone-body);
 
   @include media-breakpoint-up(lg) {
     @include lp-body-l;
@@ -232,9 +219,9 @@
 }
 
 .lp-sector-panel__action.btn {
-  --bs-btn-color: var(--lp-sector-text);
-  --bs-btn-hover-color: var(--lp-sector-text);
-  --bs-btn-active-color: var(--lp-sector-text);
+  --bs-btn-color: var(--lp-tone-text);
+  --bs-btn-hover-color: var(--lp-tone-text);
+  --bs-btn-active-color: var(--lp-tone-text);
 
   @include media-breakpoint-down(md) {
     width: 100%;

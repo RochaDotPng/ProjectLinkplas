@@ -93,11 +93,11 @@ const posts = [
 
 const ui = {
   pt: {
-    hero: { eyebrow: 'Notícias', title: 'Novidades da LinkPlas.', missingLead: 'Uma frase de introdução à página de notícias.' },
+    hero: { eyebrow: 'Notícias', title: 'Novidades da LinkPlas.' },
     readPost: 'Ler publicação',
   },
   en: {
-    hero: { eyebrow: 'News', title: 'News from LinkPlas.', missingLead: 'A one-line introduction to the news page.' },
+    hero: { eyebrow: 'News', title: 'News from LinkPlas.' },
     readPost: 'Read post',
   },
 };

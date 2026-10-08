@@ -15,6 +15,7 @@ const company = {
         eyebrow: 'Quem somos',
         title: 'Peças plásticas com rigor técnico, produzidas em Portugal desde 2012.',
         lead: 'A LinkPlas é uma empresa portuguesa especializada na injeção de peças plásticas, com atividade na indústria, na farmácia e no take-away. Desenvolvemos e produzimos soluções que aliam capacidade técnica, rigor e proximidade ao cliente.',
+        image: { src: '/images/empresa/maquina-injecao.webp', position: 'right', alt: 'Máquina de injeção na fábrica da LinkPlas, com uma tampa acabada de moldar' },
       },
       stats: {
         label: 'A LinkPlas em números',
@@ -30,6 +31,7 @@ const company = {
         eyebrow: 'A nossa história',
         title: 'De fornecedor de componentes a parceiro de desenvolvimento.',
         text: 'A LinkPlas nasceu em 2012 com uma convicção simples: numa indústria onde o preço é muitas vezes o único argumento, há espaço para quem compete pela qualidade, pelo rigor técnico e pela confiança construída com cada cliente.',
+        image: { src: '/images/empresa/armazem-moldes.jpg', alt: 'Estantes com moldes de injeção no armazém da LinkPlas' },
         timeline: [
           { year: '2012', title: 'Fundação', description: 'Paula Rocha cria a LinkPlas, depois de uma carreira ligada à indústria.' },
           { year: '2014', title: 'Certificação ISO 9001' },
@@ -40,9 +42,9 @@ const company = {
           { year: '2024', title: 'Caixas de transporte de medicamentos', description: 'Início de produção, em plástico de alta resistência e com moldes próprios.' },
           { year: '2026', title: 'Hoje', description: 'ecoCatch com a ZØR e 14 anos de atividade contínua.', current: true },
         ],
-        missing: 'Uma fotografia ou um vídeo para cada momento da história.',
       },
       purpose: {
+        image: { src: '/images/empresa/linha-producao.webp', alt: 'Tampas transparentes, acabadas de injetar, no tapete de saída da máquina' },
         mission: {
           title: 'Missão',
           text: 'Desenvolver e produzir peças e componentes plásticos de elevada qualidade e exigência técnica, trabalhando em parceria com os clientes em soluções eficientes e inovadoras que reduzem o impacto ambiental ao longo de todo o ciclo de vida.',
@@ -55,6 +57,7 @@ const company = {
       values: {
         eyebrow: 'Valores',
         title: 'Quatro valores que orientam cada projeto.',
+        image: { src: '/images/empresa/rececao.webp', alt: 'Receção da LinkPlas, com os certificados da empresa na parede' },
         items: [
           { number: '01', title: 'Confiança e rigor', description: 'Relação direta com o cliente, transparência nos prazos e nos custos, e palavra cumprida.' },
           { number: '02', title: 'Qualidade e excelência', description: 'Conhecimento técnico dos materiais, controlo em cada série e conformidade para contacto alimentar e farmacêutico.' },
@@ -67,18 +70,22 @@ const company = {
         title: 'Entreajuda, boa disposição e compromisso.',
         text: 'Uma equipa que celebra junta cada conquista e cumpre o que promete.',
         stat: { value: '12', label: 'colaboradores, 6 desde o início' },
-        missing: 'Fotografia de grupo da equipa.',
+        photo: '/images/equipa/equipa.jpg',
+        photoAlt: 'A equipa da LinkPlas',
       },
-      leadership: {
-        eyebrow: 'Liderança',
-        title: 'As pessoas que acompanham cada projeto.',
+      // The people, their roles and their photographs are the client's team slide (October 2026).
+      // `since` and `bio` come from the institutional presentation; the client is to supply them
+      // for Rui Silva and André Silva.
+      people: {
+        title: 'As pessoas por trás de cada peça.',
         people: [
-          { name: 'Paula Rocha', role: 'Fundadora · Comercial e Projetos', since: 'Desde 2012', bio: 'Fundou a LinkPlas depois de uma carreira ligada à indústria. Lidera negociações, projetos e a coordenação com clientes e fornecedores.' },
-          { name: 'Ana Paula', role: 'Qualidade e Planeamento', since: 'Desde maio de 2012', bio: 'Engenharia Química e Industrial, pós-graduada em Qualidade. Lidera as certificações e o desenvolvimento de produto.' },
-          { name: 'António Filipe', role: 'Produção e Afinação de Máquinas', since: 'Desde junho de 2012', bio: 'Entrou com 16 anos de experiência em injeção. Acompanha o arranque de cada peça para que seja viável e rentável.' },
-          { name: 'Sandra Tavares', role: 'Logística e Armazém', since: 'Desde março de 2012', bio: 'Começou como operadora de máquina e passou pelo controlo de qualidade. É a voz da LinkPlas no contacto diário com clientes.' },
+          { name: 'Paula Rocha', role: 'Fundadora · Comercial', since: 'Desde 2012', bio: 'Fundou a LinkPlas depois de uma carreira ligada à indústria. Lidera negociações, projetos e a coordenação com clientes e fornecedores.', photo: '/images/equipa/paula-rocha.jpg' },
+          { name: 'Ana Paula', role: 'Qualidade e Planeamento', since: 'Desde maio de 2012', bio: 'Engenharia Química e Industrial, pós-graduada em Qualidade. Lidera as certificações e o desenvolvimento de produto.', photo: '/images/equipa/ana-paula.jpg' },
+          { name: 'Rui Silva', role: 'Projetos', photo: '/images/equipa/rui-silva.jpg' },
+          { name: 'Sandra Tavares', role: 'Logística e Armazém', since: 'Desde março de 2012', bio: 'Começou como operadora de máquina e passou pelo controlo de qualidade. É a voz da LinkPlas no contacto diário com clientes.', photo: '/images/equipa/sandra-tavares.jpg' },
+          { name: 'António Filipe', role: 'Produção e Afinação de Máquinas', since: 'Desde junho de 2012', bio: 'Entrou com 16 anos de experiência em injeção. Acompanha o arranque de cada peça para que seja viável e rentável.', photo: '/images/equipa/antonio-filipe.jpg' },
+          { name: 'André Silva', role: 'Responsável Digital', photo: '/images/equipa/andre-silva.jpg' },
         ],
-        missing: 'Retratos das quatro pessoas da liderança.',
       },
     },
 
@@ -129,11 +136,6 @@ const company = {
         image: '/images/soldadura-ultrassons.jpg',
         imageAlt: 'Soldadura de uma peça plástica por ultrassons',
         link: { label: 'Ver a soldadura por ultrassons', to: ROUTES.product('soldadura-por-ultrassons') },
-      },
-      partnership: {
-        title: 'Parceria e proximidade',
-        quote: '“Desenvolvemos consigo, não apenas para si.”',
-        text: 'Acompanhamento direto do projeto à produção, com resposta rápida.',
       },
     },
 
@@ -200,6 +202,7 @@ const company = {
         eyebrow: 'Who we are',
         title: 'Precision plastic parts, made in Portugal since 2012.',
         lead: 'LinkPlas is a Portuguese company specialising in plastic injection moulding, working for industry, pharmacy and take-away. We develop and produce solutions that combine technical capability, rigour and closeness to the client.',
+        image: { src: '/images/empresa/maquina-injecao.webp', position: 'right', alt: 'Injection machine at the LinkPlas factory, with a freshly moulded lid' },
       },
       stats: {
         label: 'LinkPlas in numbers',
@@ -215,6 +218,7 @@ const company = {
         eyebrow: 'Our history',
         title: 'From component supplier to development partner.',
         text: 'LinkPlas was born in 2012 with a simple conviction: in an industry where price is often the only argument, there is room for those who compete on quality, technical rigour and the trust built with each client.',
+        image: { src: '/images/empresa/armazem-moldes.jpg', alt: 'Racks of injection moulds in the LinkPlas warehouse' },
         timeline: [
           { year: '2012', title: 'Founding', description: 'Paula Rocha creates LinkPlas, after a career in industry.' },
           { year: '2014', title: 'ISO 9001 certification' },
@@ -225,9 +229,9 @@ const company = {
           { year: '2024', title: 'Medicine transport boxes', description: 'Production begins, in high-strength plastic and with our own moulds.' },
           { year: '2026', title: 'Today', description: 'ecoCatch with ZØR and 14 years of continuous activity.', current: true },
         ],
-        missing: 'A photograph or a video for each moment of the history.',
       },
       purpose: {
+        image: { src: '/images/empresa/linha-producao.webp', alt: "Clear lids, freshly moulded, on the machine's outfeed conveyor" },
         mission: {
           title: 'Mission',
           text: 'To develop and produce plastic parts and components of high quality and technical demand, working in partnership with clients on efficient, innovative solutions that reduce environmental impact throughout the whole life cycle.',
@@ -240,6 +244,7 @@ const company = {
       values: {
         eyebrow: 'Values',
         title: 'Four values that guide every project.',
+        image: { src: '/images/empresa/rececao.webp', alt: "LinkPlas reception, with the company's certificates on the wall" },
         items: [
           { number: '01', title: 'Trust and rigour', description: 'A direct relationship with the client, transparency on deadlines and costs, and promises kept.' },
           { number: '02', title: 'Quality and excellence', description: 'Technical knowledge of materials, control in every series and compliance for food and pharmaceutical contact.' },
@@ -252,18 +257,19 @@ const company = {
         title: 'Mutual support, good humour and commitment.',
         text: 'A team that celebrates every achievement together and delivers what it promises.',
         stat: { value: '12', label: 'employees, 6 since the start' },
-        missing: 'Group photograph of the team.',
+        photo: '/images/equipa/equipa.jpg',
+        photoAlt: 'The LinkPlas team',
       },
-      leadership: {
-        eyebrow: 'Leadership',
-        title: 'The people who follow every project.',
+      people: {
+        title: 'The people behind every part.',
         people: [
-          { name: 'Paula Rocha', role: 'Founder · Sales and Projects', since: 'Since 2012', bio: 'Founded LinkPlas after a career in industry. Leads negotiations, projects and coordination with clients and suppliers.' },
-          { name: 'Ana Paula', role: 'Quality and Planning', since: 'Since May 2012', bio: 'Chemical and Industrial Engineering, with a postgraduate degree in Quality. Leads certifications and product development.' },
-          { name: 'António Filipe', role: 'Production and Machine Setting', since: 'Since June 2012', bio: 'Joined with 16 years of experience in injection moulding. Follows the start-up of each part so that it is viable and profitable.' },
-          { name: 'Sandra Tavares', role: 'Logistics and Warehouse', since: 'Since March 2012', bio: 'Started as a machine operator and moved through quality control. She is the voice of LinkPlas in day-to-day contact with clients.' },
+          { name: 'Paula Rocha', role: 'Founder · Sales', since: 'Since 2012', bio: 'Founded LinkPlas after a career in industry. Leads negotiations, projects and coordination with clients and suppliers.', photo: '/images/equipa/paula-rocha.jpg' },
+          { name: 'Ana Paula', role: 'Quality and Planning', since: 'Since May 2012', bio: 'Chemical and Industrial Engineering, with a postgraduate degree in Quality. Leads certifications and product development.', photo: '/images/equipa/ana-paula.jpg' },
+          { name: 'Rui Silva', role: 'Projects', photo: '/images/equipa/rui-silva.jpg' },
+          { name: 'Sandra Tavares', role: 'Logistics and Warehouse', since: 'Since March 2012', bio: 'Started as a machine operator and moved through quality control. She is the voice of LinkPlas in day-to-day contact with clients.', photo: '/images/equipa/sandra-tavares.jpg' },
+          { name: 'António Filipe', role: 'Production and Machine Setting', since: 'Since June 2012', bio: 'Joined with 16 years of experience in injection moulding. Follows the start-up of each part so that it is viable and profitable.', photo: '/images/equipa/antonio-filipe.jpg' },
+          { name: 'André Silva', role: 'Digital Lead', photo: '/images/equipa/andre-silva.jpg' },
         ],
-        missing: 'Portraits of the four people in the leadership team.',
       },
     },
 
@@ -314,11 +320,6 @@ const company = {
         image: '/images/soldadura-ultrassons.jpg',
         imageAlt: 'Ultrasonic welding of a plastic part',
         link: { label: 'See ultrasonic welding', to: ROUTES.product('soldadura-por-ultrassons') },
-      },
-      partnership: {
-        title: 'Partnership and proximity',
-        quote: '“We develop with you, not just for you.”',
-        text: 'Direct follow-up from project to production, with fast answers.',
       },
     },
 

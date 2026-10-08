@@ -31,7 +31,12 @@ export default function NavDropdown({ item, megaLinkLabel }) {
       {item.mega ? (
         <Dropdown.Menu className="lp-mega-menu">
           {item.children.map((child) => (
-            <Dropdown.Item key={child.to} as={NavLink} to={child.to} className="lp-mega-menu__column">
+            <Dropdown.Item
+              key={child.to}
+              as={NavLink}
+              to={child.to}
+              className={`lp-mega-menu__column lp-tone--${child.brand}`}
+            >
               <span className="lp-mega-menu__icon" aria-hidden="true">
                 <Icon src={ICONS[child.icon]} size={24} />
               </span>
@@ -68,6 +73,7 @@ NavDropdown.propTypes = {
         to: PropTypes.string.isRequired,
         end: PropTypes.bool,
         icon: PropTypes.string,
+        brand: PropTypes.string,
         description: PropTypes.string,
       })
     ).isRequired,

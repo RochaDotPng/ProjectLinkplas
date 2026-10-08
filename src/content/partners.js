@@ -5,7 +5,7 @@ import { useLanguage } from '../i18n/language-context';
 import { ROUTES } from './routes';
 
 // Every image dropped into src/assets/logos is picked up here; see the LEIA-ME in that folder.
-const logoFiles = import.meta.glob('../assets/logos/*.{svg,png,webp}', { eager: true, import: 'default' });
+const logoFiles = import.meta.glob('../assets/logos/*.{svg,png,webp,jpg,jpeg}', { eager: true, import: 'default' });
 const logos = Object.fromEntries(
   Object.entries(logoFiles).map(([path, url]) => [path.slice(path.lastIndexOf('/') + 1, path.lastIndexOf('.')), url])
 );

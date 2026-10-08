@@ -21,9 +21,9 @@ const complaintsBookUrl = 'https://www.livroreclamacoes.pt/';
 
 // The brands open as a mega menu: icon, name, one line.
 const brandLinks = (lines) => [
-  { label: 'FactoryLink', to: ROUTES.brand('factorylink'), icon: 'factory', description: lines.factorylink },
-  { label: 'PharmaLink', to: ROUTES.brand('pharmalink'), icon: 'pill', description: lines.pharmalink },
-  { label: 'TupperLink', to: ROUTES.brand('tupperlink'), icon: 'package', description: lines.tupperlink },
+  { label: 'FactoryLink', brand: 'factorylink', to: ROUTES.brand('factorylink'), icon: 'factory', description: lines.factorylink },
+  { label: 'PharmaLink', brand: 'pharmalink', to: ROUTES.brand('pharmalink'), icon: 'pill', description: lines.pharmalink },
+  { label: 'TupperLink', brand: 'tupperlink', to: ROUTES.brand('tupperlink'), icon: 'package', description: lines.tupperlink },
 ];
 
 const site = {

@@ -4,8 +4,10 @@
   gap: var(--lp-space-16);
 }
 
+// The portraits are supplied cropped to 6:5, so the frame keeps that shape at every card
+// width and no face is cut.
 .lp-team-card__photo {
-  height: 320px;
+  aspect-ratio: 6 / 5;
   overflow: hidden;
   background-color: var(--lp-bg-muted);
 

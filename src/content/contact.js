@@ -23,7 +23,7 @@ const contact = {
     title: 'Vamos falar sobre o seu projeto.',
     lead: 'Envie o desenho, a amostra ou apenas a ideia. Analisamos a viabilidade e respondemos com uma proposta.',
     labels: { address: 'Morada', phone: 'Telefone', email: 'Email', hours: 'Horário' },
-    hoursMissing: 'Horário de atendimento.',
+    hours: 'Segunda a sexta, 9h00–18h00',
     mapTitle: 'Localização da LinkPlas no Google Maps',
     form: {
       title: 'Pedido de orçamento',
@@ -70,7 +70,7 @@ const contact = {
     title: "Let's talk about your project.",
     lead: 'Send the drawing, the sample or just the idea. We assess feasibility and reply with a proposal.',
     labels: { address: 'Address', phone: 'Phone', email: 'Email', hours: 'Opening hours' },
-    hoursMissing: 'Opening hours.',
+    hours: 'Monday to Friday, 9:00–18:00',
     mapTitle: 'LinkPlas location on Google Maps',
     form: {
       title: 'Quote request',

@@ -8,13 +8,11 @@ import TimelineItem from '../components/content/TimelineItem/TimelineItem';
 import FeatureCard from '../components/cards/FeatureCard/FeatureCard';
 import Stat from '../components/cards/Stat/Stat';
 import TeamCard from '../components/cards/TeamCard/TeamCard';
-import ContentPlaceholder from '../components/ui/ContentPlaceholder/ContentPlaceholder';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder/ImagePlaceholder';
 import { useCompanyContent } from '../content/company';
 
 export default function About() {
   const { crumb, about } = useCompanyContent();
-  const { hero, stats, history, purpose, values, team, leadership } = about;
+  const { hero, stats, history, purpose, values, team, people } = about;
 
   return (
     <PageLayout>
@@ -25,12 +23,18 @@ export default function About() {
         eyebrow={hero.eyebrow}
         title={hero.title}
         lead={hero.lead}
+        image={hero.image}
       />
 
       <StatsBand label={stats.label} stats={stats.items} />
 
       <Section labelledBy="sobre-historia">
-        <SectionHeading id="sobre-historia" eyebrow={history.eyebrow} title={history.title} description={history.text} />
+        <div className="lp-split lp-split--center">
+          <SectionHeading id="sobre-historia" eyebrow={history.eyebrow} title={history.title} description={history.text} />
+          <div className="lp-media">
+            <img src={history.image.src} alt={history.image.alt} loading="lazy" decoding="async" />
+          </div>
+        </div>
         <ol className="lp-timeline">
           {history.timeline.map((entry) => (
             <TimelineItem
@@ -42,22 +46,31 @@ export default function About() {
             />
           ))}
         </ol>
-        <ContentPlaceholder>{history.missing}</ContentPlaceholder>
       </Section>
 
       <Section tone="subtle">
-        <div className="lp-split">
-          {[purpose.mission, purpose.vision].map((block) => (
-            <div key={block.title} className="lp-stack">
-              <h2 className="lp-subheading">{block.title}</h2>
-              <p className="lp-note">{block.text}</p>
-            </div>
-          ))}
+        <div className="lp-split lp-split--center">
+          <div className="lp-media">
+            <img src={purpose.image.src} alt={purpose.image.alt} loading="lazy" decoding="async" />
+          </div>
+          <div className="lp-stack lp-stack--loose">
+            {[purpose.mission, purpose.vision].map((block) => (
+              <div key={block.title} className="lp-stack lp-stack--tight">
+                <h2 className="lp-subheading">{block.title}</h2>
+                <p className="lp-note">{block.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
       <Section labelledBy="sobre-valores">
-        <SectionHeading id="sobre-valores" eyebrow={values.eyebrow} title={values.title} />
+        <div className="lp-split lp-split--center">
+          <SectionHeading id="sobre-valores" eyebrow={values.eyebrow} title={values.title} />
+          <div className="lp-media">
+            <img src={values.image.src} alt={values.image.alt} loading="lazy" decoding="async" />
+          </div>
+        </div>
         <ul className="lp-grid lp-grid--4">
           {values.items.map((value) => (
             <li key={value.number}>
@@ -73,25 +86,27 @@ export default function About() {
             <SectionHeading id="sobre-equipa" eyebrow={team.eyebrow} title={team.title} description={team.text} />
             <Stat value={team.stat.value} label={team.stat.label} />
           </div>
-          <div className="lp-stack">
-            <div className="lp-media">
-              <ImagePlaceholder />
-            </div>
-            <ContentPlaceholder>{team.missing}</ContentPlaceholder>
+          <div className="lp-media">
+            <img src={team.photo} alt={team.photoAlt} loading="lazy" decoding="async" />
           </div>
         </div>
       </Section>
 
-      <Section labelledBy="sobre-lideranca">
-        <SectionHeading id="sobre-lideranca" eyebrow={leadership.eyebrow} title={leadership.title} />
-        <ul className="lp-grid lp-grid--4">
-          {leadership.people.map((person) => (
+      <Section labelledBy="sobre-pessoas">
+        <SectionHeading id="sobre-pessoas" title={people.title} />
+        <ul className="lp-grid lp-grid--3">
+          {people.people.map((person) => (
             <li key={person.name}>
-              <TeamCard name={person.name} role={person.role} since={person.since} bio={person.bio} />
+              <TeamCard
+                name={person.name}
+                role={person.role}
+                since={person.since}
+                bio={person.bio}
+                photo={person.photo}
+              />
             </li>
           ))}
         </ul>
-        <ContentPlaceholder>{leadership.missing}</ContentPlaceholder>
       </Section>
     </PageLayout>
   );

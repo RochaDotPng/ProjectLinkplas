@@ -46,7 +46,10 @@
   gap: var(--lp-space-8);
 }
 
-@include media-breakpoint-up(lg) {
+// The six items, the language switcher and "Pedir orçamento" need about 1000px on one line,
+// more than the 960px column the page has between 992 and 1199px. So the desktop
+// navigation starts at 1200px, and narrower screens keep the menu button.
+@include media-breakpoint-up(xl) {
   .lp-header__nav,
   .lp-header__actions {
     display: flex;
@@ -130,6 +133,18 @@
 
   .btn {
     width: 100%;
+  }
+}
+
+// Between 992 and 1199px the page sits in a centred 960px column, and so does the header.
+// The open menu follows it, so the logo does not jump when the menu opens.
+@include media-breakpoint-only(lg) {
+  .lp-mobile-menu__top,
+  .lp-mobile-menu__items,
+  .lp-mobile-menu__bottom {
+    $inset: calc((100% - #{map-get($container-max-widths, lg)}) / 2 + #{$container-padding-x * 0.5});
+    padding-right: $inset;
+    padding-left: $inset;
   }
 }
 

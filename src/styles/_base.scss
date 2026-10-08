@@ -2,10 +2,11 @@
 
 @use "sass:math";
 
+// The header grows with its desktop navigation, which appears at 1200px (see _header.scss).
 :root {
   --lp-header-height: 64px;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     --lp-header-height: 80px;
   }
 }
@@ -54,6 +55,24 @@ code, pre { font-size: 0.875rem; line-height: math.div(22, 14); }
 :focus-visible {
   outline: 0;
   box-shadow: var(--lp-focus-ring);
+}
+
+// A tone: the tint and text shade of a sub-brand, or of the parent brand, for an element that
+// stands for it (an item of the home page's sectors, a column of the header's brands menu).
+// Setting the class only defines the colours; the component decides when to show them, and
+// must show one tone at a time: two sub-brands' accents never appear together.
+.lp-tone--brand {
+  --lp-tone-subtle: var(--lp-bg-brand-subtle);
+  --lp-tone-text: var(--lp-text-brand);
+  --lp-tone-body: var(--lp-text-primary);
+}
+
+@each $brand in (tupperlink, pharmalink, factorylink) {
+  .lp-tone--#{$brand} {
+    --lp-tone-subtle: var(--lp-subbrand-#{$brand}-subtle);
+    --lp-tone-text: var(--lp-subbrand-#{$brand}-text);
+    --lp-tone-body: var(--lp-subbrand-#{$brand}-text);
+  }
 }
 
 // Pages fade in and out as the route changes (see App.jsx, which waits the same 200ms).

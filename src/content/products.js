@@ -126,9 +126,7 @@ const products = [
     slug: 'kit-isotermico-e-pharma',
     brand: 'pharmalink',
     images: [
-      { src: '/images/CaixaEsferovite.png', alt: { pt: 'Inserção em esferovite para conservação térmica', en: 'Polystyrene insert for thermal protection' } },
-      { src: '/images/acumulador.png', alt: { pt: 'Acumulador de frio', en: 'Cold pack' } },
-      { src: '/images/TampaEsferovite.png', alt: { pt: 'Tampa do invólucro em esferovite', en: 'Polystyrene insert lid' } },
+      { src: '/images/kit-isotermico-vista-explodida.png', alt: { pt: 'Vista explodida do kit isotérmico: caixa exterior plástica com tampa, reforço com isolamento térmico e acumuladores', en: 'Exploded view of the isothermal kit: plastic outer box with lid, liner with thermal insulation and cold packs' } },
     ],
     downloads: [{ kind: 'datasheet', file: '/files/ZØR_LINKPLAS_Kit.pdf' }],
     pt: {

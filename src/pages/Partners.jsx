@@ -10,6 +10,7 @@ import { usePartnersContent } from '../content/partners';
 
 export default function Partners() {
   const { crumb, hero, list, referral, partners } = usePartnersContent();
+  const someHaveLogos = partners.some((partner) => partner.logo);
 
   return (
     <PageLayout>
@@ -24,7 +25,7 @@ export default function Partners() {
         <ul className="lp-grid lp-grid--4">
           {partners.map((partner) => (
             <li key={partner.id}>
-              <PartnerCard name={partner.name} logo={partner.logo} line={partner.line} />
+              <PartnerCard name={partner.name} logo={partner.logo} logoSlot={someHaveLogos} line={partner.line} />
             </li>
           ))}
         </ul>

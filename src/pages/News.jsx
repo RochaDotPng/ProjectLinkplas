@@ -3,7 +3,6 @@ import PageLayout from '../components/sections/PageLayout/PageLayout';
 import InteriorHero from '../components/sections/InteriorHero/InteriorHero';
 import Section from '../components/content/Section/Section';
 import NewsCard from '../components/cards/NewsCard/NewsCard';
-import ContentPlaceholder from '../components/ui/ContentPlaceholder/ContentPlaceholder';
 import { useNews } from '../content/news';
 import { useSiteContent } from '../content/site';
 
@@ -14,9 +13,7 @@ export default function News() {
   return (
     <PageLayout>
       <PageMeta page="news" />
-      <InteriorHero current={hero.eyebrow} eyebrow={hero.eyebrow} title={hero.title}>
-        <ContentPlaceholder>{hero.missingLead}</ContentPlaceholder>
-      </InteriorHero>
+      <InteriorHero current={hero.eyebrow} eyebrow={hero.eyebrow} title={hero.title} />
 
       <Section>
         <ul className="lp-grid lp-grid--3">

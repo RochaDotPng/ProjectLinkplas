@@ -4,13 +4,14 @@ import Breadcrumb from '../../navigation/Breadcrumb/Breadcrumb';
 import Button from '../../ui/Button/Button';
 import Icon from '../../ui/Icon/Icon';
 import Eyebrow from '../../content/Eyebrow/Eyebrow';
+import CheckList from '../../content/CheckList/CheckList';
 import SubbrandLogo from '../../brand/SubbrandLogo/SubbrandLogo';
 import arrowRight from '../../../assets/icons/arrow-right-20.svg';
 import { useSiteContent } from '../../../content/site';
 import { ROUTES } from '../../../content/routes';
 
-// Top of a brand page: the brand's logo, its promise as the page's h1, and a photograph,
-// on the brand's own tint. The tint is only ever used on that brand's page.
+// Top of a brand page: the brand's logo, its promise as the page's h1, one paragraph, its
+// points and a photograph, on the brand's own tint. The tint is only ever used on that brand's page.
 export default function BrandHero({ brand, groupLabel, productsLabel, quoteLabel }) {
   const { breadcrumbLabel, homeCrumb } = useSiteContent();
 
@@ -31,6 +32,7 @@ export default function BrandHero({ brand, groupLabel, productsLabel, quoteLabel
               {brand.title}
             </h1>
             <p className="lp-brand-hero__lead">{brand.lead}</p>
+            <CheckList items={brand.points} />
             <div className="lp-brand-hero__actions">
               <Button as={Link} to={brand.productsPath} size="large" trailingIcon={<Icon src={arrowRight} />}>
                 {productsLabel}
@@ -56,6 +58,7 @@ BrandHero.propTypes = {
     eyebrow: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     lead: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string.isRequired,
     productsPath: PropTypes.string.isRequired,
   }).isRequired,

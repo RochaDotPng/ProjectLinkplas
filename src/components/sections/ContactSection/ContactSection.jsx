@@ -4,7 +4,6 @@ import emailjs from 'emailjs-com';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Alert from '../../ui/Alert/Alert';
 import Button from '../../ui/Button/Button';
-import ContentPlaceholder from '../../ui/ContentPlaceholder/ContentPlaceholder';
 import Icon from '../../ui/Icon/Icon';
 import Breadcrumb from '../../navigation/Breadcrumb/Breadcrumb';
 import Eyebrow from '../../content/Eyebrow/Eyebrow';
@@ -30,7 +29,7 @@ const REQUIRED = ['nome', 'email', 'tipo', 'mensagem', 'consentimento'];
 // Contact details and map beside the quote request form (Contact Section in Figma). The
 // form comes right after the heading in the page, so on phones it is reached first.
 export default function ContactSection() {
-  const { eyebrow, title, lead, labels, hoursMissing, mapTitle, form, company, address, phone, email, mapUrl } =
+  const { eyebrow, title, lead, labels, hours, mapTitle, form, company, address, phone, email, mapUrl } =
     useContactContent();
   const { breadcrumbLabel, homeCrumb } = useSiteContent();
   const { fields, messages } = form;
@@ -222,7 +221,7 @@ export default function ContactSection() {
               <span className="lp-contact__icon" aria-hidden="true"><Icon src={clock} /></span>
               <div>
                 <p className="lp-contact__label">{labels.hours}</p>
-                <ContentPlaceholder>{hoursMissing}</ContentPlaceholder>
+                <p className="lp-contact__value">{hours}</p>
               </div>
             </li>
           </ul>

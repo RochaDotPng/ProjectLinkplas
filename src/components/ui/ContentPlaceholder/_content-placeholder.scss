@@ -20,7 +20,6 @@
 
 // On a tinted band the note turns white so it still reads as a note.
 .lp-section--subtle .lp-content-placeholder,
-.lp-interior-hero .lp-content-placeholder,
-.lp-contact .lp-content-placeholder {
+.lp-interior-hero .lp-content-placeholder {
   background-color: var(--lp-bg-page);
 }

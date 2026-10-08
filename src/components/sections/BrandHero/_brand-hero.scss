@@ -60,6 +60,15 @@
   color: var(--lp-text-secondary);
 }
 
+// The ticks sit on white so they read on the tint.
+.lp-brand-hero .lp-check-list {
+  margin-top: var(--lp-space-8);
+}
+
+.lp-brand-hero .lp-check-list__check {
+  background-color: var(--lp-bg-page);
+}
+
 .lp-brand-hero__actions {
   display: flex;
   flex-direction: column;

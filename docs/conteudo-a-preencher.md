@@ -42,7 +42,9 @@ A página usa o vídeo da produção (`Hero.webm`) no lugar da fotografia do des
 
 **1.2 Logótipos da faixa "Mais de 20 clientes ativos confiam na LinkPlas"**
 Enquanto não houver logótipos, a faixa mostra os nomes dos oito parceiros em texto.
-- Ficheiros colocados em `src/assets/logos/`: …
+- Ficheiros colocados em `src/assets/logos/`: os oito parceiros (ZØR, OCP, Medlog, Polisport, Empifarma, Plural, Platec e Coprax; 8 de outubro de 2026).
+- Dois precisam de um ficheiro melhor: o da **Platec** veio na versão para fundo escuro (letras a desvanecer para branco) e é pequeno (150 × 56 px): as letras foram passadas a um só tom de cinzento para se lerem, e o ficheiro original está em `content-inbox/parcerias/logos/platec-original.png`; o da **Coprax** é um JPG pequeno (220 × 80 px) com fundo branco. Versões para fundo claro, em SVG ou PNG maior: …
+- O logótipo da Plural diz "plural+udifar". Decidido (8 de outubro de 2026): o site continua a escrever "Plural".
 - Outros clientes a acrescentar à faixa: …
 
 **1.3 "Respondemos no prazo de 2 dias úteis com uma proposta."**
@@ -61,6 +63,7 @@ A página inicial mostra os passos do design (Desenvolvimento · Molde · Injeç
 ## 2. Notícias
 
 **2.1 Frase de introdução da página** (uma linha)
+Opcional: a página abre só com o título "Novidades da LinkPlas." e já não mostra a nota "Conteúdo a fornecer". Se quiser uma frase por baixo do título, escreva-a aqui.
 - …
 
 **2.2 Novas publicações**
@@ -210,6 +213,10 @@ Convite a pedir orçamento para o produto, com ligação para a página da marca
 ---
 
 ## 4. Marcas
+
+Desde 8 de outubro de 2026 as páginas das marcas usam o texto do PowerPoint de apresentação das marcas (setor, título, parágrafo e pontos de cada diapositivo), seguido dos produtos da marca. Todos os campos desta secção deixaram de ser necessários para as páginas; ficam como registo.
+
+As páginas das marcas já não têm as secções "Origem" e "Clientes" (retiradas a 8 de outubro de 2026). Os campos **Origem** e **Cliente ou testemunho** abaixo deixaram de ser necessários; ficam aqui apenas para o caso de as secções voltarem.
 
 ### 4.1 TupperLink
 
@@ -388,7 +395,15 @@ Cada marco precisa de um ano, de uma ou duas frases e, se possível, de uma foto
 |---|---|---|---|
 | … | … | … | … |
 
+Recebidas a 8 de outubro de 2026 quatro fotografias da fábrica (máquina de injeção, armazém de moldes, tapete de saída e receção), já colocadas ao longo da página Sobre nós. Estão em `public/images/empresa/`.
+
 ### 6.2 Sobre nós — equipa
+
+Recebido a 8 de outubro de 2026 (diapositivo "A equipa"): a fotografia de grupo e seis pessoas com retrato, nome e cargo. Já estão na página; os ficheiros estão em `public/images/equipa/`.
+
+Paula Rocha, Ana Paula, António Filipe e Sandra Tavares têm a data de entrada e uma pequena biografia (da apresentação institucional). **Faltam para os dois novos**, no mesmo formato ("Desde …" e uma ou duas frases):
+- Rui Silva (Projetos): …
+- André Silva (Responsável Digital): …
 
 **Fotografia de grupo**
 A apresentação tem uma fotografia de um jantar da equipa. Usa-se essa ou outra?
@@ -446,7 +461,7 @@ A apresentação e o site antigo indicam contactos diferentes. A página usa os 
 | Email | paula.rocha@linkplas.pt | geral@linkplas.pt no rodapé, paula.rocha@linkplas.pt na página Contactos | geral@linkplas.pt (confirmado) |
 | Morada | Rua António Gomes Correia Júnior, n.º 459, Zona Industrial do Mergulhão, Cesar, 3700-606 Oliveira de Azeméis | igual, sem o número da porta | a da apresentação, com "Linkplas, Lda" por cima **(confirmar)** |
 
-**Horário de atendimento** (a página mostra "Conteúdo a fornecer" até haver resposta): …
+**Horário de atendimento**: segunda a sexta, das 9h00 às 18h00 (indicado a 8 de outubro de 2026; já está na página).
 
 **Formulário** — decidido: tem os campos Nome, Empresa, Email, Telefone, Tipo de pedido (Orçamento · Informação · Parceria) e Mensagem, e uma caixa de consentimento obrigatória. Não tem envio de ficheiros.
 

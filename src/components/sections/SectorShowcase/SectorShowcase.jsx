@@ -61,7 +61,7 @@ export default function SectorShowcase({ items, menuLabel }) {
         {items.map((item, index) => (
           <div
             key={item.id}
-            className={`lp-sector-menu__item lp-sector-tone--${item.tone}${index === active ? ' is-active' : ''}`}
+            className={`lp-sector-menu__item lp-tone--${item.tone}${index === active ? ' is-active' : ''}`}
             onMouseEnter={() => select(index)}
           >
             {/* The button chooses the item; the link below it, a separate control, opens its page. */}
@@ -94,7 +94,7 @@ export default function SectorShowcase({ items, menuLabel }) {
       {/* Announced to screen readers only once the visitor is choosing, never while it cycles. */}
       <div
         id={PANEL_ID}
-        className={`lp-sector-panel lp-sector-tone--${current.tone}`}
+        className={`lp-sector-panel lp-tone--${current.tone}`}
         aria-live={cycling ? 'off' : 'polite'}
       >
         <div className="lp-sector-panel__media">
