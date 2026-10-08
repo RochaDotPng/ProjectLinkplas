@@ -53,7 +53,7 @@ export default function Brand() {
                   title={block.title}
                   description={block.text}
                 />
-                <CheckList items={block.points} />
+                <CheckList items={block.points} marker="square" />
               </div>
               <div className="lp-media lp-media--contain">
                 <img src={block.image} alt={block.imageAlt} loading="lazy" decoding="async" />

@@ -1,7 +1,7 @@
 // Copy for the home page, per language.
 
 import { useLanguage } from '../i18n/language-context';
-import { ROUTES } from './routes';
+import { PORTFOLIO_PUBLISHED, ROUTES } from './routes';
 
 // What does not change with the language: where each sector leads and what it shows.
 const sectorBase = {
@@ -32,7 +32,8 @@ const sectorBase = {
   ecocatch: {
     id: 'ecocatch',
     tone: 'brand',
-    to: ROUTES.portfolio,
+    // "Conhecer o projeto" leads to the project's page, or to Parcerias while that page is hidden.
+    to: PORTFOLIO_PUBLISHED ? ROUTES.portfolio : ROUTES.partners,
     panel: {
       name: 'ecoCatch',
       to: ROUTES.partners,
@@ -67,7 +68,7 @@ const home = {
         sector('industria', {
           title: 'Indústria',
           text: 'Peças e componentes técnicos injetados, do desenvolvimento ao molde.',
-          linkLabel: 'Ver soluções para a indústria',
+          linkLabel: 'Ver FactoryLink',
           panel: {
             text: 'Peças plásticas técnicas para diversas indústrias, com precisão, qualidade e resistência.',
             action: 'Saber mais',
@@ -141,7 +142,7 @@ const home = {
         sector('industria', {
           title: 'Industry',
           text: 'Injected technical parts and components, from development to mould.',
-          linkLabel: 'View solutions for industry',
+          linkLabel: 'View FactoryLink',
           panel: {
             text: 'Technical plastic parts for many industries, with precision, quality and strength.',
             action: 'Learn more',

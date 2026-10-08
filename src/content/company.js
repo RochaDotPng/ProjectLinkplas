@@ -150,7 +150,6 @@ const company = {
         badge: { title: 'ISO 9001', description: 'Gestão da Qualidade' },
         since: 'Certificação ISO 9001 desde 2014.',
         text: 'Certificações de qualidade e conformidade de materiais para contacto alimentar e farmacêutico.',
-        missing: 'O certificado ISO 9001 em PDF e a lista das certificações de materiais.',
       },
       policy: {
         title: 'Política da qualidade',
@@ -185,10 +184,6 @@ const company = {
         text: 'Reconhece as empresas sem diferenças remuneratórias entre mulheres e homens em funções equivalentes.',
         image: '/LinkplasData/igualdade.jpeg',
         imageAlt: 'Selo Igualdade Salarial atribuído à LinkPlas',
-      },
-      presence: {
-        title: 'Presença no setor: ExpoFarma',
-        missing: 'Fotografia e uma frase sobre a presença na ExpoFarma.',
       },
     },
   },
@@ -334,7 +329,6 @@ const company = {
         badge: { title: 'ISO 9001', description: 'Quality Management' },
         since: 'ISO 9001 certified since 2014.',
         text: 'Quality certifications and compliance of materials for food and pharmaceutical contact.',
-        missing: 'The ISO 9001 certificate as a PDF and the list of material certifications.',
       },
       policy: {
         title: 'Quality policy',
@@ -369,10 +363,6 @@ const company = {
         text: 'It recognises companies with no pay differences between women and men in equivalent roles.',
         image: '/LinkplasData/igualdade.jpeg',
         imageAlt: 'Equal Pay Seal awarded to LinkPlas',
-      },
-      presence: {
-        title: 'Presence in the sector: ExpoFarma',
-        missing: 'A photograph and a sentence about the presence at ExpoFarma.',
       },
     },
   },

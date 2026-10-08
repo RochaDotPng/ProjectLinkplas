@@ -124,7 +124,7 @@ export default function ZorPartnership() {
       <div className="container lp-zor__inner">
         <div className="lp-stack">
           <SectionHeading id="zor-titulo" eyebrow={zor.eyebrow} title={zor.title} description={zor.lead} />
-          <StandaloneLink to={zor.action.to}>{zor.action.label}</StandaloneLink>
+          {zor.action && <StandaloneLink to={zor.action.to}>{zor.action.label}</StandaloneLink>}
         </div>
 
         <div ref={stackRef} className={`lp-zor__stack${reducedMotion ? ' lp-zor__stack--static' : ''}`}>

@@ -18,7 +18,7 @@ export default function News() {
       <Section>
         <ul className="lp-grid lp-grid--3">
           {posts.map((post) => (
-            <li key={post.url}>
+            <li key={post.url ?? post.date}>
               <NewsCard post={post} linkLabel={readPost} newTabLabel={newTabLabel} />
             </li>
           ))}

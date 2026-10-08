@@ -2,7 +2,7 @@
 // Link targets are router paths: the router adds the language prefix.
 
 import { useLanguage } from '../i18n/language-context';
-import { ROUTES } from './routes';
+import { PORTFOLIO_PUBLISHED, ROUTES } from './routes';
 
 export const BRAND_NAME = 'LinkPlas';
 
@@ -18,6 +18,28 @@ const contactDetails = {
 };
 
 const complaintsBookUrl = 'https://www.livroreclamacoes.pt/';
+
+// Parcerias has two pages, Parceiros and Portfólio. While Portfólio is hidden the menu item
+// is a plain link to the one page left, and the footer lists only that page.
+const partnershipsNav = ({ group, partners, portfolio }) =>
+  PORTFOLIO_PUBLISHED
+    ? {
+        label: group,
+        base: '/parcerias',
+        children: [
+          { label: partners, to: ROUTES.partners, end: true },
+          { label: portfolio, to: ROUTES.portfolio },
+        ],
+      }
+    : { label: group, to: ROUTES.partners };
+
+const partnershipsFooter = ({ group, partners, portfolio }) => ({
+  heading: group,
+  links: [
+    { label: partners, to: ROUTES.partners },
+    ...(PORTFOLIO_PUBLISHED ? [{ label: portfolio, to: ROUTES.portfolio }] : []),
+  ],
+});
 
 // The brands open as a mega menu: icon, name, one line.
 const brandLinks = (lines) => [
@@ -57,14 +79,7 @@ const site = {
             tupperlink: 'Caixas reutilizáveis e personalizadas para restauração.',
           }),
         },
-        {
-          label: 'Parcerias',
-          base: '/parcerias',
-          children: [
-            { label: 'Parceiros', to: ROUTES.partners, end: true },
-            { label: 'Portfólio', to: ROUTES.portfolio },
-          ],
-        },
+        partnershipsNav({ group: 'Parcerias', partners: 'Parceiros', portfolio: 'Portfólio' }),
         {
           label: 'Empresa',
           base: '/empresa',
@@ -104,13 +119,7 @@ const site = {
             { label: 'Todos os produtos', to: ROUTES.products },
           ],
         },
-        {
-          heading: 'Parcerias',
-          links: [
-            { label: 'Parceiros', to: ROUTES.partners },
-            { label: 'Portfólio', to: ROUTES.portfolio },
-          ],
-        },
+        partnershipsFooter({ group: 'Parcerias', partners: 'Parceiros', portfolio: 'Portfólio' }),
       ],
       contacts: { heading: 'Contactos', ...contactDetails },
       legal: {
@@ -149,14 +158,7 @@ const site = {
             tupperlink: 'Reusable, customised containers for restaurants.',
           }),
         },
-        {
-          label: 'Partnerships',
-          base: '/parcerias',
-          children: [
-            { label: 'Partners', to: ROUTES.partners, end: true },
-            { label: 'Portfolio', to: ROUTES.portfolio },
-          ],
-        },
+        partnershipsNav({ group: 'Partnerships', partners: 'Partners', portfolio: 'Portfolio' }),
         {
           label: 'Company',
           base: '/empresa',
@@ -196,13 +198,7 @@ const site = {
             { label: 'All products', to: ROUTES.products },
           ],
         },
-        {
-          heading: 'Partnerships',
-          links: [
-            { label: 'Partners', to: ROUTES.partners },
-            { label: 'Portfolio', to: ROUTES.portfolio },
-          ],
-        },
+        partnershipsFooter({ group: 'Partnerships', partners: 'Partners', portfolio: 'Portfolio' }),
       ],
       contacts: { heading: 'Contact', ...contactDetails },
       legal: {

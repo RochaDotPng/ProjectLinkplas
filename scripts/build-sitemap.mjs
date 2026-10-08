@@ -5,7 +5,7 @@
 
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { ROUTES } from '../src/content/routes.js';
+import { PORTFOLIO_PUBLISHED, ROUTES } from '../src/content/routes.js';
 
 const ORIGIN = 'https://www.linkplas.pt';
 const root = (path) => fileURLToPath(new URL(`../${path}`, import.meta.url));
@@ -43,7 +43,7 @@ const pages = [
   ...brandSlugs.map((slug) => ({ path: ROUTES.brand(slug), changefreq: 'monthly', priority: '0.8' })),
   { path: ROUTES.news, changefreq: 'weekly', priority: '0.7' },
   { path: ROUTES.partners, changefreq: 'monthly', priority: '0.7' },
-  { path: ROUTES.portfolio, changefreq: 'monthly', priority: '0.7' },
+  ...(PORTFOLIO_PUBLISHED ? [{ path: ROUTES.portfolio, changefreq: 'monthly', priority: '0.7' }] : []),
   { path: ROUTES.about, changefreq: 'yearly', priority: '0.8' },
   { path: ROUTES.process, changefreq: 'yearly', priority: '0.7' },
   { path: ROUTES.quality, changefreq: 'yearly', priority: '0.6' },

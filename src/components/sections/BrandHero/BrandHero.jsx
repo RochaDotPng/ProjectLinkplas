@@ -32,7 +32,7 @@ export default function BrandHero({ brand, groupLabel, productsLabel, quoteLabel
               {brand.title}
             </h1>
             <p className="lp-brand-hero__lead">{brand.lead}</p>
-            <CheckList items={brand.points} />
+            <CheckList items={brand.points} marker="square" />
             <div className="lp-brand-hero__actions">
               <Button as={Link} to={brand.productsPath} size="large" trailingIcon={<Icon src={arrowRight} />}>
                 {productsLabel}

@@ -15,7 +15,7 @@ import About from './pages/About'
 import Process from './pages/Process'
 import Quality from './pages/Quality'
 import Contact from './pages/Contact'
-import { LEGACY_ROUTES, ROUTES } from './content/routes';
+import { LEGACY_ROUTES, PORTFOLIO_PUBLISHED, ROUTES } from './content/routes';
 import { useLanguage } from './i18n/language-context';
 import { getLanguage } from './i18n/languages';
 
@@ -62,7 +62,11 @@ export default function App() {
           <Route path={ROUTES.product(':slug')} element={page('product', <ProductDetail />)} />
           <Route path={ROUTES.brand(':brand')} element={page('brand', <Brand />)} />
           <Route path={ROUTES.partners} element={page('partners', <Partners />)} />
-          <Route path={ROUTES.portfolio} element={page('portfolio', <Portfolio />)} />
+          {/* Hidden for now: its address leads to Parcerias (see PORTFOLIO_PUBLISHED). */}
+          <Route
+            path={ROUTES.portfolio}
+            element={PORTFOLIO_PUBLISHED ? page('portfolio', <Portfolio />) : <Navigate to={ROUTES.partners} replace />}
+          />
           <Route path={ROUTES.about} element={page('about', <About />)} />
           <Route path={ROUTES.process} element={page('process', <Process />)} />
           <Route path={ROUTES.quality} element={page('quality', <Quality />)} />

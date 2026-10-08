@@ -1,10 +1,24 @@
-// The news feed. Posts are added here by hand, newest first; each one links to the original
-// post on the company's social networks.
+// The news feed. Posts are added here by hand, newest first. Most link to the original post
+// on the company's social networks (`source` and `url`); a post written for the site has
+// neither, and its card is not a link.
 
 import { useLanguage } from '../i18n/language-context';
 import { getLanguage } from '../i18n/languages';
 
 const posts = [
+  {
+    // The first day of the fair (28 to 30 May 2026, Centro de Congressos de Lisboa).
+    date: '2026-05-28',
+    image: '/images/noticias/expofarma.jpg',
+    pt: {
+      title: 'Presença na ExpoFarma',
+      text: 'A LinkPlas esteve na ExpoFarma 2026, no Centro de Congressos de Lisboa, a feira que reúne o setor das farmácias em Portugal.',
+    },
+    en: {
+      title: 'LinkPlas at ExpoFarma',
+      text: 'LinkPlas was at ExpoFarma 2026, at the Lisbon Congress Centre, the trade fair that brings together the pharmacy sector in Portugal.',
+    },
+  },
   {
     date: '2026-01-08',
     source: 'LinkedIn',

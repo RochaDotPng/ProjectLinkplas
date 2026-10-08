@@ -2,7 +2,7 @@
 // Monte Meão is deliberately absent: it is not an active partnership.
 
 import { useLanguage } from '../i18n/language-context';
-import { ROUTES } from './routes';
+import { PORTFOLIO_PUBLISHED, ROUTES } from './routes';
 
 // Every image dropped into src/assets/logos is picked up here; see the LEIA-ME in that folder.
 const logoFiles = import.meta.glob('../assets/logos/*.{svg,png,webp,jpg,jpeg}', { eager: true, import: 'default' });
@@ -36,7 +36,8 @@ const partners = {
       eyebrow: 'ecoCatch · em parceria com a ZØR',
       title: 'LinkPlas × ZØR',
       lead: 'O kit isotérmico é adequado para todos os tipos de transporte de produtos termossensíveis. Trata-se de uma solução fácil de utilizar, reutilizável e qualificada até 20 horas.',
-      action: { label: 'Ver o projeto no portfólio', to: ROUTES.portfolio },
+      // The link to the project appears only while the Portfólio page is published.
+      action: PORTFOLIO_PUBLISHED ? { label: 'Ver o projeto no portfólio', to: ROUTES.portfolio } : null,
       layers: [
         'Caixa exterior LinkPlas em plástico resistente',
         'Inserção em esferovite ZØR para conservação térmica',
@@ -156,7 +157,7 @@ const partners = {
       eyebrow: 'ecoCatch · in partnership with ZØR',
       title: 'LinkPlas × ZØR',
       lead: 'The isothermal kit suits every kind of transport of temperature-sensitive products. It is easy to use, reusable and qualified for up to 20 hours.',
-      action: { label: 'See the project in the portfolio', to: ROUTES.portfolio },
+      action: PORTFOLIO_PUBLISHED ? { label: 'See the project in the portfolio', to: ROUTES.portfolio } : null,
       layers: [
         'LinkPlas outer box in strong plastic',
         'ZØR polystyrene insert for thermal protection',

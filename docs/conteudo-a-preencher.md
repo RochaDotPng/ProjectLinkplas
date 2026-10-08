@@ -67,11 +67,11 @@ Opcional: a página abre só com o título "Novidades da LinkPlas." e já não m
 - …
 
 **2.2 Novas publicações**
-A apresentação refere estes quatro temas, que ainda não estão no feed. Preencha os que quiser publicar e acrescente linhas para outros.
+A apresentação refere estes quatro temas. O primeiro já está publicado; os outros ainda não estão no feed. Preencha os que quiser publicar e acrescente linhas para outros.
 
 | Data | Origem (LinkedIn, Instagram, site…) | Título | Texto curto (até 200 caracteres) | Imagem (ficheiro) | Ligação para a publicação original |
 |---|---|---|---|---|---|
-| … | … | Presença na ExpoFarma | … | … | … |
+| 28 de maio de 2026 (primeiro dia da feira) | site, sem publicação original | Presença na ExpoFarma | **Publicado, a rever:** "A LinkPlas esteve na ExpoFarma 2026, no Centro de Congressos de Lisboa, a feira que reúne o setor das farmácias em Portugal." | fotografia enviada em 2026-10-08 | … (se existir uma publicação, o cartão passa a ligar a ela) |
 | … | … | ecoCatch, em parceria com a ZØR | … | … | … |
 | dezembro de 2025 **(confirmar)** | … | Projeto Platec concluído | … | … | … |
 | fevereiro de 2026 **(confirmar)** | … | Entrega à Plural | … | … | … |
@@ -334,6 +334,8 @@ A Monte Meão não entra no site: de momento não é uma parceria ativa.
 
 ### 5.2 Portfólio
 
+> A página Portfólio está escondida do site desde 2026-10-08, até este conteúdo existir. Volta a aparecer no menu quando estiver pronto.
+
 Para cada projeto: o que o cliente precisava, o que a LinkPlas fez e o resultado. Duas ou três frases em cada campo. Os testemunhos já existem na apresentação.
 
 **Plural (2025–2026)**
@@ -445,9 +447,7 @@ A apresentação fala em conformidade para contacto alimentar e farmacêutico.
 **Selo Igualdade Salarial 2024**
 - Imagem do selo (ficheiro): …
 
-**ExpoFarma**
-- Ano da participação: …
-- A fotografia da apresentação pode ser usada? …
+A presença na ExpoFarma saiu desta página e passou a ser uma notícia (secção 2.2). A página Qualidade também já não mostra a nota "Conteúdo a fornecer" das certificações; os ficheiros acima continuam em falta.
 
 ---
 

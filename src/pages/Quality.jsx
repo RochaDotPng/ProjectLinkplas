@@ -6,13 +6,11 @@ import SectionHeading from '../components/content/SectionHeading/SectionHeading'
 import CheckList from '../components/content/CheckList/CheckList';
 import Stat from '../components/cards/Stat/Stat';
 import CertificationBadge from '../components/ui/CertificationBadge/CertificationBadge';
-import ContentPlaceholder from '../components/ui/ContentPlaceholder/ContentPlaceholder';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder/ImagePlaceholder';
 import { useCompanyContent } from '../content/company';
 
 export default function Quality() {
   const { crumb, quality } = useCompanyContent();
-  const { hero, certifications, policy, control, sustainability, social, presence } = quality;
+  const { hero, certifications, policy, control, sustainability, social } = quality;
 
   return (
     <PageLayout>
@@ -25,7 +23,6 @@ export default function Quality() {
           <CertificationBadge title={certifications.badge.title} description={certifications.badge.description} />
           <p className="lp-note">{certifications.since}</p>
         </div>
-        <ContentPlaceholder>{certifications.missing}</ContentPlaceholder>
       </Section>
 
       <Section tone="subtle" labelledBy="qualidade-politica">
@@ -65,18 +62,6 @@ export default function Quality() {
           <SectionHeading id="qualidade-social" eyebrow={social.eyebrow} title={social.title} description={social.text} />
           <div className="lp-media lp-media--contain">
             <img src={social.image} alt={social.imageAlt} loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </Section>
-
-      <Section tone="subtle" labelledBy="qualidade-presenca">
-        <div className="lp-split">
-          <div className="lp-stack">
-            <SectionHeading id="qualidade-presenca" title={presence.title} />
-            <ContentPlaceholder>{presence.missing}</ContentPlaceholder>
-          </div>
-          <div className="lp-media">
-            <ImagePlaceholder />
           </div>
         </div>
       </Section>

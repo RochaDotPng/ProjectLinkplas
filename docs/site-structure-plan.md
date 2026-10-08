@@ -18,7 +18,7 @@ Section names and copy are kept in Portuguese, as they will appear on the site.
 | Notícias | — | Notícias | `/noticias` |
 | Produtos | — | Produtos (catalogue), and one detail page per product | `/produtos`, `/produtos/<produto>` |
 | Marcas | TupperLink · PharmaLink · FactoryLink (a mega menu on desktop) | one page per sub-brand | `/marcas/tupperlink`, `/marcas/pharmalink`, `/marcas/factorylink` |
-| Parcerias | Parceiros · Portfólio | Parceiros, Portfólio | `/parcerias`, `/parcerias/portfolio` |
+| Parcerias | Parceiros · Portfólio (hidden for now) | Parceiros, Portfólio | `/parcerias`, `/parcerias/portfolio` |
 | Empresa | Sobre nós · Como trabalhamos · Qualidade | three pages | `/empresa/sobre-nos`, `/empresa/como-trabalhamos`, `/empresa/qualidade` |
 | Contactos | — | Contactos | `/contactos` |
 
@@ -66,9 +66,9 @@ A feed of recent posts about the company, newest first. Posts are added by hand,
 | 1 | Cabeçalho | Title and one-line intro | Gap (one sentence) | Hero (Interior) |
 | 2 | Feed | Image, date, origin (LinkedIn, Instagram…), title, short text, link to the original post | Site: the six posts in `cards.json` | News Card, Pagination |
 
-As built: the six posts, three per row on desktop, each card linking to the original post in a new tab. The page has no introduction line (the client had its placeholder removed on 2026-10-08), and there is no pagination yet (six posts fit on one page). Posts are added in `src/content/news.js`.
+As built: the six posts plus one about ExpoFarma 2026, three per row on desktop, each card linking to the original post in a new tab (the ExpoFarma post has no original post, so its card is not a link). The page has no introduction line (the client had its placeholder removed on 2026-10-08), and there is no pagination yet (seven posts fit on one page). Posts are added in `src/content/news.js`.
 
-Candidate posts the presentation mentions that are not in the feed yet: presence at ExpoFarma (p. 20), ecoCatch with ZØR (p. 3, p. 14), the Platec project concluded in December 2025 (p. 16), the Plural delivery (p. 17). The Selo Igualdade Salarial 2024 (p. 20) is already there.
+Candidate posts the presentation mentions that are not in the feed yet: ecoCatch with ZØR (p. 3, p. 14), the Platec project concluded in December 2025 (p. 16), the Plural delivery (p. 17). The Selo Igualdade Salarial 2024 (p. 20) is already there, and so is the presence at ExpoFarma (p. 20), added on 2026-10-08 with the client's photograph and a sentence drafted here.
 
 ### 2.3 Produtos
 
@@ -198,7 +198,7 @@ As built (2026-10-05): after the header comes the featured partnership, "ecoCatc
 
 **Monte Meão is left out**: it is not an active partnership at the moment, so its project (Accor Hotels Arena, Paris, 2015) and António Pimentel's testimonial on p. 16 are not used on the site. Permission to publish the partners' names, logos and testimonials is confirmed.
 
-**Portfólio** — projects delivered.
+**Portfólio** — projects delivered. **Hidden since 2026-10-08**, until its content is ready: the page is built but has no route, no links and no sitemap entry (`PORTFOLIO_PUBLISHED` in `src/content/routes.js`), and Parcerias is a plain link in the header.
 
 | Project | Content | Source |
 |---|---|---|
@@ -266,9 +266,9 @@ As built: sections 1 to 4 above, in that order, with the existing ultrasonic wel
 | 4 | Controlo | "Controlo dimensional e de qualidade, com domínio da conformidade regulamentar." "Conhecimento técnico dos materiais, controlo em cada série." | p. 10, p. 5 | Check List |
 | 5 | Sustentabilidade | "Reutilizar em vez de deitar fora." Reutilização e durabilidade como alternativa ao descartável; alinhamento com a PPWR e o Green Deal; the 6 t vs 720 t figure | p. 6, p. 5, p. 15 | Stat, text |
 | 6 | Responsabilidade social | Selo Igualdade Salarial 2024, with its explanation | p. 20 | image + text |
-| 7 | Presença no setor | ExpoFarma, with photo | p. 20 | image |
+| 7 | Presença no setor (removed) | ExpoFarma, with photo: moved to Notícias on 2026-10-08 | p. 20 | News Card |
 
-As built: the seven sections. The quality-policy text is the previous site's, with its four commitments. The certificate files and the ExpoFarma photograph are placeholders; the Selo Igualdade Salarial uses the image from the news post.
+As built: the first six sections; the client moved ExpoFarma to Notícias on 2026-10-08, since it does not belong on this page. The quality-policy text is the previous site's, with its four commitments. The certificate files are still missing, but the page no longer shows a note about them (removed at the client's request the same day); the Selo Igualdade Salarial uses the image from the news post.
 
 ### 2.7 Contactos
 
@@ -309,7 +309,7 @@ Every page of the presentation is placed at least once.
 | 17 | Plural, Coprax | Portfólio; Plural also on PharmaLink |
 | 18 | A nossa equipa | Sobre nós |
 | 19 | Liderança | Sobre nós |
-| 20 | Qualidade e responsabilidade | Qualidade; ExpoFarma also as a news post |
+| 20 | Qualidade e responsabilidade | Qualidade; ExpoFarma as a news post only |
 | 21 | Contacto | Contactos; closing line on Início and Como trabalhamos |
 
 ---

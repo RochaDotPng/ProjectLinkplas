@@ -1,7 +1,10 @@
-// Each brand page sets its own tint; nothing outside that page uses it.
-.lp-brand--tupperlink { --lp-brand-subtle: var(--lp-subbrand-tupperlink-subtle); }
-.lp-brand--pharmalink { --lp-brand-subtle: var(--lp-subbrand-pharmalink-subtle); }
-.lp-brand--factorylink { --lp-brand-subtle: var(--lp-subbrand-factorylink-subtle); }
+// Each brand page sets its own tint and accent; nothing outside that page uses them.
+@each $brand in (tupperlink, pharmalink, factorylink) {
+  .lp-brand--#{$brand} {
+    --lp-brand-subtle: var(--lp-subbrand-#{$brand}-subtle);
+    --lp-brand-accent: var(--lp-subbrand-#{$brand}-accent);
+  }
+}
 
 .lp-brand-hero {
   padding: var(--lp-space-32) 0 var(--lp-space-48);
@@ -60,13 +63,8 @@
   color: var(--lp-text-secondary);
 }
 
-// The ticks sit on white so they read on the tint.
 .lp-brand-hero .lp-check-list {
   margin-top: var(--lp-space-8);
-}
-
-.lp-brand-hero .lp-check-list__check {
-  background-color: var(--lp-bg-page);
 }
 
 .lp-brand-hero__actions {

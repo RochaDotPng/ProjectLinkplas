@@ -29,6 +29,18 @@
   border-radius: var(--lp-radius-xs);
 }
 
+// The brand pages' marker. The page sets --lp-brand-accent; anywhere else the square is
+// Azul Petróleo. It is a decoration beside the text, which is why the light accents can be
+// used here: they are never the colour of the text itself.
+.lp-check-list__square {
+  flex: none;
+  width: var(--lp-space-12);
+  height: var(--lp-space-12);
+  // Centred on the first line of text (26px line height).
+  margin-top: calc((26px - var(--lp-space-12)) / 2);
+  background-color: var(--lp-brand-accent, var(--lp-bg-brand));
+}
+
 .lp-section--subtle .lp-check-list__check {
   background-color: var(--lp-bg-page);
 }
