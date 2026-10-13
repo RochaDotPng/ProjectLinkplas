@@ -29,7 +29,7 @@ const languages = (
   .filter(([, , , , published]) => published === 'true')
   .map(([, code, locale, prefix]) => ({ code, locale, prefix }));
 
-const productSlugs = (await matches('src/content/products.js', /^ {4}slug: '([^']+)'/gm, 'product slugs')).map(
+const productSlugs = (await matches('src/content/products.js', /^ {4}slug: '([^']+)',\n(?! {4}hidden: true)/gm, 'product slugs')).map(
   ([, slug]) => slug
 );
 

@@ -240,7 +240,7 @@ As páginas das marcas já não têm as secções "Origem" e "Clientes" (retirad
 | 5 | 2500 ml | 346 mm | 226 mm | 50 mm |
 | 6 | 4000 ml | … | … | … |
 
-O volume de 4000 ml veio com os modelos 3D e não está no site atual; no modelo mede cerca de 346 × 226 × 76 mm.
+O volume de 4000 ml foi retirado do site em 2026-10-13, até entrar em produção. Veio com os modelos 3D; no modelo mede cerca de 346 × 226 × 76 mm.
 - Medidas do recipiente de 4000 ml: …
 - No modelo 3D, o recipiente de 1500 ml tem 62 mm de altura; o site indica 64 mm. Qual é o valor certo? …
 

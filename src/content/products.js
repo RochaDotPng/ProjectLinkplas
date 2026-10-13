@@ -36,7 +36,9 @@ const cadFiles = (folder, drawing, kinds) =>
 
 const catalogue = { kind: 'catalogue', file: '/files/catalogo_Linkplas_sem_taco.pdf' };
 
-const products = [
+// A product with `hidden: true` (on the line after its slug, where the sitemap script looks
+// for it) is kept here but left out of the site: no card, no page, no sitemap entry.
+const allProducts = [
   {
     slug: 'recipiente-tupperlink',
     brand: 'tupperlink',
@@ -61,12 +63,13 @@ const products = [
       { id: '1500ml', specs: { volume: 1500, length: 210, width: 160, height: 64 }, model: '/models/tupperlink-1500ml.glb' },
       { id: '2000ml', specs: { volume: 2000, length: 210, width: 160, height: 86 } },
       { id: '2500ml', specs: { volume: 2500, length: 346, width: 226, height: 50 }, model: '/models/tupperlink-2500ml.glb' },
-      { id: '4000ml', specs: { volume: 4000 }, model: '/models/tupperlink-4000ml.glb' },
+      // The 4000 ml size is not in production yet (client, 2026-10-13). Its 3D source is in
+      // content-inbox/3d/; add the size back here and in scripts/build-3d-models.mjs.
     ],
     pt: {
       name: 'Recipiente TupperLink',
       summary: 'Recipientes empilháveis para armazenamento e take-away, do congelador à máquina de lavar louça.',
-      cardSpecs: ['500–4000 ml'],
+      cardSpecs: ['500–2500 ml'],
       description: [
         'TupperLink: a solução de armazenamento versátil e sustentável. Empilháveis para otimizar o espaço, estes recipientes vão do congelador à máquina de lavar louça, facilitando o armazenamento e a limpeza. A escolha consciente para sua cozinha - funcionalidade, conveniência e eco-amigável em cada recipiente.',
         'Desenvolvidos para se adaptarem perfeitamente ao serviço de takeaway, os TupperLink oferecem praticidade sem igual.',
@@ -75,7 +78,7 @@ const products = [
     en: {
       name: 'TupperLink container',
       summary: 'Stackable containers for storage and take-away, from the freezer to the dishwasher.',
-      cardSpecs: ['500–4000 ml'],
+      cardSpecs: ['500–2500 ml'],
       description: [
         'TupperLink: the versatile, sustainable storage solution. Stackable to save space, these containers go from the freezer to the dishwasher, making storage and cleaning easy. The conscious choice for your kitchen: practical, convenient and eco-friendly in every container.',
         'Designed to fit take-away service perfectly, TupperLink containers are exceptionally practical.',
@@ -124,6 +127,7 @@ const products = [
 
   {
     slug: 'kit-isotermico-e-pharma',
+    hidden: true, // until production starts (client, 2026-10-13)
     brand: 'pharmalink',
     images: [
       { src: '/images/kit-isotermico-vista-explodida.png', alt: { pt: 'Vista explodida do kit isotérmico: caixa exterior plástica com tampa, reforço com isolamento térmico e acumuladores', en: 'Exploded view of the isothermal kit: plastic outer box with lid, liner with thermal insulation and cold packs' } },
@@ -530,6 +534,8 @@ function localize(product, language, locale) {
     downloads: toDownloads(product.downloads),
   };
 }
+
+const products = allProducts.filter((product) => !product.hidden);
 
 export function useProducts() {
   const language = useLanguage();

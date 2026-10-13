@@ -83,7 +83,6 @@ const MODELS = [
   tupperLink(1000),
   tupperLink(1500),
   tupperLink(2500),
-  tupperLink(4000),
   pharmaLink('grande', /^caixa grande/i, 'y'),
   pharmaLink('media', /^caixa m/i, '-z'),
   pharmaLink('pequena', /^caixa pequena/i, 'z'),
